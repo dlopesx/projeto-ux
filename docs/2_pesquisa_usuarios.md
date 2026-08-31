@@ -1,54 +1,30 @@
 # Pesquisa e Coleta de Dados com Usuários
 
-> **_NOTE:_**: O objetivo desta entrega é planejar e registrar como a equipe vai ouvir os usuários reais (ou representativos do público-alvo) antes de avançar para personas e cenários. Não é para relatar impressões da equipe — é para descrever o que será perguntado, para quem, como e por quê.
-
-1) **Identificação de Necessidades dos Usuários e Requisitos de UX**
-- Que dados coletar? (comportamentos, dores, expectativas, contexto de uso, frequência de uso, nível de familiaridade com tecnologia, etc.)
-- De quem coletar? (perfil do público-alvo e critérios de seleção dos participantes — quantos, onde encontrá-los)
-
-2) **Aspectos Éticos**
-- Seu projeto deverá considerar aspectos éticos? Justifique usando os conceitos da aula.
-- Como o consentimento dos participantes será obtido (termo de consentimento)?
-- Como os dados coletados serão armazenados, anonimizados e descartados, considerando a LGPD?
-
-3) **Ferramentas de Coleta de Dados (três técnicas diferentes)**
-
-> **_NOTE:_**: Escolher técnicas complementares (ex.: uma qualitativa individual, uma qualitativa em grupo, uma quantitativa), não três variações da mesma técnica.
-
-Para cada instrumento, apresente:
-- Nome do instrumento e objetivo de aplicação
-- Explicar como aplicar (serve para normalizar o processo de aplicação quando pessoas distintas aplicam o instrumento)
-- Instrumento (por exemplo, link do questionário no Google Forms, roteiro de entrevista, roteiro do Grupo Focal, etc)
-
----
-
-## Exemplo de entrega
-
-> O exemplo abaixo é fictício — usa como cenário um app universitário de organização de grupos de estudo ("Estuda+") apenas para ilustrar o **nível de detalhe e formato** esperado. Não copie o conteúdo, copie a estrutura.
+> O objetivo desta entrega é entender em profundidade as expectativas, dores e hábitos de usuários reais representantes do público-alvo da aplicação.
 
 ### 1) Identificação de Necessidades dos Usuários e Requisitos de UX
 
 **Que dados coletar?**
-- Como os alunos hoje organizam sessões de estudo em grupo (ferramentas usadas, frequência).
-- Principais dificuldades para combinar horários e manter o grupo engajado.
-- Expectativas sobre lembretes, divisão de tópicos de estudo e acompanhamento de progresso.
+- Quais métodos e ferramentas os tutores utilizam para administrar rotinas de cuidado dos pets, como agendamentos, medicações e vacinas, além de frequência e contexto de uso.
+- Principais dificuldades para cuidar da rotina do pet.
+- Como um aplicativo/site ajudaria esses tutores.
 
 **De quem coletar?**
-- Alunos de graduação de Ciência da Computação, do 2º ao 6º semestre, que já participaram de pelo menos um grupo de estudo nos últimos 6 meses.
-- Amostra mínima: 8 alunos para entrevistas, 40 respostas para o questionário.
-- Recrutamento: convite em grupos de turma no WhatsApp/Discord.
+- Tutores que possuem celular/computador disponível para registrar as informações dos animais de estimação.
+- Amostra mínima: 8 tutores de pets para entrevistas, 40 respostas para o questionário, 1 pessoa para investigação contextual.
+- Recrutamento: seleção pessoal para as entrevistas, divulgação do questionário em redes sociais como o Instagram e fóruns do Reddit.
 
 ### 2) Aspectos Éticos
 
-Sim, o projeto envolve dados pessoais de participantes (nome, e-mail, respostas sobre hábitos de estudo), portanto:
-- Será aplicado um **Termo de Consentimento Livre e Esclarecido (TCLE)** antes de qualquer coleta, explicando objetivo da pesquisa, uso dos dados e direito de desistência a qualquer momento.
-- Os dados serão coletados de forma **anonimizada** (sem nome/e-mail nas respostas do questionário) e armazenados apenas na equipe, em conformidade com a LGPD (Lei n.º 13.709/2018).
-- Gravações de entrevista serão apagadas ao final do projeto, mantendo-se apenas as transcrições anonimizadas usadas na análise.
+O projeto envolve aspectos éticos (nome, idade, respostas pessoais) que devem ser considerados, logo:
+- Aplicado um **Termo de Consentimento Livre e Esclarecido (TCLE)** antes da realização das entrevistas e investigação contextual, explicando objetivo da pesquisa, uso dos dados e direito de desistência a qualquer momento.
+- Os dados serão coletados de forma **anonimizada** (sem nome/e-mail nas respostas do questionário) e não serão divulgados ao público, em conformidade com a LGPD (Lei n.º 13.709/2018)
+- Não serão realizadas gravações de entrevistas e os questionários serão sem identificação pessoal, tendo as respostas das entrevistas e materiais registrados descartados após o término do projeto.
 
 ### 3) Ferramentas de Coleta de Dados
 
 | Instrumento | Objetivo | Como aplicar | Link/Roteiro |
 | :---- | :---- | :---- | :---- |
-| **Entrevista semiestruturada** | Entender em profundidade como os alunos organizam e mantêm grupos de estudo, e onde o processo falha. | Sessão individual de 20-30 min, presencial ou por chamada de vídeo. Seguir o roteiro fixo, mas permitir perguntas de aprofundamento ("por quê?", "pode dar um exemplo?"). Gravar com autorização e transcrever depois. | Roteiro: 1) Como você organiza sessões de estudo hoje? 2) Conte sobre a última vez que um grupo de estudo não funcionou. 3) O que faria você usar um app específico para isso? |
-| **Questionário (Google Forms)** | Quantificar ferramentas usadas, frequência de grupos de estudo e principais frustrações, em uma amostra maior. | Divulgar o link em grupos de turma, aberto por 1 semana. Sem identificação pessoal, tempo estimado de resposta de 5 min. | `https://forms.google.com/exemplo-estuda-mais` *(placeholder — substituir pelo link real)* |
-| **Grupo focal** | Observar a discussão entre alunos sobre o que tornaria um grupo de estudo "bom", captando divergências de opinião difíceis de obter em entrevista individual. | Sessão única com 5-6 alunos, 45 min, mediada por um membro da equipe seguindo um roteiro de tópicos, com outro membro registrando anotações. | Roteiro de tópicos: hábitos atuais, ferramentas testadas e abandonadas, o que faria o grupo "durar" até a prova. |
+| **Entrevista semiestruturada** | Compreender quais as dificuldades em administrar as rotinas do pet e como uma aplicação pode auxiliar. | Sessão individual de 10-20 min, presencial ou por chamada de vídeo. Seguir o roteiro fixo e manter oportunidade de dúvidas (como, por que) que surgirem durante respostas.| Roteiro: 1) Quantos pets você tem atualmente e quais? 2) Como você costuma organizar os cuidados do pet, como vacinas, banho e tosa, medicamentos? 3) Com que frequência você lida com essas tarefas de cuidados (diária, semanal..)? 4) Você já se esqueceu de alguma vacina ou medicamento? Se sim, o que aconteceu depois? 5) Você sente dificuldade para manter essas rotinas organizadas? Se sim, quais dificuldades? 6) Qual a parte mais trabalhosa de cuidar da saúde do seu pet atualmente? 7) Você divide esses cuidados com outras pessoas? Se sim, como é a comunicação com elas? 8) O que faria você usar um aplicativo para esses fins, se é que ainda não usa? 9) Você possui alguma experiência negativa utilizando aplicativos de monitoramento? Se sim, qual seria? 10) Qual função de um aplicativo mais te ajudaria nesses cuidados do dia a dia? 11) Pra você, seria útil uma função de compartilhamento para que outras pessoas administrem as rotinas do seu pet junto a você? |
+| **Questionário (Google Forms)** | Quantificar ferramentas usadas como agenda, identificar padrões de UX preferidos pelos usuários e expectativas sobre funcionalidades. | Divulgar o link em grupos de turma e redes sociais (Instagram, fórum de pets do Reddit), aberto por 1 semana. Sem identificação pessoal, tempo estimado de resposta de 5 min. | `https://forms.google.com/exemplo-estuda-mais` *(placeholder — substituir pelo link real)* |
+| **Investigação contextual** | Observar como o tutor administra atividades do dia a dia com cuidados do pet e outras atividades. | Visita ao tutor para realizar observação enquanto registra as dificuldades relatadas e comportamento usual. |preencher|
