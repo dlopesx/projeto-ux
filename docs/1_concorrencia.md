@@ -20,32 +20,52 @@ IOS: https://apps.apple.com/br/app/petzillas/id1347981298
 ![Cadastro de usuário](imagens/concorrentes/petzillas/cadastro_usuario.jpeg)
 *Cadastro de usuário*
 
+&nbsp;
+
 ![Cadastro de animal](imagens/concorrentes/petzillas/cadastro_animal.jpeg)
 *Cadastro de animal*
+
+&nbsp;
 
 ![Menu inicial. Tela esquerda: antes de adicionar um pet. Tela direita: após adicionar](imagens/concorrentes/petzillas/menu_antes_dps.jpeg)
 *Menu inicial. Tela esquerda: antes de adicionar um pet. Tela direita: após adicionar*
 
+&nbsp;
+
 ![Menu lateral](imagens/concorrentes/petzillas/menu_hamburguer.jpeg)
 *Menu lateral*
+
+&nbsp;
 
 ![Menu que mostra pets já falecidos com título "Meus anjinhos".](imagens/concorrentes/petzillas/meus_pets_anjinhos.jpeg)
 *Menu que mostra pets já falecidos com título "Meus anjinhos".*
 
+&nbsp;
+
 ![Menu de exemplo de pet cadastrado.](imagens/concorrentes/petzillas/gato_menu.jpeg)
 *Menu de exemplo de pet cadastrado*
+
+&nbsp;
 
 ![Exemplo de funcionalidade: peso de animal](imagens/concorrentes/petzillas/grafico_peso.jpeg)
 *Exemplo de funcionalidade: peso de animal*
 
+&nbsp;
+
 ![Acompanhamento de vacinas.](imagens/concorrentes/petzillas/vacinas.jpeg)
 *Acompanhamento de vacinas.*
+
+&nbsp;
 
 ![Exemplo genérico de agendamento de higiene](imagens/concorrentes/petzillas/agendamentos_genericos.jpeg)
 *Exemplo genérico de agendamento de higiene*
 
+&nbsp;
+
 ![Exemplo de medicamentos adicionados](imagens/concorrentes/petzillas/add_medicamento.jpeg)
 *Exemplo de medicamentos adicionados]*
+
+&nbsp;
 
 </details>
 
@@ -93,17 +113,28 @@ IOS: https://apps.apple.com/us/app/11pets-pet-care/id1232470530
 ![Tela inicial de cadastro de usuário seguida de anúncio de plano pago](imagens/concorrentes/11pets/cadastro_usuario.jpeg)
 *Tela inicial de cadastro de usuário seguida de anúncio de plano pago*
 
+&nbsp;
+
 ![Realizando o cadastro de um pet](imagens/concorrentes/11pets/cadastro_pet.jpeg)
 *Cadastro de pet. A tela direita é continuação do scroll da esquerda.*
+
+&nbsp;
 
 ![Menu inicial do app](imagens/concorrentes/11pets/menu_inicial.jpeg)
 *Tela 1: resumo inicial; Tela 2: painel de animais de estimação; Tela 3: reservas de serviços.*
 
+&nbsp;
+
 ![Menu lateral](imagens/concorrentes/11pets/menu-lateral.jpeg)
 *Menu lateral e detalhes.*
 
+&nbsp;
+
 ![Menu de resumo de um pet](imagens/concorrentes/11pets/menu_pet.jpeg)
 *Menu de resumo de um pet.*
+
+&nbsp;
+
 </details>
 
 ### 2.2 Características e funcionalidades
@@ -148,7 +179,40 @@ Web: https://www.petlove.com.br/
 <details>
 <summary>📱 Ver prints do Petlove</summary>
 
-PREENCHER
+![Cadastro guiado ao inicializar o app pela primeira vez - cadastrar um animal](imagens/concorrentes/petlove/menu_cadastro1.jpeg)  
+*Cadastro guiado ao inicializar o app pela primeira vez - cadastrar um animal*
+
+&nbsp;
+
+![Continuação do cadastro de animal](imagens/concorrentes/petlove/menu_cadastro2.jpeg)  
+*Continuação do cadastro de animal*
+
+&nbsp;
+
+![Menu inicial: Tela 1 inclui o dashboard inicial, tela 2 a assinatura paga (club petlove), tela 3 os planos de saúde](imagens/concorrentes/petlove/menu_inicial.jpeg)  
+*Menu inicial: Tela 1 inclui o dashboard inicial, tela 2 a assinatura paga (club petlove), tela 3 os planos de saúde*  
+
+&nbsp;
+
+![Menu de pets](imagens/concorrentes/petlove/menu_pet.jpeg)  
+*Menu de pets*  
+
+&nbsp;
+
+![Exemplo de funcionalidade: agendamento de banho](imagens/concorrentes/petlove/agendamento_banho.jpeg)  
+*Exemplo de funcionalidade: agendamento de banho*  
+
+&nbsp;
+
+![Exemplo de funcionalidade: agendamento de pet sitter](imagens/concorrentes/petlove/agendamento_petsitter.jpeg)
+*Exemplo de funcionalidade: agendamento de pet sitter*  
+
+&nbsp;
+
+![Exemplo de funcionalidade: rotina de alimentação com produtos adicionados da loja](imagens/concorrentes/petlove/rotina_alimentacao.jpeg)
+*Exemplo de funcionalidade: rotina de alimentação com produtos adicionados da loja*  
+
+&nbsp;
 
 </details>
 
@@ -170,8 +234,8 @@ PREENCHER
 ### 3.4 Preços e modelo de negócio
 - **Modelo:** Híbrido - possui serviços e produtos pagos, mas o uso é gratuito dentro do app.  
 - **Planos e valores:**  
-- Clube petlove: 12x de 9,99 reais por ano.
-- Clube petlove plus: 12x de 14,99 reais por ano. Diferencial: possui 2% de cashback sobre as compras e 15-20% off em todos os serviços de agendamento
+  Clube petlove: 12x de 9,99 reais por ano.
+  Clube petlove plus: 12x de 14,99 reais por ano. Diferencial: possui 2% de cashback sobre as compras e 15-20% off em todos os serviços de agendamento
 
 ### 3.5 Pontos fortes e fracos
 
@@ -204,7 +268,7 @@ PREENCHER
 
 ## 5. Síntese e recomendações
 
-**Resumo geral:** Todos os concorrentes possuem funcionalidades de monitoramento de tarefas relacionadas aos pets, mas existem propostas diferentes de 
+**Resumo geral:** Todos os concorrentes possuem funcionalidades de monitoramento de tarefas relacionadas aos pets, mas existem propostas diferentes no mercado para diferentes públicos. No projeto que faremos, talvez não seja ideal integrar serviços de compra de produtos e agendamentos diretos pelo app, visto que o propósito é auxiliar o usuário a monitorar por completo os agendamentos já realizados, as tarefas a fazer, pendências médicas e de higiene.
 
 **Recomendações de uso no nosso produto:**
 1. UI amigável e de fácil uso, ícones arredondados
