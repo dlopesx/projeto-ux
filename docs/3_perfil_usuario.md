@@ -1,15 +1,3 @@
-# Perfil do Usuário
-
-> **_NOTE:_**: Esta entrega consolida e sintetiza os dados coletados na etapa de Pesquisa e Coleta de Dados com Usuários, caracterizando o público-alvo real antes de criar as personas (arquétipos fictícios). Aqui ainda não há personagem — são dados e padrões observados nos participantes reais.
-
-1) **Perfil Demográfico**
-- Faixa etária, gênero, escolaridade, ocupação, localização geográfica e outros dados demográficos relevantes ao produto/serviço.
-
-2) **Perfil Comportamental e Tecnológico**
-- Nível de familiaridade com tecnologia (baixo/médio/alto) e dispositivos mais usados.
-- Frequência e contexto de uso de produtos/serviços similares.
-- Hábitos relevantes para o produto ou serviço em questão.
-
 3) **Necessidades e Dores Consolidadas**
 - Sintetize (não repita bruto) os principais achados da pesquisa: padrões que se repetiram entre os participantes, necessidades não atendidas e frustrações recorrentes.
 - Aponte, para cada necessidade/dor, quantos participantes (aproximadamente) a mencionaram — isso embasa a priorização nas próximas etapas.
@@ -20,33 +8,32 @@
 
 ---
 
-## Exemplo de entrega
-
-> Continuação do exemplo fictício do app "Estuda+" (grupos de estudo universitários), consolidando os dados coletados na etapa de pesquisa. Copie a estrutura, não o conteúdo.
+# Perfil do Usuário
 
 ### 1) Perfil Demográfico
 
-- Idade: 18 a 24 anos.
-- Escolaridade: cursando graduação (2º ao 6º semestre).
-- Ocupação: a maioria concilia estudo com estágio ou trabalho meio período (6 de 8 entrevistados).
-- Localização: região metropolitana, moradia com a família ou república estudantil.
+- Idade: 20 a 30 anos.
+- Escolaridade: cursando graduação ou pós/especialização.
+- Gênero: a maioria é do gênero feminino.
+- Ocupação: uma parte concilia emprego e graduação ou já possui graduação (4 de 7 entrevistados).
+- Localização: Grande ABC.
 
 ### 2) Perfil Comportamental e Tecnológico
 
-- Alta familiaridade com tecnologia: todos usam smartphone diariamente e ao menos um app de mensagens em grupo (WhatsApp ou Discord).
-- Uso de produtos similares: 7 de 8 entrevistados já tentaram organizar grupo de estudo por WhatsApp; nenhum usou um app dedicado a isso.
-- Contexto de uso predominante: à noite, entre aulas, e na semana anterior às provas.
+- Acesso tecnológico: todos possuem acesso ao computador ou celular e a maioria possui mais afinidade com smartphones no dia a dia.
+- Pouco uso de aplicativos para essa finalidade: a maioria das pessoas não usam métodos tecnológicos para administrar rotinas de pets, confiam somente na memória e alguns utilizam agenda/caderno de papel para registrar.
+- Baixa frequência de acompanhamento: os participantes costumam organizar a rotina somente quando é necessário, por exemplo, quando precisam levar o pet ao veterinário.
 
 ### 3) Necessidades e Dores Consolidadas
 
 | Necessidade/Dor | Frequência aproximada | Evidência |
 | :---- | :---- | :---- |
-| Dificuldade em combinar horário comum entre os membros | 7 de 8 entrevistados | "A gente ficava mandando mensagem por dias até fechar um horário" (E4) |
-| Grupo perde engajamento após 1-2 semanas | 6 de 8 entrevistados | Confirmado também nas respostas do questionário (68% relataram abandono do grupo) |
-| Falta de divisão clara de quem estuda qual tópico | 5 de 8 entrevistados | "Todo mundo estudava a mesma coisa e a gente repetia esforço" (E2) |
-| Preocupação com exposição de dados pessoais em grupos abertos | 3 de 8 entrevistados | Mencionado espontaneamente nas entrevistas |
+| Esquecimentos na rotina do pet | qtde entrevistados | 39,9% das respostas do questionário confirmaram, cerca de 19 pessoas de 48 |
+| preencher | qtde entrevistados/forms | preencher |
+| preencher | qtde entrevistados/forms | preencher |
+| preencher | qtde entrevistados/forms | preencher |
 
-### 4) Segmentação
+### 4) Segmentação (apenas exemplo de entrega abaixo)
 
 Foram identificados dois perfis distintos entre os participantes:
 
