@@ -28,9 +28,9 @@
 
 | Necessidade/Dor | Frequência aproximada | Evidência |
 | :---- | :---- | :---- |
-| Esquecimentos na rotina do pet | qtde entrevistados | 39,9% das respostas do questionário confirmaram, cerca de 19 pessoas de 48 |
-| preencher | qtde entrevistados/forms | preencher |
-| preencher | qtde entrevistados/forms | preencher |
+| Esquecimentos na rotina do pet | 2 de 7 entrevistados  | 39,9% das respostas do questionário confirmaram, cerca de 19 pessoas de 48 |
+| Encontrar veterinários custo-benefício | 3 de 7 entrevistados | "Depois que meu cachorro entrou na fase da velhice, encontrar veterinários bons se tornou bem difícil" |
+| Alguns apps são difíceis de encontrar funções e navegar | 7 respostas de 29  | em relação a quais mecanismos de apps são mais difíceis: "Busca de funções específicas que nem sempre são tão simples de encontrar" |
 | preencher | qtde entrevistados/forms | preencher |
 
 ### 4) Segmentação (apenas exemplo de entrega abaixo)
