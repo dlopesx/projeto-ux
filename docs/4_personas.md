@@ -2,7 +2,7 @@
 
 ### Persona primária: Júlia Sousa
 
-![foto de rosto ilustrativa](imagens/persona_julia.jpeg)
+![foto de rosto ilustrativa](imagens/persona_julia.jpg)
 
 | Campo | Descrição |
 | :---- | :---- |
@@ -26,7 +26,7 @@
 
 ### Persona primária: Ana Clara
 
-![foto de rosto ilustrativa](imagens/persona_anaclara.jpeg)
+![foto de rosto ilustrativa](imagens/persona_anaclara.jpg)
 
 | Campo | Descrição |
 | :---- | :---- |
