@@ -1,6 +1,6 @@
 # Arquitetura de Informação e Fluxo do Usuário
 
-1) **Arquitetura de Informação (Sitemap)**
+## 1) **Arquitetura de Informação (Sitemap)**
 
 ### Telas e seções principais
 
@@ -38,7 +38,7 @@ A partir do Dashboard, o usuário pode acessar o registro de vacinas e consultas
 
 A estrutura também poderá ser adaptada durante o desenvolvimento da aplicação, principalmente em relação à forma de acesso aos registros, que poderá utilizar componentes da interface web, como páginas ou elementos sobrepostos.
 
-2) **Fluxo do Usuário (User Flow)**
+## 2) **Fluxo do Usuário (User Flow)**
 
 ### User Flow — Cadastrar um pet
 
