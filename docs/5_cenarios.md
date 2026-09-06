@@ -1,7 +1,5 @@
 # Cenário de Análise/Problema
 
-- Complemente com um diagrama de jornada (`journey`) do Mermaid, agrupando as etapas em seções e atribuindo uma nota de 1 (péssimo) a 9 (ótimo) ao estado emocional de cada uma.
-
 ### 1) Cenário de Análise/Problema
 
 Júlia é estudante e trabalha em período integral enquanto tem dois animais de estimação, um gato e um cachorro. Ela também divide as tarefas dos animais com a sua mãe. Às vezes, Júlia acaba se esquecendo de renovar as vacinas dos seus animais e de fazer coisas básicas relacionadas a eles no dia a dia, como lavar as vasilhas e repor água e comida. Além disso, são animais diferentes e os cuidados são diferentes, o que torna mais difícil saber quais são as necessidades de cada um. No final das contas, ela se sente um pouco atrapalhada e irresponsável por não se organizar do jeito que queria. 
@@ -36,13 +34,13 @@ Júlia tem muita correria no seu dia a dia de estudante e trabalhadora, o que se
 
 ```mermaid
 journey
-    title Jornada atual de Marina (sem solução)
-    section Formar o grupo
-      Colega cria grupo no WhatsApp: 8: Marina
-      Trocar mensagens animadas na 1ª semana: 7: Marina
-    section Grupo esvazia
-      Colegas param de responder: 3: Marina
-      Cobrar o grupo, sem retorno: 2: Marina
-    section Prova se aproxima
-      Estudar sozinha, sem saber se cobriu tudo: 1: Marina
+    title Jornada atual de Júlia (sem solução)
+    section Verificando última vacina
+      Se questiona quando foi a última vacina dos pets 4: Júlia
+      Confirma na carteirinha que as doses já venceram 2: Júlia
+    section Agenda novo retorno
+      Agenda um retorno para as doses na clínica: 6: Júlia
+      Anota as datas em um pedaço de papel qualquer: 8: Júlia
+    section Falta de acompanhamento
+      Esquece o papel na gaveta e não se lembra de verificar: 5: Júlia
 ```
