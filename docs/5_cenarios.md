@@ -36,11 +36,11 @@ Júlia tem muita correria no seu dia a dia de estudante e trabalhadora, o que se
 journey
     title Jornada atual de Júlia (sem solução)
     section Verificando última vacina
-      Se questiona quando foi a última vacina dos pets 4: Júlia
-      Confirma na carteirinha que as doses já venceram 2: Júlia
+      Se questiona quando foi a última vacina dos pets 5: Júlia
+      Confirma na carteirinha que as doses já venceram 1: Júlia
     section Agenda novo retorno
-      Agenda um retorno para as doses na clínica: 6: Júlia
+      Agenda um retorno para as doses na clínica: 4: Júlia
       Anota as datas em um pedaço de papel qualquer: 8: Júlia
     section Falta de acompanhamento
-      Esquece o papel na gaveta e não se lembra de verificar: 5: Júlia
+      Esquece o papel na gaveta e não se lembra de verificar: 6: Júlia
 ```
