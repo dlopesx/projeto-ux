@@ -8,7 +8,7 @@
 | Característica | Descrição |
 | :---- | :---- |
 | Descrição do Software | Aplicação web voltada para o monitoramento de animais de estimação, permitindo cadastrar pets e organizar seus cuidados de saúde, como vacinas e consultas. Além disso, a plataforma também disponibiliza um dashboard com lembretes e configuração de alertas. |
-| Descrição do Hardware | A aplicação web poderá ser acessada por computadores, notebooks, tablets e smartphones dês de que tenham conexão com internet. |
+| Descrição do Hardware | A aplicação web poderá ser acessada por computadores, notebooks, tablets e smartphones, desde que tenham conexão com internet. |
 | LISTA DE Capacidades da Plataforma (com explicação) | - acesso pelo navegador;<br>- possibilidade de acesso sem a necessidade de aplicativos;<br>- acesso de qualquer dispositivo apenas com o login;<br>- adaptação da interface em vários formatos de tela;<br>- uso em computador, notebook, tablet e celular;<br>- armazenamento de informações dos pets;<br>- cadastramento e alteração de informações;<br>- consulta de dados cadastrados;<br>- visualização do painel com dashboard;<br>- aviso ao usuário sobre cuidados próximos ou pendentes. |
 | LISTA DE Restrições da Plataforma (com explicação) | - necessidade de internet para o acesso;<br>- variação da experiencia devido a versão do navegador;<br>- notificações web possuem menos recursos em comparação a aplicações mobile;<br>- dependência de permissões do usuário para utilização de certos recursos. |
 
