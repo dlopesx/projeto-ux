@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto UX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="flex">
+
+        <!-- SIDEBAR-->
+
+        <!-- SIDEBAR-->
+
+        <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
+            <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                <ul class=" flex-1 space-y-2 font-medium">
+                    <li class="flex">
+                        <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
+                        <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                        </a>
+                        <button> <img class="pb-6" src = "/svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                    </li>
+                    <li dir="ltr">
+                        <a href="#" class="border-l-4 border-l-[#F29A4B] flex items-center px-2 py-3  rounded-xl hover:bg-[#E9DDCF]  group">
+                        <img src = "/svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "/svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "/svg/calendario.svg" alt="Calendario na cor laranja"/>
+
+                        <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "/svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+
+                        <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "/svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- RODAPÉ DA SIDEBAR-->
+                <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "/svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "/svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                        
+                    </li>
+                </ul>
+                   
+            </div>
+        </aside>
+
+        <!-- HEADER E MAIN -->
+
+        <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
+
+            <header class="flex flex-row justify-between p-5 border ">
+                <p> Voltar</p>
+                <button> <img src = "/svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
+            </header>
+
+            
+            <main class="flex w-full py-8 px-16 flex-col items-start self-stretch">
+                
+                <div class="flex flex-col items-center self-stretch gap-[2.25rem]">
+                    <div class="flex justify-between self-stretch items-center">
+                        <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Adicionar vacina </h1>
+                    </div>
+                    
+                    <!-- SEÇÃO: NOVO ALERTA-->
+
+                    <div class="flex flex-col self-stretch gap-3"> 
+        
+                        <form class="flex flex-col gap-8 w-full max-w-[500px] border border-[#E9DDCF] rounded-2xl p-6">
+                            <div class="grid grid-cols-1 gap-x-6 gap-y-5"> 
+                                <div class="flex flex-col gap-3">
+                                    <label> Selecione o nome da vacina</label>
+                                    <input class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                </div>
+                                <div class="flex flex-col gap-3">
+                                    <label> Data da última dose</label>
+                                    <input class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                </div>
+                            </div>
+                            <button class="type=send flex bg-[#FEEA8F] w-80 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#FEEA1F] hover:shadow-md transition transition" > <img src = "/svg/adicionar.svg" alt="Botão de 'Mais'"/>
+                            Ainda não tomou a primeira dose </button>
+                            
+                            <button class="type=send flex bg-[#F29A4B] w-40 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > <img src = "/svg/adicionar.svg" alt="Botão de 'Mais'"/>
+                            Adicionar </button>
+                        </form>
+                            
+                    </div>
+                
+        
+                </div>
+                
+        
+            </main>
+
+        </div>
+        
+
+
+    </div>
+
+
+</body>
+</html>
