@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="./index.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  	
+  	<style>
+        .primeiro-acesso-desktop {
+            width: 100%;
+            position: relative;
+            background-color: #fffbf6;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            isolation: isolate;
+            min-height: 900px;
+            text-align: left;
+            font-size: 72px;
+            color: #2b1a0e;
+            font-family: Inter;
+        }
+        .apresentao {
+            height: 900px;
+            width: 800px;
+            background-color: #fff6ec;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 112px;
+            box-sizing: border-box;
+            position: relative;
+            isolation: isolate;
+            gap: 36px;
+            z-index: 0;
+        }
+        .nome-da-aplicao {
+            align-self: stretch;
+            position: relative;
+            line-height: 108%;
+            font-weight: 600;
+            z-index: 0;
+            flex-shrink: 0;
+        }
+        .descrio {
+            align-self: stretch;
+            position: relative;
+            font-size: 26px;
+            line-height: 145%;
+            color: #75634f;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+        .curva-icon {
+            width: 800px;
+            height: 120px;
+            position: absolute;
+            margin: 0 !important;
+            bottom: 0px;
+            left: 0px;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+        .acesso {
+            height: 900px;
+            width: 640px;
+            position: absolute;
+            margin: 0 !important;
+            top: 0px;
+            left: 800px;
+            overflow: hidden;
+            flex-shrink: 0;
+            min-height: 900px;
+            z-index: 1;
+            font-size: 15px;
+            color: #75634f;
+        }
+        .acesso2 {
+            position: absolute;
+            top: 7px;
+            left: 4px;
+            width: 640px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 168px 37px;
+            box-sizing: border-box;
+            isolation: isolate;
+            gap: 35px;
+            min-height: 900px;
+            flex-shrink: 0;
+        }
+        .acesso-child {
+            width: 464px;
+            height: 48px;
+            position: relative;
+            border-radius: 20px;
+            background-color: #f8f0e6;
+            z-index: 0;
+            flex-shrink: 0;
+        }
+        .entrada {
+            width: 464px;
+            height: 54px;
+            border-radius: 12px;
+            background-color: #f8f0e6;
+            border: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            gap: 12px;
+            z-index: 1;
+        }
+        .valor {
+            flex: 1;
+            position: relative;
+        }
+        .cone-icon {
+            height: 20px;
+            width: 20px;
+            position: relative;
+        }
+        .acesso-item {
+            width: 234.7px;
+            height: 48px;
+            position: absolute;
+            margin: 0 !important;
+            top: 168.96px;
+            left: 317px;
+            border-radius: 20px;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+        .log-in {
+            width: 229px;
+            height: 48px;
+            position: absolute;
+            margin: 0 !important;
+            top: 168px;
+            left: 88px;
+            font-size: 24px;
+            line-height: 120%;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+            flex-shrink: 0;
+        }
+        .cadastro {
+            width: 164px;
+            height: 31px;
+            position: absolute;
+            margin: 0 !important;
+            top: 177px;
+            left: 374px;
+            font-size: 24px;
+            line-height: 120%;
+            font-weight: 600;
+            color: #2b1a0e;
+            display: inline-block;
+            z-index: 4;
+            flex-shrink: 0;
+        }
+        .ao {
+            width: 265px;
+            height: 52px;
+            position: absolute;
+            margin: 0 !important;
+            top: 599px;
+            left: 184px;
+            border-radius: 12px;
+            background-color: #fffbf6;
+            border: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            z-index: 5;
+            color: #2b1a0e;
+        }
+        .rtulo-da-ao {
+            position: absolute;
+            top: 17px;
+            left: 54px;
+            font-weight: 600;
+        }
+        .ao2 {
+            width: 272px;
+            height: 52px;
+            position: absolute;
+            margin: 0 !important;
+            top: 747px;
+            left: 197px;
+            border-radius: 12px;
+            background-color: #f29a4b;
+            border: 1px solid #f29a4b;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            z-index: 6;
+            font-size: 20px;
+            color: #2b1a0e;
+        }
+        .rtulo-da-ao2 {
+            position: absolute;
+            top: 14px;
+            left: 95px;
+            font-weight: 600;
+        }
+        .grupo-de-campos {
+            width: 464px;
+            height: 54px;
+            position: absolute;
+            margin: 0 !important;
+            top: 339px;
+            left: 88px;
+            overflow: hidden;
+            flex-shrink: 0;
+            z-index: 7;
+        }
+        .campo {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 464px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .entrada2 {
+            align-self: stretch;
+            height: 54px;
+            border-radius: 12px;
+            background-color: #f8f0e6;
+            border: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            position: relative;
+            isolation: isolate;
+            gap: 12px;
+        }
+        .valor2 {
+            flex: 1;
+            position: relative;
+            z-index: 0;
+        }
+        .cone-icon2 {
+            height: 21px;
+            width: 24px;
+            position: absolute;
+            margin: 0 !important;
+            top: 16px;
+            left: 423px;
+            z-index: 1;
+        }
+        .descrio2 {
+            position: absolute;
+            top: 578px;
+            left: 88px;
+            font-size: 14px;
+            line-height: 145%;
+            color: #2b1a0e;
+            text-align: center;
+            display: inline-block;
+            width: 464px;
+            flex-shrink: 0;
+        }
+        .campo2 {
+            position: absolute;
+            top: 430px;
+            left: 91px;
+            width: 466px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-shrink: 0;
+        }
+        .entrada3 {
+            align-self: stretch;
+            height: 54px;
+            border-radius: 12px;
+            background-color: #f8f0e6;
+            border: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            gap: 12px;
+        }
+        .cone-icon3 {
+            height: 20px;
+            width: 24px;
+            position: relative;
+        }
+        .campo3 {
+            position: absolute;
+            top: 513px;
+            left: 92px;
+            width: 464px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-shrink: 0;
+        }
+        .descrio3 {
+            position: absolute;
+            top: 667px;
+            left: 92px;
+            font-size: 14px;
+            line-height: 145%;
+            color: #2b1a0e;
+            text-align: center;
+            display: inline-block;
+            width: 464px;
+            flex-shrink: 0;
+        }
+    </style>
+  	
+</head>
+<body>
+  	
+  	<div class="primeiro-acesso-desktop">
+    		<div class="apresentao">
+      			<div class="nome-da-aplicao">Nome da aplicação</div>
+      			<div class="descrio">Frase</div>
+      			<img class="curva-icon" alt="">
+      			
+    		</div>
+    		<div class="acesso">
+      			<div class="acesso2">
+        				<div class="acesso-child">
+        				</div>
+        				<div class="entrada">
+          					<div class="valor">Nome *</div>
+          					<img class="cone-icon" alt="">
+          					
+        				</div>
+        				<img class="acesso-item" alt="">
+        				
+        				<div class="log-in" id="logInText">Log In</div>
+        				<div class="cadastro">Cadastro</div>
+        				<div class="ao">
+          					<div class="rtulo-da-ao">Continuar com Google</div>
+        				</div>
+        				<div class="ao2">
+          					<div class="rtulo-da-ao2">Finalizar</div>
+        				</div>
+        				<div class="grupo-de-campos">
+          					<div class="campo">
+            						<div class="entrada2">
+              							<div class="valor2">E-mail</div>
+              							<img class="cone-icon2" alt="">
+              							
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="descrio2">ou</div>
+      			<div class="campo2">
+        				<div class="entrada3">
+          					<div class="valor">Crie uma senha</div>
+          					<img class="cone-icon3" alt="">
+          					
+        				</div>
+      			</div>
+      			<div class="campo3">
+        				<div class="entrada3">
+          					<div class="valor">Repita a sua senha novamente</div>
+          					<img class="cone-icon3" alt="">
+          					
+        				</div>
+      			</div>
+      			<div class="descrio3">Continuar sem cadastro</div>
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var logInText = document.getElementById("logInText");
+    		if(logInText) {
+      			logInText.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}</script></body>
+</html>

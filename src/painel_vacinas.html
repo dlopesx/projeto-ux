@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="./index.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  	
+  	<style>
+        .tina-painel-de-vacinas-deskt {
+            width: 100%;
+            position: relative;
+            background-color: #fffbf6;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            min-height: 900px;
+            text-align: left;
+            font-size: 15px;
+            color: #2b1a0e;
+            font-family: Inter;
+        }
+        .navegao-lateral {
+            width: 248px;
+            background-color: #f8f0e6;
+            border-right: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 24px;
+            position: relative;
+            isolation: isolate;
+            gap: 40px;
+            min-height: 900px;
+        }
+        .pessoa {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 0;
+            flex-shrink: 0;
+        }
+        .avatar {
+            height: 40px;
+            width: 40px;
+            border-radius: 100px;
+            background-color: #e9ddcf;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .inicial {
+            position: relative;
+            font-weight: 600;
+        }
+        .nome {
+            position: relative;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .cone-icon {
+            height: 16px;
+            width: 16px;
+            position: relative;
+        }
+        .links {
+            align-self: stretch;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+        .item-de-navegao {
+            align-self: stretch;
+            height: 50px;
+            border-radius: 12px;
+            background-color: #f8f0e6;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 14px;
+            box-sizing: border-box;
+            gap: 12px;
+        }
+        .item-de-navegao2 {
+            align-self: stretch;
+            height: 50px;
+            border-radius: 12px;
+            background-color: #e9ddcf;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 14px;
+            box-sizing: border-box;
+            gap: 12px;
+        }
+        .paw-print-icon {
+            height: 22px;
+            width: 22px;
+            position: relative;
+        }
+        .rtulo2 {
+            position: relative;
+        }
+        .conta {
+            width: calc(100% - 24px);
+            margin: 0 !important;
+            position: absolute;
+            right: 0px;
+            bottom: 32px;
+            left: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+        .divisor {
+            width: 200px;
+            height: 1px;
+            position: relative;
+            background-color: #e9ddcf;
+        }
+        .rea-principal {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            isolation: isolate;
+            font-size: 32px;
+        }
+        .cabealho {
+            align-self: stretch;
+            height: 88px;
+            border-bottom: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 48px;
+            z-index: 0;
+        }
+        .contedo {
+            align-self: stretch;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 48px;
+            gap: 32px;
+            z-index: 1;
+        }
+        .ttulo-e-ao {
+            align-self: stretch;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .ttulo {
+            flex: 1;
+            position: relative;
+            line-height: 120%;
+            font-weight: 600;
+        }
+        .ao {
+            height: 52px;
+            width: 220px;
+            border-radius: 12px;
+            background-color: #fffbf6;
+            border: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 24px;
+            gap: 10px;
+            font-size: 15px;
+        }
+        .filtro {
+            align-self: stretch;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 14px;
+        }
+        .opo {
+            border-radius: 100px;
+            background-color: #f29a4b;
+            border: 1px solid #f29a4b;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 20px;
+        }
+        .opo2 {
+            border-radius: 100px;
+            background-color: #fffbf6;
+            border: 1px solid #e9ddcf;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 20px;
+        }
+        .descrio {
+            align-self: stretch;
+            position: relative;
+            font-size: 22px;
+            line-height: 145%;
+            font-weight: 600;
+        }
+        .carteira-de-vacinao {
+            align-self: stretch;
+            border-radius: 20px;
+            border: 1px solid #e9ddcf;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 15px;
+        }
+        .cabealho-da-lista {
+            align-self: stretch;
+            background-color: #fff6ec;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            padding: 24px;
+            gap: 24px;
+            font-size: 14px;
+            color: #75634f;
+        }
+        .coluna {
+            flex: 1;
+            position: relative;
+            font-weight: 600;
+        }
+        .vacina {
+            align-self: stretch;
+            height: 112px;
+            background-color: #f8f0e6;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 24px;
+            box-sizing: border-box;
+            gap: 24px;
+        }
+        .nome2 {
+            flex: 1;
+            position: relative;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .ltima-dose {
+            flex: 1;
+            position: relative;
+            color: #75634f;
+        }
+        .prxima-dose {
+            flex: 1;
+            position: relative;
+            color: #8f4b17;
+        }
+        .estado {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            font-size: 13px;
+            color: #d64545;
+        }
+        .etiqueta {
+            border-radius: 100px;
+            background-color: #fffbf6;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            padding: 8px 14px;
+        }
+        .vacina2 {
+            align-self: stretch;
+            height: 112px;
+            background-color: #f8f0e6;
+            border-top: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 24px;
+            gap: 24px;
+        }
+        .estado2 {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            font-size: 13px;
+            color: #f29a4b;
+        }
+        .vector-parent {
+            width: 97px;
+            height: 22px;
+            position: absolute;
+            margin: 0 !important;
+            top: 29px;
+            left: 19px;
+            z-index: 2;
+            font-size: 18px;
+            color: #473c31;
+        }
+        .vector-icon {
+            position: absolute;
+            top: 4px;
+            left: 0px;
+            width: 29px;
+            height: 18px;
+        }
+        .ttulo-da-tela {
+            position: absolute;
+            top: 0px;
+            left: 45px;
+            font-weight: 600;
+        }
+    </style>
+  	
+</head>
+<body>
+  	
+  	<div class="tina-painel-de-vacinas-deskt">
+    		<div class="navegao-lateral">
+      			<div class="pessoa">
+        				<div class="avatar">
+          					<div class="inicial">M</div>
+        				</div>
+        				<div class="nome">Marina</div>
+        				<img class="cone-icon" alt="">
+        				
+      			</div>
+      			<div class="links">
+        				<div class="item-de-navegao">
+          					<img class="paw-print-icon" alt="">
+          					
+          					<div class="inicial">Início</div>
+        				</div>
+        				<div class="item-de-navegao2">
+          					<img class="paw-print-icon" alt="">
+          					
+          					<div class="rtulo2">Meus pets</div>
+        				</div>
+        				<div class="item-de-navegao">
+          					<img class="paw-print-icon" alt="">
+          					
+          					<div class="rtulo2">Agendamentos</div>
+        				</div>
+        				<div class="item-de-navegao">
+          					<img class="paw-print-icon" alt="">
+          					
+          					<div class="rtulo2">Alertas</div>
+        				</div>
+      			</div>
+      			<div class="conta">
+        				<div class="divisor">
+        				</div>
+      			</div>
+    		</div>
+    		<div class="rea-principal">
+      			<div class="cabealho">
+      			</div>
+      			<div class="contedo">
+        				<div class="ttulo-e-ao">
+          					<div class="ttulo">Tina — vacinas</div>
+          					<div class="ao">
+            						<img class="paw-print-icon" alt="">
+            						
+            						<div class="inicial">Adicionar vacina</div>
+          					</div>
+        				</div>
+        				<div class="filtro">
+          					<div class="inicial">Filtro:</div>
+          					<div class="opo">
+            						<div class="rtulo2">Todas</div>
+          					</div>
+          					<div class="opo2">
+            						<div class="rtulo2">Atrasadas</div>
+          					</div>
+          					<div class="opo2">
+            						<div class="rtulo2">Próximas</div>
+          					</div>
+        				</div>
+        				<div class="descrio">Todas as vacinas</div>
+        				<div class="carteira-de-vacinao">
+          					<div class="cabealho-da-lista">
+            						<div class="coluna">Vacina</div>
+            						<div class="coluna">Última dose</div>
+            						<div class="coluna">Próxima dose</div>
+            						<div class="coluna">Estado</div>
+          					</div>
+          					<div class="vacina">
+            						<div class="nome2">Antirrábica</div>
+            						<div class="ltima-dose">Última dose: 23/05/2025</div>
+            						<div class="prxima-dose">Próxima dose: 23/05/2026</div>
+            						<div class="estado">
+              							<div class="etiqueta">
+                								<div class="inicial">△ Atrasada</div>
+              							</div>
+            						</div>
+          					</div>
+          					<div class="vacina2">
+            						<div class="nome2">V10</div>
+            						<div class="ltima-dose">Última dose: 20/09/2025</div>
+            						<div class="prxima-dose">Próxima dose: 20/09/2026</div>
+            						<div class="estado2">
+              							<div class="etiqueta">
+                								<div class="inicial">Próxima</div>
+              							</div>
+            						</div>
+          					</div>
+          					<div class="vacina2">
+            						<div class="nome2">Gripe</div>
+            						<div class="ltima-dose">Última dose: 23/05/2026</div>
+            						<div class="prxima-dose">Próxima dose: 23/05/2027</div>
+            						<div class="estado2">
+              							<div class="etiqueta">
+                								<div class="inicial">Em dia</div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="vector-parent">
+        				<img class="vector-icon" alt="">
+        				
+        				<div class="ttulo-da-tela">Voltar</div>
+      			</div>
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+</body>
+</html>

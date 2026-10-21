@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Primeiro Acesso</title>
+  	
+  	<link rel="stylesheet"  href="./index.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  	
+  	<style> 
+        .primeiro-acesso-desktop {
+            width: 100%;
+            position: relative;
+            background-color: #fffbf6;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            isolation: isolate;
+            min-height: 900px;
+            text-align: left;
+            font-size: 72px;
+            color: #2b1a0e;
+            font-family: Inter;
+        }
+        .apresentao {
+            height: 900px;
+            width: 800px;
+            background-color: #fff6ec;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 112px;
+            box-sizing: border-box;
+            position: relative;
+            isolation: isolate;
+            gap: 36px;
+            z-index: 0;
+        }
+        .nome-da-aplicao {
+            align-self: stretch;
+            position: relative;
+            line-height: 108%;
+            font-weight: 600;
+            z-index: 0;
+            flex-shrink: 0;
+        }
+        .descrio {
+            align-self: stretch;
+            position: relative;
+            font-size: 26px;
+            line-height: 145%;
+            color: #75634f;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+        .curva-icon {
+            width: 800px;
+            height: 120px;
+            position: absolute;
+            margin: 0 !important;
+            bottom: 0px;
+            left: 0px;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+        .acesso {
+            height: 900px;
+            width: 640px;
+            margin: 0 !important;
+            position: absolute;
+            top: 0px;
+            left: 800px;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 88px;
+            box-sizing: border-box;
+            isolation: isolate;
+            gap: 20px;
+            min-height: 900px;
+            z-index: 1;
+            text-align: center;
+            font-size: 14px;
+        }
+        .acesso2 {
+            width: 640px;
+            margin: 0 !important;
+            position: absolute;
+            top: 5px;
+            left: 0px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 168px 37px;
+            box-sizing: border-box;
+            isolation: isolate;
+            gap: 35px;
+            min-height: 900px;
+            z-index: 0;
+            flex-shrink: 0;
+            text-align: left;
+            font-size: 15px;
+            color: #75634f;
+        }
+        .acesso-child {
+            width: 464px;
+            height: 48px;
+            position: relative;
+            border-radius: 20px;
+            background-color: #f8f0e6;
+            z-index: 0;
+        }
+        .campo {
+            width: 464px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            z-index: 1;
+        }
+        .entrada {
+            align-self: stretch;
+            height: 54px;
+            position: relative;
+            border-radius: 12px;
+            background-color: #f8f0e6;
+            border: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .valor {
+            position: absolute;
+            width: 432px;
+            top: 18px;
+            left: 16px;
+            display: inline-block;
+        }
+        .campo2 {
+            width: 464px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 2;
+        }
+        .entrada2 {
+            align-self: stretch;
+            height: 54px;
+            border-radius: 12px;
+            background-color: #f8f0e6;
+            border: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            gap: 12px;
+        }
+        .valor2 {
+            flex: 1;
+            position: relative;
+        }
+        .cone-icon {
+            height: 20px;
+            width: 25px;
+            position: relative;
+        }
+        .descrio2 {
+            position: relative;
+            font-size: 14px;
+            line-height: 145%;
+            color: #8f4b17;
+            z-index: 3;
+        }
+        .acesso-item {
+            width: 231px;
+            height: 48px;
+            position: absolute;
+            margin: 0 !important;
+            top: 168px;
+            left: 88px;
+            border-radius: 20px;
+            z-index: 4;
+        }
+        .log-in {
+            width: 94px;
+            height: 25px;
+            position: absolute;
+            margin: 0 !important;
+            top: 177px;
+            left: 169px;
+            font-size: 24px;
+            line-height: 120%;
+            font-weight: 600;
+            color: #000;
+            display: inline-block;
+            z-index: 5;
+        }
+        .cadastro {
+            width: 233px;
+            height: 48px;
+            position: absolute;
+            margin: 0 !important;
+            top: 168px;
+            left: 319px;
+            font-size: 24px;
+            line-height: 120%;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 6;
+        }
+        .ao {
+            width: 272px;
+            height: 52px;
+            position: absolute;
+            margin: 0 !important;
+            top: 538px;
+            left: 184px;
+            border-radius: 12px;
+            background-color: #f29a4b;
+            border: 1px solid #f29a4b;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            z-index: 7;
+            font-size: 20px;
+            color: #2b1a0e;
+        }
+        .rtulo-da-ao {
+            position: absolute;
+            top: 14px;
+            left: 106px;
+            font-weight: 600;
+        }
+        .ao2 {
+            width: 272px;
+            height: 52px;
+            position: absolute;
+            margin: 0 !important;
+            top: 468px;
+            left: 184px;
+            border-radius: 12px;
+            background-color: #fffbf6;
+            border: 1px solid #e9ddcf;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            z-index: 8;
+            color: #2b1a0e;
+        }
+        .rtulo-da-ao2 {
+            position: absolute;
+            top: 17px;
+            left: 54px;
+            font-weight: 600;
+        }
+        .div {
+            width: 31px;
+            height: 33px;
+            position: absolute;
+            margin: 0 !important;
+            top: 249px;
+            left: 507px;
+            font-size: 24px;
+            line-height: 145%;
+            color: #db7f2e;
+            text-align: center;
+            display: inline-block;
+            z-index: 9;
+        }
+        .descrio3 {
+            width: 464px;
+            height: 20px;
+            position: absolute;
+            margin: 0 !important;
+            top: 689px;
+            left: 88px;
+            line-height: 145%;
+            display: inline-block;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+        .descrio4 {
+            width: 464px;
+            height: 20px;
+            position: absolute;
+            margin: 0 !important;
+            top: 651px;
+            left: 87px;
+            line-height: 145%;
+            display: inline-block;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+
+    </style>  	
+</head>
+<body>
+  	
+  	<div class="primeiro-acesso-desktop">
+    		<div class="apresentao">
+      			<div class="nome-da-aplicao">Nome da aplicação</div>
+      			<div class="descrio">Frase</div>
+      			<img class="curva-icon" alt="">
+      			
+    		</div>
+    		<div class="acesso">
+      			<div class="acesso2">
+        				<div class="acesso-child">
+        				</div>
+        				<div class="campo">
+          					<div class="entrada">
+            						<div class="valor">E-mail</div>
+          					</div>
+        				</div>
+        				<div class="campo2">
+          					<div class="entrada2">
+            						<div class="valor2">Senha</div>
+            						<img class="cone-icon" alt="">
+            						
+          					</div>
+        				</div>
+        				<div class="descrio2">Esqueci a senha</div>
+        				<img class="acesso-item" alt="">
+        				
+        				<div class="log-in">Log In</div>
+        				<div class="cadastro" id="cadastroText">Cadastro</div>
+        				<div class="ao">
+          					<div class="rtulo-da-ao">Entrar</div>
+        				</div>
+        				<div class="ao2">
+          					<div class="rtulo-da-ao2">Continuar com Google</div>
+        				</div>
+        				<div class="div">@</div>
+      			</div>
+      			<div class="descrio3">Continuar sem cadastro</div>
+      			<div class="descrio4">ou</div>
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var cadastroText = document.getElementById("cadastroText");
+    		if(cadastroText) {
+      			cadastroText.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}</script></body>
+</html>
