@@ -6,7 +6,7 @@
   	
   	<link rel="stylesheet"  href="./index.css" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
-  	
+  	<script src="https://cdn.tailwindcss.com"></script>
   	<style>
         .tina-painel-de-vacinas-deskt {
             width: 100%;
@@ -350,42 +350,69 @@
 <body>
   	
   	<div class="tina-painel-de-vacinas-deskt">
-    		<div class="navegao-lateral">
-      			<div class="pessoa">
-        				<div class="avatar">
+    	<aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
+            <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                <ul class=" flex-1 space-y-2 font-medium">
+                    <li class="flex">
+                        <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
+                        <span class="px-1 pb-6 text-xl font-bold">Marina</span>
+                        </a>
+                        <div class="avatar">
           					<div class="inicial">M</div>
         				</div>
-        				<div class="nome">Marina</div>
-        				<img class="cone-icon" alt="">
-        				
-      			</div>
-      			<div class="links">
-        				<div class="item-de-navegao">
-          					<img class="paw-print-icon" alt="">
-          					
-          					<div class="inicial">Início</div>
-        				</div>
-        				<div class="item-de-navegao2">
-          					<img class="paw-print-icon" alt="">
-          					
-          					<div class="rtulo2">Meus pets</div>
-        				</div>
-        				<div class="item-de-navegao">
-          					<img class="paw-print-icon" alt="">
-          					
-          					<div class="rtulo2">Agendamentos</div>
-        				</div>
-        				<div class="item-de-navegao">
-          					<img class="paw-print-icon" alt="">
-          					
-          					<div class="rtulo2">Alertas</div>
-        				</div>
-      			</div>
+                    </li>
+                    <li dir="ltr">
+                        <a href="#" class="border-l-4 border-l-[#F29A4B] flex items-center px-2 py-3  rounded-xl hover:bg-[#E9DDCF]  group">
+                        <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
+
+                        <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+
+                        <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- RODAPÉ DA SIDEBAR-->
+                <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                        
+                    </li>
+                </ul>
+                   
+            </div>
+        </aside>
       			<div class="conta">
         				<div class="divisor">
         				</div>
       			</div>
-    		</div>
+
     		<div class="rea-principal">
       			<div class="cabealho">
       			</div>

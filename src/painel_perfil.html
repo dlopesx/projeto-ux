@@ -6,6 +6,9 @@
   	
   	<link rel="stylesheet"  href="./index.css" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+    
+
+    <script src="https://cdn.tailwindcss.com"></script>
   	
   	<style>
         .perfil-de-tina-desktop {
@@ -293,41 +296,10 @@
             gap: 20px;
             font-size: 16px;
         }
-        .cuidado {
-            height: 118px;
-            width: 172px;
-            border-radius: 20px;
-            background-color: #f8f0e6;
-            border: 1px solid #e9ddcf;
-            box-sizing: border-box;
-            overflow: hidden;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 24px;
-            gap: 18px;
-            cursor: pointer;
-        }
         .cone-icon7 {
             width: 26px;
             height: 26px;
             position: relative;
-        }
-        .cuidado2 {
-            height: 118px;
-            width: 172px;
-            border-radius: 20px;
-            background-color: #f8f0e6;
-            border: 1px solid #e9ddcf;
-            box-sizing: border-box;
-            overflow: hidden;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 24px;
-            gap: 18px;
         }
         .group-icon {
             width: 18px;
@@ -381,55 +353,71 @@
 <body>
   	
   	<div class="perfil-de-tina-desktop">
-    		<div class="navegao-lateral">
-      			<div class="pessoa">
-        				<div class="avatar">
-          					<div class="inicial">M</div>
-        				</div>
-        				<div class="nome">Marina</div>
-        				<img class="cone-icon" alt="" src="svg/">
-        				
-      			</div>
-      			<div class="links">
-        				<div class="item-de-navegao">
-          					<img class="paw-print-icon" alt="Figura de uma casa na cor laranja" src="svg/inicio.svg">
-          					
-          					<div class="inicial">Início</div>
-        				</div>
-        				<div class="item-de-navegao2">
-          					<img class="paw-print-icon" alt="Figura de pata de cachorro na cor laranja" src="svg/paw-print.svg">
-          					
-          					<div class="rtulo2">Meus pets</div>
-        				</div>
-        				<div class="item-de-navegao">
-          					<img class="paw-print-icon" alt="Figura de calendário laranja" src="svg/calendario.svg">
-          					
-          					<div class="rtulo2">Agendamentos</div>
-        				</div>
-        				<div class="item-de-navegao">
-          					<img class="paw-print-icon" alt="Sino de alerta na cor laranja" src="svg/notificacao.svg">
-          					
-          					<div class="rtulo2">Alertas</div>
-        				</div>
-      			</div>
-      			<div class="conta">
-        				<div class="divisor">
-        				</div>
-      			</div>
-    		</div>
+            <div class="navegao-lateral flex flex-col min-h-screen">
+
+                <!-- PERFIL -->
+                <div class="pessoa">
+                    <div class="avatar">
+                        <div class="inicial">M</div>
+                    </div>
+                    <div class="nome">Marina</div>
+                    <img class="cone-icon" alt="Seta para baixo" src="svg/v.svg">
+                </div>
+
+                <!-- LINKS PRINCIPAIS -->
+                <div class="links">
+                    <a href="#" class="item-de-navegao border-l-4 border-l-[#F29A4B] flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                        <img class="paw-print-icon" alt="" src="svg/inicio.svg">
+                        <div class="flex-1 ms-3 whitespace-nowrap">Início</div>
+                    </a>
+
+                    <a href="#" class="item-de-navegao2 flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                        <img class="paw-print-icon" alt="" src="svg/paw-print.svg">
+                        <div class="flex-1 ms-3 whitespace-nowrap">Meus pets</div>
+                    </a>
+
+                    <a href="#" class="item-de-navegao flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                        <img class="paw-print-icon" alt="" src="svg/calendario.svg">
+                        <div class="flex-1 ms-3 whitespace-nowrap">Agendamentos</div>
+                    </a>
+
+                    <a href="#" class="item-de-navegao flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                        <img class="paw-print-icon" alt="" src="svg/notificacao.svg">
+                        <div class="flex-1 ms-3 whitespace-nowrap">Alertas</div>
+                    </a>
+                </div>
+
+                <!-- RODAPÉ: SOBRE E AJUDA -->
+                <ul class="mt-auto w-full space-y-2 py-5 border-t border-[#E9DDCF]">
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]">
+                            <img src="svg/info.svg" alt="" />
+                            Sobre
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]">
+                            <img src="svg/help-circle.svg" alt="" />
+                            Ajuda
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
     		<div class="rea-principal">
-      			<div class="cabealho">
-      			</div>
+      			<div class="cabealho"></div>
       			<div class="contedo">
         				<div class="perfil-do-pet">
           					<div class="identificao">
             						<div class="avatar-do-pet">
-              							<img class="cone-icon5" alt="">
+              							<img class="cone-icon5" alt="" src="svg/dog.svg">
               							
             						</div>
             						<div class="nome-do-pet">
               							<div class="inicial">Tina</div>
-              							<img class="cone-icon6" alt="">
+              							<img class="cone-icon6" alt="Figura de um lápis em um quadrado preto" src="svg/editar.svg">
               							
             						</div>
             						<div class="descrio">Cachorro • fêmea</div>
@@ -444,44 +432,44 @@
               							<div class="descrio4">• Limpar vasilha — hoje</div>
             						</div>
             						<div class="descrio3">Cuidados</div>
-            						<div class="opes-de-cuidados">
-              							<div class="cuidado" id="cuidadoContainer">
-                								<img class="cone-icon7" alt="">
+            						<div class="grid grid-cols-4 gap-5 self-stretch text-base">
+              							<div class="h-[118px] min-w-0 rounded-[20px] border border-[#e9ddcf] bg-[#f8f0e6] box-border overflow-hidden flex flex-col items-start p-6 gap-[18px] cursor-pointer" id="cuidadoContainer">
+                								<img class="cone-icon7" alt="Figura de uma seringa laranja" src="svg/vacinas.svg">
                 								
                 								<div class="rtulo2">Vacinas</div>
               							</div>
-              							<div class="cuidado2">
-                								<img class="cone-icon7" alt="">
+              							<div class="h-[118px] min-w-0 rounded-[20px] border border-[#e9ddcf] bg-[#f8f0e6] box-border overflow-hidden flex flex-col items-start p-6 gap-[18px] cursor-pointer">
+                								<img class="cone-icon7" alt="Figura de uma estrela laranja" src="svg/estrela.svg">
                 								
                 								<div class="rtulo2">Limpeza</div>
               							</div>
-              							<div class="cuidado2">
-                								<img class="cone-icon7" alt="">
+              							<div class="h-[118px] min-w-0 rounded-[20px] border border-[#e9ddcf] bg-[#f8f0e6] box-border overflow-hidden flex flex-col items-start p-6 gap-[18px] cursor-pointer">
+                								<img class="cone-icon7" alt="Figura de um estetoscópio laranja" src="svg/consulta.svg">
                 								
                 								<div class="rtulo2">Consultas</div>
               							</div>
-              							<div class="cuidado2">
-                								<img class="cone-icon7" alt="">
+              							<div class="h-[118px] min-w-0 rounded-[20px] border border-[#e9ddcf] bg-[#f8f0e6] box-border overflow-hidden flex flex-col items-start p-6 gap-[18px] cursor-pointer">
+                								<img class="cone-icon7" alt="Figura de talheres laranja" src="svg/talher.svg">
                 								
                 								<div class="rtulo2">Alimentação</div>
               							</div>
-              							<div class="cuidado2">
-                								<img class="cone-icon7" alt="">
+              							<div class="h-[118px] min-w-0 rounded-[20px] border border-[#e9ddcf] bg-[#f8f0e6] box-border overflow-hidden flex flex-col items-start p-6 gap-[18px] cursor-pointer">
+                								<img class="cone-icon7" alt="Figura de coração laranja" src="svg/coracao.svg">
                 								
                 								<div class="rtulo2">Cio</div>
               							</div>
-              							<div class="cuidado2">
-                								<img class="group-icon" alt="">
+              							<div class="h-[118px] min-w-0 rounded-[20px] border border-[#e9ddcf] bg-[#f8f0e6] box-border overflow-hidden flex flex-col items-start p-6 gap-[18px] cursor-pointer">
+                								<img class="group-icon" alt="Figura de banheira laranja" src="svg/banheira.svg">
                 								
                 								<div class="rtulo2">Banho e Tosa</div>
               							</div>
-              							<div class="cuidado2">
-                								<img class="healthcare-icon" alt="">
+              							<div class="h-[118px] min-w-0 rounded-[20px] border border-[#e9ddcf] bg-[#f8f0e6] box-border overflow-hidden flex flex-col items-start p-6 gap-[18px] cursor-pointer">
+                								<img class="healthcare-icon" alt="Figura de mãos com um simbolo de mais no meio" src="svg/maos.svg">
                 								
                 								<div class="rtulo2">Peso</div>
               							</div>
-              							<div class="cuidado2">
-                								<img class="cone-icon7" alt="">
+              							<div class="h-[118px] min-w-0 rounded-[20px] border border-[#e9ddcf] bg-[#f8f0e6] box-border overflow-hidden flex flex-col items-start p-6 gap-[18px] cursor-pointer">
+                								<img class="cone-icon7" alt="Figura de coração laranja" src="svg/coracao.svg">
                 								
                 								<div class="rtulo2">Unhas e Orelhas</div>
               							</div>
@@ -490,7 +478,7 @@
         				</div>
       			</div>
       			<div class="vector-parent" id="groupContainer">
-        				<img class="vector-icon" alt="">
+        				<img class="vector-icon" alt="Figura de seta laranja" src="svg/voltar.svg">
         				
         				<div class="ttulo-da-tela">Voltar</div>
       			</div>
