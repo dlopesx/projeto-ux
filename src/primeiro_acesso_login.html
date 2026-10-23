@@ -9,6 +9,16 @@
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+
+        /* Remove o botão nativo de revelar senha do Edge */
+        input::-ms-reveal,
+        input::-ms-clear {
+            display: none;
+        }
+
+    </style>
+
 <body>
     
 
@@ -20,7 +30,9 @@
             <div class="self-stretch justify-start text-Texto-2 text-2xl font-normal font-['Inter'] leading-9">
                 Frase
             </div>
-            <div class="w-[800px] h-28 left-0 top-[780px] absolute bg-Fundo"></div>
+            <div class=" absolute bottom-0 left-0 w-full h-28">
+                <img src="svg/curva.svg" alt="Figura em formato de curva branca" class="w-full h-full object-fill pointer-events-none"/>
+            </div>
         </div>
         
         <div class="min-w-0 min-h-screen w-full p-10 flex flex-col justify-center items-center overflow-hidden">
@@ -29,72 +41,82 @@
 
                 <!-- Abas de Login e Cadastro -->
                 <div class="w-full flex items-center gap-4">
-                    <div class="flex-1 h-12 bg-Botão-1 rounded-[20px] flex justify-center items-center">
-                        <span class="text-black text-lg font-semibold font-['Inter'] w-full h-12 bg-[#F29A4B] text-white rounded-xl font-semibold">
-                            Log In
-                        </span>
-                    </div>
 
-                    <div class="flex-1 h-12 flex justify-center items-center">
-                        <span class="text-Texto-2 text-lg font-semibold font-['Inter']">
-                            Cadastro
-                        </span>
-                    </div>
+                    <!-- Login ativo -->
+                    <a href="primeiro_acesso_login.html"
+                    class="flex-1 h-12 bg-[#F29A4B] text-white rounded-xl 
+                            flex justify-center items-center text-lg font-semibold">
+                        Log In
+                    </a>
+
+                    <!-- Cadastro inativo -->
+                    <a href="primeiro_acesso_cadastro.html"
+                    class="flex-1 h-12 text-Texto-2 rounded-xl 
+                            flex justify-center items-center text-lg font-semibold">
+                        Cadastro
+                    </a>
+
                 </div>
 
+                
                 <!-- E-mail -->
-                <div class="w-full flex flex-col gap-2">
-                    <div class="w-full h-14 px-4 bg-Superficie rounded-xl outline outline-1 outline-Borda flex items-center">
-                        <span class="text-Texto-2 text-base font-normal font-['Inter']">
-                            E-mail
-                        </span>
-                    </div>
+                <div class="w-full h-14 px-4 bg-[#FFFBF6] rounded-xl outline outline-1 outline-[#51443B] flex items-center gap-3">
+
+                    <input type="email" name="email" placeholder="E-mail" class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[#2B1A0E] text-base font-normal font-['Inter'] placeholder:text-[#51443B]"/>
+
+                    <img src="svg/@.svg" alt="Ícone de e-mail" class="w-6 h-6 object-contain shrink-0"/>
+
                 </div>
 
+
+                
+                
                 <!-- Senha -->
-                <div class="w-full flex flex-col gap-2">
-                    <div class="w-full h-14 px-4 bg-Superficie rounded-xl outline outline-1 outline-Borda flex justify-between items-center">
-                        <span class="text-Texto-2 text-base font-normal font-['Inter']">
-                            Senha
-                        </span>
+                <div class="w-full h-14 px-4 bg-[#FFFBF6] rounded-xl outline outline-1 outline-[#51443B] flex items-center gap-3">
 
-                        <div class="w-6 h-5 outline outline-2 outline-CorTexto1"></div>
-                    </div>
+                    <input id="senha" type="password" name="senha" placeholder="Senha" class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[#2B1A0E] text-base font-['Inter'] placeholder:text-[#51443B]"/>
+
+                    <button type="button" onclick="alternarSenha()" class="w-6 h-6 shrink-0 flex items-center justify-center" aria-label="Mostrar ou ocultar senha">
+                        <img src="svg/olho.svg" alt="" class="w-6 h-6 object-contain" />
+                    </button>
+
                 </div>
+
+
 
                 <!-- Recuperação de senha -->
-                <div class="w-full flex justify-end">
-                    <span class="text-Texto-3 text-sm font-normal font-['Inter'] leading-5">
+                <div class="w-full flex justify-center mt-6">
+                    <span class="text-Texto-3 text-sm font-normal font-['Inter'] leading-5 text-[#8F4B17]">
                         Esqueci a senha
                     </span>
                 </div>
 
-                <!-- Botão Entrar -->
-                <div class="w-full h-12 bg-Botão-1 rounded-xl flex justify-center items-center">
-                    <span class="text-Texto-1 text-lg font-semibold font-['Inter']">
-                        Entrar
-                    </span>
-                </div>
-
-                <!-- Separador -->
-                <div class="w-full flex items-center gap-3">
-                    <div class="flex-1 h-px bg-Borda"></div>
-                    <span class="text-Texto-1 text-sm font-normal font-['Inter']">
-                        ou
-                    </span>
-                    <div class="flex-1 h-px bg-Borda"></div>
-                </div>
-
                 <!-- Google -->
-                <div class="w-full h-12 px-4 bg-Fundo rounded-xl outline outline-1 outline-Borda flex justify-center items-center gap-3">
+                <div class="w-64 h-12 px-4 bg-Fundo rounded-xl outline outline-1 outline-Borda flex justify-center items-center gap-3">
                     <span class="text-Texto-1 text-base font-semibold font-['Inter']">
                         Continuar com Google
                     </span>
                 </div>
 
+                <!-- Botão Entrar -->
+                <div class="w-64 h-12 bg-Botão-1 rounded-xl flex justify-center items-center outline outline-1 outline-Borda bg-[#F29A4B]">
+                    <a href="index.html" class="text-Texto-1 text-lg font-semibold font-['Inter']">
+                        Entrar
+                    </a>
+                </div>
+
+                <!-- Separador -->
+                <div class="w-full flex items-center ">
+                    <div class="flex-1 h-px bg-Borda"></div>
+                    <span class="text-Texto-1 text-sm font-normal font-['Inter'] text-[#2B1A0E]">
+                        ou
+                    </span>
+                    <div class="flex-1 h-px bg-Borda"></div>
+                </div>
+
                 <!-- Acesso sem cadastro -->
                 <div class="w-full text-center">
-                    <span class="text-Texto-1 text-sm font-normal font-['Inter'] leading-5">
+                    <span class="text-Texto-1 text-sm font-normal font-['Inter'] leading-5 text-[#2B1A0E]">
                         Continuar sem cadastro
                     </span>
                 </div>
@@ -103,5 +125,19 @@
         </div>
 
     </div>
+
+    
+    <script>
+        function alternarSenha() {
+            const campoSenha = document.getElementById("senha");
+
+            if (campoSenha.type === "password") {
+                campoSenha.type = "text";
+            } else {
+                campoSenha.type = "password";
+            }
+        }
+    </script>
+
 
 </body>
