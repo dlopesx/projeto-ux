@@ -7,361 +7,101 @@
   	
   	<link rel="stylesheet"  href="./index.css" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
-  	
-  	<style> 
-        .primeiro-acesso-desktop {
-            width: 100%;
-            position: relative;
-            background-color: #fffbf6;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-start;
-            isolation: isolate;
-            min-height: 900px;
-            text-align: left;
-            font-size: 72px;
-            color: #2b1a0e;
-            font-family: Inter;
-        }
-        .apresentao {
-            height: 900px;
-            width: 800px;
-            background-color: #fff6ec;
-            overflow: hidden;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 112px;
-            box-sizing: border-box;
-            position: relative;
-            isolation: isolate;
-            gap: 36px;
-            z-index: 0;
-        }
-        .nome-da-aplicao {
-            align-self: stretch;
-            position: relative;
-            line-height: 108%;
-            font-weight: 600;
-            z-index: 0;
-            flex-shrink: 0;
-        }
-        .descrio {
-            align-self: stretch;
-            position: relative;
-            font-size: 26px;
-            line-height: 145%;
-            color: #75634f;
-            z-index: 1;
-            flex-shrink: 0;
-        }
-        .curva-icon {
-            width: 800px;
-            height: 120px;
-            position: absolute;
-            margin: 0 !important;
-            bottom: 0px;
-            left: 0px;
-            z-index: 2;
-            flex-shrink: 0;
-        }
-        .acesso {
-            height: 900px;
-            width: 640px;
-            margin: 0 !important;
-            position: absolute;
-            top: 0px;
-            left: 800px;
-            overflow: hidden;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 88px;
-            box-sizing: border-box;
-            isolation: isolate;
-            gap: 20px;
-            min-height: 900px;
-            z-index: 1;
-            text-align: center;
-            font-size: 14px;
-        }
-        .acesso2 {
-            width: 640px;
-            margin: 0 !important;
-            position: absolute;
-            top: 5px;
-            left: 0px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 168px 37px;
-            box-sizing: border-box;
-            isolation: isolate;
-            gap: 35px;
-            min-height: 900px;
-            z-index: 0;
-            flex-shrink: 0;
-            text-align: left;
-            font-size: 15px;
-            color: #75634f;
-        }
-        .acesso-child {
-            width: 464px;
-            height: 48px;
-            position: relative;
-            border-radius: 20px;
-            background-color: #f8f0e6;
-            z-index: 0;
-        }
-        .campo {
-            width: 464px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            z-index: 1;
-        }
-        .entrada {
-            align-self: stretch;
-            height: 54px;
-            position: relative;
-            border-radius: 12px;
-            background-color: #f8f0e6;
-            border: 1px solid #e9ddcf;
-            box-sizing: border-box;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .valor {
-            position: absolute;
-            width: 432px;
-            top: 18px;
-            left: 16px;
-            display: inline-block;
-        }
-        .campo2 {
-            width: 464px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            z-index: 2;
-        }
-        .entrada2 {
-            align-self: stretch;
-            height: 54px;
-            border-radius: 12px;
-            background-color: #f8f0e6;
-            border: 1px solid #e9ddcf;
-            box-sizing: border-box;
-            overflow: hidden;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            padding: 16px;
-            gap: 12px;
-        }
-        .valor2 {
-            flex: 1;
-            position: relative;
-        }
-        .cone-icon {
-            height: 20px;
-            width: 25px;
-            position: relative;
-        }
-        .descrio2 {
-            position: relative;
-            font-size: 14px;
-            line-height: 145%;
-            color: #8f4b17;
-            z-index: 3;
-        }
-        .acesso-item {
-            width: 231px;
-            height: 48px;
-            position: absolute;
-            margin: 0 !important;
-            top: 168px;
-            left: 88px;
-            border-radius: 20px;
-            z-index: 4;
-        }
-        .log-in {
-            width: 94px;
-            height: 25px;
-            position: absolute;
-            margin: 0 !important;
-            top: 177px;
-            left: 169px;
-            font-size: 24px;
-            line-height: 120%;
-            font-weight: 600;
-            color: #000;
-            display: inline-block;
-            z-index: 5;
-        }
-        .cadastro {
-            width: 233px;
-            height: 48px;
-            position: absolute;
-            margin: 0 !important;
-            top: 168px;
-            left: 319px;
-            font-size: 24px;
-            line-height: 120%;
-            font-weight: 600;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 6;
-        }
-        .ao {
-            width: 272px;
-            height: 52px;
-            position: absolute;
-            margin: 0 !important;
-            top: 538px;
-            left: 184px;
-            border-radius: 12px;
-            background-color: #f29a4b;
-            border: 1px solid #f29a4b;
-            box-sizing: border-box;
-            overflow: hidden;
-            flex-shrink: 0;
-            z-index: 7;
-            font-size: 20px;
-            color: #2b1a0e;
-        }
-        .rtulo-da-ao {
-            position: absolute;
-            top: 14px;
-            left: 106px;
-            font-weight: 600;
-        }
-        .ao2 {
-            width: 272px;
-            height: 52px;
-            position: absolute;
-            margin: 0 !important;
-            top: 468px;
-            left: 184px;
-            border-radius: 12px;
-            background-color: #fffbf6;
-            border: 1px solid #e9ddcf;
-            box-sizing: border-box;
-            overflow: hidden;
-            flex-shrink: 0;
-            z-index: 8;
-            color: #2b1a0e;
-        }
-        .rtulo-da-ao2 {
-            position: absolute;
-            top: 17px;
-            left: 54px;
-            font-weight: 600;
-        }
-        .div {
-            width: 31px;
-            height: 33px;
-            position: absolute;
-            margin: 0 !important;
-            top: 249px;
-            left: 507px;
-            font-size: 24px;
-            line-height: 145%;
-            color: #db7f2e;
-            text-align: center;
-            display: inline-block;
-            z-index: 9;
-        }
-        .descrio3 {
-            width: 464px;
-            height: 20px;
-            position: absolute;
-            margin: 0 !important;
-            top: 689px;
-            left: 88px;
-            line-height: 145%;
-            display: inline-block;
-            z-index: 1;
-            flex-shrink: 0;
-        }
-        .descrio4 {
-            width: 464px;
-            height: 20px;
-            position: absolute;
-            margin: 0 !important;
-            top: 651px;
-            left: 87px;
-            line-height: 145%;
-            display: inline-block;
-            z-index: 2;
-            flex-shrink: 0;
-        }
+    <script src="https://cdn.tailwindcss.com"></script>
 
-
-    </style>  	
-</head>
 <body>
-  	
-  	<div class="primeiro-acesso-desktop">
-    		<div class="apresentao">
-      			<div class="nome-da-aplicao">Nome da aplicação</div>
-      			<div class="descrio">Frase</div>
-      			<img class="curva-icon" alt="">
-      			
-    		</div>
-    		<div class="acesso">
-      			<div class="acesso2">
-        				<div class="acesso-child">
-        				</div>
-        				<div class="campo">
-          					<div class="entrada">
-            						<div class="valor">E-mail</div>
-          					</div>
-        				</div>
-        				<div class="campo2">
-          					<div class="entrada2">
-            						<div class="valor2">Senha</div>
-            						<img class="cone-icon" alt="">
-            						
-          					</div>
-        				</div>
-        				<div class="descrio2">Esqueci a senha</div>
-        				<img class="acesso-item" alt="">
-        				
-        				<div class="log-in">Log In</div>
-        				<div class="cadastro" id="cadastroText">Cadastro</div>
-        				<div class="ao">
-          					<div class="rtulo-da-ao">Entrar</div>
-        				</div>
-        				<div class="ao2">
-          					<div class="rtulo-da-ao2">Continuar com Google</div>
-        				</div>
-        				<div class="div">@</div>
-      			</div>
-      			<div class="descrio3">Continuar sem cadastro</div>
-      			<div class="descrio4">ou</div>
-    		</div>
-  	</div>
-  	
-  	
-  	
-  	
-  	<script>
-    		var cadastroText = document.getElementById("cadastroText");
-    		if(cadastroText) {
-      			cadastroText.addEventListener("click", function (e) {
-        				// Add your code here
-      			});
-    		}</script></body>
-</html>
+    
+
+    <div class="relative bg-Fundo justify-start items-start overflow-hidden bg-[#FFFBF6] grid grid-cols-[3fr_2fr] w-full min-h-screen">
+        <div class="min-w-0 min-h-screen p-28 relative bg-ondasFundo inline-flex flex-col justify-center items-start gap-9 overflow-hidden bg-[#fff6ec]">
+            <div class="self-stretch justify-start text-Texto-1 text-7xl font-semibold font-['Inter'] leading-[77.76px]">
+                Nome da aplicação
+            </div>
+            <div class="self-stretch justify-start text-Texto-2 text-2xl font-normal font-['Inter'] leading-9">
+                Frase
+            </div>
+            <div class="w-[800px] h-28 left-0 top-[780px] absolute bg-Fundo"></div>
+        </div>
+        
+        <div class="min-w-0 min-h-screen w-full p-10 flex flex-col justify-center items-center overflow-hidden">
+
+            <div class="w-full max-w-lg flex flex-col items-center gap-6">
+
+                <!-- Abas de Login e Cadastro -->
+                <div class="w-full flex items-center gap-4">
+                    <div class="flex-1 h-12 bg-Botão-1 rounded-[20px] flex justify-center items-center">
+                        <span class="text-black text-lg font-semibold font-['Inter'] w-full h-12 bg-[#F29A4B] text-white rounded-xl font-semibold">
+                            Log In
+                        </span>
+                    </div>
+
+                    <div class="flex-1 h-12 flex justify-center items-center">
+                        <span class="text-Texto-2 text-lg font-semibold font-['Inter']">
+                            Cadastro
+                        </span>
+                    </div>
+                </div>
+
+                <!-- E-mail -->
+                <div class="w-full flex flex-col gap-2">
+                    <div class="w-full h-14 px-4 bg-Superficie rounded-xl outline outline-1 outline-Borda flex items-center">
+                        <span class="text-Texto-2 text-base font-normal font-['Inter']">
+                            E-mail
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Senha -->
+                <div class="w-full flex flex-col gap-2">
+                    <div class="w-full h-14 px-4 bg-Superficie rounded-xl outline outline-1 outline-Borda flex justify-between items-center">
+                        <span class="text-Texto-2 text-base font-normal font-['Inter']">
+                            Senha
+                        </span>
+
+                        <div class="w-6 h-5 outline outline-2 outline-CorTexto1"></div>
+                    </div>
+                </div>
+
+                <!-- Recuperação de senha -->
+                <div class="w-full flex justify-end">
+                    <span class="text-Texto-3 text-sm font-normal font-['Inter'] leading-5">
+                        Esqueci a senha
+                    </span>
+                </div>
+
+                <!-- Botão Entrar -->
+                <div class="w-full h-12 bg-Botão-1 rounded-xl flex justify-center items-center">
+                    <span class="text-Texto-1 text-lg font-semibold font-['Inter']">
+                        Entrar
+                    </span>
+                </div>
+
+                <!-- Separador -->
+                <div class="w-full flex items-center gap-3">
+                    <div class="flex-1 h-px bg-Borda"></div>
+                    <span class="text-Texto-1 text-sm font-normal font-['Inter']">
+                        ou
+                    </span>
+                    <div class="flex-1 h-px bg-Borda"></div>
+                </div>
+
+                <!-- Google -->
+                <div class="w-full h-12 px-4 bg-Fundo rounded-xl outline outline-1 outline-Borda flex justify-center items-center gap-3">
+                    <span class="text-Texto-1 text-base font-semibold font-['Inter']">
+                        Continuar com Google
+                    </span>
+                </div>
+
+                <!-- Acesso sem cadastro -->
+                <div class="w-full text-center">
+                    <span class="text-Texto-1 text-sm font-normal font-['Inter'] leading-5">
+                        Continuar sem cadastro
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
