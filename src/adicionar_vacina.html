@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Vacina</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss"> 
+            @layer components {
+                .campo {
+                    @apply w-full h-12 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition
+                    focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+    }
+
+    </style>
 </head>
 <body>
 
@@ -24,7 +33,7 @@
                         <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
                     </li>
                     <li dir="ltr">
-                        <a href="#" class="border-l-4 border-l-[#F29A4B] flex items-center px-2 py-3  rounded-xl hover:bg-[#E9DDCF]  group">
+                        <a href="#" class="flex items-center px-2 py-3  rounded-xl hover:bg-[#E9DDCF]  group">
                         <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
                         <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
                         </a>
@@ -76,7 +85,10 @@
         <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
 
             <header class="flex flex-row justify-between p-5 border ">
-                <p> Voltar</p>
+                <a href="index.html" class=" text-[] flex items-center gap-2 text-lg font-semibold text-[#473C31] hover:text-laranja transition rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                    <span> <img alt="Figura de seta laranja" src="svg/voltar.svg"></span>
+                    Voltar
+                </a>
                 <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
             </header>
 
@@ -92,22 +104,35 @@
 
                     <div class="flex flex-col self-stretch gap-3"> 
         
-                        <form class="flex flex-col gap-8 w-full max-w-[500px] border border-[#E9DDCF] rounded-2xl p-6">
+                        <form method="post" id="form-vacina" class="flex flex-col gap-8 w-full max-w-[500px] border border-[#E9DDCF] rounded-2xl p-6">
                             <div class="grid grid-cols-1 gap-x-6 gap-y-5"> 
                                 <div class="flex flex-col gap-3">
                                     <label> Selecione o nome da vacina</label>
-                                    <input class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                    <input class="campo outline-none focus:visible focus:ring-2 w-full h-14 bg-[#F8F0E6] rounded-2xl">
                                 </div>
-                                <div class="flex flex-col gap-3">
+                                <div class="flex flex-col gap-3 ">
                                     <label> Data da última dose</label>
-                                    <input class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                    <input class="campo outline-none w-full h-14 bg-[#F8F0E6] rounded-2xl">
                                 </div>
                             </div>
-                            <button class="type=send flex bg-[#FEEA8F] w-80 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#FEEA1F] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
-                            Ainda não tomou a primeira dose </button>
+                            <div class="flex gap-4  ">
+                                <input type="checkbox" class="flex bg-[#FEEA8F] rounded-2xl font-semibold hover:bg-[#FEEA1F] hover:shadow-md transition transition accent-[#F29A4B]" > 
+                                <label> Ainda não tomou a primeira dose </label>
+                            </div>
                             
-                            <button class="type=send flex bg-[#F29A4B] w-40 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
+                            <button id="bt-adicionar" type="submit" class=" aria-label='Adicionar vacina - enviar' flex bg-[#F29A4B] w-40 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
                             Adicionar </button>
+                            <div id="vacina-adicionada" class="hidden flex w-85 items-center p-4 gap-3 fixed top-[7rem] right-[5rem] text-body bg-[#E8863A] rounded-xl shadow-xs border border-default" role="alert">
+                                <div class="inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-success bg-success-soft rounded">
+                                    <svg class="w-7 h-7 border border-[#111111] rounded-md" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/></svg>
+                                    <span class="sr-only">Check icon</span>
+                                </div>
+                                <div class="ms-3 text-xl font-normal ">Vacina adicionada com sucesso.</div>
+                                <button type="button" id="bt-fechar" class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8 focus:outline-none" data-dismiss-target="#toast-success" aria-label="Close">
+                                    <span class="sr-only">Close</span>
+                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                                </button>
+                            </div>
                         </form>
                             
                     </div>
@@ -118,12 +143,41 @@
         
             </main>
 
-        </div>
+        </div> 
         
 
 
     </div>
 
+    <script>
+        const adicionar = document.getElementById('bt-adicionar');
+        const fechar = document.getElementById('bt-fechar');
+        const painel = document.getElementById('vacina-adicionada');
+        const form = document.getElementById('form-vacina');
+        let timer;
+
+
+        function mostrar() {
+            painel.classList.remove('hidden');
+            painel.classList.add('flex');
+            clearTimeout(timer);
+            timer = setTimeout(esconder, 5000);
+        }
+
+        function esconder() {
+            clearTimeout(timer);
+            painel.classList.add('hidden');
+            painel.classList.remove('flex');
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();   // impede o recarregamento da página
+            // aqui, no futuro, você guarda os dados da vacina
+            mostrar();
+        });
+
+        fechar.addEventListener('click', esconder);
+    </script>
 
 </body>
 </html>

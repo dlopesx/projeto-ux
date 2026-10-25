@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Fiu</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Cores e fonte do Figma, definidas uma vez só -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        cabecalho: '#FFF6EC',
+                        bege: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto: '#2B1A0E',
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-fundo text-texto font-sans text-[15px] antialiased">
+
+<div class="flex min-h-screen">
+
+    <!-- SIDEBAR (só aparece a partir de 768px) -->
+    <aside class="hidden md:flex sticky top-0 h-screen w-[248px] shrink-0 flex-col bg-superficie border-r border-bege px-4 py-6" aria-label="Menu lateral">
+
+        <!-- perfil -->
+        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 mb-6 rounded-2xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+            <span class="w-10 h-10 shrink-0 rounded-full bg-bege group-hover:bg-superficie flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+            <span class="flex-1 min-w-0 text-base font-semibold truncate">Marina</span>
+            <img src="svg/v.svg" alt="" class="w-4 h-4 shrink-0">
+        </a>
+
+        <nav class="flex-1" aria-label="Navegação principal">
+            <ul class="flex flex-col gap-2">
+                <li>
+                    <a href="index.html" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                        <img src="svg/inicio.svg" alt="" class="w-6 h-6 shrink-0">
+                        Início
+                    </a>
+                </li>
+
+                <!-- item ativo: barrinha só no meio -->
+                <li class="relative">
+                    <a href="meus_pets.html" aria-current="page" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl bg-bege font-semibold">
+                        <img src="svg/paw-print.svg" alt="" class="w-6 h-6 shrink-0">
+                        Meus pets
+                    </a>
+                </li>
+
+                <li>
+                    <a href="meus_agendamentos.html" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                        <img src="svg/calendario.svg" alt="" class="w-6 h-6 shrink-0">
+                        Agendamentos
+                    </a>
+                </li>
+                <li>
+                    <a href="meus_alertas.html" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                        <img src="svg/notificacao.svg" alt="" class="w-6 h-6 shrink-0">
+                        Alertas
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- rodapé da sidebar -->
+        <ul class="flex flex-col gap-1 border-t border-bege pt-4">
+            <li>
+                <a href="#" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                    <img src="svg/info.svg" alt="" class="w-6 h-6 shrink-0">
+                    Sobre
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                    <img src="svg/help-circle.svg" alt="" class="w-6 h-6 shrink-0">
+                    Ajuda
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <div class="flex-1 min-w-0 flex flex-col">
+
+        <header class="flex items-center h-[88px] px-6 md:px-12 border-b border-bege">
+            <a href="index.html" class="flex items-center gap-3 text-lg font-semibold text-[#473C31] hover:text-laranja transition rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                <img src="svg/voltar.svg" alt="" class="w-5 h-5">
+                Voltar
+            </a>
+        </header>
+
+        <main class="p-6 md:p-12">
+
+            <!-- no desktop largo: cartão do pet na esquerda e cuidados na direita; abaixo disso, um sobre o outro -->
+            <div class="flex flex-col xl:flex-row items-stretch xl:items-start gap-8">
+
+                <!-- IDENTIFICAÇÃO DO PET -->
+                <section aria-label="Identificação do pet"
+                    class="flex flex-col items-center gap-6 w-full xl:w-[300px] xl:shrink-0 xl:min-h-[539px] px-8 py-8 rounded-[28px] bg-laranja text-center text-xl">
+
+                    <div class="flex items-center justify-center w-[140px] h-[140px] shrink-0 rounded-full bg-cabecalho border border-bege">
+                        <img src="svg/fiu.svg" alt="" class="w-[70px] h-[70px]">
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <h1 class="text-4xl font-semibold">Fiu</h1>
+                        <button type="button" aria-label="Editar perfil da Tina"
+                            class="p-1 rounded-lg hover:bg-white/30 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-texto">
+                            <img src="svg/editar.svg" alt="" class="w-5 h-5">
+                        </button>
+                    </div>
+
+                    <p class="leading-[145%]">Calopsita • macho</p>
+                    <p class="leading-[145%]">2 anos</p>
+                </section>
+
+                <!-- CUIDADOS -->
+                <div class="flex flex-col flex-1 min-w-0 gap-6 text-left">
+
+                    <h2 class="text-[22px] font-semibold leading-[145%]">Próximos cuidados</h2>
+
+                    <ul class="flex flex-col gap-5 p-7 pl-12 list-disc marker:text-laranja rounded-[20px] bg-superficie border border-bege text-base leading-[145%]">
+                        <li>Limpar gaiola — amanhã</li>
+                        <li>Comprar ração extrusada — amanhã</li>
+                    </ul>
+
+                    <h2 class="text-[22px] font-semibold leading-[145%]">Cuidados</h2>
+
+                    <ul class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5 text-base">
+
+                        <li>
+                            <a href="consultas.html"
+                               class="flex flex-col items-start gap-[18px] h-[118px] min-w-0 p-6 rounded-[20px] bg-superficie border border-bege hover:shadow-md hover:-translate-y-0.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                                <img src="svg/vacinas.svg" alt="" class="w-6 h-6 shrink-0">
+                                Consultas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                               class="flex flex-col items-start gap-[18px] h-[118px] min-w-0 p-6 rounded-[20px] bg-superficie border border-bege hover:shadow-md hover:-translate-y-0.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                                <img src="svg/estrela.svg" alt="" class="w-6 h-6 shrink-0">
+                                Medicamento
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                               class="flex flex-col items-start gap-[18px] h-[118px] min-w-0 p-6 rounded-[20px] bg-superficie border border-bege hover:shadow-md hover:-translate-y-0.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                                <img src="svg/consulta.svg" alt="" class="w-6 h-6 shrink-0">
+                                Unhas e Asas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                               class="flex flex-col items-start gap-[18px] h-[118px] min-w-0 p-6 rounded-[20px] bg-superficie border border-bege hover:shadow-md hover:-translate-y-0.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                                <img src="svg/talher.svg" alt="" class="w-6 h-6 shrink-0">
+                                Alimentação
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                               class="flex flex-col items-start gap-[18px] h-[118px] min-w-0 p-6 rounded-[20px] bg-superficie border border-bege hover:shadow-md hover:-translate-y-0.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                                <img src="svg/coracao.svg" alt="" class="w-6 h-6 shrink-0">
+                                Higiene
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                               class="flex flex-col items-start gap-[18px] h-[118px] min-w-0 p-6 rounded-[20px] bg-superficie border border-bege hover:shadow-md hover:-translate-y-0.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                                <img src="svg/banheira.svg" alt="" class="w-6 h-6 shrink-0">
+                                Registros médicos
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+</body>
+</html>

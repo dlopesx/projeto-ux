@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus alertas</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss"> 
+            @layer components {
+                .campo {
+                    @apply w-full h-12 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition
+                    focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+    }
+
+    </style>
+
 </head>
 <body>
 
@@ -30,9 +40,8 @@
                         </a>
                     </li>
 
-                    <li class="relative">
-                        <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
-                        <a href="index.html" class="flex items-center px-2 py-3 pl-6 rounded-xl hover:bg-[#E9DDCF]  group">
+                    <li>
+                        <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF]  group">
                         <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
                         <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
                         </a>
@@ -46,14 +55,13 @@
                     <li>
                         <a href="meus_agendamentos.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
                         <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
-
                         <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="meus_alertas.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                    <li class="relative">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                        <a href="meus_alertas.html" class="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF]  group">
                         <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
-
                         <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
                         </a>
                     </li>
@@ -111,7 +119,7 @@
                                 <p class="font-semibold"> Limpar gaiola de Fiu</p>
                                 <P> Toda quarta</P>
                             </div>
-                            <button class="flex gap-2 hover:font-semibold"> 
+                            <button id="bt-editar" class="flex gap-2 hover:font-semibold"> 
                                 <img src = "svg/editar.svg" alt="Símbolo de lápis pra editar"/> 
                                 <p> Editar alerta </p>
                             </button>
@@ -121,7 +129,7 @@
                                 <p class="font-semibold"> Cortar unha da Tina</p>
                                 <P> Hoje</P>
                             </div>
-                            <button class="flex gap-2 hover:font-semibold"> 
+                            <button id="bt-editar" class="flex gap-2 hover:font-semibold"> 
                                 <img src = "svg/editar.svg" alt="Símbolo de lápis pra editar"/> 
                                 <p> Editar alerta </p>
                             </button>
@@ -139,6 +147,159 @@
 
     </div>
 
+    <!-- PAINEL DE EDITAR ALERTA -->
+    <dialog id="painel-editar" class=" absolute m-0 ml-auto p-0 h-full max-h-full w-full max-w-full sm:w-[26rem] bg-[#FFFBF6] text-[#2B1A0E]
+               border-l border-[#E9DDCF] shadow-2xl backdrop:bg-black/40 open:flex flex-col" aria-label="Sidebar">
+        <div class="flex items-center justify-between gap-4 h-[88px] shrink-0 px-6 border-b border-[#E9DDCF]">
+            <h2 id="titulo-painel" class="text-2xl font-semibold">Editar alerta</h2>
+            <button type="button" id="fechar-painel" aria-label="Fechar painel"
+                class="p-2 rounded-lg hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                <img src="svg/fechar.svg" alt="" class="w-6 h-6">
+            </button>
+        </div>
+        <form id="form-editar" class="flex flex-1 min-h-0 flex-col">
+ 
+            <!-- campos (rola se a tela for baixa) -->
+            <div class="flex-1 overflow-y-auto flex flex-col gap-6 p-6">
+ 
+                <div class="flex flex-col gap-2">
+                    <label for="edit-titulo ">O que você precisa lembrar?</label>
+                    <input id="edit-titulo" name="titulo" type="text" required autofocus autocomplete="off" class="campo">
+                </div>
+ 
+                <div class="flex flex-col gap-2">
+                    <label for="edit-pet">Para qual pet?</label>
+                    <div class="relative">
+                        <select id="edit-pet" name="pet" required class="campo appearance-none pr-12 cursor-pointer">
+                            <option value="fiu">Fiu</option>
+                            <option value="tina">Tina</option>
+                        </select>
+                        <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#F29A4B] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </div>
+ 
+                <fieldset class="flex flex-col border-0 p-0 m-0 min-w-0">
+                    <legend class="font-semibold mb-3">Quando?</legend>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="edit-data" class="sr-only">Data</label>
+                            <input id="edit-data" name="data" type="date" required class="campo">
+                        </div>
+                        <div>
+                            <label for="edit-hora" class="sr-only">Hora</label>
+                            <input id="edit-hora" name="hora" type="time" required class="campo">
+                        </div>
+                    </div>
+                </fieldset>
+ 
+                <fieldset class="flex flex-col gap-4 border-0 p-0 m-0 min-w-0">
+                    <legend class="font-semibold mb-3">Repetir</legend>
+ 
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="repetir" value="nao" class="w-5 h-5 accent-[#F29A4B]">
+                        Não repetir
+                    </label>
+ 
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="repetir" value="semanal" class="w-5 h-5 accent-[#F29A4B]">
+                        A cada
+                    </label>
+ 
+                    <!-- só ficam ativos quando "A cada" está marcado -->
+                    <div id="bloco-semanal" class="grid grid-cols-2 gap-4 pl-8 transition-opacity">
+                        <div class="relative">
+                            <label for="edit-dia" class="sr-only">Dia da semana</label>
+                            <select id="edit-dia" name="dia" class="campo appearance-none pr-10 cursor-pointer">
+                                <option value="" disabled>Dia da semana</option>
+                                <option value="dom">Domingo</option>
+                                <option value="seg">Segunda</option>
+                                <option value="ter">Terça</option>
+                                <option value="qua">Quarta</option>
+                                <option value="qui">Quinta</option>
+                                <option value="sex">Sexta</option>
+                                <option value="sab">Sábado</option>
+                            </select>
+                            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#F29A4B] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                        </div>
+                        <div>
+                            <label for="edit-horario" class="sr-only">Horário</label>
+                            <input id="edit-horario" name="horario" type="time" class="campo">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+ 
+            <!-- rodapé fixo: salvar, cancelar e excluir -->
+            <div class="shrink-0 p-6 border-t border-[#E9DDCF]">
+ 
+                <div id="rodape-normal">
+                    <div class="flex items-center justify-between gap-3">
+                        <button type="button" id="bt-excluir"
+                            class="font-semibold text-[#B3261E] rounded-lg hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B3261E]">
+                            Excluir alerta
+                        </button>
+                        <div class="flex gap-3">
+                            <button type="button" id="cancelar"
+                                class="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                Cancelar
+                            </button>
+                            <button type="submit"
+                                class="px-6 h-12 rounded-xl bg-[#F29A4B] font-semibold hover:bg-[#E8863A] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B] focus-visible:ring-offset-2">
+                                Salvar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- confirmação de exclusão: troca o rodapé normal -->
+                <div id="rodape-confirmar" hidden>
+                    <div class="flex flex-col gap-3">
+                        <p class="font-semibold">Excluir este alerta?</p>
+                        <p class="text-sm text-[#75634F]">Essa ação não pode ser desfeita.</p>
+                        <div class="flex gap-3">
+                            <button type="button" id="manter"
+                                class="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                Manter
+                            </button>
+                            <button type="button" id="bt-confirmar-excluir"
+                                class="px-5 h-12 rounded-xl bg-[#B3261E] text-white font-semibold hover:brightness-110 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B3261E] focus-visible:ring-offset-2">
+                                Sim, excluir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </dialog>
+
+    <script>
+        const botaoEditar = document.getElementById('bt-editar')
+        const botaoExcluir = document.getElementById('bt-excluir')
+        const botaoFechar = document.getElementById('fechar-painel')
+        const botaoCancelar = document.getElementById('cancelar')
+        const botaoConfirmarExcluir = document.getElementById('bt-confirmar-excluir')
+        const painel = document.getElementById('painel-editar')
+        const excluir = document.getElementById('rodape-confirmar')
+
+        botaoEditar.addEventListener('click', () =>{
+            painel.showModal();
+            })
+
+        botaoFechar.addEventListener('click', () => {
+            painel.close();
+        })
+
+        botaoCancelar.addEventListener('click', () => {
+            painel.close();
+        })
+
+        botaoExcluir.addEventListener('click', () => {
+            excluir.classList.remove('hidden');
+        })
+        
+    </script>
 
 </body>
 </html>

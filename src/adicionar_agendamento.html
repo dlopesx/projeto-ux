@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <style>
+    <style type="text/tailwindcss">
         .flatpickr-calendar.inline { width: 100%; max-width: 100%; box-shadow: none; background: transparent; }
         .flatpickr-innerContainer, .flatpickr-rContainer, .flatpickr-days, .dayContainer { width: 100%; min-width: 100%; max-width: 100%; }
         .flatpickr-day { max-width: none; }
@@ -15,6 +15,16 @@
         .flatpickr-day.today { border-color: #F29A4B; }
         .flatpickr-day:hover { background: #F8F0E6; border-color: #F8F0E6; }
         .flatpickr-prev-month svg, .flatpickr-next-month svg { fill: #F29A4B; }
+
+        @layer components {
+            .campo {
+                @apply bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition
+                focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+            }
+        }
+
+    </style>
+
     </style>
         
 </head>
@@ -36,7 +46,7 @@
                         <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
                     </li>
                     <li dir="ltr">
-                        <a href="index.html" class="border-l-4 border-l-[#F29A4B] flex items-center px-2 py-3  rounded-xl hover:bg-[#E9DDCF]  group">
+                        <a href="index.html" class=" flex items-center px-2 py-3  rounded-xl hover:bg-[#E9DDCF]  group">
                         <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
                         <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
                         </a>
@@ -105,19 +115,19 @@
                     
                     <div class="flex self-stretch">
 
-                        <form method="post" action="#" class="flex flex-col lg:flex-row items-start gap-16 w-full">
+                        <form id="form-agendamento" method="post" action="#" class="flex flex-col lg:flex-row items-start gap-16 w-full">
 
                             <!-- CALENDARIO e HORARIO-->
                             <div class="flex flex-col gap-6 w-full lg:w-[26rem] shrink-0">
 
                                 <div class="">
-                                    <input id="data"  name="data" class="w-130 h-5 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-md">
+                                    <input id="data"  name="data" class="campo w-130 h-5 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-md">
                                 </div>
 
                                 <div class="flex flex-col gap-3"> 
                                      <label for="horario"> Horário </label>
                                      <input id="horario" name="horario" type="text" placeholder="00:00"
-                                            class="w-full h-14 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl ">
+                                            class="campo w-full h-14 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl ">
                                 </div>
                                 
                             </div>
@@ -128,34 +138,45 @@
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5"> 
                                         <div class="flex flex-col gap-3">
                                             <label for="profissional" > Profissional </label>
-                                            <input id="profissional" name="profissional" class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                            <input id="profissional" name="profissional" class="campo w-full h-14 bg-[#F8F0E6] rounded-2xl">
                                         </div>
                                         <div class="flex flex-col gap-3">
                                             <label for="crm"> CRM (opcional)</label>
-                                            <input id="crm" name="crm" class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                            <input id="crm" name="crm" class="campo w-full h-14 bg-[#F8F0E6] rounded-2xl">
                                         </div>
                                     </div>
                                     <div class="flex flex-col gap-3">
                                         <div class="flex flex-col gap-2">
                                             <label for="estabelecimento"> Estabelecimento (opcional)</label>
-                                            <input id="estabelecimento" name="estabelecimento" class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                            <input id="estabelecimento" name="estabelecimento" class="campo w-full h-14 bg-[#F8F0E6] rounded-2xl">
                                         </div>
                                         <div class="flex flex-col gap-2">
                                             <label for="endereco"> Endereço (opcional) </label>
-                                            <input id="endereco" name="endereco" class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                            <input id="endereco" name="endereco" class="campo w-full h-14 bg-[#F8F0E6] rounded-2xl">
                                         </div>
                                         <div class="flex flex-col gap-2">
                                             <label for="obs"> Observações/motivo </label>
                                             <textarea id="obs" name="obs"
-                                                class="w-full h-28 px-5 py-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl"></textarea>
+                                                class="campo w-full h-28 px-5 py-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl"></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <button type="submit" class="flex bg-[#F29A4B] w-40 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > 
+                                <button type="submit" id="bt-adicionar" class="flex bg-[#F29A4B] w-40 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > 
                                 <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
                                 Adicionar 
                                 </button>
+                                <div id="agendamento-adicionado" class="hidden flex w-85 items-center p-4 gap-3 fixed top-[4.5rem] right-[5rem] text-body bg-[#E8863A] rounded-xl shadow-xs border border-default" role="alert">
+                                    <div class="inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-success bg-success-soft rounded">
+                                        <svg class="w-7 h-7 border border-[#111111] rounded-md" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/></svg>
+                                        <span class="sr-only">Check icon</span>
+                                    </div>
+                                    <div class="ms-3 text-xl font-normal ">Agendamento adicionado com sucesso.</div>
+                                    <button type="button" id="bt-fechar" class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8 focus:outline-none" data-dismiss-target="#toast-success" aria-label="Close">
+                                        <span class="sr-only">Close</span>
+                                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                                    </button>
+                                </div>
                             </div>
                             
                         </form>
@@ -185,6 +206,34 @@
                         time_24hr: true,
                         minuteIncrement: 1
                     });
+
+        const adicionar = document.getElementById('bt-adicionar');
+        const fechar = document.getElementById('bt-fechar');
+        const painel = document.getElementById('agendamento-adicionado');
+        const form = document.getElementById('form-agendamento');
+        let timer;
+
+
+        function mostrar() {
+            painel.classList.remove('hidden');
+            painel.classList.add('flex');
+            clearTimeout(timer);
+            timer = setTimeout(esconder, 5000);
+        }
+
+        function esconder() {
+            clearTimeout(timer);
+            painel.classList.add('hidden');
+            painel.classList.remove('flex');
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();   // impede o recarregamento da página
+            // aqui, no futuro, você guarda os dados da vacina
+            mostrar();
+        });
+
+        fechar.addEventListener('click', esconder);
         </script>
     </div>
 </body>

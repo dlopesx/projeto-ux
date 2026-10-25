@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo alerta</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss"> 
+        @layer components {
+            .campo {
+                @apply rounded-2xl outline-none transition
+                focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+    }
+
+    </style>
 </head>
 <body>
 
@@ -31,8 +40,7 @@
             </li>
 
             <li class="relative">
-                <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
-                <a href="index.html" class="flex items-center px-2 py-3 pl-6 rounded-xl hover:bg-[#E9DDCF]  group">
+                <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF]  group">
                 <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
                 <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
                 </a>
@@ -103,15 +111,15 @@
 
                     <div class="flex flex-col self-stretch gap-3"> 
         
-                        <form class="flex flex-col gap-8 w-full max-w-[936px] border border-[#E9DDCF] rounded-2xl p-6">
+                        <form id="form-alerta" class="flex flex-col gap-8 w-full max-w-[936px] border border-[#E9DDCF] rounded-2xl p-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5"> 
                                 <div class="flex flex-col gap-3">
                                     <label> O que você precisa lembrar?</label>
-                                    <input class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                    <input class="campo p-4 w-full h-14 bg-[#F8F0E6] rounded-2xl" placeholder="Ex: Limpar vasilhas">
                                 </div>
                                 <div class="flex flex-col gap-3">
                                     <label> Para qual pet?</label>
-                                    <input class="w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                    <input class="campo w-full h-14 bg-[#F8F0E6] rounded-2xl">
                                 </div>
                             </div>
 
@@ -121,11 +129,11 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
                                     <div class="flex flex-col gap-2">
                                         <label for="data" class="sr-only">Data</label>
-                                        <input class="h-14 bg-[#F8F0E6] rounded-2xl">
+                                        <input  type="date" id="data" class="campo h-14 p-4 bg-[#F8F0E6] rounded-2xl">
                                     </div>
                                     <div class="flex flex-col gap-2">
-                                        <label for="hora" class="sr-only">Hora</label>
-                                        <input class="h-14 bg-[#F8F0E6] rounded-2xl">
+                                        <label for="hora" class="sr-only" >Hora</label>
+                                        <input type="time" id="hora" class="campo h-14 p-4 bg-[#F8F0E6] rounded-2xl">
                                     </div>
                                 </div>
                             </fieldset>
@@ -133,7 +141,7 @@
                             <fieldset class="flex flex-col"> 
                                 <legend class="font-semibold mb-4"> Repetir?</legend>
                                 <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="radio" name="repetir" value="nao" class="w-5 h-5 accent-laranja">
+                                <input type="radio" name="repetir" value="nao" class="w-5 h-5 accent-[#F29A4B]">
                                 Não repetir
                                 </label>
                                 
@@ -143,7 +151,7 @@
         
                                 <div class="flex items-center gap-3 w-[204px] h-10 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl focus-within:ring-2 focus-within:ring-[#F29A4B] transition">
                                     <label for="dia" class="sr-only">Dia da semana</label>
-                                    <select id="dia" name="dia" class="flex-1 min-w-0 h-full bg-transparent outline-none appearance-none cursor-pointer">
+                                    <select id="dia" name="dia" class="accent-[#F29A4B] flex-1 min-w-0 h-full bg-transparent outline-none appearance-none cursor-pointer ">
                                         <option value="" disabled selected hidden>Dia da semana</option>
                                         <option value="dom">Domingo</option>
                                         <option value="seg">Segunda</option>
@@ -156,14 +164,25 @@
                                     <img src="seta-baixo.svg" alt="" class="w-5 h-5 shrink-0">
                                 </div>
         
-                                <div class="w-48 opacity-50 peer-checked:opacity-100 flex items-center gap-3 w-[204px] h-10 px-5 bg-[#E9DDCF] border border-[#E9DDCF] rounded-2xl focus-within:ring-2 focus-within:ring-[#F29A4B] transition">
+                                <div class="w-48 opacity-50 peer-checked:opacity-100 flex items-center gap-3 w-[204px] h-10 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl focus-within:ring-2 focus-within:ring-[#F29A4B] transition">
                                     <label for="horario" class="sr-only">Horário</label>
-                                    <input id="horario" name="horario" type="time" class="bg-[#E9DDCF]">
+                                    <input id="horario" name="horario" type="time" class="campo bg-[#F8F0E6]">
                                 </div>
 
                             </fieldset>
-                            <button class="type=send flex bg-[#F29A4B] w-60 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
+                            <button id="bt-adicionar" type="submit" class="flex bg-[#F29A4B] w-60 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
                             Adicionar </button>
+                            <div id="alerta-adicionado" class="hidden flex w-85 items-center p-4 gap-3 fixed top-[7rem] right-[5rem] text-body bg-[#E8863A] rounded-xl shadow-xs border border-default" role="alert">
+                                <div class="inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-success bg-success-soft rounded">
+                                    <svg class="w-7 h-7 border border-[#111111] rounded-md" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/></svg>
+                                    <span class="sr-only">Check icon</span>
+                                </div>
+                                <div class="ms-3 text-xl font-normal ">Alerta adicionado com sucesso.</div>
+                                <button type="button" id="bt-fechar" class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8 focus:outline-none" data-dismiss-target="#toast-success" aria-label="Close">
+                                    <span class="sr-only">Close</span>
+                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                                </button>
+                            </div>
                         </form>
                             
                         </div>      
@@ -181,7 +200,35 @@
 
 
     </div>
+    <script>
+        const adicionar = document.getElementById('bt-adicionar');
+        const fechar = document.getElementById('bt-fechar');
+        const painel = document.getElementById('alerta-adicionado');
+        const form = document.getElementById('form-alerta');
+        let timer;
 
+
+        function mostrar() {
+            painel.classList.remove('hidden');
+            painel.classList.add('flex');
+            clearTimeout(timer);
+            timer = setTimeout(esconder, 5000);
+        }
+
+        function esconder() {
+            clearTimeout(timer);
+            painel.classList.add('hidden');
+            painel.classList.remove('flex');
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();   // impede o recarregamento da página
+            // aqui, no futuro, você guarda os dados da vacina
+            mostrar();
+        });
+
+        fechar.addEventListener('click', esconder);
+    </script>
 
 </body>
 </html>
