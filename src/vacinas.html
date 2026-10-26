@@ -5,188 +5,281 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tina - Vacinas</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                colors: {
+                    "Texto-1": "#2B1A0E",
+                    "Texto-2": "#75634F",
+                    "Fundo": "#FFFBF6",
+                    "Superficie": "#F8F0E6",
+                    "Borda": "#E9DDCF",
+                    "Botão-1": "#F29A4B",
+                    "ErroVencida": "#D64545"
+                }
+                }
+            }
+        }
+    </script>
+
 </head>
 <body>
 
-    <div class="flex">
+    <!-- DESKTOP -->
+    <section class="hidden md:block">
+        <div class="flex">
 
-        <!-- SIDEBAR-->
+            <!-- SIDEBAR-->
 
-        <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
-            <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
-                <ul class=" flex-1 space-y-2 font-medium">
-                    <li class="flex">
-                        <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
-                        <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
-                        </a>
-                        <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
-                    </li>
+            <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
+                <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                    <ul class=" flex-1 space-y-2 font-medium">
+                        <li class="flex">
+                            <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
+                            <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                            </a>
+                            <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                        </li>
 
-                    <!-- PERFIL DO USUÁRIO -->
-                    <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
-                        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
-                            <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
-                            <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
-                        </a>
-                    </li>
+                        <!-- PERFIL DO USUÁRIO -->
+                        <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                            <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                                <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+                                <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                            </a>
+                        </li>
 
-                    <li class="relative">
-                        <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
-                        <a href="#" class="flex items-center px-2 py-3 pl-6 rounded-xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
+                        <li class="relative">
+                            <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                            <a href="#" class="flex items-center px-2 py-3 pl-6 rounded-xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
-                        </a>
-                    </li>
-                </ul>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                            </a>
+                        </li>
+                    </ul>
 
-                <!-- RODAPÉ DA SIDEBAR-->
-                <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
-                    <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
-                        
-                    </li>
-                </ul>
-                
-            </div>
-        </aside>
-
-        <!-- HEADER E MAIN -->
-
-        <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
-
-            <header class="flex flex-row justify-between p-5 border ">
-                <p> Voltar</p>
-                <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
-            </header>
-
-            
-            <main class="flex w-full py-8 px-16 flex-col items-start self-stretch">
-                
-                <!-- TITULO E BOTAO DE ADICIONAR ALERTA -->
-                <div class="flex flex-col self-stretch gap-[2.25rem]">
-                    <div class="flex justify-between items-center">
-                        <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Tina - vacinas </h1>
-                        <button class="flex px-5 py-3 gap-4 rounded-2xl  font-semibold border border-[#9c9c9c] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
-                            Adicionar vacina </button>
-                    </div>
-
-                    <!-- FILTRO -->
-                    <div class="flex gap-5 items-center">
-                        <p class="font-semibold"> Filtro: </p>
-                        <button class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">Todas</button>
-                        <button class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">Atrasadas</button>
-                        <button class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">Próximas</button>
-                    </div>
-
-                    <div class="rounded-3xl p-5 bg-[#F8F0E6] border border-[#E9DDCF] overflow-hidden">
-                        <table class="w-full">
-                            <thead class="p-5 h-5 bg-[#F8F0E6] hover:shadow-md">
-                                <tr>
-                                    <th class="font-medium"> Vacina </th>
-                                    <th class="font-medium"> Última dose </th>
-                                    <th class="font-medium"> Próxima dose </th>
-                                    <th class="font-medium"> Status </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="p-5 h-24 bg-[#F8F0E6] ">
-                                    <td class="px-6 font-semibold text-lg"> Antirrábica </td>
-                                    <td class="px-6"> Última dose: 23/05/2025 </td>
-                                    <td class="px-6"> Próxima dose: 23/05/2026 </td>
-                                    <td class="px-6"> 
-                                        <span class="border border-red-600 text-red-600 px-4 py-1 rounded-2xl"> Atrasada </span>
-                                    </td>
-                                </tr>
-                                <tr class="h-24 p-5 bg-[#F8F0E6] ">
-                                    <td class="px-6 font-semibold text-lg"> V10 </td>
-                                    <td class="px-6"> Última dose: 23/05/2025 </td>
-                                    <td class="px-6"> Próxima dose: 23/05/2025 </td>
-                                    <td class="px-6"> 
-                                        <span class="border border-[#F29A4B] text-[#F29A4B] px-4 py-1 rounded-2xl"> Próxima </span>
-                                    </td>
-                                </tr>
-                                <tr class=" h-24 p-5 bg-[#F8F0E6] ">
-                                    <td class="px-6 font-semibold text-lg"> Gripe </td>
-                                    <td class="px-6"> Última dose: 23/05/2025 </td>
-                                    <td class="px-6"> Próxima dose: 23/05/2025 </td>
-                                    <td class="px-6"> 
-                                        <span class="border border-[#F29A4B] text-[#F29A4B] px-4 py-1 rounded-2xl"> Em dia </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="grid-cols-2 md:grid-cols-4">
-                        <ul> 
-                            <div class=>
-                                <li class="grid grid-cols-2 md:grid-cols-4 p-5 h-2 bg-[#F8F0E6] hover:shadow-md">
-                                    <p class="font-medium"> Vacina </p>
-                                    <p class="font-medium"> Última dose</p>
-                                    <p class="font-medium"> Próxima dose</p>
-                                    <p class="font-medium"> Status </p>
-                                </li>
-
-                            </div>
-                            <li class="grid grid-cols-2 md:grid-cols-4 p-5 h-24 bg-[#F8F0E6] ">
-                                <p class="font-semibold text-xl"> Antirrábica </p>
-                                <p> Última dose: 23/05/2025</p>
-                                <p> Próxima dose: 23/05/2026</p>
-                                <p> Atrasada </p>
-                            </li>
-                            <li class="grid grid-cols-2 md:grid-cols-4 h-24 p-5 bg-[#F8F0E6] ">
-                                <p class="font-semibold text-xl"> V10 </p>
-                                <p> Última dose: 23/05/2025</p>
-                                <p> Próxima dose: 23/05/2026</p>
-                                <p> Atrasada </p>
-                            </li>
-                            <li class="grid grid-cols-2 md:grid-cols-4 h-24 p-5 bg-[#F8F0E6] ">
-                                <p class="font-semibold text-xl"> Gripe </p>
-                                <p> Última dose: 23/05/2025</p>
-                                <p> Próxima dose: 23/05/2026</p>
-                                <p> Atrasada </p>
-                            </li>
-                        </ul>
-                    </div>
+                    <!-- RODAPÉ DA SIDEBAR-->
+                    <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
+                        <li>
+                            <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                            
+                        </li>
+                    </ul>
+                    
                 </div>
+            </aside>
+
+            <!-- HEADER E MAIN -->
+
+            <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
+
+                <header class="flex flex-row justify-between p-5 border ">
+                    <p> Voltar</p>
+                    <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
+                </header>
+
                 
-        
-            </main>
+                <main class="flex w-full py-8 px-16 flex-col items-start self-stretch">
+                    
+                    <!-- TITULO E BOTAO DE ADICIONAR ALERTA -->
+                    <div class="flex flex-col self-stretch gap-[2.25rem]">
+                        <div class="flex justify-between items-center">
+                            <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Tina - vacinas </h1>
+                            <button class="flex px-5 py-3 gap-4 rounded-2xl  font-semibold border border-[#9c9c9c] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
+                                Adicionar vacina </button>
+                        </div>
+
+                        <!-- FILTRO -->
+                        <div class="flex gap-5 items-center">
+                            <p class="font-semibold"> Filtro: </p>
+                            <button class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">Todas</button>
+                            <button class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">Atrasadas</button>
+                            <button class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">Próximas</button>
+                        </div>
+
+                        <div class="rounded-3xl p-5 bg-[#F8F0E6] border border-[#E9DDCF] overflow-hidden">
+                            <table class="w-full">
+                                <thead class="p-5 h-5 bg-[#F8F0E6] hover:shadow-md">
+                                    <tr>
+                                        <th class="font-medium"> Vacina </th>
+                                        <th class="font-medium"> Última dose </th>
+                                        <th class="font-medium"> Próxima dose </th>
+                                        <th class="font-medium"> Status </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="p-5 h-24 bg-[#F8F0E6] ">
+                                        <td class="px-6 font-semibold text-lg"> Antirrábica </td>
+                                        <td class="px-6"> Última dose: 23/05/2025 </td>
+                                        <td class="px-6"> Próxima dose: 23/05/2026 </td>
+                                        <td class="px-6"> 
+                                            <span class="border border-red-600 text-red-600 px-4 py-1 rounded-2xl"> Atrasada </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="h-24 p-5 bg-[#F8F0E6] ">
+                                        <td class="px-6 font-semibold text-lg"> V10 </td>
+                                        <td class="px-6"> Última dose: 23/05/2025 </td>
+                                        <td class="px-6"> Próxima dose: 23/05/2025 </td>
+                                        <td class="px-6"> 
+                                            <span class="border border-[#F29A4B] text-[#F29A4B] px-4 py-1 rounded-2xl"> Próxima </span>
+                                        </td>
+                                    </tr>
+                                    <tr class=" h-24 p-5 bg-[#F8F0E6] ">
+                                        <td class="px-6 font-semibold text-lg"> Gripe </td>
+                                        <td class="px-6"> Última dose: 23/05/2025 </td>
+                                        <td class="px-6"> Próxima dose: 23/05/2025 </td>
+                                        <td class="px-6"> 
+                                            <span class="border border-[#F29A4B] text-[#F29A4B] px-4 py-1 rounded-2xl"> Em dia </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="grid-cols-2 md:grid-cols-4">
+                            <ul> 
+                                <div class=>
+                                    <li class="grid grid-cols-2 md:grid-cols-4 p-5 h-2 bg-[#F8F0E6] hover:shadow-md">
+                                        <p class="font-medium"> Vacina </p>
+                                        <p class="font-medium"> Última dose</p>
+                                        <p class="font-medium"> Próxima dose</p>
+                                        <p class="font-medium"> Status </p>
+                                    </li>
+
+                                </div>
+                                <li class="grid grid-cols-2 md:grid-cols-4 p-5 h-24 bg-[#F8F0E6] ">
+                                    <p class="font-semibold text-xl"> Antirrábica </p>
+                                    <p> Última dose: 23/05/2025</p>
+                                    <p> Próxima dose: 23/05/2026</p>
+                                    <p> Atrasada </p>
+                                </li>
+                                <li class="grid grid-cols-2 md:grid-cols-4 h-24 p-5 bg-[#F8F0E6] ">
+                                    <p class="font-semibold text-xl"> V10 </p>
+                                    <p> Última dose: 23/05/2025</p>
+                                    <p> Próxima dose: 23/05/2026</p>
+                                    <p> Atrasada </p>
+                                </li>
+                                <li class="grid grid-cols-2 md:grid-cols-4 h-24 p-5 bg-[#F8F0E6] ">
+                                    <p class="font-semibold text-xl"> Gripe </p>
+                                    <p> Última dose: 23/05/2025</p>
+                                    <p> Próxima dose: 23/05/2026</p>
+                                    <p> Atrasada </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+            
+                </main>
+
+            </div>
+            
+
 
         </div>
-        
+    </section>
+    
+    <!-- MOBILE -->
+     <section class="block md:hidden">
+        <div class="w-full min-h-dvh bg-[#FFFBF6] flex flex-col overflow-hidden">
 
+        <header class="h-16 shrink-0 px-6 border-b border-[#E9DDCF] flex items-center gap-4">
+            <a href="#" onclick="history.back(); return false;" class="shrink-0 flex items-center justify-center">
+                <img src="svg/voltar.svg" alt="Voltar" class="w-4 h-4 object-contain">
+            </a>
+            <h1 class="text-[#2B1A0E] text-lg font-semibold font-['Inter']">Tina — vacinas</h1>
+        </header>
 
+        <main class="w-full flex-1 min-h-0 px-6 py-4 flex flex-col gap-4">
+
+            <button type="button" class="shrink-0 h-12 w-full px-5 bg-[#F8F0E6] rounded-xl border border-[#E9DDCF] flex justify-center items-center gap-2.5">
+                <img src="svg/adicionarLaranja.svg" alt="" class="w-4 h-4 object-contain">
+                <span class="text-[#2B1A0E] text-base font-semibold font-['Inter']">Adicionar vacina</span>
+            </button>
+
+            <section class="shrink-0 flex flex-col gap-2">
+                <h2 class="text-[#2B1A0E] text-xs font-semibold font-['Inter']">Filtro:</h2>
+
+                <nav aria-label="Filtrar vacinas" class="flex flex-wrap items-center gap-2">
+                    <button type="button" class="px-3 py-2 bg-[#F29A4B] rounded-full text-[#2B1A0E] text-xs font-normal font-['Inter']">
+                        Todas
+                    </button>
+                    <button type="button" class="px-3 py-2 bg-[#FFFBF6] rounded-full border border-[#E9DDCF] text-[#75634F] text-xs font-normal font-['Inter']">
+                        Atrasadas
+                    </button>
+                    <button type="button" class="px-3 py-2 bg-[#FFFBF6] rounded-full border border-[#E9DDCF] text-[#75634F] text-xs font-normal font-['Inter']">
+                        Próximas
+                    </button>
+                </nav>
+            </section>
+
+            <section class="min-h-0 flex flex-col gap-3">
+                <h2 class="shrink-0 text-[#2B1A0E] text-lg font-semibold font-['Inter']">Todas as vacinas</h2>
+
+                <article class="shrink-0 p-3.5 bg-[#F8F0E6] rounded-2xl flex flex-col gap-2">
+                    <div class="flex justify-between items-center gap-2">
+                        <h3 class="text-[#2B1A0E] text-sm font-semibold font-['Inter']">Antirrábica</h3>
+                        <span class="px-2 py-1 bg-[#FFFBF6] rounded-full text-[#D64545] text-[10px] font-semibold font-['Inter'] whitespace-nowrap">△ Atrasada</span>
+                    </div>
+                    <p class="text-[#75634F] text-xs font-normal font-['Inter']">Última dose: 23/05/2025</p>
+                    <p class="text-[#2B1A0E] text-xs font-normal font-['Inter']">Próxima dose: 23/05/2026</p>
+                </article>
+
+                <article class="shrink-0 p-3.5 bg-[#F8F0E6] rounded-2xl flex flex-col gap-2">
+                    <div class="flex justify-between items-center gap-2">
+                        <h3 class="text-[#2B1A0E] text-sm font-semibold font-['Inter']">V10</h3>
+                        <span class="px-2 py-1 bg-[#FFFBF6] rounded-full text-[#F29A4B] text-[10px] font-semibold font-['Inter']">Próxima</span>
+                    </div>
+                    <p class="text-[#75634F] text-xs font-normal font-['Inter']">Última dose: 20/09/2025</p>
+                    <p class="text-[#2B1A0E] text-xs font-normal font-['Inter']">Próxima dose: 20/09/2026</p>
+                </article>
+
+                <article class="shrink-0 p-3.5 bg-[#F8F0E6] rounded-2xl flex flex-col gap-2">
+                    <div class="flex justify-between items-center gap-2">
+                        <h3 class="text-[#2B1A0E] text-sm font-semibold font-['Inter']">Gripe</h3>
+                        <span class="px-2 py-1 bg-[#FFFBF6] rounded-full text-[#F29A4B] text-[10px] font-semibold font-['Inter']">Em dia</span>
+                    </div>
+                    <p class="text-[#75634F] text-xs font-normal font-['Inter']">Última dose: 23/05/2026</p>
+                    <p class="text-[#2B1A0E] text-xs font-normal font-['Inter']">Próxima dose: 23/05/2027</p>
+                </article>
+            </section>
+
+        </main>
     </div>
+     </section>
 
 
 </body>
