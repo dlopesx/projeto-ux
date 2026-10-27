@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo alerta</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style type="text/tailwindcss"> 
         @layer components {
             .campo {
@@ -12,194 +14,352 @@
                 focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
         }
     }
-
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        botao2: '#EEEE88',
+                        borda: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto1: '#2B1A0E',
+                        texto2: '#75634F',
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
 </head>
 <body>
 
+    <!--DESKTOP-->
+    <section class="hidden md:block">
     <div class="flex">
 
-       <!-- SIDEBAR-->
+        <!-- SIDEBAR-->
 
-<aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
-    <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
-        <ul class=" flex-1 space-y-2 font-medium">
-            <li class="flex">
-                <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
-                <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
-                </a>
-                <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
-            </li>
+            <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
+                <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                    <ul class=" flex-1 space-y-2 font-medium">
+                        <li class="flex">
+                            <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
+                            <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                            </a>
+                            <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                        </li>
 
-            <!-- PERFIL DO USUÁRIO -->
-            <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
-                <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
-                    <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
-                    <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
-                </a>
-            </li>
+                        <!-- PERFIL DO USUÁRIO -->
+                        <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                            <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                                <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+                                <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                            </a>
+                        </li>
 
-            <li class="relative">
-                <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF]  group">
-                <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
-                <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
-                </a>
-            </li>
-            <li>
-                <a href="meus_pets.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
-                <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
-                </a>
-            </li>
-            <li>
-                <a href="meus_agendamentos.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
+                        <li class="relative">
+                            <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="meus_pets.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="meus_agendamentos.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
 
-                <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
-                </a>
-            </li>
-            <li>
-                <a href="meus_alertas.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="meus_alertas.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
 
-                <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
-                </a>
-            </li>
-            <li>
-                <a href="tutores.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
-                <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
-                </a>
-            </li>
-        </ul>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tutores.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                            </a>
+                        </li>
+                    </ul>
 
-        <!-- RODAPÉ DA SIDEBAR-->
-        <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
-            <li>
-                <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                    <!-- RODAPÉ DA SIDEBAR-->
+                    <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
+                        <li>
+                            <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                            
+                        </li>
+                    </ul>
+                    
+                </div>
+            </aside>
+
+            <!-- HEADER E MAIN -->
+
+            <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
+
+                <header class="flex flex-row justify-between p-5 border ">
+                    <a href="index.html" class="flex gap-4">
+                        <img alt="Figura de seta laranja" src="svg/voltar.svg">
+                        <p> Voltar</p>
+                    </a>
+                    <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
+                </header>
+
                 
-            </li>
-        </ul>
-           
-    </div>
-</aside>
+                <main class="flex w-full py-8 px-16 flex-col items-start self-stretch">
+                    
+                    <div class="flex flex-col items-center self-stretch gap-[2.25rem]">
+                        <div class="flex justify-between self-stretch items-center">
+                            <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Novo alerta </h1>
+                        </div>
+                        
+                        <!-- SEÇÃO: NOVO ALERTA-->
 
-        <!-- HEADER E MAIN -->
-
-        <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
-
-            <header class="flex flex-row justify-between p-5 border ">
-                <a href="index.html" class="flex gap-4">
-                    <img alt="Figura de seta laranja" src="svg/voltar.svg">
-                    <p> Voltar</p>
-                </a>
-                <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
-            </header>
-
+                        <div class="flex flex-col self-stretch gap-3"> 
             
-            <main class="flex w-full py-8 px-16 flex-col items-start self-stretch">
-                
-                <div class="flex flex-col items-center self-stretch gap-[2.25rem]">
-                    <div class="flex justify-between self-stretch items-center">
-                        <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Novo alerta </h1>
+                            <form id="form-alerta" class="flex flex-col gap-8 w-full max-w-[936px] border border-[#E9DDCF] rounded-2xl p-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5"> 
+                                    <div class="flex flex-col gap-3">
+                                        <label> O que você precisa lembrar?</label>
+                                        <input class="campo p-4 w-full h-14 bg-[#F8F0E6] rounded-2xl" placeholder="Ex: Limpar vasilhas">
+                                    </div>
+                                    <div class="flex flex-col gap-3">
+                                        <label> Para qual pet?</label>
+                                        <input class="campo w-full h-14 bg-[#F8F0E6] rounded-2xl">
+                                    </div>
+                                </div>
+
+                                <fieldset class="flex flex-col gap-4 border-0 p-0 m-0 min-w-0">
+                                    <legend class="font-semibold mb-4">Quando?</legend>
+    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+                                        <div class="flex flex-col gap-2">
+                                            <label for="data" class="sr-only">Data</label>
+                                            <input  type="date" id="data" class="campo h-14 p-4 bg-[#F8F0E6] rounded-2xl">
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <label for="hora" class="sr-only" >Hora</label>
+                                            <input type="time" id="hora" class="campo h-14 p-4 bg-[#F8F0E6] rounded-2xl">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                
+                                <fieldset class="flex flex-col"> 
+                                    <legend class="font-semibold mb-4"> Repetir?</legend>
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                    <input type="radio" name="repetir" value="nao" class="w-5 h-5 accent-[#F29A4B]">
+                                    Não repetir
+                                    </label>
+                                    
+                                    <div class="flex flex-wrap items-center gap-4">
+                                    <input id="repetir-semanal" type="radio" name="repetir" value="semanal" class="peer w-5 h-5 accent-laranja cursor-pointer">
+                                    <label for="repetir-semanal" class="cursor-pointer">A cada</label>
+            
+                                    <div class="flex items-center gap-3 w-[204px] h-10 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl focus-within:ring-2 focus-within:ring-[#F29A4B] transition">
+                                        <label for="dia" class="sr-only">Dia da semana</label>
+                                        <select id="dia" name="dia" class="accent-[#F29A4B] flex-1 min-w-0 h-full bg-transparent outline-none appearance-none cursor-pointer ">
+                                            <option value="" disabled selected hidden>Dia da semana</option>
+                                            <option value="dom">Domingo</option>
+                                            <option value="seg">Segunda</option>
+                                            <option value="ter">Terça</option>
+                                            <option value="qua">Quarta</option>
+                                            <option value="qui">Quinta</option>
+                                            <option value="sex">Sexta</option>
+                                            <option value="sab">Sábado</option>
+                                        </select>
+                                        <img src="seta-baixo.svg" alt="" class="w-5 h-5 shrink-0">
+                                    </div>
+            
+                                    <div class="w-48 opacity-50 peer-checked:opacity-100 flex items-center gap-3 w-[204px] h-10 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl focus-within:ring-2 focus-within:ring-[#F29A4B] transition">
+                                        <label for="horario" class="sr-only">Horário</label>
+                                        <input id="horario" name="horario" type="time" class="campo bg-[#F8F0E6]">
+                                    </div>
+
+                                </fieldset>
+                                <button id="bt-adicionar" type="submit" class="flex bg-[#F29A4B] w-60 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
+                                Adicionar </button>
+                                <div id="alerta-adicionado" class="hidden flex w-85 items-center p-4 gap-3 fixed top-[7rem] right-[5rem] text-body bg-[#E8863A] rounded-xl shadow-xs border border-default" role="alert">
+                                    <div class="inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-success bg-success-soft rounded">
+                                        <svg class="w-7 h-7 border border-[#111111] rounded-md" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/></svg>
+                                        <span class="sr-only">Check icon</span>
+                                    </div>
+                                    <div class="ms-3 text-xl font-normal ">Alerta adicionado com sucesso.</div>
+                                    <button type="button" id="bt-fechar" class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8 focus:outline-none" data-dismiss-target="#toast-success" aria-label="Close">
+                                        <span class="sr-only">Close</span>
+                                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                                    </button>
+                                </div>
+                            </form>
+                                
+                            </div>      
+            
+                        </div>
+                    
+            
                     </div>
                     
-                    <!-- SEÇÃO: NOVO ALERTA-->
+            
+                </main>
 
-                    <div class="flex flex-col self-stretch gap-3"> 
-        
-                        <form id="form-alerta" class="flex flex-col gap-8 w-full max-w-[936px] border border-[#E9DDCF] rounded-2xl p-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5"> 
-                                <div class="flex flex-col gap-3">
-                                    <label> O que você precisa lembrar?</label>
-                                    <input class="campo p-4 w-full h-14 bg-[#F8F0E6] rounded-2xl" placeholder="Ex: Limpar vasilhas">
-                                </div>
-                                <div class="flex flex-col gap-3">
-                                    <label> Para qual pet?</label>
-                                    <input class="campo w-full h-14 bg-[#F8F0E6] rounded-2xl">
-                                </div>
-                            </div>
+            </div>
+            
+    </div>
+    </section>
 
-                            <fieldset class="flex flex-col gap-4 border-0 p-0 m-0 min-w-0">
-                                <legend class="font-semibold mb-4">Quando?</legend>
- 
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
-                                    <div class="flex flex-col gap-2">
-                                        <label for="data" class="sr-only">Data</label>
-                                        <input  type="date" id="data" class="campo h-14 p-4 bg-[#F8F0E6] rounded-2xl">
-                                    </div>
-                                    <div class="flex flex-col gap-2">
-                                        <label for="hora" class="sr-only" >Hora</label>
-                                        <input type="time" id="hora" class="campo h-14 p-4 bg-[#F8F0E6] rounded-2xl">
-                                    </div>
-                                </div>
-                            </fieldset>
-                            
-                            <fieldset class="flex flex-col"> 
-                                <legend class="font-semibold mb-4"> Repetir?</legend>
-                                <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="radio" name="repetir" value="nao" class="w-5 h-5 accent-[#F29A4B]">
-                                Não repetir
-                                </label>
-                                
-                                <div class="flex flex-wrap items-center gap-4">
-                                <input id="repetir-semanal" type="radio" name="repetir" value="semanal" class="peer w-5 h-5 accent-laranja cursor-pointer">
-                                <label for="repetir-semanal" class="cursor-pointer">A cada</label>
-        
-                                <div class="flex items-center gap-3 w-[204px] h-10 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl focus-within:ring-2 focus-within:ring-[#F29A4B] transition">
-                                    <label for="dia" class="sr-only">Dia da semana</label>
-                                    <select id="dia" name="dia" class="accent-[#F29A4B] flex-1 min-w-0 h-full bg-transparent outline-none appearance-none cursor-pointer ">
-                                        <option value="" disabled selected hidden>Dia da semana</option>
-                                        <option value="dom">Domingo</option>
-                                        <option value="seg">Segunda</option>
-                                        <option value="ter">Terça</option>
-                                        <option value="qua">Quarta</option>
-                                        <option value="qui">Quinta</option>
-                                        <option value="sex">Sexta</option>
-                                        <option value="sab">Sábado</option>
-                                    </select>
-                                    <img src="seta-baixo.svg" alt="" class="w-5 h-5 shrink-0">
-                                </div>
-        
-                                <div class="w-48 opacity-50 peer-checked:opacity-100 flex items-center gap-3 w-[204px] h-10 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl focus-within:ring-2 focus-within:ring-[#F29A4B] transition">
-                                    <label for="horario" class="sr-only">Horário</label>
-                                    <input id="horario" name="horario" type="time" class="campo bg-[#F8F0E6]">
-                                </div>
+    <!--MOBILE-->
+    <section class="block md:hidden min-h-screen w-full bg-fundo flex flex-col">
+        <div class="flex-1 min-h-screen w-full bg-fundo flex flex-col">
 
-                            </fieldset>
-                            <button id="bt-adicionar" type="submit" class="flex bg-[#F29A4B] w-60 px-4 py-3 gap-4 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
-                            Adicionar </button>
-                            <div id="alerta-adicionado" class="hidden flex w-85 items-center p-4 gap-3 fixed top-[7rem] right-[5rem] text-body bg-[#E8863A] rounded-xl shadow-xs border border-default" role="alert">
-                                <div class="inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-success bg-success-soft rounded">
-                                    <svg class="w-7 h-7 border border-[#111111] rounded-md" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/></svg>
-                                    <span class="sr-only">Check icon</span>
-                                </div>
-                                <div class="ms-3 text-xl font-normal ">Alerta adicionado com sucesso.</div>
-                                <button type="button" id="bt-fechar" class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8 focus:outline-none" data-dismiss-target="#toast-success" aria-label="Close">
-                                    <span class="sr-only">Close</span>
-                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+            <header class="h-16 shrink-0 px-5 border-b border-borda flex items-center gap-4">
+                <button type="button" aria-label="Voltar" onclick="window.location.href='index.html'"
+                    class="size-6 shrink-0 flex items-center justify-center">
+                    <img src="svg/voltar.svg" alt="" class="size-4 object-contain">
+                </button>
+
+                <h1 class="text-texto1 text-lg font-semibold font-['Inter']">
+                    Novo alerta
+                </h1>
+            </header>
+
+            <form id="form-alerta-mobile"
+                class="flex-1 w-full px-5 pt-6 pb-24 flex flex-col gap-6 bg-fundo">
+
+                <div class="w-full flex flex-col gap-2">
+                    <label for="lembrete-mobile" class="text-texto1 text-base font-medium font-['Inter']">
+                        O que você precisa lembrar?
+                    </label>
+                    <input id="lembrete-mobile" name="lembrete" type="text"
+                        placeholder="Ex: Limpar vasilhas" required
+                        class="campo w-full h-12 px-3.5 bg-superficie border border-borda rounded-xl text-texto1 placeholder:text-texto2">
+                </div>
+
+                <div class="w-full flex flex-col gap-2">
+                    <label for="pet-mobile" class="text-texto1 text-base font-medium font-['Inter']">
+                        Para qual pet?
+                    </label>
+                    <div class="w-full h-12 px-3.5 bg-superficie border border-borda rounded-xl flex items-center gap-2.5 focus-within:ring-2 focus-within:ring-laranja">
+                        <input id="pet-mobile" name="pet" type="text" required
+                            class="min-w-0 flex-1 w-full h-full bg-transparent text-texto1 outline-none focus:ring-0 border-0 rounded-xl">
+                        <button type="button" aria-label="Pesquisar pet"
+                            class="size-5 shrink-0 flex items-center justify-center">
+                            <img src="svg/pesquisar.svg" alt="" class="size-4 object-contain">
+                        </button>
+                    </div>
+                </div>
+
+                <fieldset class="w-full flex flex-col gap-3">
+                    <legend class="text-texto1 text-base font-semibold font-['Inter'] mb-3">
+                        Quando?
+                    </legend>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="min-w-0">
+                            <label for="data-mobile" class="sr-only">Data</label>
+                            <div class="relative h-12 w-full px-3.5 bg-superficie border border-borda rounded-xl flex items-center">
+                                <input id="data-mobile" name="data" type="date" required
+                                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                <span id="texto-data-mobile" class="flex-1 text-texto2 text-base pointer-events-none">
+                                    Data
+                                </span>
+                                <button type="button" id="abrir-data-mobile" aria-label="Abrir calendário"
+                                    class="relative z-10 size-6 shrink-0 flex items-center justify-center">
+                                    <img src="svg/calendario.svg" alt="" class="size-4 object-contain pointer-events-none">
                                 </button>
                             </div>
-                        </form>
-                            
-                        </div>      
-        
+                        </div>
+
+                        <div class="min-w-0">
+                            <label for="hora-mobile" class="sr-only">Hora</label>
+                            <div class="relative h-12 w-full px-3.5 bg-superficie border border-borda rounded-xl flex items-center">
+                                <input id="hora-mobile" name="hora" type="time" required
+                                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                <span id="texto-hora-mobile" class="flex-1 text-texto2 text-base pointer-events-none">
+                                    Hora
+                                </span>
+                                <button type="button" id="abrir-hora-mobile" aria-label="Abrir seletor de horário"
+                                    class="relative z-10 size-6 shrink-0 flex items-center justify-center">
+                                    <img src="svg/relogio.svg" alt="" class="size-4 object-contain pointer-events-none">
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                
-        
+                </fieldset>
+
+                <fieldset class="w-full flex flex-col gap-4">
+                    <legend class="text-texto1 text-base font-semibold font-['Inter'] mb-2">
+                        Repetir?
+                    </legend>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="repetir-mobile" value="nao" checked
+                            class="size-5 accent-laranja">
+                        <span class="text-texto1 text-base">Não repetir</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input id="repetir-semanal-mobile" type="radio" name="repetir-mobile" value="semanal"
+                            class="size-5 accent-laranja">
+                        <span class="text-texto1 text-base">Sim, selecionar intervalo</span>
+                    </label>
+
+                    <div id="opcoes-repeticao-mobile" class="hidden flex-col gap-3 pl-8">
+                        <label for="dia-mobile" class="sr-only">Dia da semana</label>
+                        <select id="dia-mobile" name="dia"
+                            class="campo w-full h-12 px-4 bg-superficie border border-borda rounded-xl text-texto1">
+                            <option value="" selected disabled>Dia da semana</option>
+                            <option value="dom">Domingo</option>
+                            <option value="seg">Segunda</option>
+                            <option value="ter">Terça</option>
+                            <option value="qua">Quarta</option>
+                            <option value="qui">Quinta</option>
+                            <option value="sex">Sexta</option>
+                            <option value="sab">Sábado</option>
+                        </select>
+
+                        <label for="horario-mobile" class="text-texto1 text-sm">Horário da repetição</label>
+                        <input id="horario-mobile" name="horario" type="time"
+                            class="campo w-full h-12 px-4 bg-superficie border border-borda rounded-xl text-texto1">
+                    </div>
+                </fieldset>
+
+                <div id="alerta-adicionado-mobile" role="status"
+                    class="hidden w-full items-center justify-between gap-3 p-3 bg-superficie rounded-xl border border-borda">
+                    <span class="text-texto1 text-sm">Alerta adicionado com sucesso.</span>
+                    <button type="button" id="bt-fechar-alerta-mobile" aria-label="Fechar mensagem"
+                        class="text-texto1 font-semibold px-2">
+                        ✕
+                    </button>
                 </div>
-                
-        
-            </main>
 
+                <button type="submit"
+                    class="fixed bottom-6 left-5 right-5 w-[calc(100%-2.5rem)] h-12 px-5 bg-laranja rounded-xl border border-borda flex justify-center items-center shadow-md">
+                    <span class="text-texto1 text-base font-semibold font-['Inter']">
+                        Adicionar
+                    </span>
+                </button>
+
+            </form>
         </div>
-        
+    </section>
+
+    
 
 
-    </div>
     <script>
         const adicionar = document.getElementById('bt-adicionar');
         const fechar = document.getElementById('bt-fechar');
@@ -228,6 +388,85 @@
         });
 
         fechar.addEventListener('click', esconder);
+
+        //MOBILE 
+        const formAlertaMobile = document.getElementById('form-alerta-mobile');
+        const dataMobile = document.getElementById('data-mobile');
+        const horaMobile = document.getElementById('hora-mobile');
+        const textoDataMobile = document.getElementById('texto-data-mobile');
+        const textoHoraMobile = document.getElementById('texto-hora-mobile');
+
+        document.getElementById('abrir-data-mobile').addEventListener('click', () => {
+            if (typeof dataMobile.showPicker === 'function') {
+                dataMobile.showPicker();
+            } else {
+                dataMobile.click();
+            }
+        });
+
+        document.getElementById('abrir-hora-mobile').addEventListener('click', () => {
+            if (typeof horaMobile.showPicker === 'function') {
+                horaMobile.showPicker();
+            } else {
+                horaMobile.click();
+            }
+        });
+
+        dataMobile.addEventListener('change', () => {
+            if (!dataMobile.value) {
+                textoDataMobile.textContent = 'Data';
+                return;
+            }
+
+            const [ano, mes, dia] = dataMobile.value.split('-');
+            textoDataMobile.textContent = `${dia}/${mes}/${ano}`;
+        });
+
+        horaMobile.addEventListener('change', () => {
+            textoHoraMobile.textContent = horaMobile.value || 'Hora';
+        });
+
+        const repetirSemanalMobile = document.getElementById('repetir-semanal-mobile');
+        const opcoesRepeticaoMobile = document.getElementById('opcoes-repeticao-mobile');
+        const diaMobile = document.getElementById('dia-mobile');
+        const horarioRepeticaoMobile = document.getElementById('horario-mobile');
+
+        document.querySelectorAll('input[name="repetir-mobile"]').forEach((radio) => {
+            radio.addEventListener('change', () => {
+                const repetir = repetirSemanalMobile.checked;
+
+                opcoesRepeticaoMobile.classList.toggle('hidden', !repetir);
+                opcoesRepeticaoMobile.classList.toggle('flex', repetir);
+
+                diaMobile.required = repetir;
+                horarioRepeticaoMobile.required = repetir;
+            });
+        });
+
+        const painelAlertaMobile = document.getElementById('alerta-adicionado-mobile');
+        const fecharAlertaMobile = document.getElementById('bt-fechar-alerta-mobile');
+        let timerAlertaMobile;
+
+        formAlertaMobile.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            painelAlertaMobile.classList.remove('hidden');
+            painelAlertaMobile.classList.add('flex');
+
+            clearTimeout(timerAlertaMobile);
+
+            timerAlertaMobile = setTimeout(() => {
+                painelAlertaMobile.classList.add('hidden');
+                painelAlertaMobile.classList.remove('flex');
+            }, 5000);
+        });
+
+        fecharAlertaMobile.addEventListener('click', () => {
+            clearTimeout(timerAlertaMobile);
+            painelAlertaMobile.classList.add('hidden');
+            painelAlertaMobile.classList.remove('flex');
+        });
+
     </script>
 
 </body>

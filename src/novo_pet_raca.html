@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo pet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        botao2: '#EEEE88',
+                        borda: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto1: '#2B1A0E',
+                        texto2: '#75634F',
+                        texto3: '#8F4B17',
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
+
+</head>
+<body>
+
+    <!-- MOBILE -->
+    <section class="block md:hidden">
+        <div id="raca" class="w-96 min-h-[844px] relative bg-Fundo rounded-3xl inline-flex flex-col justify-start items-start overflow-hidden">
+            <div class="self-stretch h-11 px-6 inline-flex justify-between items-center overflow-hidden">
+                <div class="justify-start text-gray-800 text-sm font-semibold font-['Inter']">9:41</div>
+                <div class="size- flex justify-start items-start gap-1.5 overflow-hidden">
+                    <div class="size-4 relative overflow-hidden">
+                        <div class="w-4 h-2.5 left-0 top-[3.73px] absolute bg-gray-800"></div>
+                    </div>
+                    <div class="size-4 relative overflow-hidden">
+                        <div class="w-3.5 h-2.5 left-[0.85px] top-[2.84px] absolute bg-gray-800"></div>
+                    </div>
+                    <div class="w-6 h-4 relative overflow-hidden">
+                        <div class="w-6 h-3 left-0 top-[3.40px] absolute bg-gray-800"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="self-stretch h-16 px-6 border-b border-neutral-200 inline-flex justify-start items-center gap-4 overflow-hidden">
+                <div class="size-5 relative overflow-hidden">
+                    <div class="size-3 left-[4.58px] top-[4.58px] absolute outline outline-2 outline-offset-[-0.90px] outline-Botão-1"></div>
+                </div>
+                <div class="justify-start text-Texto-2 text-lg font-semibold font-['Inter']">Novo pet</div>
+            </div>
+            <div class="self-stretch px-6 pt-5 pb-1 inline-flex justify-start items-start gap-1.5 overflow-hidden">
+                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
+                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
+                <div class="flex-1 h-[5px] bg-Borda rounded-[100px]"></div>
+                <div class="flex-1 h-[5px] bg-Borda rounded-[100px]"></div>
+                <div class="flex-1 h-[5px] bg-Borda rounded-[100px]"></div>
+            </div>
+            <div class="self-stretch p-6 flex flex-col justify-start items-start gap-6 overflow-hidden">
+                <div class="self-stretch justify-start text-Texto-1 text-2xl font-semibold font-['Inter'] leading-8">Qual a raça do <nome>?</div>
+                <div class="self-stretch flex flex-col justify-start items-start gap-2 overflow-hidden">
+                    <div class="self-stretch h-12 p-3.5 bg-Superficie rounded-xl outline outline-1 outline-offset-[-1px] outline-Borda inline-flex justify-start items-center gap-2.5 overflow-hidden">
+                        <div class="flex-1 justify-start text-Borda text-base font-normal font-['Inter']"> </div>
+                        <div class="size-5 relative overflow-hidden">
+                            <div class="size-3.5 left-[2.50px] top-[2.50px] absolute outline outline-2 outline-offset-[-0.90px] outline-Botão-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="size- inline-flex justify-start items-center gap-2.5 overflow-hidden">
+                    <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
+                    <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Não sei a raça</div>
+                </div>
+            </div>
+            <div class="w-80 left-[24px] top-[752px] absolute flex flex-col justify-start items-start gap-3 overflow-hidden">
+                <div class="self-stretch h-12 px-5 bg-teal-700 rounded-xl outline outline-1 outline-offset-[-1px] outline-teal-700 inline-flex justify-center items-center gap-2.5 overflow-hidden">
+                    <div class="justify-start text-white text-base font-semibold font-['Inter']">Avançar</div>
+                </div>
+            </div>
+            <div class="w-80 left-[24px] top-[752px] absolute flex flex-col justify-start items-start gap-3 overflow-hidden">
+                <div class="self-stretch h-12 px-5 bg-orange-400 rounded-xl outline outline-1 outline-offset-[-1px] outline-orange-400 inline-flex justify-center items-center gap-2.5 overflow-hidden">
+                    <div class="justify-start text-stone-900 text-base font-semibold font-['Inter']">Avançar</div>
+                </div>
+            </div>
+            <div class="w-28 h-1 left-[137px] top-[831px] absolute bg-gray-800 rounded-[100px]"></div>
+        </div>
+    </section>
+
+
+    <script>
+
+    </script>
+
+
+</body>
+</html>

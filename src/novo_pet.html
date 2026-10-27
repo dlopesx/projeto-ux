@@ -5,190 +5,479 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo pet</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        botao2: '#EEEE88',
+                        borda: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto1: '#2B1A0E',
+                        texto2: '#75634F',
+                        texto3: '#8F4B17',
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
+
 </head>
 <body>
 
-    <div class="flex">
+    <!-- DESKTOP -->
+    <section class="hidden md:block">
+        <div class="flex">
 
-        <!-- SIDEBAR-->
+                <!-- SIDEBAR-->
 
-        <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
-            <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
-                <ul class=" flex-1 space-y-2 font-medium">
-                    <li class="flex">
-                        <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
-                        <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
-                        </a>
-                        <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
-                    </li>
+                <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
+                    <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                        <ul class=" flex-1 space-y-2 font-medium">
+                            <li class="flex">
+                                <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
+                                <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                                </a>
+                                <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                            </li>
 
-                    <!-- PERFIL DO USUÁRIO -->
-                    <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
-                        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
-                            <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
-                            <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
-                        </a>
-                    </li>
+                            <!-- PERFIL DO USUÁRIO -->
+                            <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                                <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                                    <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+                                    <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                                </a>
+                            </li>
 
-                    <li class="relative">
-                        <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="meus_pets.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="meus_agendamentos.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
+                            <li class="relative">
+                                <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF]  group">
+                                <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                                <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="meus_pets.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                                <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
+                                <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="meus_agendamentos.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                                <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="meus_alertas.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+                                <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="meus_alertas.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                                <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tutores.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                        <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
-                        </a>
-                    </li>
-                </ul>
+                                <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tutores.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                                <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                                <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                                </a>
+                            </li>
+                        </ul>
 
-                <!-- RODAPÉ DA SIDEBAR-->
-                <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
-                    <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                        <!-- RODAPÉ DA SIDEBAR-->
+                        <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
+                            <li>
+                                <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                                
+                            </li>
+                        </ul>
                         
-                    </li>
-                </ul>
+                    </div>
+                </aside>
+
+                <!-- HEADER E MAIN -->
+
+                <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
+
+                    <header class="flex flex-row justify-between p-5 border ">
+                        <a href="index.html" class="flex gap-4">
+                            <img alt="Figura de seta laranja" src="svg/voltar.svg">
+                            <p> Voltar</p>
+                        </a>
+                        <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
+                    </header>
+
+                    
+                    <main class="flex w-full py-8 px-16 flex items-start self-stretch">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-[20rem_60rem] gap-20 w-full">
+
+                            <!-- NAVEGAÇÃO ENTRE ETAPAS -->
+                            <div class="flex flex-col gap-9 p-9">
+                                <h3 class= " flex items-start self-stretch font-semibold"> NOVO PET </h3>
+                                <div class="flex items-center gap-4">
+                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F29A4B] border border-[#E9DDCF] flex justify-center items-center">1</div>
+                                    <p> Nome e espécie </p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">2</div>
+                                    <p> Raça </p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">3</div>
+                                    <p> Nascimento </p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">4</div>
+                                    <p> Informações adicionais </p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">5</div>
+                                    <p> Foto </p>
+                                </div>
+                            </div>
+
+                            <!-- FORMULARIO -->
+                            <div class=" flex flex-col self-stretch w-full gap-12 border p-9 border-[#E9DDCF] rounded-3xl ">
+                                <label for="nome_pet">
+                                    <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Qual o nome do pet?</h1>
+                                </label>
+                                <input id="nome_pet"  name="nome_pet" class="w-130 h-10 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl">
+
+                                <div class="flex gap-4 flex-col">
+                                    <h3> Selecione a espécie: </h3>
+                                    <div class="flex gap-3">
+                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
+                                            <input type="radio" id="cachorro" class="hidden peer" type="radio" name="especie" value="cachorro" class="hidden peer">
+                                            <label for="especie"> Cachorro </label>
+                                        </div>
+                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
+                                            <input type="radio" id="gato" class="hidden peer" type="radio" name="especie" value="gato" class="hidden peer">
+                                            <label for="especie"> Gato </label>
+                                        </div>
+                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1.5 rounded-2xl">
+                                            <input type="radio" id="passaro" class="hidden peer" type="radio" name="especie" value="passaro" class="hidden peer">
+                                            <label for="especie"> Pássaro </label>
+                                        </div>
+                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
+                                            <input type="radio" id="peixe" class="hidden peer" type="radio" name="especie" value="peixe" class="hidden peer">
+                                            <label for="especie"> Peixe </label>
+                                        </div>
+                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
+                                            <input type="radio" id="roedor" class="hidden peer" type="radio" name="especie" value="roedor" class="hidden peer">
+                                            <label for="especie"> Roedor </label>
+                                        </div>
+                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
+                                            <input type="radio" id="reptil" class="hidden peer" type="radio" name="especie" value="reptil" class="hidden peer">
+                                            <label for="especie"> Réptil </label>
+                                        </div>
+                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
+                                            <input type="radio" id="outro" class="hidden peer" type="radio" name="especie" value="outro" class="hidden peer">
+                                            <label for="especie"> Outro </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col gap-4">
+                                    <h3> Sexo: </h3>
+                                    <div class="flex gap-3">
+                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
+                                            <input type="radio" id="femea" class="hidden peer" type="radio" name="especie" value="femea" class="hidden peer">
+                                            <label for="especie"> Fêmea </label>
+                                        </div>
+                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
+                                            <input type="radio" id="macho" class="hidden peer" type="radio" name="especie" value="macho" class="hidden peer">
+                                            <label for="especie"> Macho </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="flex bg-[#F29A4B] w-40 px-4 py-3 gap-4 rounded-2xl items-center justify-center hover:bg-[#E8863A] hover:shadow-md transition transition" > 
+                                    Avançar 
+                                </button>
+                            </div>
+                                
+                            </div>
                 
+                    </main>
+
+                </div>
+                
+
+
             </div>
-        </aside>
+    </section>
 
-        <!-- HEADER E MAIN -->
+    <!-- MOBILE -->
+    <section class="block md:hidden min-h-screen w-full bg-fundo">
+        <div id="nomeEspecie" class="min-h-screen w-full bg-fundo flex flex-col">
 
-        <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
-
-            <header class="flex flex-row justify-between p-5 border ">
-                <a href="index.html" class="flex gap-4">
-                    <img alt="Figura de seta laranja" src="svg/voltar.svg">
-                    <p> Voltar</p>
-                </a>
-                <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
+            <header class="h-16 shrink-0 px-5 border-b border-borda flex items-center gap-4">
+                <button type="button" aria-label="Voltar" onclick="window.location.href='index.html'" 
+                    class="size-6 shrink-0 flex items-center justify-center">
+                    <img src="svg/voltar.svg" alt="Figura de voltar laranja" class="size-4 object-contain">
+                </button>
+                <h1 class="text-texto2 text-lg font-semibold font-['Inter']">Novo pet</h1>
             </header>
 
-            
-            <main class="flex w-full py-8 px-16 flex items-start self-stretch">
-                
-                <div class="grid grid-cols-1 md:grid-cols-[20rem_60rem] gap-20 w-full">
+            <div class="px-6 pt-5 pb-1 flex gap-1.5">
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-borda rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-borda rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-borda rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-borda rounded-full"></div>
+            </div>
 
-                    <!-- NAVEGAÇÃO ENTRE ETAPAS -->
-                    <div class="flex flex-col gap-9 p-9">
-                        <h3 class= " flex items-start self-stretch font-semibold"> NOVO PET </h3>
-                        <div class="flex items-center gap-4">
-                            <div class="rounded-full w-9 h-9 shrink-0 bg-[#F29A4B] border border-[#E9DDCF] flex justify-center items-center">1</div>
-                            <p> Nome e espécie </p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">2</div>
-                            <p> Raça </p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">3</div>
-                            <p> Nascimento </p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">4</div>
-                            <p> Informações adicionais </p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">5</div>
-                            <p> Foto </p>
-                        </div>
-                    </div>
+            <form id="form-pet-mobile" class="flex-1 flex flex-col px-6 pt-5 pb-28 gap-6">
 
-                    <!-- FORMULARIO -->
-                    <div class=" flex flex-col self-stretch w-full gap-12 border p-9 border-[#E9DDCF] rounded-3xl ">
-                        <label for="nome_pet">
-                            <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Qual o nome do pet?</h1>
-                        </label>
-                        <input id="nome_pet"  name="nome_pet" class="w-130 h-10 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl">
+                <div class="text-texto1 text-2xl font-semibold font-['Inter'] leading-8">
+                    Qual o nome do pet?
+                </div>
 
-                        <div class="flex gap-4 flex-col">
-                            <h3> Selecione a espécie: </h3>
-                            <div class="flex gap-3">
-                                <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                    <input type="radio" id="cachorro" class="hidden peer" type="radio" name="especie" value="cachorro" class="hidden peer">
-                                    <label for="especie"> Cachorro </label>
-                                </div>
-                                <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                    <input type="radio" id="gato" class="hidden peer" type="radio" name="especie" value="gato" class="hidden peer">
-                                    <label for="especie"> Gato </label>
-                                </div>
-                                <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1.5 rounded-2xl">
-                                    <input type="radio" id="passaro" class="hidden peer" type="radio" name="especie" value="passaro" class="hidden peer">
-                                    <label for="especie"> Pássaro </label>
-                                </div>
-                                <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                    <input type="radio" id="peixe" class="hidden peer" type="radio" name="especie" value="peixe" class="hidden peer">
-                                    <label for="especie"> Peixe </label>
-                                </div>
-                                <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                    <input type="radio" id="roedor" class="hidden peer" type="radio" name="especie" value="roedor" class="hidden peer">
-                                    <label for="especie"> Roedor </label>
-                                </div>
-                                <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                    <input type="radio" id="reptil" class="hidden peer" type="radio" name="especie" value="reptil" class="hidden peer">
-                                    <label for="especie"> Réptil </label>
-                                </div>
-                                <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                    <input type="radio" id="outro" class="hidden peer" type="radio" name="especie" value="outro" class="hidden peer">
-                                    <label for="especie"> Outro </label>
-                                </div>
-                            </div>
-                         </div>
+                <div class="w-full">
+                    <label for="nome-pet-mobile" class="sr-only">Nome do pet</label>
+                    <input id="nome-pet-mobile" name="nome" type="text" required
+                        placeholder="Nome do pet"
+                        class="w-full h-12 px-3.5 bg-superficie border border-borda rounded-xl text-texto1 outline-none focus:ring-2 focus:ring-laranja">
+                </div>
 
-                         <div class="flex flex-col gap-4">
-                             <h3> Sexo: </h3>
-                             <div class="flex gap-3">
-                                <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                    <input type="radio" id="femea" class="hidden peer" type="radio" name="especie" value="femea" class="hidden peer">
-                                    <label for="especie"> Fêmea </label>
-                                </div>
-                                <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                    <input type="radio" id="macho" class="hidden peer" type="radio" name="especie" value="macho" class="hidden peer">
-                                    <label for="especie"> Macho </label>
-                                </div>
-                            </div>
-                        </div>
+                <fieldset class="flex flex-col gap-3">
+                    <legend class="text-texto1 text-base font-semibold font-['Inter'] mb-3">
+                        Selecione a espécie:
+                    </legend>
 
-                        <button type="submit" class="flex bg-[#F29A4B] w-40 px-4 py-3 gap-4 rounded-2xl items-center justify-center hover:bg-[#E8863A] hover:shadow-md transition transition" > 
-                            Avançar 
+                    <div id="especies-mobile" class="flex flex-wrap gap-2">
+                        <button type="button" data-especie="Cachorro"
+                            class="opcao-pet px-3 py-2.5 bg-superficie rounded-full border border-borda text-texto2 text-sm">
+                            Cachorro
                         </button>
-                     </div>
-                        
+                        <button type="button" data-especie="Gato"
+                            class="opcao-pet px-3 py-2.5 bg-superficie rounded-full border border-borda text-texto2 text-sm">
+                            Gato
+                        </button>
+                        <button type="button" data-especie="Peixe"
+                            class="opcao-pet px-3 py-2.5 bg-superficie rounded-full border border-borda text-texto2 text-sm">
+                            Peixe
+                        </button>
+                        <button type="button" data-especie="Pássaro"
+                            class="opcao-pet px-3 py-2.5 bg-superficie rounded-full border border-borda text-texto2 text-sm">
+                            Pássaro
+                        </button>
+                        <button type="button" data-especie="Roedor"
+                            class="opcao-pet px-3 py-2.5 bg-superficie rounded-full border border-borda text-texto2 text-sm">
+                            Roedor
+                        </button>
+                        <button type="button" data-especie="Réptil"
+                            class="opcao-pet px-3 py-2.5 bg-superficie rounded-full border border-borda text-texto2 text-sm">
+                            Réptil
+                        </button>
+                        <button type="button" data-especie="Outro"
+                            class="opcao-pet px-3 py-2.5 bg-superficie rounded-full border border-borda text-texto2 text-sm">
+                            Mais opções
+                        </button>
                     </div>
-        
-            </main>
+
+                    <input type="hidden" id="especie-pet-mobile" name="especie" required>
+                </fieldset>
+
+                <fieldset class="flex flex-col gap-3">
+                    <legend class="text-texto1 text-base font-semibold font-['Inter']">
+                        Sexo:
+                    </legend>
+
+                    <div id="sexos-mobile" class="flex flex-wrap gap-2">
+                        <button type="button" data-sexo="Fêmea"
+                            class="opcao-pet px-4 py-2.5 bg-superficie rounded-full border border-borda text-texto2 text-sm">
+                            Fêmea
+                        </button>
+                        <button type="button" data-sexo="Macho"
+                            class="opcao-pet px-4 py-2.5 bg-superficie rounded-full border border-borda text-texto2 text-sm">
+                            Macho
+                        </button>
+                    </div>
+
+                    <input type="hidden" id="sexo-pet-mobile" name="sexo" required>
+                </fieldset>
+
+                <div id="erro-pet-mobile" class="hidden text-sm text-red-700" role="alert">
+                    Selecione a espécie e o sexo do pet.
+                </div>
+
+                <div id="pet-adicionado-mobile"
+                    class="hidden items-center justify-between gap-3 rounded-xl bg-superficie border border-borda p-3"
+                    role="status">
+                    <span class="text-texto1 text-sm">Dados do pet preenchidos!</span>
+                    <button type="button" id="fechar-pet-mobile"
+                        aria-label="Fechar mensagem" class="px-2 font-semibold text-texto1">✕</button>
+                </div>
+
+            </form>
+
+            <footer class="fixed bottom-0 left-0 right-0 z-20 bg-fundo border-t border-borda px-6 pt-3 pb-6">
+                <button type="submit" form="form-pet-mobile"
+                    class="w-full h-12 px-5 bg-laranja rounded-xl border border-laranja flex justify-center items-center hover:bg-[#E8863A] transition">
+                    <span class="text-texto1 text-base font-semibold font-['Inter']">Avançar</span>
+                </button>
+            </footer>
 
         </div>
+
         
 
+        
 
-    </div>
+        <div id="informacoes" class="w-96 min-h-[844px] relative bg-Fundo rounded-3xl inline-flex flex-col justify-start items-start overflow-hidden">
+            <div class="self-stretch h-11 px-6 inline-flex justify-between items-center overflow-hidden">
+                <div class="justify-start text-gray-800 text-sm font-semibold font-['Inter']">9:41</div>
+                <div class="size- flex justify-start items-start gap-1.5 overflow-hidden">
+                    <div class="size-4 relative overflow-hidden">
+                        <div class="w-4 h-2.5 left-0 top-[3.73px] absolute bg-gray-800"></div>
+                    </div>
+                    <div class="size-4 relative overflow-hidden">
+                        <div class="w-3.5 h-2.5 left-[0.85px] top-[2.84px] absolute bg-gray-800"></div>
+                    </div>
+                    <div class="w-6 h-4 relative overflow-hidden">
+                        <div class="w-6 h-3 left-0 top-[3.40px] absolute bg-gray-800"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="self-stretch h-16 px-6 border-b border-neutral-200 inline-flex justify-start items-center gap-4 overflow-hidden">
+                <div class="size-5 relative overflow-hidden">
+                    <div class="size-3 left-[4.58px] top-[4.58px] absolute outline outline-2 outline-offset-[-0.90px] outline-Botão-1"></div>
+                </div>
+                <div class="justify-start text-Texto-2 text-lg font-semibold font-['Inter']">Novo pet</div>
+            </div>
+            <div class="self-stretch px-6 pt-5 pb-1 inline-flex justify-start items-start gap-1.5 overflow-hidden">
+                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
+                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
+                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
+                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
+                <div class="flex-1 h-[5px] bg-Borda rounded-[100px]"></div>
+            </div>
+            <div class="self-stretch p-6 flex flex-col justify-start items-start gap-6 overflow-hidden">
+                <div class="self-stretch justify-start text-Texto-1 text-2xl font-semibold font-['Inter'] leading-8">Quase lá!</div>
+                <div class="self-stretch justify-start text-Texto-3 text-base font-normal font-['Inter'] leading-6">Preencha informações adicionais sobre o(a) <nome>.</div>
+                <div class="self-stretch flex flex-col justify-start items-start gap-2 overflow-hidden">
+                    <div class="justify-start text-Texto-3 text-sm font-medium font-['Inter']">Cor</div>
+                    <div class="self-stretch h-12 p-3.5 bg-Superficie rounded-xl outline outline-1 outline-offset-[-1px] outline-Borda inline-flex justify-start items-center gap-2.5 overflow-hidden">
+                        <div class="flex-1 justify-start text-Borda text-base font-normal font-['Inter']"> </div>
+                    </div>
+                </div>
+                <div class="self-stretch flex flex-col justify-start items-start gap-2 overflow-hidden">
+                    <div class="justify-start text-Texto-3 text-sm font-medium font-['Inter']">Peso (kg)</div>
+                    <div class="self-stretch h-12 p-3.5 bg-Superficie rounded-xl outline outline-1 outline-offset-[-1px] outline-Borda inline-flex justify-start items-center gap-2.5 overflow-hidden">
+                        <div class="flex-1 justify-start text-Borda text-base font-normal font-['Inter']"> </div>
+                    </div>
+                </div>
+                <div class="self-stretch flex flex-col justify-start items-start gap-3 overflow-hidden">
+                    <div class="self-stretch justify-start text-Texto-3 text-base font-semibold font-['Inter'] leading-6">O pet é adotado?</div>
+                    <div class="size- inline-flex justify-start items-start gap-8 overflow-hidden">
+                        <div class="size- flex justify-start items-center gap-2.5 overflow-hidden">
+                            <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
+                            <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Sim</div>
+                        </div>
+                        <div class="size- flex justify-start items-center gap-2.5 overflow-hidden">
+                            <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
+                            <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Não</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="self-stretch flex flex-col justify-start items-start gap-3 overflow-hidden">
+                    <div class="self-stretch justify-start text-Texto-3 text-base font-semibold font-['Inter'] leading-6">O pet é castrado?</div>
+                    <div class="size- inline-flex justify-start items-start gap-8 overflow-hidden">
+                        <div class="size- flex justify-start items-center gap-2.5 overflow-hidden">
+                            <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
+                            <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Sim</div>
+                        </div>
+                        <div class="size- flex justify-start items-center gap-2.5 overflow-hidden">
+                            <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
+                            <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Não</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-80 left-[24px] top-[752px] absolute flex flex-col justify-start items-start gap-3 overflow-hidden">
+                <div class="self-stretch h-12 px-5 bg-teal-700 rounded-xl outline outline-1 outline-offset-[-1px] outline-teal-700 inline-flex justify-center items-center gap-2.5 overflow-hidden">
+                    <div class="justify-start text-white text-base font-semibold font-['Inter']">Avançar</div>
+                </div>
+            </div>
+            <div class="w-80 left-[24px] top-[752px] absolute flex flex-col justify-start items-start gap-3 overflow-hidden">
+                <div class="self-stretch h-12 px-5 bg-Botão-1 rounded-xl outline outline-1 outline-offset-[-1px] outline-Botão-1 inline-flex justify-center items-center gap-2.5 overflow-hidden">
+                    <div class="justify-start text-Texto-1 text-base font-semibold font-['Inter']">Avançar</div>
+                </div>
+            </div>
+            <div class="w-28 h-1 left-[137px] top-[831px] absolute bg-gray-800 rounded-[100px]"></div>
+        </div>
+    </section>
+
+    <script>
+
+        const formPetMobile = document.getElementById('form-pet-mobile');
+        const especiePetMobile = document.getElementById('especie-pet-mobile');
+        const sexoPetMobile = document.getElementById('sexo-pet-mobile');
+        const erroPetMobile = document.getElementById('erro-pet-mobile');
+        const painelPetMobile = document.getElementById('pet-adicionado-mobile');
+        const fecharPetMobile = document.getElementById('fechar-pet-mobile');
+
+        function selecionarOpcao(grupo, atributo, campo) {
+            grupo.querySelectorAll('button').forEach((botao) => {
+                botao.addEventListener('click', () => {
+                    grupo.querySelectorAll('button').forEach((opcao) => {
+                        opcao.classList.remove('bg-laranja', 'border-laranja', 'text-texto1');
+                        opcao.classList.add('bg-superficie', 'border-borda', 'text-texto2');
+                        opcao.setAttribute('aria-pressed', 'false');
+                    });
+
+                    botao.classList.remove('bg-superficie', 'border-borda', 'text-texto2');
+                    botao.classList.add('bg-laranja', 'border-laranja', 'text-texto1');
+                    botao.setAttribute('aria-pressed', 'true');
+
+                    campo.value = botao.dataset[atributo];
+                    erroPetMobile.classList.add('hidden');
+                });
+            });
+        }
+
+        selecionarOpcao(
+            document.getElementById('especies-mobile'),
+            'especie',
+            especiePetMobile
+        );
+
+        selecionarOpcao(
+            document.getElementById('sexos-mobile'),
+            'sexo',
+            sexoPetMobile
+        );
+
+        formPetMobile.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (!especiePetMobile.value || !sexoPetMobile.value) {
+                erroPetMobile.classList.remove('hidden');
+                painelPetMobile.classList.add('hidden');
+                painelPetMobile.classList.remove('flex');
+                return;
+            }
+
+            erroPetMobile.classList.add('hidden');
+            painelPetMobile.classList.remove('hidden');
+            painelPetMobile.classList.add('flex');
+        });
+
+        fecharPetMobile.addEventListener('click', () => {
+            painelPetMobile.classList.add('hidden');
+            painelPetMobile.classList.remove('flex');
+        });
+
+    </script>
 
 
 </body>
