@@ -32,151 +32,127 @@
 
     <!-- MOBILE -->
     <section class="block md:hidden">
-        <div id="informacoes" class="w-96 min-h-[844px] relative bg-Fundo rounded-3xl inline-flex flex-col justify-start items-start overflow-hidden">
-            <div class="self-stretch h-11 px-6 inline-flex justify-between items-center overflow-hidden">
-                <div class="justify-start text-gray-800 text-sm font-semibold font-['Inter']">9:41</div>
-                <div class="size- flex justify-start items-start gap-1.5 overflow-hidden">
-                    <div class="size-4 relative overflow-hidden">
-                        <div class="w-4 h-2.5 left-0 top-[3.73px] absolute bg-gray-800"></div>
-                    </div>
-                    <div class="size-4 relative overflow-hidden">
-                        <div class="w-3.5 h-2.5 left-[0.85px] top-[2.84px] absolute bg-gray-800"></div>
-                    </div>
-                    <div class="w-6 h-4 relative overflow-hidden">
-                        <div class="w-6 h-3 left-0 top-[3.40px] absolute bg-gray-800"></div>
-                    </div>
-                </div>
+        <div id="informacoes" class="min-h-screen w-full relative bg-fundo flex flex-col overflow-hidden">
+
+            <header class="h-16 shrink-0 px-6 border-b border-borda flex items-center gap-4">
+                <button type="button" onclick="history.back()" aria-label="Voltar" class="size-5 flex items-center justify-center">
+                    <img src="svg/voltar.svg" alt="Figura de voltar laranja" class="w-5 h-5">
+                </button>
+                <span class="text-texto2 text-lg font-semibold">Novo pet</span>
+            </header>
+
+            <div class="px-6 pt-5 pb-1 flex gap-1.5">
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-borda rounded-full"></div>
             </div>
-            <div class="self-stretch h-16 px-6 border-b border-neutral-200 inline-flex justify-start items-center gap-4 overflow-hidden">
-                <div class="size-5 relative overflow-hidden">
-                    <div class="size-3 left-[4.58px] top-[4.58px] absolute outline outline-2 outline-offset-[-0.90px] outline-Botão-1"></div>
+
+            <form id="form-informacoes" class="flex-1 p-6 flex flex-col gap-6 pb-28">
+
+                <div class="flex flex-col gap-2">
+                    <h1 class="text-texto1 text-2xl font-semibold leading-8">Quase lá!</h1>
+                    <p class="text-texto3 text-base leading-6">
+                        Preencha informações adicionais sobre o(a)
+                        <span id="nome-pet">seu pet</span>.
+                    </p>
                 </div>
-                <div class="justify-start text-Texto-2 text-lg font-semibold font-['Inter']">Novo pet</div>
-            </div>
-            <div class="self-stretch px-6 pt-5 pb-1 inline-flex justify-start items-start gap-1.5 overflow-hidden">
-                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
-                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
-                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
-                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
-                <div class="flex-1 h-[5px] bg-Borda rounded-[100px]"></div>
-            </div>
-            <div class="self-stretch p-6 flex flex-col justify-start items-start gap-6 overflow-hidden">
-                <div class="self-stretch justify-start text-Texto-1 text-2xl font-semibold font-['Inter'] leading-8">Quase lá!</div>
-                <div class="self-stretch justify-start text-Texto-3 text-base font-normal font-['Inter'] leading-6">Preencha informações adicionais sobre o(a) <nome>.</div>
-                <div class="self-stretch flex flex-col justify-start items-start gap-2 overflow-hidden">
-                    <div class="justify-start text-Texto-3 text-sm font-medium font-['Inter']">Cor</div>
-                    <div class="self-stretch h-12 p-3.5 bg-Superficie rounded-xl outline outline-1 outline-offset-[-1px] outline-Borda inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                        <div class="flex-1 justify-start text-Borda text-base font-normal font-['Inter']"> </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="cor-pet" class="text-texto3 text-sm font-medium">Cor</label>
+                    <input
+                        type="text"
+                        id="cor-pet"
+                        name="cor"
+                        placeholder="Ex.: caramelo, preto e branco"
+                        class="w-full h-12 px-3.5 bg-superficie rounded-xl border border-borda text-texto1 placeholder:text-borda outline-none focus:border-laranja"
+                    >
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="peso-pet" class="text-texto3 text-sm font-medium">Peso (kg)</label>
+                    <input
+                        type="number"
+                        id="peso-pet"
+                        name="peso"
+                        placeholder="Ex.: 5,5"
+                        min="0"
+                        step="0.1"
+                        class="w-full h-12 px-3.5 bg-superficie rounded-xl border border-borda text-texto1 placeholder:text-borda outline-none focus:border-laranja"
+                    >
+                </div>
+
+                <fieldset class="flex flex-col gap-3">
+                    <legend class="text-texto3 text-base font-semibold mb-3">O pet é adotado?</legend>
+                    <div class="flex items-center gap-8">
+                        <label class="flex items-center gap-2.5 text-texto2 cursor-pointer">
+                            <input type="radio" name="adotado" value="sim" class="size-5 accent-laranja">
+                            Sim
+                        </label>
+                        <label class="flex items-center gap-2.5 text-texto2 cursor-pointer">
+                            <input type="radio" name="adotado" value="nao" class="size-5 accent-laranja">
+                            Não
+                        </label>
                     </div>
-                </div>
-                <div class="self-stretch flex flex-col justify-start items-start gap-2 overflow-hidden">
-                    <div class="justify-start text-Texto-3 text-sm font-medium font-['Inter']">Peso (kg)</div>
-                    <div class="self-stretch h-12 p-3.5 bg-Superficie rounded-xl outline outline-1 outline-offset-[-1px] outline-Borda inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                        <div class="flex-1 justify-start text-Borda text-base font-normal font-['Inter']"> </div>
+                </fieldset>
+
+                <fieldset class="flex flex-col gap-3">
+                    <legend class="text-texto3 text-base font-semibold mb-3">O pet é castrado?</legend>
+                    <div class="flex items-center gap-8">
+                        <label class="flex items-center gap-2.5 text-texto2 cursor-pointer">
+                            <input type="radio" name="castrado" value="sim" class="size-5 accent-laranja">
+                            Sim
+                        </label>
+                        <label class="flex items-center gap-2.5 text-texto2 cursor-pointer">
+                            <input type="radio" name="castrado" value="nao" class="size-5 accent-laranja">
+                            Não
+                        </label>
                     </div>
-                </div>
-                <div class="self-stretch flex flex-col justify-start items-start gap-3 overflow-hidden">
-                    <div class="self-stretch justify-start text-Texto-3 text-base font-semibold font-['Inter'] leading-6">O pet é adotado?</div>
-                    <div class="size- inline-flex justify-start items-start gap-8 overflow-hidden">
-                        <div class="size- flex justify-start items-center gap-2.5 overflow-hidden">
-                            <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
-                            <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Sim</div>
-                        </div>
-                        <div class="size- flex justify-start items-center gap-2.5 overflow-hidden">
-                            <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
-                            <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Não</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="self-stretch flex flex-col justify-start items-start gap-3 overflow-hidden">
-                    <div class="self-stretch justify-start text-Texto-3 text-base font-semibold font-['Inter'] leading-6">O pet é castrado?</div>
-                    <div class="size- inline-flex justify-start items-start gap-8 overflow-hidden">
-                        <div class="size- flex justify-start items-center gap-2.5 overflow-hidden">
-                            <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
-                            <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Sim</div>
-                        </div>
-                        <div class="size- flex justify-start items-center gap-2.5 overflow-hidden">
-                            <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
-                            <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Não</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-80 left-[24px] top-[752px] absolute flex flex-col justify-start items-start gap-3 overflow-hidden">
-                <div class="self-stretch h-12 px-5 bg-teal-700 rounded-xl outline outline-1 outline-offset-[-1px] outline-teal-700 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                    <div class="justify-start text-white text-base font-semibold font-['Inter']">Avançar</div>
-                </div>
-            </div>
-            <div class="w-80 left-[24px] top-[752px] absolute flex flex-col justify-start items-start gap-3 overflow-hidden">
-                <div class="self-stretch h-12 px-5 bg-Botão-1 rounded-xl outline outline-1 outline-offset-[-1px] outline-Botão-1 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                    <div class="justify-start text-Texto-1 text-base font-semibold font-['Inter']">Avançar</div>
-                </div>
-            </div>
-            <div class="w-28 h-1 left-[137px] top-[831px] absolute bg-gray-800 rounded-[100px]"></div>
+                </fieldset>
+
+            </form>
+
+            <footer class="fixed bottom-0 left-0 right-0 p-6 pt-3 bg-fundo">
+                <button
+                    type="submit"
+                    form="form-informacoes"
+                    class="w-full h-12 px-5 bg-laranja rounded-xl flex justify-center items-center text-texto1 text-base font-semibold"
+                >
+                    Avançar
+                </button>
+            </footer>
+
         </div>
     </section>
 
 
-<script>
+    <script>
+        const nomePet = sessionStorage.getItem('nomePet');
 
-        const formPetMobile = document.getElementById('form-pet-mobile');
-        const especiePetMobile = document.getElementById('especie-pet-mobile');
-        const sexoPetMobile = document.getElementById('sexo-pet-mobile');
-        const erroPetMobile = document.getElementById('erro-pet-mobile');
-        const painelPetMobile = document.getElementById('pet-adicionado-mobile');
-        const fecharPetMobile = document.getElementById('fechar-pet-mobile');
-
-        function selecionarOpcao(grupo, atributo, campo) {
-            grupo.querySelectorAll('button').forEach((botao) => {
-                botao.addEventListener('click', () => {
-                    grupo.querySelectorAll('button').forEach((opcao) => {
-                        opcao.classList.remove('bg-laranja', 'border-laranja', 'text-texto1');
-                        opcao.classList.add('bg-superficie', 'border-borda', 'text-texto2');
-                        opcao.setAttribute('aria-pressed', 'false');
-                    });
-
-                    botao.classList.remove('bg-superficie', 'border-borda', 'text-texto2');
-                    botao.classList.add('bg-laranja', 'border-laranja', 'text-texto1');
-                    botao.setAttribute('aria-pressed', 'true');
-
-                    campo.value = botao.dataset[atributo];
-                    erroPetMobile.classList.add('hidden');
-                });
-            });
+        if (nomePet) {
+            document.getElementById('nome-pet').textContent = nomePet;
         }
 
-        selecionarOpcao(
-            document.getElementById('especies-mobile'),
-            'especie',
-            especiePetMobile
-        );
-
-        selecionarOpcao(
-            document.getElementById('sexos-mobile'),
-            'sexo',
-            sexoPetMobile
-        );
-
-        formPetMobile.addEventListener('submit', (event) => {
+        document.getElementById('form-informacoes').addEventListener('submit', function (event) {
             event.preventDefault();
 
-            if (!especiePetMobile.value || !sexoPetMobile.value) {
-                erroPetMobile.classList.remove('hidden');
-                painelPetMobile.classList.add('hidden');
-                painelPetMobile.classList.remove('flex');
-                return;
-            }
+            const cor = document.getElementById('cor-pet').value.trim();
+            const peso = document.getElementById('peso-pet').value;
+            const adotado = document.querySelector('input[name="adotado"]:checked');
+            const castrado = document.querySelector('input[name="castrado"]:checked');
 
-            erroPetMobile.classList.add('hidden');
-            painelPetMobile.classList.remove('hidden');
-            painelPetMobile.classList.add('flex');
+            const informacoesPet = {
+                cor: cor,
+                peso: peso,
+                adotado: adotado ? adotado.value : '',
+                castrado: castrado ? castrado.value : ''
+            };
+
+            sessionStorage.setItem('informacoesPet', JSON.stringify(informacoesPet));
+
+            window.location.href = 'novo_pet_foto.html';
         });
-
-        fecharPetMobile.addEventListener('click', () => {
-            painelPetMobile.classList.add('hidden');
-            painelPetMobile.classList.remove('flex');
-        });
-
     </script>
 
 

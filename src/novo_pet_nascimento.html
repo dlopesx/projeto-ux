@@ -27,130 +27,148 @@
         }
     </script>
 
+    <style>
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            opacity: 0;
+            display: none;
+        }
+    </style>
+
 </head>
 <body>
 
     <!-- MOBILE -->
-    <section class="block md:hidden">
-        <div id="nascimento" class="w-96 min-h-[844px] relative bg-Fundo rounded-3xl inline-flex flex-col justify-start items-start overflow-hidden">
-            <div class="self-stretch h-11 px-6 inline-flex justify-between items-center overflow-hidden">
-                <div class="justify-start text-gray-800 text-sm font-semibold font-['Inter']">9:41</div>
-                <div class="size- flex justify-start items-start gap-1.5 overflow-hidden">
-                    <div class="size-4 relative overflow-hidden">
-                        <div class="w-4 h-2.5 left-0 top-[3.73px] absolute bg-gray-800"></div>
+    <section class="block md:hidden min-h-screen w-full bg-fundo">
+        <div class="min-h-screen w-full bg-fundo flex flex-col">
+
+            <header class="h-16 shrink-0 px-6 border-b border-borda flex items-center gap-4">
+                <button type="button" aria-label="Voltar" onclick="window.location.href = 'novo_pet_raca.html'"
+                    class="size-5 shrink-0 flex items-center justify-center">
+                    <img src="svg/voltar.svg" alt="Figura de voltar laranja" class="size-4 object-contain">
+                </button>
+                <h1 class="text-texto2 text-lg font-semibold font-['Inter']">Novo pet</h1>
+            </header>
+
+            <div class="px-6 pt-5 pb-1 flex gap-1.5">
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-borda rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-borda rounded-full"></div>
+            </div>
+
+            <form id="form-nascimento-mobile" class="flex-1 flex flex-col px-6 pt-5 pb-28 gap-6">
+
+                <h2 id="titulo-nascimento-mobile"
+                    class="text-texto1 text-2xl font-semibold font-['Inter'] leading-8">
+                    Qual a data de nascimento do seu pet?
+                </h2>
+
+                <div class="flex flex-col gap-2">
+                    <label for="data-nascimento-mobile"
+                        class="text-texto2 text-base font-normal font-['Inter']">
+                        Aproximada
+                    </label>
+
+                    <div class="relative w-full h-12 px-3.5 bg-superficie border border-borda rounded-xl flex items-center gap-2.5 focus-within:ring-2 focus-within:ring-laranja">
+                        <input id="data-nascimento-mobile" name="data-nascimento" type="date"
+                            class="min-w-0 flex-1 w-full h-full bg-transparent text-texto1 outline-none">
+
+                        <button type="button" id="abrir-calendario-nascimento-mobile"
+                            aria-label="Abrir calendário"
+                            class="size-5 shrink-0 flex items-center justify-center cursor-pointer">
+                            <img src="svg/calendario.svg" alt="Figura de um calendário laranja"
+                                class="size-4 object-contain pointer-events-none">
+                        </button>
                     </div>
-                    <div class="size-4 relative overflow-hidden">
-                        <div class="w-3.5 h-2.5 left-[0.85px] top-[2.84px] absolute bg-gray-800"></div>
-                    </div>
-                    <div class="w-6 h-4 relative overflow-hidden">
-                        <div class="w-6 h-3 left-0 top-[3.40px] absolute bg-gray-800"></div>
-                    </div>
                 </div>
-            </div>
-            <div class="self-stretch h-16 px-6 border-b border-neutral-200 inline-flex justify-start items-center gap-4 overflow-hidden">
-                <div class="size-5 relative overflow-hidden">
-                    <div class="size-3 left-[4.58px] top-[4.58px] absolute outline outline-2 outline-offset-[-0.90px] outline-Botão-1"></div>
-                </div>
-                <div class="justify-start text-Texto-2 text-lg font-semibold font-['Inter']">Novo pet</div>
-            </div>
-            <div class="self-stretch px-6 pt-5 pb-1 inline-flex justify-start items-start gap-1.5 overflow-hidden">
-                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
-                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
-                <div class="flex-1 h-[5px] bg-Texto-2 rounded-[100px]"></div>
-                <div class="flex-1 h-[5px] bg-Borda rounded-[100px]"></div>
-                <div class="flex-1 h-[5px] bg-Borda rounded-[100px]"></div>
-            </div>
-            <div class="self-stretch p-6 flex flex-col justify-start items-start gap-6 overflow-hidden">
-                <div class="self-stretch justify-start text-Texto-1 text-2xl font-semibold font-['Inter'] leading-8">Qual a data de nascimento do <nome>?</div>
-                <div class="self-stretch justify-start text-Texto-3 text-base font-normal font-['Inter'] leading-6">Aproximada</div>
-                <div class="self-stretch flex flex-col justify-start items-start gap-2 overflow-hidden">
-                    <div class="self-stretch h-12 p-3.5 bg-Superficie rounded-xl outline outline-1 outline-offset-[-1px] outline-Borda inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                        <div class="flex-1 justify-start text-Texto-2 text-base font-normal font-['Inter']">12/11/2025</div>
-                        <div class="size-5 relative overflow-hidden">
-                            <div class="w-3.5 h-4 left-[2.50px] top-[1.67px] absolute outline outline-2 outline-offset-[-0.90px] outline-Botão-1"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="size- inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                    <div class="size-5 bg-white rounded-[5px] border-[1.50px] border-Borda"></div>
-                    <div class="justify-start text-Texto-2 text-base font-normal font-['Inter']">Não sei a data</div>
-                </div>
-            </div>
-            <div class="w-80 left-[24px] top-[752px] absolute flex flex-col justify-start items-start gap-3 overflow-hidden">
-                <div class="self-stretch h-12 px-5 bg-teal-700 rounded-xl outline outline-1 outline-offset-[-1px] outline-teal-700 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                    <div class="justify-start text-white text-base font-semibold font-['Inter']">Avançar</div>
-                </div>
-            </div>
-            <div class="w-80 left-[24px] top-[752px] absolute flex flex-col justify-start items-start gap-3 overflow-hidden">
-                <div class="self-stretch h-12 px-5 bg-orange-400 rounded-xl outline outline-1 outline-offset-[-1px] outline-orange-400 inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                    <div class="justify-start text-stone-900 text-base font-semibold font-['Inter']">Avançar</div>
-                </div>
-            </div>
-            <div class="w-28 h-1 left-[137px] top-[831px] absolute bg-gray-800 rounded-[100px]"></div>
+
+                <label for="nao-sei-data-mobile"
+                    class="flex items-center gap-3 cursor-pointer text-texto2 text-base font-normal font-['Inter']">
+                    <input id="nao-sei-data-mobile" name="nao-sei-data" type="checkbox"
+                        class="size-5 shrink-0 accent-laranja rounded">
+                    <span>Não sei a data</span>
+                </label>
+
+                <p id="erro-nascimento-mobile" class="hidden text-sm text-red-700" role="alert">
+                    Informe a data de nascimento ou selecione "Não sei a data".
+                </p>
+
+            </form>
+
+            <footer class="fixed bottom-0 left-0 right-0 z-20 bg-fundo border-t border-borda px-6 pt-3 pb-6">
+                <button type="submit" form="form-nascimento-mobile"
+                    class="w-full h-12 px-5 bg-laranja rounded-xl border border-laranja flex justify-center items-center hover:bg-[#E8863A] transition">
+                    <span class="text-texto1 text-base font-semibold font-['Inter']">Avançar</span>
+                </button>
+            </footer>
+
         </div>
     </section>
 
+    <script>
+        const formNascimentoMobile = document.getElementById('form-nascimento-mobile');
+        const dataNascimentoMobile = document.getElementById('data-nascimento-mobile');
+        const naoSeiDataMobile = document.getElementById('nao-sei-data-mobile');
+        const abrirCalendarioNascimento = document.getElementById('abrir-calendario-nascimento-mobile');
+        const erroNascimentoMobile = document.getElementById('erro-nascimento-mobile');
+        const tituloNascimentoMobile = document.getElementById('titulo-nascimento-mobile');
 
-<script>
+        const nomePetNascimento = sessionStorage.getItem('nomePet');
 
-        const formPetMobile = document.getElementById('form-pet-mobile');
-        const especiePetMobile = document.getElementById('especie-pet-mobile');
-        const sexoPetMobile = document.getElementById('sexo-pet-mobile');
-        const erroPetMobile = document.getElementById('erro-pet-mobile');
-        const painelPetMobile = document.getElementById('pet-adicionado-mobile');
-        const fecharPetMobile = document.getElementById('fechar-pet-mobile');
-
-        function selecionarOpcao(grupo, atributo, campo) {
-            grupo.querySelectorAll('button').forEach((botao) => {
-                botao.addEventListener('click', () => {
-                    grupo.querySelectorAll('button').forEach((opcao) => {
-                        opcao.classList.remove('bg-laranja', 'border-laranja', 'text-texto1');
-                        opcao.classList.add('bg-superficie', 'border-borda', 'text-texto2');
-                        opcao.setAttribute('aria-pressed', 'false');
-                    });
-
-                    botao.classList.remove('bg-superficie', 'border-borda', 'text-texto2');
-                    botao.classList.add('bg-laranja', 'border-laranja', 'text-texto1');
-                    botao.setAttribute('aria-pressed', 'true');
-
-                    campo.value = botao.dataset[atributo];
-                    erroPetMobile.classList.add('hidden');
-                });
-            });
+        if (nomePetNascimento) {
+            tituloNascimentoMobile.textContent = `Qual a data de nascimento de ${nomePetNascimento}?`;
         }
 
-        selecionarOpcao(
-            document.getElementById('especies-mobile'),
-            'especie',
-            especiePetMobile
-        );
+        abrirCalendarioNascimento.addEventListener('click', () => {
+            if (dataNascimentoMobile.disabled) return;
 
-        selecionarOpcao(
-            document.getElementById('sexos-mobile'),
-            'sexo',
-            sexoPetMobile
-        );
+            if (typeof dataNascimentoMobile.showPicker === 'function') {
+                dataNascimentoMobile.showPicker();
+            } else {
+                dataNascimentoMobile.focus();
+                dataNascimentoMobile.click();
+            }
+        });
 
-        formPetMobile.addEventListener('submit', (event) => {
+        naoSeiDataMobile.addEventListener('change', () => {
+            const naoSabe = naoSeiDataMobile.checked;
+
+            dataNascimentoMobile.disabled = naoSabe;
+            dataNascimentoMobile.required = !naoSabe;
+
+            if (naoSabe) {
+                dataNascimentoMobile.value = '';
+                erroNascimentoMobile.classList.add('hidden');
+            }
+        });
+
+        dataNascimentoMobile.addEventListener('change', () => {
+            erroNascimentoMobile.classList.add('hidden');
+
+            if (dataNascimentoMobile.value) {
+                naoSeiDataMobile.checked = false;
+                dataNascimentoMobile.disabled = false;
+            }
+        });
+
+        formNascimentoMobile.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            if (!especiePetMobile.value || !sexoPetMobile.value) {
-                erroPetMobile.classList.remove('hidden');
-                painelPetMobile.classList.add('hidden');
-                painelPetMobile.classList.remove('flex');
+            const dataNascimento = dataNascimentoMobile.value;
+            const naoSabe = naoSeiDataMobile.checked;
+
+            if (!dataNascimento && !naoSabe) {
+                erroNascimentoMobile.classList.remove('hidden');
                 return;
             }
 
-            erroPetMobile.classList.add('hidden');
-            painelPetMobile.classList.remove('hidden');
-            painelPetMobile.classList.add('flex');
-        });
+            erroNascimentoMobile.classList.add('hidden');
 
-        fecharPetMobile.addEventListener('click', () => {
-            painelPetMobile.classList.add('hidden');
-            painelPetMobile.classList.remove('flex');
-        });
+            sessionStorage.setItem('dataNascimentoPet', naoSabe ? 'Não sei' : dataNascimento);
 
+            window.location.href = 'novo_pet_informacoes.html';
+        });
     </script>
 
 

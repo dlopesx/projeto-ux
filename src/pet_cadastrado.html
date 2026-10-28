@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo pet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        botao2: '#EEEE88',
+                        borda: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto1: '#2B1A0E',
+                        texto2: '#75634F',
+                        texto3: '#8F4B17',
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
+
+</head>
+<body>
+
+    <!-- MOBILE -->
+    <section class="block md:hidden">
+        <div class="min-h-screen w-full bg-fundo flex flex-col overflow-hidden">
+
+            <main class="flex-1 px-8 pt-40 flex flex-col gap-6">
+                <h1 class="text-texto1 text-2xl font-semibold leading-8">
+                    Pet cadastrado!
+                </h1>
+
+                <p class="text-texto3 text-2xl font-normal leading-9">
+                    Veja o perfil de <span id="nome-pet-cadastrado">seu pet</span> ♡
+                </p>
+
+                <div class="pt-20">
+                    <button
+                        type="button"
+                        id="btn-ir-para-pet"
+                        class="w-full h-12 px-5 bg-laranja rounded-xl flex justify-center items-center text-stone-900 text-base font-semibold"
+                    >
+                        Ir para o pet
+                    </button>
+                </div>
+            </main>
+
+        </div>
+    </section>
+
+
+    <script>
+        const nomePet = sessionStorage.getItem('nomePet');
+
+        if (nomePet) {
+            document.getElementById('nome-pet-cadastrado').textContent = nomePet;
+        }
+
+        document.getElementById('btn-ir-para-pet').addEventListener('click', function () {
+            window.location.href = 'fiu.html';
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo pet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        botao2: '#EEEE88',
+                        borda: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto1: '#2B1A0E',
+                        texto2: '#75634F',
+                        texto3: '#8F4B17',
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
+
+</head>
+<body>
+
+    <!-- MOBILE -->
+    <section class="block md:hidden">
+        <div class="min-h-screen w-full relative bg-fundo flex flex-col overflow-hidden">
+
+            <header class="h-16 shrink-0 px-6 border-b border-borda flex items-center gap-4">
+                <button type="button" onclick="window.location.href = 'novo_pet_informacoes.html'" aria-label="Voltar" class="size-5 flex items-center justify-center">
+                    <img src="svg/voltar.svg" alt="Figura de voltar" class="size-3">
+                </button>
+                <span class="text-texto2 text-lg font-semibold">Novo pet</span>
+            </header>
+
+            <div class="px-6 pt-5 pb-1 flex gap-1.5">
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+                <div class="flex-1 h-[5px] bg-texto2 rounded-full"></div>
+            </div>
+
+            <div class="flex-1 p-6 flex flex-col gap-6">
+                <div>
+                    <h1 class="text-texto1 text-2xl font-semibold leading-8">Que tal uma foto?</h1>
+                    <p class="text-texto3 text-base leading-6 mt-2">
+                        Personalize o perfil de <span id="nome-pet-foto">seu pet</span>!
+                    </p>
+                </div>
+
+                <div class="pt-10 flex justify-center">
+                    <div class="size-40 bg-superficie rounded-full border border-borda flex justify-center items-center overflow-hidden">
+                        <img
+                            id="preview-foto-pet"
+                            src="svg/fiu.svg"
+                            alt="Figura de um pássaro laranja"
+                            class="w-20 h-16 object-contain"
+                        >
+                    </div>
+                </div>
+
+                <input
+                    type="file"
+                    id="input-foto-pet"
+                    accept="image/*"
+                    class="hidden"
+                >
+
+                <input
+                    type="file"
+                    id="input-camera-pet"
+                    accept="image/*"
+                    capture="environment"
+                    class="hidden"
+                >
+            </div>
+
+            <footer class="mt-auto p-6 pt-3 flex flex-col gap-3">
+                <button
+                    type="button"
+                    id="btn-escolher-foto"
+                    class="w-full min-h-12 px-5 bg-laranja rounded-xl flex justify-center items-center gap-2.5 text-stone-900 text-base font-semibold"
+                >
+                    <img src="svg/camera.svg" alt="Figura de uma câmera" class="w-5 h-5">
+                    Escolher foto / tirar agora
+                </button>
+
+                <button
+                    type="button"
+                    id="btn-concluir-sem-foto"
+                    class="w-full min-h-12 px-5 bg-botao2 rounded-xl border border-borda flex justify-center items-center text-texto3 text-base font-semibold"
+                >
+                    Não, obrigado. Concluir
+                </button>
+            </footer>
+
+        </div>
+    </section>
+
+
+    <script>
+        const nomePetFoto = sessionStorage.getItem('nomePet');
+
+        if (nomePetFoto) {
+            document.getElementById('nome-pet-foto').textContent = nomePetFoto;
+        }
+
+        const inputFoto = document.getElementById('input-foto-pet');
+        const previewFoto = document.getElementById('preview-foto-pet');
+
+        document.getElementById('btn-escolher-foto').addEventListener('click', function () {
+            inputFoto.click();
+        });
+
+        inputFoto.addEventListener('change', function () {
+            const arquivo = inputFoto.files[0];
+
+            if (!arquivo) return;
+
+            if (!arquivo.type.startsWith('image/')) {
+                alert('Selecione um arquivo de imagem válido.');
+                inputFoto.value = '';
+                return;
+            }
+
+            const leitor = new FileReader();
+
+            leitor.onload = function (event) {
+                previewFoto.src = event.target.result;
+                previewFoto.className = 'w-full h-full object-cover';
+
+                sessionStorage.setItem('fotoPet', event.target.result);
+            };
+
+            leitor.readAsDataURL(arquivo);
+        });
+
+        document.getElementById('btn-concluir-sem-foto').addEventListener('click', function () {
+            sessionStorage.setItem('cadastroPetConcluido', 'true');
+            window.location.href = 'pet_cadastrado.html';
+        });
+    </script>
+
+
+</body>
+</html>

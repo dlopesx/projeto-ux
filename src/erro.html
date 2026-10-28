@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo pet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        botao2: '#EEEE88',
+                        borda: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto1: '#2B1A0E',
+                        texto2: '#75634F',
+                        texto3: '#8F4B17',
+                        erroVencida: '#D64545',
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
+
+</head>
+<body>
+
+    <!-- MOBILE -->
+    <section class="block md:hidden">
+        <div class="min-h-screen w-full bg-fundo flex flex-col overflow-hidden">
+
+            <main class="flex-1 px-8 pt-28 flex flex-col items-start gap-6">
+                <h1 class="text-erroVencida text-2xl font-semibold leading-8">
+                    Ops!
+                </h1>
+
+                <p class="text-texto3 text-xl font-normal leading-7">
+                    Tivemos um problema no nosso sistema. Tente novamente mais tarde.
+                </p>
+
+                <button
+                    type="button"
+                    id="btn-ver-detalhes"
+                    class="text-texto2 text-base font-normal"
+                    aria-expanded="false"
+                >
+                    → Ver detalhes
+                </button>
+
+                <p id="detalhes-erro" class="hidden text-texto3 text-sm leading-5">
+                    O sistema encontrou um erro inesperado. Tente novamente mais tarde.
+                    Se o problema persistir, entre em contato com o suporte.
+                </p>
+            </main>
+
+            <footer class="p-8 pt-3">
+                <button
+                    type="button"
+                    id="btn-ir-menu"
+                    class="w-full h-12 px-5 bg-laranja rounded-xl border border-borda flex justify-center items-center text-texto1 text-base font-semibold"
+                >
+                    Ir para o menu
+                </button>
+            </footer>
+
+        </div>
+    </section>
+
+
+    <script>
+        const btnDetalhes = document.getElementById('btn-ver-detalhes');
+        const detalhesErro = document.getElementById('detalhes-erro');
+
+        btnDetalhes.addEventListener('click', function () {
+            const expandido = btnDetalhes.getAttribute('aria-expanded') === 'true';
+
+            btnDetalhes.setAttribute('aria-expanded', String(!expandido));
+            detalhesErro.classList.toggle('hidden');
+
+            btnDetalhes.textContent = expandido
+                ? '→ Ver detalhes'
+                : '↓ Ocultar detalhes';
+        });
+
+        document.getElementById('btn-ir-menu').addEventListener('click', function () {
+            window.location.href = 'index.html';
+        });
+    </script>
+
+
+</body>
+</html>
