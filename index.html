@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Início</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <!-- DESKTOP -->
+    <section class="hidden md:block">
+        <div class="flex">
+
+            <!-- SIDEBAR-->
+
+            <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
+                <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                    <ul class=" flex-1 space-y-2 font-medium">
+                        <li class="flex">
+                            <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
+                            <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                            </a>
+                            <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                            <a href="index.html" class=" relative flex items-center px-2 py-3 pl-6 rounded-xl hover:bg-[#E9DDCF]  group">
+                                <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                                <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="meus_pets.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="meus_agendamentos.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="meus_alertas.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+
+                            <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tutores" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                            <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- RODAPÉ DA SIDEBAR-->
+                    <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
+                        <li>
+                            <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                            
+                        </li>
+                    </ul>
+                    
+                </div>
+            </aside>
+
+            <!-- HEADER E MAIN -->
+
+            <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
+
+                <header class="flex flex-row justify-between p-5 border ">
+                    <p> Início</p>
+                    <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
+                </header>
+
+                
+                <main class="flex py-8 px-16 flex-col items-start self-stretch">
+                    
+                    <div class="flex flex-col items-center self-stretch gap-[2.25rem]">
+                        <div class="flex justify-between self-stretch items-center">
+                            <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Oi, Marina! </h1>
+                            <button id="bt-adicionar" class="flex bg-[#F29A4B] px-4 py-3 gap-4 rounded-2xl  font-semibold hover:bg-[#E8863A] hover:shadow-md transition transition" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'"/>
+                                Adicionar </button>
+                        </div>
+                        <dialog id="painel-adicionar" aria-label="Adicionar novo item"
+                            class="fixed top-[7rem] right-4 md:right-[250px] left-auto bottom-auto m-0 p-0 w-80 max-w-[calc(100%-2rem)]
+                                bg-transparent text-[#2B1A0E] overflow-visible backdrop:bg-transparent
+                                open:flex flex-col gap-3">
+
+                            <button id="fechar_painel" type="button"
+                                class="self-end px-4 py-2 rounded-xl bg-white border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                Fechar menu
+                            </button>
+
+                            <ul class="flex flex-col gap-2 p-4 bg-white border border-[#E9DDCF] rounded-2xl shadow-md">
+                                <li>
+                                    <a href="novo_alerta.html"
+                                    class="flex items-center gap-5 p-5 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                        <img src="svg/notificacao.svg" alt="" class="w-6 h-6 shrink-0">
+                                        Adicionar novo alerta
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="adicionar_agendamento.html"
+                                    class="flex items-center gap-5 p-5 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                        <img src="svg/calendario.svg" alt="" class="w-6 h-6 shrink-0">
+                                        Adicionar agendamento
+                                </a>
+                                </li>
+                                <li>
+                                    <a href="adicionar_vacina.html"
+                                    class="flex items-center gap-5 p-5 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                        <img src="svg/vacinas.svg" alt="" class="w-6 h-6 shrink-0">
+                                        Adicionar nova vacina
+                                    </a>
+                                </li>
+                            </ul>
+                        </dialog>
+                                
+                        <!-- SEÇÃO: MEUS PETS-->
+
+                        <div class="flex flex-col self-stretch gap-8"> 
+            
+                            <h2 class= " flex items-start self-stretch text-2xl font-semibold"> Meus pets </h2>
+            
+                            <div class="bg-[#F8F0E6] flex self-stretch items-start rounded-xl p-7 gap-8 "> <!-- painel de pets-->
+                                
+                                <a href= "fiu.html" class="bg-[#FFFFFF]  items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border border-[#E9DDCF] hover:shadow-md transition"> 
+                                    <div class=" flex items-center gap-[1.5rem]">
+                                        <div class="w-16 h-16 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center ">
+                                            <img src = "svg/fiu.svg" alt="Figura pássaro na cor laranja" class="w-10 "/>
+                                        </div>
+                                        <p class="font-semibold text-2xl"> Fiu</p>
+                                    </div>
+                                </a>
+                                <a href= "tina.html" class="bg-[#FFFFFF]  items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border border-[#E9DDCF] hover:shadow-md transition"> 
+                                    <div class=" flex items-center gap-[1.5rem]">
+                                        <div class="w-16 h-16 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center ">
+                                            <img src = "svg/tina.svg" alt="Figura cachorro na cor laranja" class="w-10 "/>
+                                        </div>
+                                        <p class="font-semibold text-2xl"> Tina</p>
+                                    </div>
+                                </a>
+                                <a href= "novo_pet.html" class=" bg-[#E9DDCF] items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border-2 border-[#F29A4B] border-dashed hover:shadow-md transition"> 
+                                    <div class=" bg-[#E9DDCF] flex flex-col p-[1.75rem] gap-[1.25rem] w-[16.5rem] rounded-md "> <!-- cada pet-->
+                                        <p> Adicionar pet</p>
+                                    </div>
+                                </a>
+                            </div>      
+            
+                        </div>
+                    
+                    <!-- SEÇÃO: AGENDAMENTOS E ALERTAS-->
+
+                    <div class="grid w-full grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-x-32">  
+            
+                        <div class=" flex items-start flex-col gap-3"> <!-- agendamentos -->
+            
+                            <div class="flex flex-row justify-between self-stretch"> <!-- textos agendamento e botoes -->
+                                <div class="flex gap-4">
+                                    <p class="text-2xl font-semibold"> Agendamentos</p>
+                                    <div class="w-9 h-9 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center items-center"> 2 </div>
+                                    <a href="adicionar_agendamento.html" class="bg-[#F29A4B] p-1 rounded-3xl hover:bg-[#E8863A] hover:shadow-md transition flex items-center"> <img src = "svg/adicionar.svg" alt="Botão de 'Mais'" class="w-6 h-4"/> </a> <!-- adicionar-->
+                                </div>
+                                
+                                <a href="meus_agendamentos.html" class="text-xl hover:underline text-[#DB7F2E] font-bold"> Ver todos → </a>
+            
+                                
+                            </div>
+
+                            <!-- painel de agendamentos -->
+                            <ul class="flex flex-col gap-3 self-stretch text-xl"> 
+                                <li class="relative flex gap-5 p-5 items-center rounded-2xl bg-[#F8F0E6] hover:shadow-md ">
+                                    <span class="absolute left-0 top-1/2 -translate-y-1/2 h-14 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                                    <div class="rounded-2xl bg-[#FFFFFF] p-2 px-8 flex flex-col items-center">
+                                        <p class="text-3xl font-semibold">
+                                            14
+                                        </p>
+                                        <p>
+                                            SET
+                                        </p>
+                                    </div>
+
+                                    <div class="flex-1"> <!-- Data e nome -->
+                                        <p class="font-bold"> Consulta de tina</p>
+                                        <P class="text-[#5a4636]"> 14/09/26</P>
+                                    </div>
+
+                                    <div> <!-- horario -->
+                                        <p class="text-3xl font-semibold text-[#DB7F2E]" > 09h00</p>
+                                    </div>
+                                </li>
+                                <li class="flex gap-5 p-5 items-center rounded-2xl bg-[#F8F0E6] hover:shadow-md ">
+                                    <div class="rounded-2xl bg-[#FFFFFF] p-2 px-8 flex flex-col items-center">
+                                        <p class="text-3xl font-semibold">
+                                            11
+                                        </p>
+                                        <p>
+                                            SET
+                                        </p>
+                                    </div>
+                                    <div class="flex-1"> <!-- Data e nome -->
+                                        <p class="font-bold"> Tosa da Tina</p>
+                                        <P class="text-[#5a4636]"> 11/09/26</P>
+                                    </div>
+
+                                    <div> <!-- horario -->
+                                        <p class="text-3xl font-semibold text-[#DB7F2E]" > 11h00</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+            
+                        <div class="flex items-start flex-col gap-2"> <!-- alertas-->
+            
+                            <div class="flex flex-row self-stretch justify-between"> <!-- textos alerta e botoes -->
+            
+                                <div class="flex gap-4">
+                                    <p class="text-2xl font-semibold"> Alertas </p>
+                                    <div class="w-9 h-9 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center items-center"> 2 </div>
+                                    <a href="novo_alerta.html" class="bg-[#F29A4B] p-1 rounded-3xl hover:bg-[#E8863A] hover:shadow-md transition flex items-center" > <img src = "svg/adicionar.svg" alt="Botão de 'Mais'" class="w-6 h-4"/> </a> <!-- botao de adicionar-->
+                                </div>
+                                    
+                                <a href="meus_alertas.html"  class="text-xl hover:underline text-[#DB7F2E] font-bold"> Ver todos →</a><!-- expandir seleção-->
+            
+                            </div>
+                            
+                            <!-- painel de alertas-->
+                            <ul class="flex flex-col gap-3 self-stretch text-xl "> 
+                                <li class="relative flex gap-5 p-5 h-[7.5rem] items-center rounded-2xl bg-[#F8F0E6] hover:shadow-md ">
+                                    <span class="absolute left-0 top-1/2 -translate-y-1/2 h-14 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                                    <img src = "svg/notificacao.svg" alt="Sino laranja" class="w-9"/>
+                                    <div class="flex-1"> <!-- Data e nome -->
+                                        <p class="font-bold"> Limpar gaiola de Fiu</p>
+                                        <P class="text-[#5a4636]"> Toda quarta</P>
+                                    </div>
+                                </li>
+                                <li class="bg-[#F8F0E6] flex gap-5 h-[7.8rem] p-5 self-stretch rounded-[1.3rem] hover:shadow-md">
+                                    <img src = "svg/notificacao.svg" alt="Sino laranja" class="w-9"/>
+                                    <div> <!-- Data e nome -->
+                                        <p class="font-bold"> Cortar unha da Tina</p>
+                                        <P class="text-[#5a4636]"> Hoje</P>
+                                    </div>
+                                </li>
+                            </ul>
+            
+                        </div>
+                        </div>
+            
+                    </div>
+                    
+            
+                </main>
+
+            </div>
+            
+
+
+        </div>
+    </section>
+
+    <!-- MOBILE -->
+    <section class="block md:hidden">
+        <div class="relative flex min-h-dvh w-full flex-col overflow-hidden rounded-3xl bg-[#FFFBF6]">
+
+            <header class="flex h-14 shrink-0 items-center gap-4 border-b border-[#E9DDCF] px-6">
+                <button
+                    type="button"
+                    id="abrir-menu"
+                    class="flex size-6 shrink-0 items-center justify-center"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                >
+                    <img src="svg/menu.svg" alt="" class="w-4 h-4 object-contain">
+                </button>
+
+                <h1 class="text-lg font-semibold font-['Inter'] text-[#2B1A0E]">
+                    Oi, Marina :)
+                </h1>
+            </header>
+
+            <main class="flex flex-1 flex-col gap-5 px-4 py-4">
+
+                <section class="flex flex-col gap-3">
+                    <h2 class="text-base font-semibold font-['Inter'] text-[#2B1A0E]">
+                        Meus pets
+                    </h2>
+
+                    <div class="flex items-start justify-around gap-3 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] p-3">
+
+                        <button type="button" onclick="window.location.href='novo_pet.html'" class="flex w-16 shrink-0 flex-col items-center gap-2">
+                            <span class="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF]">
+                                <img src="svg/plus.svg" alt="Figura de um + laranja" class="w-6 object-contain">
+                            </span>
+                            <span class="text-center text-xs font-normal font-['Inter'] leading-4 text-[#75634F]">
+                                Adicionar pet
+                            </span>
+                        </button>
+
+                        <button type="button" onclick="window.location.href='fiu.html'" class="flex w-16 shrink-0 flex-col items-center gap-2">
+                            <span class="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF] bg-[#FFF6EC]">
+                                <img src="svg/fiuLaranja.svg" alt="Figura de um pássaro laranja" class="w-9 object-contain">
+                            </span>
+                            <span class="text-xs font-normal font-['Inter'] text-[#75634F]">Fiu</span>
+                        </button>
+
+                        <button type="button" onclick="window.location.href='tina.html'" class="flex w-16 shrink-0 flex-col items-center gap-2">
+                            <span class="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF] bg-[#FFF6EC]">
+                                <img src="svg/tinaLaranja.svg" alt="Figura de um cachorro laranja" class="w-9 object-contain">
+                            </span>
+                            <span class="text-xs font-normal font-['Inter'] text-[#75634F]">Tina</span>
+                        </button>
+
+                    </div>
+                </section>
+
+                <section class="flex flex-col gap-3">
+                    <div class="flex items-center justify-between gap-2">
+                        <h2 class="text-base font-semibold font-['Inter'] text-[#2B1A0E]">
+                            Agendamentos
+                        </h2>
+
+                        <button type="button" class="text-xs font-semibold font-['Inter'] text-[#75634F]">
+                            + Adicionar
+                        </button>
+                    </div>
+
+                    <article class="flex items-center gap-3 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] p-3">
+                        <img src="svg/calendario.svg" alt="Figura de um calendário laranja" class="w-6 shrink-0 object-contain">
+
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-sm font-semibold font-['Inter'] text-[#2B1A0E]">
+                                Consulta de Tina
+                            </h3>
+                            <p class="text-xs font-normal font-['Inter'] text-[#75634F]">
+                                14/09/26
+                            </p>
+                        </div>
+
+                        <time class="shrink-0 text-sm font-semibold font-['Inter'] text-[#F29A4B]">
+                            09h30
+                        </time>
+                    </article>
+
+                    <a href="#" class="self-end text-xs font-normal font-['Inter'] text-[#75634F]">
+                        Ver todos
+                    </a>
+                </section>
+
+                <section class="flex flex-col gap-3">
+                    <div class="flex items-center justify-between gap-2">
+                        <h2 class="text-base font-semibold font-['Inter'] text-[#2B1A0E]">
+                            Alertas
+                        </h2>
+
+                        <button type="button" onclick="window.location.href='novo_alerta.html'" class="text-xs font-semibold font-['Inter'] text-[#75634F]">
+                            + Adicionar
+                        </button>
+                    </div>
+
+                    <article class="flex items-center gap-3 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] p-3">
+                        <img src="svg/notificacao.svg" alt="Figura de um sino laranja" class="w-6 shrink-0 object-contain">
+
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-sm font-semibold font-['Inter'] text-[#2B1A0E]">
+                                Limpar gaiola de Fiu
+                            </h3>
+                            <p class="text-xs font-normal font-['Inter'] text-[#75634F]">
+                                Toda quarta
+                            </p>
+                        </div>
+                    </article>
+                </section>
+
+            </main>
+
+            <nav class="mx-4 mb-3 mt-auto flex h-12 shrink-0 items-center justify-between rounded-full border border-[#E9DDCF] bg-[#F8F0E6] px-6">
+                <button
+                    type="button"
+                    onclick="window.location.href='#'"
+                    class="flex size-6 items-center justify-center"
+                    aria-label="Início"
+                >
+                    <img src="svg/inicio.svg" alt="Figura de uma casa laranja" class="w-9 object-contain">
+                </button>
+
+                <button type="button" id="bt-adicionar-mobile" class="flex size-10 items-center justify-center rounded-full bg-[#F29A4B]" aria-label="Adicionar">
+                    <img src="svg/Adicionar2.svg" alt="Figura de um círculo com um + branco no centro" class="w-14 object-contain">
+                </button>
+            </nav>
+
+            <div id="menu-lateral" class="fixed inset-0 z-50 hidden">
+
+                <button
+                    type="button"
+                    id="fechar-menu-fundo"
+                    class="absolute inset-0 bg-black/30"
+                    aria-label="Fechar menu"
+                ></button>
+
+                <aside class="absolute left-0 top-0 flex h-dvh w-64 max-w-[85vw] flex-col gap-8 overflow-y-auto bg-[#FFFBF6] p-6 shadow-xl">
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-semibold font-['Inter'] text-[#2B1A0E]">
+                            Marina
+                        </span>
+
+                        <button
+                            type="button"
+                            id="fechar-menu"
+                            class="flex size-8 items-center justify-center rounded-full text-[#75634F] hover:bg-[#F8F0E6]"
+                            aria-label="Fechar menu"
+                        >
+                            <span class="text-2xl leading-none">&times;</span>
+                        </button>
+                    </div>
+
+                    <nav class="flex flex-col gap-6">
+                        <a href="perfil.html" class="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                            Ver perfil
+                        </a>
+
+                        <a href="administrar_tutores.html" class="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                            Administrar tutores
+                        </a>
+
+                        <a href="compartilhar_infos.html" class="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                            Compartilhar infos dos pets
+                        </a>
+                    </nav>
+
+                    <div class="mt-auto flex flex-col gap-6 border-t border-[#E9DDCF] pt-6">
+                        <a href="configuracoes.html" class="text-base font-normal font-['Inter'] text-[#75634F]">
+                            Config. do app
+                        </a>
+
+                        <a href="sobre.html" class="flex items-center gap-2.5 text-base font-normal font-['Inter'] text-[#75634F]">
+                            Sobre
+                            <span class="flex size-5 items-center justify-center rounded-full border border-[#75634F] text-xs font-semibold">
+                                i
+                            </span>
+                        </a>
+                    </div>
+
+                </aside>
+            </div>
+
+        </div>
+        
+        <dialog
+            id="painel-adicionar-mobile"
+            aria-label="Adicionar novo item"
+            class="fixed top-auto bottom-20 left-1/2 -translate-x-1/2 m-0 p-0 w-80 max-w-[calc(100%-2rem)] bg-transparent text-[#2B1A0E] overflow-visible backdrop:bg-black/30"
+        >
+            <button
+                id="fechar-painel-mobile"
+                type="button"
+                class="mb-3 ml-auto block rounded-xl border border-[#E9DDCF] bg-white px-4 py-2 font-semibold"
+            >
+                Fechar menu
+            </button>
+
+            <ul class="flex flex-col gap-2 rounded-2xl border border-[#E9DDCF] bg-white p-4 shadow-md">
+                <li>
+                    <a href="novo_alerta.html" class="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
+                        <img src="svg/notificacao.svg" alt="" class="h-6 w-6 shrink-0">
+                        Adicionar novo alerta
+                    </a>
+                </li>
+
+                <li>
+                    <a href="adicionar_agendamento.html" class="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
+                        <img src="svg/calendario.svg" alt="" class="h-6 w-6 shrink-0">
+                        Adicionar agendamento
+                    </a>
+                </li>
+
+                <li>
+                    <a href="adicionar_vacina.html" class="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
+                        <img src="svg/vacinas.svg" alt="" class="h-6 w-6 shrink-0">
+                        Adicionar nova vacina
+                    </a>
+                </li>
+            </ul>
+        </dialog>
+
+    </section>
+
+    
+
+    <script>
+        const botaoAbrir = document.getElementById('bt-adicionar')
+        const botaoFechar = document.getElementById('fechar_painel')
+        const painel = document.getElementById('painel-adicionar')
+
+        botaoAbrir.addEventListener('click', () =>{
+            painel.showModal();
+            })
+
+        botaoFechar.addEventListener('click', () => {
+            painel.close();
+        })
+
+        // PAINEL DE ADICIONAR - MOBILE
+        const botaoAbrirMobile = document.getElementById('bt-adicionar-mobile');
+        const botaoFecharMobile = document.getElementById('fechar-painel-mobile');
+        const painelMobile = document.getElementById('painel-adicionar-mobile');
+
+        botaoAbrirMobile.addEventListener('click', () => {
+            painelMobile.showModal();
+        });
+
+        botaoFecharMobile.addEventListener('click', () => {
+            painelMobile.close();
+        });
+
+        // MENU LATERAL - MOBILE
+        const botaoAbrirMenuMobile = document.getElementById('abrir-menu');
+        const botaoFecharMenuMobile = document.getElementById('fechar-menu');
+        const fundoMenuMobile = document.getElementById('fechar-menu-fundo');
+        const menuLateralMobile = document.getElementById('menu-lateral');
+
+        function abrirMenuMobile() {
+            menuLateralMobile.classList.remove('hidden');
+            botaoAbrirMenuMobile.setAttribute('aria-expanded', 'true');
+        }
+
+        function fecharMenuMobile() {
+            menuLateralMobile.classList.add('hidden');
+            botaoAbrirMenuMobile.setAttribute('aria-expanded', 'false');
+        }
+
+        botaoAbrirMenuMobile.addEventListener('click', abrirMenuMobile);
+
+        botaoFecharMenuMobile.addEventListener('click', fecharMenuMobile);
+
+        fundoMenuMobile.addEventListener('click', fecharMenuMobile);
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                fecharMenuMobile();
+            }
+        });
+
+    </script>
+
+</body>
+</html>
