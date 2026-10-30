@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus agendamentos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss"> 
+            @layer components {
+                .campo {
+                    @apply w-full h-12 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition
+                    focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+    }
+
+    </style>
 </head>
 <body>
 
@@ -104,28 +113,51 @@
                     </div>
 
                     <!-- PAINEL DE ALERTAS -->
-                    <ul class="flex flex-col gap-4 p-6 max-w-[600px] bg-[#F8F0E6] rounded-2xl"> 
-                        <li class="relative flex gap-5 p-5 items-center rounded-2xl bg-[#ffae52] hover:shadow-md ">
-                            <div class="flex-1"> <!-- Data e nome -->
-                                <p class="font-semibold"> Consulta de Tina</p>
-                                <p> 14/09/2026 - 09h00</p>
-                                <p> Profissional: Adriana Santos</p>
+                    <ul class="flex flex-col gap-4 p-6 max-w-[800px] bg-[#E9DDCF] rounded-2xl"> 
+                        <li class="relative flex flex-col gap-9 p-5 px-7 rounded-2xl bg-[#F8F0E6] hover:shadow-md ">
+                            <div class="flex-1 gap-9"> <!-- Data e nome -->
+                                <div class="flex justify-between gap-1">
+                                    <p class="font-semibold text-2xl text-[#2B1A0E]"> Consulta de Tina</p>
+                                    <button class="bt-editar flex gap-2 hover:font-semibold">
+                                        <img src="/svg/edit.svg" alt="Símbolo de lápis pra editar" class="w-6 h-6 ">
+                                        <p class="text-[#75634F] text-xl"> Editar</p>
+                                    </button>
+                                </div>
+                                <p class="font-semibold text-md text-[#75634F]"> 14 de setembro de 2026, quinta-feira ⋅ 09:00</p>
                             </div>
-                            <button class="flex gap-2 hover:font-semibold"> 
-                                <img src = "svg/editar.svg" alt="Símbolo de lápis pra editar"/> 
-                                <p> Editar agendamento </p>
-                            </button>
+                            <div class="flex gap-3 items-center">
+                                <img src="/svg/mapa.svg" class="w-6 h-6">
+                                <div>
+                                    <p class="font-semibold text-xl text-[#2B1A0E]"> Clínica Solemar </p>
+                                    <p class="font-semibold text-md text-[#75634F]"> Rua blablabla 34, Terra Nova, São Bernardo do Campo - SP  </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-center">
+                                <img src="/svg/heart.svg" class="w-6 h-6">
+                                <p class="font-semibold text-xl text-[#2B1A0E]"> Profissional: Adriana</p>
+                            </div>
                         </li>
-                        <li class="bg-[#ffae52] flex gap-5 p-5 items-center self-stretch rounded-[1.3rem] hover:shadow-md">
-                            <div class="flex-1"> <!-- Data e nome -->
-                                <p class="font-semibold"> Tosa da tina</p>
-                                <P> 11/09/2026 - 11h00</P>
-                                <P> Profissional: Marcos</P>
+                        <li class="relative flex flex-col gap-9 p-5 px-7 rounded-2xl bg-[#F8F0E6] hover:shadow-md ">
+                            <div class="flex-1 gap-9"> <!-- Data e nome -->
+                                <div class="flex justify-between gap-1">
+                                    <p class="font-semibold text-2xl text-[#2B1A0E]"> Tosa da tina</p>
+                                    <button class="bt-editar flex gap-2 hover:font-semibold">
+                                        <img class="w-6 h-6 items-center" src="/svg/edit.svg" alt="Símbolo de lápis pra editar">
+                                        <p class="text-[#75634F] text-xl"> Editar</p>
+                                    </button>
+                                </div>
+                                <p class="font-semibold text-md text-[#75634F]"> 11 de setembro de 2026, domingo ⋅ 08:00</p>
                             </div>
-                            <button class="flex gap-2 hover:font-semibold"> 
-                                <img src = "svg/editar.svg" alt="Símbolo de lápis pra editar"/> 
-                                <p> Editar agendamento </p>
-                            </button>
+                            <div class="flex gap-3 items-center">
+                                <img src="/svg/mapa.svg">
+                                <div>
+                                    <p class="font-semibold text-xl text-[#2B1A0E]"> Rua fulano 981, Centro, São Bernardo do Campo - SP  </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-center">
+                                <img src="/svg/heart.svg" class="w-6 h-6">
+                                <p class="font-semibold text-xl text-[#2B1A0E]"> Profissional: Marcos</p>
+                            </div>
                         </li>
                     </ul>
         
@@ -140,6 +172,128 @@
 
     </div>
 
+    <!-- PAINEL DE EDITAR AGENDAMENTO -->
+    <dialog id="painel-editar"
+    class="m-auto p-0 w-[92vw] max-w-[40rem] max-h-[90vh] overflow-hidden rounded-3xl
+           bg-[#FFFBF6] text-[#2B1A0E] border border-[#E9DDCF] shadow-2xl
+           backdrop:bg-black/40 open:flex flex-col"
+    aria-label="Editar alerta">
+        <div class="flex items-center justify-between gap-4 h-[88px] shrink-0 px-6 border-b border-[#E9DDCF]">
+            <h2 id="titulo-painel" class="text-2xl font-semibold">Editar</h2>
+            <button type="button" id="fechar-painel" aria-label="Fechar painel"
+                class="p-2 rounded-lg hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                <img src="svg/fechar.svg" alt="" class="w-6 h-6">
+            </button>
+        </div>
+        <form id="form-editar" class="flex flex-1 min-h-0 flex-col">
+ 
+            <div class="flex-1 overflow-y-auto flex flex-col gap-6 p-6">
+ 
+                <fieldset class="flex flex-col border-0 p-0 m-0 min-w-0">
+                    <legend class="font-semibold mb-3">Quando?</legend>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="edit-data" class="sr-only">Data</label>
+                            <input id="edit-data" name="data" type="date" required class="campo">
+                        </div>
+                        <div>
+                            <label for="edit-hora" class="sr-only">Hora</label>
+                            <input id="edit-hora" name="hora" type="time" required class="campo">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="flex flex-col gap-2">
+                    <label for="edit-titulo ">Nome da clínica</label>
+                    <input id="edit-titulo" name="titulo" type="text" autofocus autocomplete="off" class="campo">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="edit-titulo ">Endereço</label>
+                    <input id="edit-titulo" name="titulo" type="text" required autofocus autocomplete="off" class="campo">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="edit-titulo ">Profissional</label>
+                    <input id="edit-titulo" name="titulo" type="text" required autofocus autocomplete="off" class="campo">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="edit-titulo ">Observações/motivo</label>
+                    <input id="edit-titulo" name="titulo" type="text" autofocus autocomplete="off" class="campo">
+                </div>
+ 
+            </div>
+ 
+            <!-- rodapé fixo: salvar, cancelar e excluir -->
+            <div class="shrink-0 p-6 border-t border-[#E9DDCF]">
+ 
+                <div id="rodape-normal">
+                    <div class="flex items-center justify-between gap-3">
+                        <button type="button" id="bt-excluir"
+                            class="font-semibold text-[#B3261E] rounded-lg hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B3261E]">
+                            Excluir alerta
+                        </button>
+                        <div class="flex gap-3">
+                            <button type="button" id="cancelar"
+                                class="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                Cancelar
+                            </button>
+                            <button type="submit"
+                                class="px-6 h-12 rounded-xl bg-[#F29A4B] font-semibold hover:bg-[#E8863A] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B] focus-visible:ring-offset-2">
+                                Salvar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- confirmação de exclusão: troca o rodapé normal -->
+                <div id="rodape-confirmar" hidden>
+                    <div class="flex flex-col gap-3">
+                        <p class="font-semibold">Excluir este agendamento?</p>
+                        <p class="text-sm text-[#75634F]">Essa ação não pode ser desfeita.</p>
+                        <div class="flex gap-3">
+                            <button type="button" id="manter"
+                                class="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                Manter
+                            </button>
+                            <button type="button" id="bt-confirmar-excluir"
+                                class="px-5 h-12 rounded-xl bg-[#B3261E] text-white font-semibold hover:brightness-110 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B3261E] focus-visible:ring-offset-2">
+                                Sim, excluir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </dialog>
+
+    <script>
+        const botoesEditar = document.querySelectorAll('.bt-editar');
+        const botaoExcluir = document.getElementById('bt-excluir')
+        const botaoFechar = document.getElementById('fechar-painel')
+        const botaoCancelar = document.getElementById('cancelar')
+        const botaoConfirmarExcluir = document.getElementById('bt-confirmar-excluir')
+        const painel = document.getElementById('painel-editar')
+        const excluir = document.getElementById('rodape-confirmar')
+
+        botoesEditar.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                painel.showModal();
+            });
+        });
+
+        botaoFechar.addEventListener('click', () => {
+            painel.close();
+        })
+
+        botaoCancelar.addEventListener('click', () => {
+            painel.close();
+        })
+
+        botaoExcluir.addEventListener('click', () => {
+            excluir.classList.remove('hidden');
+        })
+        
+    </script>
 
 </body>
 </html>

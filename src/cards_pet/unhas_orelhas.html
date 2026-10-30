@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unhas e orelhas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss"> 
+            @layer components {
+                .campo {
+                    @apply w-full h-12 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition
+                    focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="flex">
+
+        <!-- SIDEBAR-->
+
+        <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
+            <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                <ul class=" flex-1 space-y-2 font-medium">
+                    <li class="flex">
+                        <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
+                        <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                        </a>
+                        <button> <img class="pb-6" src = "../svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                    </li>
+
+                    <!-- PERFIL DO USUÁRIO -->
+                    <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                            <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+                            <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                        </a>
+                    </li>
+
+                    <li >
+                        <a href="../index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF]  group">
+                        <img src = "../svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meus_pets.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "../svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                        </a>
+                    </li>
+                    <li class="relative">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                        <a href="meus_agendamentos.html" class=" flex items-center px-2 py-3  pl-6 rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "../svg/calendario.svg" alt="Calendario na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meus_alertas.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "../svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+
+                        <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tutores.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
+                        <img src = "../svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- RODAPÉ DA SIDEBAR-->
+                <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "../svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "../svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                        
+                    </li>
+                </ul>
+                
+            </div>
+        </aside>
+
+        <!-- HEADER E MAIN -->
+
+        <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
+
+            <header class="flex flex-row justify-between p-5 border ">
+                <a href="index.html" class="flex gap-4">
+                    <img alt="Figura de seta laranja" src="../svg/voltar.svg">
+                    <p> Voltar</p>
+                </a>
+                <button> <img src = "../../svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
+            </header>
+
+            
+            <main class="flex flex-col w-full py-8 px-16 items-start gap-10 self-stretch">
+                
+                <div class="flex flex-col gap-10">
+                    <div class="flex justify-between items-center">
+                        <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Unhas e orelhas </h1>
+                        
+                    </div>
+                    <div class="flex gap-[8rem]">
+                        <section class="w-[30rem]">
+                            <h2> Orelhas </h2>
+                            <div class="flex flex-col gap-6 rounded-3xl border border-[#E9DDCF] p-8">
+                                
+                                <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
+                                    <li class="relative flex flex-col gap-2">
+                                        <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                        <p class="text-sm font-semibold text-[#75634F]">Próxima data:</p>
+                                        <p class="text-xl font-semibold">01 de novembro de 2026</p>
+                                        <button class="flex px-5 py-2 gap-4 rounded-full w-[200px] font-semibold border border-[#9c9c9c] hover:shadow-md transition" > 
+                                    Marcar como feito
+                                </button>
+                                    </li>
+                                    <li class="relative">
+                                        <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                        <p class="text-sm font-semibold text-[#75634F]"></p>
+                                        <p class="text-xl font-semibold">22 de outubro de 2026</p>
+                                    </li>
+                                    <li class="relative">
+                                        <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                        <p class="text-xl font-semibold">12 de outubro de 2026</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </section>
+                        <section class="w-[30rem]">
+                            <h2> Unhas </h2>
+                            <div class="flex flex-col gap-6 rounded-3xl border border-[#E9DDCF] p-8">
+                                
+                                <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
+                                    <li class="relative flex flex-col gap-2">
+                                        <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                        <p class="text-sm font-semibold text-[#75634F]">Próxima data:</p>
+                                        <p class="text-xl font-semibold">01 de novembro de 2026</p>
+                                        <button class="flex px-5 py-2 gap-4 rounded-full w-[200px] font-semibold border border-[#9c9c9c] hover:shadow-md transition" > 
+                                    Marcar como feito
+                                </button>
+                                    </li>
+                                    <li class="relative">
+                                        <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                        <p class="text-sm font-semibold text-[#75634F]"></p>
+                                        <p class="text-xl font-semibold">22 de outubro de 2026</p>
+                                    </li>
+                                    <li class="relative">
+                                        <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                        <p class="text-xl font-semibold">12 de outubro de 2026</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+   
+    <script>
+        const botoesEditar = document.querySelectorAll('.bt-editar');
+        const botaoExcluir = document.getElementById('bt-excluir')
+        const botaoFechar = document.getElementById('fechar-painel')
+        const botaoCancelar = document.getElementById('cancelar')
+        const botaoConfirmarExcluir = document.getElementById('bt-confirmar-excluir')
+        const painel = document.getElementById('painel-editar')
+        const excluir = document.getElementById('rodape-confirmar')
+
+        botoesEditar.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                painel.showModal();
+            });
+        });
+
+        botaoFechar.addEventListener('click', () => {
+            painel.close();
+        })
+
+        botaoCancelar.addEventListener('click', () => {
+            painel.close();
+        })
+
+        botaoExcluir.addEventListener('click', () => {
+            excluir.classList.remove('hidden');
+        })
+        
+    </script>
+
+</body>
+</html>

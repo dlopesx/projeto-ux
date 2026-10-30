@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,81 +12,159 @@
 
         <!-- SIDEBAR-->
 
-        <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
-            <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
-                <ul class=" flex-1 space-y-2 font-medium">
+        <aside id="default-sidebar" class="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen" aria-label="Sidebar">
+            <div class="flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                <ul class="flex-1 space-y-2 font-medium">
                     <li class="flex">
-                        <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
-                        <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                        <a href="#" class="flex flex-1 items-center px-2 py-3 rounded-2xl group">
+                            <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
                         </a>
-                        <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                        <button> <img class="w-6 h-6 mb-6" src="svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
                     </li>
-                    <li >
-                        <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF]  group">
-                            <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+
+                    <!-- PERFIL DO USUÁRIO -->
+                    <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                            <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+                            <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
                             <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
                         </a>
                     </li>
                     <li class="relative">
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
-                        <a href="meus_pets.html" class=" relative flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF]  group">
-                            <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
+                        <a href="meus_pets.html" class="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group" aria-current="page">
+                            <img class="w-6 h-6" src="svg/paw-print.svg" alt="Pata de animal na cor laranja"/>
                             <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
                         </a>
                     </li>
                     <li>
-                        <a href="meus_agendamentos.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                            <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
+                        <a href="meus_agendamentos.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/calendario.svg" alt="Calendario na cor laranja"/>
                             <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
                         </a>
                     </li>
                     <li>
-                        <a href="meus_alertas.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                            <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+                        <a href="meus_alertas.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
                             <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
                         </a>
                     </li>
                     <li>
-                        <a href="tutores" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                            <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                        <a href="tutores.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
                             <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
                         </a>
                     </li>
                 </ul>
 
                 <!-- RODAPÉ DA SIDEBAR-->
-                <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
+                <ul class="mt-auto space-y-2 py-5 border-t border-[#E9DDCF]">
                     <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img class="w-5 h-5" src="svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
-                        
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img class="w-5 h-5" src="svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
                     </li>
                 </ul>
-                   
             </div>
         </aside>
 
         <!-- HEADER E MAIN -->
 
-        <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
+        <div class="bg-[#FFFBF6] flex flex-col self-stretch flex-1">
 
-            <header class="flex flex-row justify-between p-5 border ">
-                <p> Meus pets </p>
-                <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
+            <header class="flex flex-row justify-between p-5 border">
+                <a href="index.html" class="flex gap-4">
+                    <img class="w-6 h-6" alt="Figura de seta laranja" src="svg/voltar.svg">
+                    <p>Voltar</p>
+                </a>
+                <button> <img class="w-6 h-6" src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/> </button>
             </header>
 
-            
-            <main class="flex py-8 px-16 flex-col items-start self-stretch">
-                <div class="flex justify-between self-stretch items-center">
-                        <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Meus pets </h1>
+            <main class="flex w-full py-8 px-16 flex-col items-start self-stretch">
+
+                <div class="flex flex-col self-stretch gap-[2.25rem]">
+
+                    <!-- TITULO E BOTAO DE ADICIONAR PET -->
+                    <div class="flex justify-between items-center">
+                        <h1 class="flex items-start self-stretch text-4xl font-semibold">Meus pets</h1>
+                        <a href="adicionar_pet.html" class="flex items-center px-5 py-3 gap-4 rounded-2xl font-semibold border border-[#9c9c9c] hover:shadow-md transition">
+                            <img class="w-5 h-5" src="svg/adicionar.svg" alt="Botão de 'Mais'">
+                            Adicionar um novo pet
+                        </a>
                     </div>
+
+                    <!-- CARDS DOS PETS -->
+                    <ul class="flex flex-wrap gap-8">
+
+                        <!-- CARD: TINA -->
+                        <li>
+                            <a href="tina.html" aria-label="Ver Tina"
+                               class="block w-[300px] overflow-hidden rounded-2xl border-2 border-[#2B1A0E] bg-[#F8F0E6]
+                                      shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl
+                                      focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A4B]/50">
+
+                                <!-- foto -->
+                                <div class="flex h-48 items-center justify-center border-b-2 border-[#2B1A0E] bg-[#E9DDCF]">
+                                    <!-- troque pelo <img src="fotos/tina.jpg" alt="Foto de Tina" class="h-full w-full object-cover"> -->
+                                    <img class="w-16 h-16 opacity-70 object-cover" src="svg/tina.svg" alt="FOTO/SIMBOLO DE CACHORRO">
+                                </div>
+
+                                <!-- informações -->
+                                <div class="p-5">
+                                    <h2 class="text-2xl font-bold text-[#2B1A0E] leading-tight">Tina</h2>
+                                    <p class="font-semibold text-[#75634F]">Cachorro · Poodle</p>
+                                </div>
+
+                            </a>
+                        </li>
+
+                        <!-- CARD: FIU -->
+                        <li>
+                            <a href="fiu.html" aria-label="Ver Fiu"
+                               class="block w-[300px] overflow-hidden rounded-2xl border-2 border-[#2B1A0E] bg-[#F8F0E6]
+                                      shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl
+                                      focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A4B]/50">
+
+                                <div class="flex h-48 items-center justify-center border-b-2 border-[#2B1A0E] bg-[#E9DDCF]">
+                                    <img class="w-16 h-16 opacity-70  object-cover" src="svg/fiu.svg" alt="FOTO/SIMBOLO DE CALOPSITA">
+                                </div>
+
+                                <div class="p-5">
+                                    <h2 class="text-2xl font-bold text-[#2B1A0E] leading-tight">Fiu</h2>
+                                    <p class="font-semibold text-[#75634F]">Ave · Calopsita</p>
+                                </div>
+
+                            </a>
+                        </li>
+
+                        <!-- CARD ADICIONAR PET -->
+                        <li>
+                            <a href="novo_pet.html" aria-label="Adicionar um novo pet"
+                               class="group flex min-h-[290px] h-[200px] w-[300px] flex-col items-center justify-center gap-4 rounded-2xl
+                                      border-2 border-dashed border-[#9c9c9c] bg-[#F8F0E6] text-[#75634F]
+                                      transition duration-300 hover:-translate-y-2 hover:border-[#F29A4B] hover:shadow-xl
+                                      focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A4B]/50">
+                                <span class="flex h-14 w-14 items-center justify-center rounded-full bg-[#E9DDCF] group-hover:bg-[#F29A4B] transition">
+                                    <img class="w-6 h-6" src="svg/adicionar.svg" alt="">
+                                </span>
+                                <span class="font-semibold">Adicionar um novo pet</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
             </main>
 
         </div>
-        
-
 
     </div>
 

@@ -119,7 +119,7 @@
                                 <p class="font-semibold"> Limpar gaiola de Fiu</p>
                                 <P> Toda quarta</P>
                             </div>
-                            <button id="bt-editar" class="flex gap-2 hover:font-semibold"> 
+                            <button class="bt-editar flex gap-2 hover:font-semibold"> 
                                 <img src = "svg/editar.svg" alt="Símbolo de lápis pra editar"/> 
                                 <p> Editar alerta </p>
                             </button>
@@ -129,7 +129,7 @@
                                 <p class="font-semibold"> Cortar unha da Tina</p>
                                 <P> Hoje</P>
                             </div>
-                            <button id="bt-editar" class="flex gap-2 hover:font-semibold"> 
+                            <button  class="bt-editar flex gap-2 hover:font-semibold"> 
                                 <img src = "svg/editar.svg" alt="Símbolo de lápis pra editar"/> 
                                 <p> Editar alerta </p>
                             </button>
@@ -148,8 +148,11 @@
     </div>
 
     <!-- PAINEL DE EDITAR ALERTA -->
-    <dialog id="painel-editar" class=" absolute m-0 ml-auto p-0 h-full max-h-full w-full max-w-full sm:w-[26rem] bg-[#FFFBF6] text-[#2B1A0E]
-               border-l border-[#E9DDCF] shadow-2xl backdrop:bg-black/40 open:flex flex-col" aria-label="Sidebar">
+    <dialog id="painel-editar"
+    class="m-auto p-0 w-[92vw] max-w-[40rem] max-h-[90vh] overflow-hidden rounded-3xl
+           bg-[#FFFBF6] text-[#2B1A0E] border border-[#E9DDCF] shadow-2xl
+           backdrop:bg-black/40 open:flex flex-col"
+    aria-label="Editar alerta">
         <div class="flex items-center justify-between gap-4 h-[88px] shrink-0 px-6 border-b border-[#E9DDCF]">
             <h2 id="titulo-painel" class="text-2xl font-semibold">Editar alerta</h2>
             <button type="button" id="fechar-painel" aria-label="Fechar painel"
@@ -159,7 +162,6 @@
         </div>
         <form id="form-editar" class="flex flex-1 min-h-0 flex-col">
  
-            <!-- campos (rola se a tela for baixa) -->
             <div class="flex-1 overflow-y-auto flex flex-col gap-6 p-6">
  
                 <div class="flex flex-col gap-2">
@@ -275,7 +277,7 @@
     </dialog>
 
     <script>
-        const botaoEditar = document.getElementById('bt-editar')
+        const botoesEditar = document.querySelectorAll('.bt-editar');
         const botaoExcluir = document.getElementById('bt-excluir')
         const botaoFechar = document.getElementById('fechar-painel')
         const botaoCancelar = document.getElementById('cancelar')
@@ -283,9 +285,11 @@
         const painel = document.getElementById('painel-editar')
         const excluir = document.getElementById('rodape-confirmar')
 
-        botaoEditar.addEventListener('click', () =>{
-            painel.showModal();
-            })
+        botoesEditar.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                painel.showModal();
+            });
+        });
 
         botaoFechar.addEventListener('click', () => {
             painel.close();

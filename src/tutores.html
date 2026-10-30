@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outros tutores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .campo {
+                @apply w-full h-12 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition
+                focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex">
+
+        <!-- SIDEBAR-->
+
+        <aside id="default-sidebar" class="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen" aria-label="Sidebar">
+            <div class="flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                <ul class="flex-1 space-y-2 font-medium">
+                    <li class="flex">
+                        <a href="#" class="flex flex-1 items-center px-2 py-3 rounded-2xl group">
+                            <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                        </a>
+                        <button> <img class="w-6 h-6 mb-6" src="svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                    </li>
+
+                    <!-- PERFIL DO USUÁRIO -->
+                    <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                            <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+                            <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meus_pets.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/paw-print.svg" alt="Pata de animal na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meus_agendamentos.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/calendario.svg" alt="Calendario na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meus_alertas.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                        </a>
+                    </li>
+                    <li class="relative">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                        <a href="tutores.html" class="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group" aria-current="page">
+                            <img class="w-6 h-6" src="svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- RODAPÉ DA SIDEBAR-->
+                <ul class="mt-auto space-y-2 py-5 border-t border-[#E9DDCF]">
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img class="w-5 h-5" src="svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img class="w-5 h-5" src="svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- HEADER E MAIN -->
+
+        <div class="bg-[#FFFBF6] flex flex-col self-stretch flex-1">
+
+            <header class="flex flex-row justify-between p-5 border">
+                <a href="index.html" class="flex gap-4">
+                    <img class="w-6 h-6" alt="Figura de seta laranja" src="svg/voltar.svg">
+                    <p>Voltar</p>
+                </a>
+                <button> <img class="w-6 h-6" src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/> </button>
+            </header>
+
+            <main class="flex w-full py-8 px-16 flex-col items-start self-stretch">
+
+                <div class="flex flex-col self-stretch gap-[2.25rem]">
+
+                    <!-- TITULO E BOTAO DE ADICIONAR TUTOR -->
+                    <div class="flex justify-between items-center">
+                        <h1 class="flex items-start self-stretch text-4xl font-semibold">Outros tutores</h1>
+                        <button id="bt-convidar" type="button" class="flex items-center px-5 py-3 gap-4 rounded-2xl font-semibold border border-[#9c9c9c] hover:shadow-md transition">
+                            <img class="w-5 h-5" src="svg/adicionar.svg" alt="Botão de 'Mais'">
+                            Convidar um tutor
+                        </button>
+                    </div>
+
+                    <!-- BUSCA -->
+                    <div class="flex flex-col gap-2 max-w-[800px]">
+                        <label for="busca-tutor" class="sr-only">Buscar tutor</label>
+                        <input id="busca-tutor" type="search" placeholder="Buscar tutor por nome" class="campo">
+                    </div>
+
+                    <!-- PAINEL DE TUTORES -->
+                    <ul id="lista-tutores" class="flex flex-col gap-4 p-6 max-w-[800px] bg-[#E9DDCF] rounded-2xl">
+
+                        <li class="tutor flex items-center gap-5 p-5 px-7 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition">
+                            <span class="w-14 h-14 shrink-0 rounded-full bg-[#E9DDCF] flex items-center justify-center text-xl font-semibold" aria-hidden="true">C</span>
+                            <div class="flex-1 min-w-0">
+                                <p class="nome-tutor font-semibold text-2xl text-[#2B1A0E] truncate">Carlos</p>
+                                <p class="font-semibold text-md text-[#75634F]">Pets em comum: Tina, Fiu</p>
+                            </div>
+                            <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-[#F29A4B] text-sm font-semibold">Tutor principal</span>
+                            <button type="button" class="bt-remover flex gap-2 items-center hover:font-semibold text-[#75634F]">
+                                <img class="w-5 h-5" src="svg/editar.svg" alt="Símbolo de lápis pra editar">
+                                <span class="text-xl">Gerenciar</span>
+                            </button>
+                        </li>
+
+                        <li class="tutor flex items-center gap-5 p-5 px-7 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition">
+                            <span class="w-14 h-14 shrink-0 rounded-full bg-[#E9DDCF] flex items-center justify-center text-xl font-semibold" aria-hidden="true">J</span>
+                            <div class="flex-1 min-w-0">
+                                <p class="nome-tutor font-semibold text-2xl text-[#2B1A0E] truncate">Juliana</p>
+                                <p class="font-semibold text-md text-[#75634F]">Pets em comum: Tina</p>
+                            </div>
+                            <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-[#E9DDCF] text-sm font-semibold">Cuidador</span>
+                            <button type="button" class="bt-remover flex gap-2 items-center hover:font-semibold text-[#75634F]">
+                                <img class="w-5 h-5" src="svg/editar.svg" alt="Símbolo de lápis pra editar">
+                                <span class="text-xl">Gerenciar</span>
+                            </button>
+                        </li>
+
+                        <li class="tutor flex items-center gap-5 p-5 px-7 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition">
+                            <span class="w-14 h-14 shrink-0 rounded-full bg-[#E9DDCF] flex items-center justify-center text-xl font-semibold" aria-hidden="true">R</span>
+                            <div class="flex-1 min-w-0">
+                                <p class="nome-tutor font-semibold text-2xl text-[#2B1A0E] truncate">Roberto</p>
+                                <p class="font-semibold text-md text-[#75634F]">Pets em comum: Fiu</p>
+                            </div>
+                            <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-[#E9DDCF] text-sm font-semibold">Cuidador</span>
+                            <button type="button" class="bt-remover flex gap-2 items-center hover:font-semibold text-[#75634F]">
+                                <img class="w-5 h-5" src="svg/editar.svg" alt="Símbolo de lápis pra editar">
+                                <span class="text-xl">Gerenciar</span>
+                            </button>
+                        </li>
+
+                        <!-- mensagem quando a busca não encontra ninguém -->
+                        <li id="sem-resultado" class="hidden p-5 text-center text-[#75634F] font-semibold">
+                            Nenhum tutor encontrado.
+                        </li>
+                    </ul>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- PAINEL DE CONVIDAR TUTOR -->
+    <dialog id="painel-convidar"
+        class="m-auto p-0 w-[92vw] max-w-[28rem] max-h-[90vh] overflow-hidden rounded-3xl
+               bg-[#FFFBF6] text-[#2B1A0E] border border-[#E9DDCF] shadow-2xl
+               backdrop:bg-black/40 open:flex flex-col"
+        aria-label="Convidar tutor">
+        <div class="flex items-center justify-between gap-4 h-[88px] shrink-0 px-6 border-b border-[#E9DDCF]">
+            <h2 class="text-2xl font-semibold">Convidar tutor</h2>
+            <button type="button" id="fechar-convidar" aria-label="Fechar painel"
+                class="p-2 rounded-lg hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                <img src="svg/fechar.svg" alt="" class="w-6 h-6">
+            </button>
+        </div>
+
+        <form id="form-convidar" class="flex flex-1 min-h-0 flex-col">
+            <div class="flex-1 overflow-y-auto flex flex-col gap-6 p-6">
+                <div class="flex flex-col gap-2">
+                    <label for="convite-email">E-mail do tutor</label>
+                    <input id="convite-email" name="email" type="email" required autocomplete="off" placeholder="nome@email.com" class="campo">
+                </div>
+
+                <fieldset class="flex flex-col gap-3 border-0 p-0 m-0 min-w-0">
+                    <legend class="font-semibold mb-3">Quais pets ele pode ver?</legend>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="pets" value="tina" class="w-5 h-5 accent-[#F29A4B]">
+                        Tina
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="pets" value="fiu" class="w-5 h-5 accent-[#F29A4B]">
+                        Fiu
+                    </label>
+                </fieldset>
+            </div>
+
+            <div class="shrink-0 p-6 border-t border-[#E9DDCF] flex justify-end gap-3">
+                <button type="button" id="cancelar-convite"
+                    class="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                    Cancelar
+                </button>
+                <button type="submit"
+                    class="px-6 h-12 rounded-xl bg-[#F29A4B] font-semibold hover:bg-[#E8863A] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B] focus-visible:ring-offset-2">
+                    Enviar convite
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- PAINEL DE GERENCIAR TUTOR -->
+    <dialog id="painel-gerenciar"
+        class="m-auto p-0 w-[92vw] max-w-[24rem] overflow-hidden rounded-3xl
+               bg-[#FFFBF6] text-[#2B1A0E] border border-[#E9DDCF] shadow-2xl
+               backdrop:bg-black/40"
+        aria-label="Gerenciar tutor">
+        <div class="flex flex-col gap-4 p-6">
+            <div class="flex items-center justify-between gap-4">
+                <h2 id="titulo-gerenciar" class="text-2xl font-semibold">Gerenciar tutor</h2>
+                <button type="button" id="fechar-gerenciar" aria-label="Fechar painel"
+                    class="p-2 rounded-lg hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                    <img src="svg/fechar.svg" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <div id="gerenciar-normal" class="flex flex-col gap-3">
+                <p class="text-[#75634F]">Remover este tutor tira o acesso dele aos seus pets.</p>
+                <div class="flex items-center justify-between gap-3">
+                    <button type="button" id="bt-remover-tutor"
+                        class="font-semibold text-[#B3261E] rounded-lg hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B3261E]">
+                        Remover tutor
+                    </button>
+                    <button type="button" id="bt-fechar-gerenciar"
+                        class="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+
+            <div id="gerenciar-confirmar" hidden class="flex flex-col gap-3">
+                <p class="font-semibold">Remover este tutor?</p>
+                <p class="text-sm text-[#75634F]">Essa ação não pode ser desfeita!</p>
+                <div class="flex gap-3">
+                    <button type="button" id="bt-manter-tutor"
+                        class="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                        Manter
+                    </button>
+                    <button type="button" id="bt-confirmar-remover"
+                        class="px-5 h-12 rounded-xl bg-[#B3261E] text-white font-semibold hover:brightness-110 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B3261E] focus-visible:ring-offset-2">
+                        Sim, quero remover
+                    </button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- AVISO DE CONVITE ENVIADO -->
+    <div id="aviso-convite" role="status"
+        class="hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[380px] max-w-[90vw] items-center gap-3 p-5 bg-[#E8863A] rounded-3xl shadow-2xl border border-[#E9DDCF]">
+        <div class="inline-flex items-center justify-center shrink-0 w-7 h-7 bg-white/40 rounded-full">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/></svg>
+        </div>
+        <div class="ms-3 text-xl font-normal">Convite enviado com sucesso</div>
+    </div>
+
+    <script>
+        const busca = document.getElementById('busca-tutor');
+        const tutores = document.querySelectorAll('#lista-tutores .tutor');
+        const semResultado = document.getElementById('sem-resultado');
+
+        busca.addEventListener('input', () => {
+            const termo = busca.value.trim().toLowerCase();
+            let visiveis = 0;
+
+            tutores.forEach((tutor) => {
+                const nome = tutor.querySelector('.nome-tutor').textContent.toLowerCase();
+                const mostrar = nome.includes(termo);
+                tutor.classList.toggle('hidden', !mostrar);
+                tutor.classList.toggle('flex', mostrar);
+                if (mostrar) visiveis++;
+            });
+
+            semResultado.classList.toggle('hidden', visiveis > 0);
+        });
+
+        const painelConvidar = document.getElementById('painel-convidar');
+        const formConvidar = document.getElementById('form-convidar');
+        const aviso = document.getElementById('aviso-convite');
+        let timerAviso;
+
+        document.getElementById('bt-convidar').addEventListener('click', () => {
+            formConvidar.reset();
+            painelConvidar.showModal();
+        });
+        document.getElementById('fechar-convidar').addEventListener('click', () => painelConvidar.close());
+        document.getElementById('cancelar-convite').addEventListener('click', () => painelConvidar.close());
+
+        painelConvidar.addEventListener('click', (e) => {
+            if (e.target === painelConvidar) painelConvidar.close();
+        });
+
+        formConvidar.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // aqui, no futuro, você envia o convite
+            painelConvidar.close();
+
+            aviso.classList.remove('hidden');
+            aviso.classList.add('flex');
+            clearTimeout(timerAviso);
+            timerAviso = setTimeout(() => {
+                aviso.classList.add('hidden');
+                aviso.classList.remove('flex');
+            }, 4000);
+        });
+
+        const painelGerenciar = document.getElementById('painel-gerenciar');
+        const tituloGerenciar = document.getElementById('titulo-gerenciar');
+        const blocoNormal = document.getElementById('gerenciar-normal');
+        const blocoConfirmar = document.getElementById('gerenciar-confirmar');
+        let tutorSelecionado = null;
+
+        function resetarGerenciar() {
+            blocoNormal.hidden = false;
+            blocoConfirmar.hidden = true;
+        }
+
+        document.querySelectorAll('.bt-remover').forEach((botao) => {
+            botao.addEventListener('click', () => {
+                tutorSelecionado = botao.closest('.tutor');
+                tituloGerenciar.textContent = tutorSelecionado.querySelector('.nome-tutor').textContent;
+                resetarGerenciar();
+                painelGerenciar.showModal();
+            });
+        });
+
+        document.getElementById('fechar-gerenciar').addEventListener('click', () => painelGerenciar.close());
+        document.getElementById('bt-fechar-gerenciar').addEventListener('click', () => painelGerenciar.close());
+
+        document.getElementById('bt-remover-tutor').addEventListener('click', () => {
+            blocoNormal.hidden = true;
+            blocoConfirmar.hidden = false;
+        });
+
+        document.getElementById('bt-manter-tutor').addEventListener('click', resetarGerenciar);
+
+        document.getElementById('bt-confirmar-remover').addEventListener('click', () => {
+            if (tutorSelecionado) tutorSelecionado.remove();
+            painelGerenciar.close();
+        });
+
+        painelGerenciar.addEventListener('click', (e) => {
+            if (e.target === painelGerenciar) painelGerenciar.close();
+        });
+    </script>
+
+</body>
+</html>
