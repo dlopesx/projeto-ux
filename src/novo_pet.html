@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer components {
+            .campo {
+                @apply rounded-2xl outline-none transition
+                focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+            }
+        }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -26,193 +34,322 @@
             },
         }
     </script>
-
 </head>
 <body>
 
     <!-- DESKTOP -->
     <section class="hidden md:block">
-        <div class="flex">
 
-                <!-- SIDEBAR-->
+        <!-- ================= CADASTRO (etapas 1 a 5) ================= -->
+        <div id="cadastro" class="flex">
 
-                <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
-                    <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
-                        <ul class=" flex-1 space-y-2 font-medium">
-                            <li class="flex">
-                                <a href="#" class="flex flex-1 items-center px-2 py-3  rounded-2xl  group">
+            <!-- SIDEBAR -->
+            <aside id="default-sidebar" class="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen" aria-label="Sidebar">
+                <div class="flex flex-col flex-1 px-3 py-4 justify-between">
+                    <ul class="flex-1 space-y-2 font-medium">
+                        <li class="flex">
+                            <a href="#" class="flex flex-1 items-center px-2 py-3 rounded-2xl group">
                                 <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
-                                </a>
-                                <button> <img class="pb-6" src = "svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
-                            </li>
+                            </a>
+                            <button><img class="pb-6" src="svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                        </li>
 
-                            <!-- PERFIL DO USUÁRIO -->
-                            <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
-                                <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
-                                    <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
-                                    <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
-                                </a>
-                            </li>
+                        <!-- PERFIL DO USUÁRIO -->
+                        <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                            <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                                <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+                                <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                            </a>
+                        </li>
 
-                            <li class="relative">
-                                <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF]  group">
-                                <img src = "svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                        <li>
+                            <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                                <img src="svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="meus_pets.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                                <img src = "svg/paw-print.svg" a    lt="Pata de animal na cor laranja"/>
+                            </a>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                            <a href="meus_pets.html" class="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group" aria-current="page">
+                                <img src="svg/paw-print.svg" alt="Pata de animal na cor laranja"/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="meus_agendamentos.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                                <img src = "svg/calendario.svg" alt="Calendario na cor laranja"/>
-
+                            </a>
+                        </li>
+                        <li>
+                            <a href="meus_agendamentos.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img src="svg/calendario.svg" alt="Calendario na cor laranja"/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="meus_alertas.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                                <img src = "svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
-
+                            </a>
+                        </li>
+                        <li>
+                            <a href="meus_alertas.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tutores.html" class="flex items-center px-2 py-3  rounded-2xl hover:bg-[#E9DDCF]  group">
-                                <img src = "svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tutores.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img src="svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
-                                </a>
-                            </li>
-                        </ul>
+                            </a>
+                        </li>
+                    </ul>
 
-                        <!-- RODAPÉ DA SIDEBAR-->
-                        <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
-                            <li>
-                                <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
-                                
-                            </li>
-                        </ul>
-                        
-                    </div>
-                </aside>
+                    <!-- RODAPÉ DA SIDEBAR -->
+                    <ul class="mt-auto space-y-2 py-5 border-t border-[#E9DDCF]">
+                        <li>
+                            <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src="svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src="svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
 
-                <!-- HEADER E MAIN -->
+            <!-- HEADER E MAIN -->
+            <div class="bg-[#FFFBF6] flex flex-col self-stretch flex-1 min-w-0">
 
-                <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
+                <header class="flex flex-row justify-between p-5 border">
+                    <a href="index.html" class="flex gap-4">
+                        <img alt="Figura de seta laranja" src="svg/voltar.svg">
+                        <p>Voltar ao menu</p>
+                    </a>
+                    <button><img src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/></button>
+                </header>
 
-                    <header class="flex flex-row justify-between p-5 border ">
-                        <a href="index.html" class="flex gap-4">
-                            <img alt="Figura de seta laranja" src="svg/voltar.svg">
-                            <p> Voltar</p>
-                        </a>
-                        <button> <img src = "svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
-                    </header>
+                <main class="flex w-full py-8 px-16 items-start self-stretch">
 
-                    
-                    <main class="flex w-full py-8 px-16 flex items-start self-stretch">
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-[20rem_60rem] gap-20 w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-[16rem_minmax(0,1fr)] gap-12 w-full max-w-6xl">
 
-                            <!-- NAVEGAÇÃO ENTRE ETAPAS -->
-                            <div class="flex flex-col gap-9 p-9">
-                                <h3 class= " flex items-start self-stretch font-semibold"> NOVO PET </h3>
-                                <div class="flex items-center gap-4">
-                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F29A4B] border border-[#E9DDCF] flex justify-center items-center">1</div>
-                                    <p> Nome e espécie </p>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">2</div>
-                                    <p> Raça </p>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">3</div>
-                                    <p> Nascimento </p>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">4</div>
-                                    <p> Informações adicionais </p>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <div class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">5</div>
-                                    <p> Foto </p>
-                                </div>
+                        <!-- NAVEGAÇÃO ENTRE ETAPAS -->
+                        <div class="flex flex-col gap-9 p-9">
+                            <h3 class="flex items-start self-stretch font-semibold">NOVO PET</h3>
+                            <div class="flex items-center gap-4">
+                                <div data-passo="1" class="rounded-full w-9 h-9 shrink-0 bg-[#F29A4B] border border-[#E9DDCF] flex justify-center items-center">1</div>
+                                <p>Nome e espécie</p>
                             </div>
+                            <div class="flex items-center gap-4">
+                                <div data-passo="2" class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">2</div>
+                                <p>Raça</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div data-passo="3" class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">3</div>
+                                <p>Nascimento</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div data-passo="4" class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">4</div>
+                                <p>Informações adicionais</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div data-passo="5" class="rounded-full w-9 h-9 shrink-0 bg-[#F8F0E6] border border-[#E9DDCF] flex justify-center items-center">5</div>
+                                <p>Foto</p>
+                            </div>
+                        </div>
 
-                            <!-- FORMULARIO -->
-                            <div class=" flex flex-col self-stretch w-full gap-12 border p-9 border-[#E9DDCF] rounded-3xl ">
+                        <!-- ÁREA DAS ETAPAS -->
+                        <div class="flex flex-col gap-3 min-w-0">
+
+                            <!-- voltar ao passo anterior (aparece da etapa 2 em diante) -->
+                            <button type="button" id="bt-voltar-passo" class="hidden items-center gap-2 text-sm self-start hover:underline">
+                                <img class="w-4 h-4" src="svg/voltar.svg" alt="">
+                                Voltar ao passo anterior
+                            </button>
+
+                            <!-- ETAPA 1: NOME E ESPÉCIE -->
+                            <section class="etapa flex flex-col w-full gap-10 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="1">
                                 <label for="nome_pet">
-                                    <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Qual o nome do pet?</h1>
+                                    <h1 class="text-4xl font-semibold">Qual o nome do pet?</h1>
                                 </label>
-                                <input id="nome_pet"  name="nome_pet" class="w-130 h-10 px-5 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl">
+                                <input id="nome_pet" name="nome_pet" type="text" class="campo w-full max-w-lg h-12 px-5 bg-[#F8F0E6] border border-[#E9DDCF]">
 
-                                <div class="flex gap-4 flex-col">
-                                    <h3> Selecione a espécie: </h3>
-                                    <div class="flex gap-3">
-                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                            <input type="radio" id="cachorro" class="hidden peer" type="radio" name="especie" value="cachorro" class="hidden peer">
-                                            <label for="especie"> Cachorro </label>
+                                <fieldset class="flex flex-col gap-4">
+                                    <legend class="mb-4">Selecione a espécie:</legend>
+                                    <div class="flex flex-wrap gap-3">
+                                        <div>
+                                            <input type="radio" id="cachorro" name="especie" value="cachorro" class="peer sr-only">
+                                            <label for="cachorro" class="block cursor-pointer px-4 py-1.5 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] hover:border-[#F29A4B] peer-checked:bg-[#F29A4B] peer-checked:border-[#F29A4B] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F29A4B]">Cachorro</label>
                                         </div>
-                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                            <input type="radio" id="gato" class="hidden peer" type="radio" name="especie" value="gato" class="hidden peer">
-                                            <label for="especie"> Gato </label>
+                                        <div>
+                                            <input type="radio" id="gato" name="especie" value="gato" class="peer sr-only">
+                                            <label for="gato" class="block cursor-pointer px-4 py-1.5 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] hover:border-[#F29A4B] peer-checked:bg-[#F29A4B] peer-checked:border-[#F29A4B] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F29A4B]">Gato</label>
                                         </div>
-                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1.5 rounded-2xl">
-                                            <input type="radio" id="passaro" class="hidden peer" type="radio" name="especie" value="passaro" class="hidden peer">
-                                            <label for="especie"> Pássaro </label>
+                                        <div>
+                                            <input type="radio" id="passaro" name="especie" value="passaro" class="peer sr-only">
+                                            <label for="passaro" class="block cursor-pointer px-4 py-1.5 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] hover:border-[#F29A4B] peer-checked:bg-[#F29A4B] peer-checked:border-[#F29A4B] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F29A4B]">Pássaro</label>
                                         </div>
-                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                            <input type="radio" id="peixe" class="hidden peer" type="radio" name="especie" value="peixe" class="hidden peer">
-                                            <label for="especie"> Peixe </label>
+                                        <div>
+                                            <input type="radio" id="peixe" name="especie" value="peixe" class="peer sr-only">
+                                            <label for="peixe" class="block cursor-pointer px-4 py-1.5 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] hover:border-[#F29A4B] peer-checked:bg-[#F29A4B] peer-checked:border-[#F29A4B] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F29A4B]">Peixe</label>
                                         </div>
-                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                            <input type="radio" id="roedor" class="hidden peer" type="radio" name="especie" value="roedor" class="hidden peer">
-                                            <label for="especie"> Roedor </label>
+                                        <div>
+                                            <input type="radio" id="roedor" name="especie" value="roedor" class="peer sr-only">
+                                            <label for="roedor" class="block cursor-pointer px-4 py-1.5 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] hover:border-[#F29A4B] peer-checked:bg-[#F29A4B] peer-checked:border-[#F29A4B] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F29A4B]">Roedor</label>
                                         </div>
-                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                            <input type="radio" id="reptil" class="hidden peer" type="radio" name="especie" value="reptil" class="hidden peer">
-                                            <label for="especie"> Réptil </label>
+                                        <div>
+                                            <input type="radio" id="reptil" name="especie" value="reptil" class="peer sr-only">
+                                            <label for="reptil" class="block cursor-pointer px-4 py-1.5 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] hover:border-[#F29A4B] peer-checked:bg-[#F29A4B] peer-checked:border-[#F29A4B] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F29A4B]">Réptil</label>
                                         </div>
-                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                            <input type="radio" id="outro" class="hidden peer" type="radio" name="especie" value="outro" class="hidden peer">
-                                            <label for="especie"> Outro </label>
+                                        <div>
+                                            <input type="radio" id="outro" name="especie" value="outro" class="peer sr-only">
+                                            <label for="outro" class="block cursor-pointer px-4 py-1.5 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] hover:border-[#F29A4B] peer-checked:bg-[#F29A4B] peer-checked:border-[#F29A4B] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F29A4B]">Outro</label>
                                         </div>
                                     </div>
+                                </fieldset>
+
+                                <fieldset class="flex flex-col gap-4">
+                                    <legend class="mb-4">Sexo:</legend>
+                                    <div class="flex flex-wrap gap-3">
+                                        <div>
+                                            <input type="radio" id="femea" name="sexo" value="femea" class="peer sr-only">
+                                            <label for="femea" class="block cursor-pointer px-4 py-1.5 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] hover:border-[#F29A4B] peer-checked:bg-[#F29A4B] peer-checked:border-[#F29A4B] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F29A4B]">Fêmea</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="macho" name="sexo" value="macho" class="peer sr-only">
+                                            <label for="macho" class="block cursor-pointer px-4 py-1.5 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] hover:border-[#F29A4B] peer-checked:bg-[#F29A4B] peer-checked:border-[#F29A4B] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F29A4B]">Macho</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <p class="erro hidden text-sm text-red-700" role="alert">Preencha o nome e selecione a espécie e o sexo.</p>
+
+                                <button type="button" class="bt-avancar flex bg-[#F29A4B] w-40 px-4 py-3 rounded-2xl items-center justify-center hover:bg-[#E8863A] hover:shadow-md transition">
+                                    Avançar
+                                </button>
+                            </section>
+
+                            <!-- ETAPA 2: RAÇA -->
+                            <section class="etapa hidden flex-col w-full gap-10 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="2">
+                                <label for="raca_pet">
+                                    <h1 class="text-4xl font-semibold">Qual a raça do pet?</h1>
+                                </label>
+                                <div class="flex flex-col gap-5">
+                                    <input id="raca_pet" name="raca_pet" type="text" class="campo w-full max-w-lg h-12 px-5 bg-[#F8F0E6] border border-[#E9DDCF]">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" id="sem_raca" name="sem_raca" class="size-5 accent-[#F29A4B]">
+                                        Não sei qual é a raça
+                                    </label>
                                 </div>
+
+                                <p class="erro hidden text-sm text-red-700" role="alert">Informe a raça ou marque que não sabe.</p>
+
+                                <button type="button" class="bt-avancar flex bg-[#F29A4B] w-40 px-4 py-3 rounded-2xl items-center justify-center hover:bg-[#E8863A] hover:shadow-md transition">
+                                    Avançar
+                                </button>
+                            </section>
+
+                            <!-- ETAPA 3: NASCIMENTO -->
+                            <section class="etapa hidden flex-col w-full gap-10 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="3">
+                                <label for="data_nasc">
+                                    <h1 class="text-4xl font-semibold">Qual a data de nascimento do pet?</h1>
+                                </label>
+                                <div class="flex flex-col gap-5">
+                                    <input id="data_nasc" name="data_nasc" type="date" class="campo w-full max-w-lg h-12 px-5 bg-[#F8F0E6] border border-[#E9DDCF]">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" id="sem_data" name="sem_data" class="size-5 accent-[#F29A4B]">
+                                        Não sei a data
+                                    </label>
+                                </div>
+
+                                <p class="erro hidden text-sm text-red-700" role="alert">Informe a data ou marque que não sabe.</p>
+
+                                <button type="button" class="bt-avancar flex bg-[#F29A4B] w-40 px-4 py-3 rounded-2xl items-center justify-center hover:bg-[#E8863A] hover:shadow-md transition">
+                                    Avançar
+                                </button>
+                            </section>
+
+                            <!-- ETAPA 4: INFORMAÇÕES ADICIONAIS -->
+                            <section class="etapa hidden flex-col w-full gap-10 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="4">
+                                <div class="flex flex-col gap-3">
+                                    <h1 class="text-4xl font-semibold">Quase lá!</h1>
+                                    <p class="font-semibold text-[#8F4B17]">Preencha informações adicionais sobre o pet.</p>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+                                    <div class="flex flex-col gap-3">
+                                        <label for="cor_pet">Cor</label>
+                                        <input id="cor_pet" name="cor_pet" type="text" class="campo w-full h-14 px-5 bg-[#F8F0E6] border border-[#E9DDCF]">
+                                    </div>
+                                    <div class="flex flex-col gap-3">
+                                        <label for="peso_pet">Peso (kg)</label>
+                                        <input id="peso_pet" name="peso_pet" type="number" min="0" step="0.1" class="campo w-full h-14 px-5 bg-[#F8F0E6] border border-[#E9DDCF]">
+                                    </div>
+                                </div>
+
+                                <fieldset class="flex flex-col gap-2">
+                                    <legend class="text-[#8F4B17] mb-2">O pet é adotado?</legend>
+                                    <div class="flex gap-16">
+                                        <label class="flex items-center gap-3 cursor-pointer">
+                                            <input type="radio" name="adotado" value="sim" class="size-5 accent-[#F29A4B]"> Sim
+                                        </label>
+                                        <label class="flex items-center gap-3 cursor-pointer">
+                                            <input type="radio" name="adotado" value="nao" class="size-5 accent-[#F29A4B]"> Não
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="flex flex-col gap-2">
+                                    <legend class="text-[#8F4B17] mb-2">O pet é castrado?</legend>
+                                    <div class="flex gap-16">
+                                        <label class="flex items-center gap-3 cursor-pointer">
+                                            <input type="radio" name="castrado" value="sim" class="size-5 accent-[#F29A4B]"> Sim
+                                        </label>
+                                        <label class="flex items-center gap-3 cursor-pointer">
+                                            <input type="radio" name="castrado" value="nao" class="size-5 accent-[#F29A4B]"> Não
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <button type="button" class="bt-avancar flex bg-[#F29A4B] w-40 px-4 py-3 rounded-2xl items-center justify-center hover:bg-[#E8863A] hover:shadow-md transition">
+                                    Avançar
+                                </button>
+                            </section>
+
+                            <!-- ETAPA 5: FOTO -->
+                            <section class="etapa hidden flex-col w-full gap-8 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="5">
+                                <div class="flex flex-col gap-3">
+                                    <h1 class="text-4xl font-semibold">Que tal uma foto?</h1>
+                                    <p class="text-sm text-[#8F4B17]">Personalize o perfil de <span class="nome-pet">seu pet</span>!</p>
+                                </div>
+
+                                <div class="flex justify-center py-4">
+                                    <div class="size-36 rounded-full overflow-hidden bg-[#F8F0E6] border border-[#E9DDCF] flex items-center justify-center">
+                                        <img id="preview-foto" src="svg/paw-print.svg" alt="Prévia da foto do pet" class="w-12 h-12 opacity-70 object-contain">
+                                    </div>
+                                </div>
+
+                                <input type="file" id="foto_pet" name="foto_pet" accept="image/*" class="sr-only">
 
                                 <div class="flex flex-col gap-4">
-                                    <h3> Sexo: </h3>
-                                    <div class="flex gap-3">
-                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                            <input type="radio" id="femea" class="hidden peer" type="radio" name="especie" value="femea" class="hidden peer">
-                                            <label for="especie"> Fêmea </label>
-                                        </div>
-                                        <div class="border border-[#E9DDCF] bg-[#F8F0E6] px-4 py-1 rounded-2xl">
-                                            <input type="radio" id="macho" class="hidden peer" type="radio" name="especie" value="macho" class="hidden peer">
-                                            <label for="especie"> Macho </label>
-                                        </div>
-                                    </div>
+                                    <button type="button" id="bt-escolher-foto" class="w-full h-12 flex items-center justify-center gap-2 rounded-xl bg-[#F29A4B] font-semibold hover:bg-[#E8863A] hover:shadow-md transition">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                                        Escolher arquivo
+                                    </button>
+                                    <button type="button" id="bt-concluir" class="w-full h-12 rounded-xl bg-botao2 text-texto3 font-semibold hover:brightness-95 hover:shadow-md transition">
+                                        Não, obrigado. Concluir
+                                    </button>
                                 </div>
+                            </section>
 
-                                <button type="submit" class="flex bg-[#F29A4B] w-40 px-4 py-3 gap-4 rounded-2xl items-center justify-center hover:bg-[#E8863A] hover:shadow-md transition transition" > 
-                                    Avançar 
-                                </button>
-                            </div>
-                                
-                            </div>
-                
-                    </main>
+                        </div>
+                    </div>
 
-                </div>
-                
-
-
+                </main>
             </div>
+        </div>
+
+        <!-- ================= PET CADASTRADO ================= -->
+        <div id="sucesso" class="hidden min-h-screen w-full bg-[#FFFBF6] items-center justify-center p-8">
+            <div class="w-full max-w-[26rem] flex flex-col gap-8 rounded-3xl border border-[#E9DDCF] bg-[#F8F0E6] p-8">
+                <h2 class="text-2xl font-semibold text-texto1">Pet cadastrado!</h2>
+                <p class="text-texto3">Veja o perfil de <span class="nome-pet font-semibold">seu pet</span> ♡</p>
+                <!-- troque o href pela página do pet quando ela existir -->
+                <a id="bt-ir-pet" href="meus_pets.html" class="w-full h-12 flex items-center justify-center rounded-xl bg-[#F29A4B] text-sm font-semibold hover:bg-[#E8863A] hover:shadow-md transition">
+                    Ir para o pet
+                </a>
+            </div>
+        </div>
+
     </section>
 
     <!-- MOBILE -->
@@ -220,7 +357,7 @@
         <div id="nomeEspecie" class="min-h-screen w-full bg-fundo flex flex-col">
 
             <header class="h-16 shrink-0 px-5 border-b border-borda flex items-center gap-4">
-                <button type="button" aria-label="Voltar" onclick="window.location.href='index.html'" 
+                <button type="button" aria-label="Voltar" onclick="window.location.href='index.html'"
                     class="size-6 shrink-0 flex items-center justify-center">
                     <img src="svg/voltar.svg" alt="Figura de voltar laranja" class="size-4 object-contain">
                 </button>
@@ -330,8 +467,8 @@
         </div>
     </section>
 
+    <!-- SCRIPT MOBILE (igual ao seu) -->
     <script>
-
         const formPetMobile = document.getElementById('form-pet-mobile');
         const especiePetMobile = document.getElementById('especie-pet-mobile');
         const sexoPetMobile = document.getElementById('sexo-pet-mobile');
@@ -358,17 +495,8 @@
             });
         }
 
-        selecionarOpcao(
-            document.getElementById('especies-mobile'),
-            'especie',
-            especiePetMobile
-        );
-
-        selecionarOpcao(
-            document.getElementById('sexos-mobile'),
-            'sexo',
-            sexoPetMobile
-        );
+        selecionarOpcao(document.getElementById('especies-mobile'), 'especie', especiePetMobile);
+        selecionarOpcao(document.getElementById('sexos-mobile'), 'sexo', sexoPetMobile);
 
         formPetMobile.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -389,9 +517,107 @@
             painelPetMobile.classList.add('hidden');
             painelPetMobile.classList.remove('flex');
         });
-
     </script>
 
+    <!-- SCRIPT DESKTOP: etapas -->
+    <script>
+        (function () {
+            const etapas = document.querySelectorAll('.etapa');
+            const passos = document.querySelectorAll('[data-passo]');
+            const botaoVoltar = document.getElementById('bt-voltar-passo');
+            const nomePet = document.getElementById('nome_pet');
+            const racaPet = document.getElementById('raca_pet');
+            const semRaca = document.getElementById('sem_raca');
+            const dataNasc = document.getElementById('data_nasc');
+            const semData = document.getElementById('sem_data');
+            const inputFoto = document.getElementById('foto_pet');
+            const previewFoto = document.getElementById('preview-foto');
+            const botaoConcluir = document.getElementById('bt-concluir');
+            let etapaAtual = 1;
+
+            // regras de cada etapa (etapa 4 e 5 são opcionais)
+            const validacoes = {
+                1: () => nomePet.value.trim()
+                    && document.querySelector('input[name="especie"]:checked')
+                    && document.querySelector('input[name="sexo"]:checked'),
+                2: () => racaPet.value.trim() || semRaca.checked,
+                3: () => dataNasc.value || semData.checked,
+            };
+
+            function atualizarNomes() {
+                const nome = nomePet.value.trim() || 'seu pet';
+                document.querySelectorAll('.nome-pet').forEach((el) => (el.textContent = nome));
+            }
+
+            function irPara(n) {
+                etapaAtual = n;
+
+                etapas.forEach((e) => {
+                    const ativa = Number(e.dataset.etapa) === n;
+                    e.classList.toggle('hidden', !ativa);
+                    e.classList.toggle('flex', ativa);
+                });
+
+                // círculos da lateral: etapas já feitas e a atual ficam laranja
+                passos.forEach((p) => {
+                    const feito = Number(p.dataset.passo) <= n;
+                    p.classList.toggle('bg-[#F29A4B]', feito);
+                    p.classList.toggle('bg-[#F8F0E6]', !feito);
+                });
+
+                botaoVoltar.classList.toggle('hidden', n === 1);
+                botaoVoltar.classList.toggle('flex', n > 1);
+                atualizarNomes();
+            }
+
+            document.querySelectorAll('.bt-avancar').forEach((botao) => {
+                botao.addEventListener('click', () => {
+                    const erro = etapas[etapaAtual - 1].querySelector('.erro');
+                    const valida = validacoes[etapaAtual];
+
+                    if (valida && !valida()) {
+                        erro?.classList.remove('hidden');
+                        return;
+                    }
+                    erro?.classList.add('hidden');
+                    irPara(etapaAtual + 1);
+                });
+            });
+
+            botaoVoltar.addEventListener('click', () => irPara(etapaAtual - 1));
+
+            // "Não sei": desativa o campo correspondente
+            semRaca.addEventListener('change', () => {
+                racaPet.disabled = semRaca.checked;
+                if (semRaca.checked) racaPet.value = '';
+            });
+            semData.addEventListener('change', () => {
+                dataNasc.disabled = semData.checked;
+                if (semData.checked) dataNasc.value = '';
+            });
+
+            // foto
+            document.getElementById('bt-escolher-foto').addEventListener('click', () => inputFoto.click());
+
+            inputFoto.addEventListener('change', () => {
+                const arquivo = inputFoto.files[0];
+                if (!arquivo) return;
+
+                previewFoto.src = URL.createObjectURL(arquivo);
+                previewFoto.className = 'w-full h-full object-cover';
+                botaoConcluir.textContent = 'Concluir';
+            });
+
+            // concluir: troca o cadastro pela tela "Pet cadastrado!"
+            botaoConcluir.addEventListener('click', () => {
+                atualizarNomes();
+                document.getElementById('cadastro').classList.add('hidden');
+                const sucesso = document.getElementById('sucesso');
+                sucesso.classList.remove('hidden');
+                sucesso.classList.add('flex');
+            });
+        })();
+    </script>
 
 </body>
 </html>

@@ -102,19 +102,22 @@
             
             <main class="flex flex-col w-full py-8 px-16 items-start gap-10 self-stretch">
                 
-                <div class="flex flex-col gap-10">
+                <div class="flex flex-col gap-10 w-full">
                     <div class="flex justify-between items-center">
                         <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Alimentação </h1>
                         
                     </div>
-                    <div class="flex gap-[2.25rem]">
-                        <section class="w-full flex flex flex-col gap-6 bg-[#F8F0E6]">
-                            <div class="flex flex-col gap-16 rounded-3xl border border-[#E9DDCF] p-8">
+                    <div class="flex gap-[2.25rem] ">
+
+                        <!-- ROTINA ALIMENTAR-->
+                         
+                        <section class="flex-1 flex flex-col gap-6 bg-[#F8F0E6]">
+                            <div class="flex flex-col gap-16 rounded-3xl border border-[#E9DDCF] w-full p-8">
                                 <div class="flex justify-between">
                                     <p class="text-2xl font-semibold"> Rotina alimentar</p>
                                     <button id="bt-rotina-editar"> <img src="../svg/edit.svg"> </button>
                                 </div>
-                                <ol class="ml-3 flex flex-col gap-[5rem] border-l-2 border-[#E9DDCF] pl-8">
+                                <ol id="lista-rotina" class="ml-3 flex flex-col gap-[5rem] border-l-2 border-[#E9DDCF] pl-8">
                                     <li class="relative flex flex-col gap-2">
                                         <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
                                         <p class="text-md font-semibold bg-[#E9DDCF] rounded-full px-4 py-2 max-w-[15rem] text-[#473C31]">Manhã - Entre 6h e 9h</p>
@@ -133,13 +136,15 @@
                                 </ol>
                             </div>
                         </section>
-                        <section class="w-full max-w-[32.75rem] flex flex-col gap-6">
+
+                        <!-- ALIMENTOS PREFERIDOS DO PET -->
+                        <section id="favoritos-original" class="w-[32.75rem] shrink-0 flex flex-col gap-6 relative w-full max-w-[32.75rem]">
                             <div class="flex flex-col gap-6 rounded-3xl  border border-[#E9DDCF] p-8">
                                 <div class="flex justify-between">
                                     <p class="font-semibold text-xl text-[#120111]"> Alimentos preferidos</p>
                                     <button id="bt-preferido-editar"> <img src="../svg/edit.svg"> </button>
                                 </div>
-                                <ol class="flex-wrap flex gap-4">
+                                <ol id="lista-original" class="flex-wrap flex gap-4 min-h-[6rem]">
                                     <li class="px-4 py-2 text-md font-semibold rounded-full  border border-[#F29A4B]">
                                         <p> Frango cozido</p>
                                     </li>
@@ -155,16 +160,117 @@
                                 </ol>
                             </div>
                         </section>
+
+                        <!-- EDITAR E REMOVER ALIMEENTOS PREFERIDOS-->
+                        <section id="favoritos-editar" class="w-full max-w-[32.75rem] flex flex-col gap-6 hidden">
+                            <div class="flex flex-col gap-6 rounded-3xl border border-[#E9DDCF] p-8">
+                                <div class="flex justify-between">
+                                    <p class="font-semibold text-xl text-[#120111]">Alimentos preferidos</p>
+                                    <button id="bt-editar-fechar"><img src="../svg/fechar.svg"></button>
+                                </div>
+
+                                <ol class="flex-wrap flex gap-4 min-h-[6rem]">
+                                    <li>
+                                        <span onclick="this.parentElement.remove()" class="inline-flex items-center bg-[#FEF3E8] border border-[#F29A4B] text-[#120111] text-md font-semibold ps-4 pe-2 py-2 rounded-full gap-2">
+                                            <span>Frango cozido</span>
+                                            <button type="button" onclick="this.parentElement.remove()" class="remover inline-flex items-center p-0.5 bg-transparent rounded-full hover:bg-[#F29A4B]/20" data-dismiss-target="#badge-dismiss-frango" aria-label="Remover Frango cozido">
+                                                <svg class="w-4 h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                                                <span class="sr-only">Remover</span>
+                                            </button>
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <span class="inline-flex items-center bg-[#FEF3E8] border border-[#F29A4B] text-[#120111] text-md font-semibold ps-4 pe-2 py-2 rounded-full gap-2">
+                                            <span>Brócolis</span>
+                                            <button type="button" onclick="this.parentElement.remove()" class="remover inline-flex items-center p-0.5 bg-transparent rounded-full hover:bg-[#F29A4B]/20" data-dismiss-target="#badge-dismiss-brocolis" aria-label="Remover Brócolis">
+                                                <svg class="w-4 h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                                                <span class="sr-only">Remover</span>
+                                            </button>
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <span  class="inline-flex items-center bg-[#FEF3E8] border border-[#F29A4B] text-[#120111] text-md font-semibold ps-4 pe-2 py-2 rounded-full gap-2">
+                                            <span>Banana</span>
+                                            <button type="button" onclick="this.parentElement.remove()" class="remover inline-flex items-center p-0.5 bg-transparent rounded-full hover:bg-[#F29A4B]/20" data-dismiss-target="#badge-dismiss-banana" aria-label="Remover Banana">
+                                                <svg class="w-4 h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                                                <span class="sr-only">Remover</span>
+                                            </button>
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <span class="inline-flex items-center bg-[#FEF3E8] border border-[#F29A4B] text-[#120111] text-md font-semibold ps-4 pe-2 py-2 rounded-full gap-2">
+                                            <span>Petisco de carne</span>
+                                            <button type="button" onclick="this.parentElement.remove()" class="remover inline-flex items-center p-0.5 bg-transparent rounded-full hover:bg-[#F29A4B]/20" data-dismiss-target="#badge-dismiss-petisco" aria-label="Remover Petisco de carne">
+                                                <svg class="w-4 h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+                                                <span class="sr-only">Remover</span>
+                                            </button>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="inline-flex items-center text-[#120111] text-md font-semibold">
+                                            <button id="bt-adicionar" type="button" class="inline-flex items-center p-0.5 bg-transparent rounded-full hover:bg-[#F29A4B]/20" aria-label="Adicionar alimento favorito">
+                                            <img src="../svg/adicionar2.svg">
+                                            </button>
+                                        </span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </main>
         </div>
     </div>
 
-    
-
     <script>
+        const painelOriginal = document.getElementById("favoritos-original");
+        const painelEditar = document.getElementById("favoritos-editar");
+        const listaOriginal = document.getElementById("lista-original");
+        const botaoEditar = document.getElementById("bt-preferido-editar");
+        const botaoFecharPainel = document.getElementById("bt-editar-fechar");
+        const botaoRotinaEditar = document.getElementById("bt-rotina-editar");
+        const textosRotina = document.querySelectorAll("#lista-rotina li p");
+        let editandoRotina = false;
+
+        botaoEditar.addEventListener('click', () => {
+            painelOriginal.classList.add('hidden');
+            painelEditar.classList.remove('hidden');
+        })
         
+        document.querySelectorAll(".remover").forEach((botao) => {
+            botao.addEventListener("click", () => botao.closest("li").remove());
+        });
+
+        botaoFecharPainel.addEventListener("click", () => {
+        // copia o que sobrou no painel de edição para o painel original
+            const nomes = [...painelEditar.querySelectorAll("li > span > span:first-child")]
+                .map((s) => s.textContent);
+
+            listaOriginal.innerHTML = nomes
+                .map((n) => `<li class="px-4 py-2 text-md font-semibold rounded-full border border-[#F29A4B]"><p>${n}</p></li>`)
+                .join("");
+
+            painelEditar.classList.add("hidden");
+            painelOriginal.classList.remove("hidden");
+        });
+
+       
+
+        botaoRotinaEditar.addEventListener("click", () => {
+            editandoRotina = !editandoRotina;
+
+            textosRotina.forEach((p) => {
+                p.contentEditable = editandoRotina;
+                p.classList.toggle("outline", editandoRotina);
+                p.classList.toggle("outline-2", editandoRotina);
+                p.classList.toggle("outline-[#F29A4B]", editandoRotina);
+            });
+
+            if (editandoRotina) textosRotina[0].focus();
+        });
     </script>
 
 </body>

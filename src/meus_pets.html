@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus pets</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss"> 
+            @layer components {
+                .campo {
+                    @apply w-full h-12 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition
+                    focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+    }
+
+    </style>
 </head>
 <body>
 
@@ -94,17 +103,20 @@
                     <!-- TITULO E BOTAO DE ADICIONAR PET -->
                     <div class="flex justify-between items-center">
                         <h1 class="flex items-start self-stretch text-4xl font-semibold">Meus pets</h1>
-                        <a href="adicionar_pet.html" class="flex items-center px-5 py-3 gap-4 rounded-2xl font-semibold border border-[#9c9c9c] hover:shadow-md transition">
-                            <img class="w-5 h-5" src="svg/adicionar.svg" alt="Botão de 'Mais'">
-                            Adicionar um novo pet
-                        </a>
+                        <div class="flex gap-4">
+                            <button id="bt-remover-pet" class="rounded-full p-3 border-2 border-[#A42525] hover:shadow-md transition hover:bg-[#E6B8B880]"> <img src="svg/trash.svg"> </button>
+                            <a href="novo_pet.html" class="flex items-center px-5 py-3 gap-4 rounded-2xl font-semibold border border-[#9c9c9c] hover:shadow-md transition">
+                                <img class="w-5 h-5" src="svg/adicionar.svg" alt="Botão de 'Mais'">
+                                Adicionar um novo pet
+                            </a>
+                        </div>
                     </div>
 
                     <!-- CARDS DOS PETS -->
                     <ul class="flex flex-wrap gap-8">
 
                         <!-- CARD: TINA -->
-                        <li>
+                        <li class="pet">
                             <a href="tina.html" aria-label="Ver Tina"
                                class="block w-[300px] overflow-hidden rounded-2xl border-2 border-[#2B1A0E] bg-[#F8F0E6]
                                       shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl
@@ -126,7 +138,7 @@
                         </li>
 
                         <!-- CARD: FIU -->
-                        <li>
+                        <li class="pet">
                             <a href="fiu.html" aria-label="Ver Fiu"
                                class="block w-[300px] overflow-hidden rounded-2xl border-2 border-[#2B1A0E] bg-[#F8F0E6]
                                       shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl
@@ -168,5 +180,120 @@
 
     </div>
 
+    <!-- PAINEL DE EXCLUIR PET -->
+    <dialog id="painel-excluir" class="m-auto p-0 w-[92vw] max-w-[40rem] max-h-[90vh] overflow-hidden rounded-3xl bg-[#FFFBF6] text-[#2B1A0E] border border-[#E9DDCF] shadow-2xl backdrop:bg-black/40 open:flex flex-col" aria-label="Editar alerta">
+        <div class="flex items-center justify-between gap-4 h-[88px] shrink-0 px-6 border-b border-[#E9DDCF]">
+            <h2 id="titulo-painel" class="text-2xl font-semibold">Deletar pet</h2>
+            <button type="button" id="fechar-painel" aria-label="Fechar painel"
+                class="p-2 rounded-lg hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                <img src="svg/fechar.svg" alt="" class="w-6 h-6">
+            </button>
+        </div>
+        <form id="form-editar" class="flex flex-1 min-h-0 flex-col">
+            <div class="flex-1 overflow-y-auto flex flex-col gap-6 p-6">
+                <div class="flex flex-col gap-2">
+                    <label for="edit-pet">Qual pet deseja remover?</label>
+                    <div class="relative">
+                        <select id="edit-pet" name="pet" required class="campo appearance-none pr-12 cursor-pointer">
+                            <option value="fiu">Fiu</option>
+                            <option value="tina">Tina</option>
+                        </select>
+                        <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#F29A4B] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RODAPE DE EXCLUIR PET-->
+            <div class="shrink-0 p-6 border-t border-[#E9DDCF]">
+ 
+                <div id="rodape-normal">
+                    <div class="flex items-center justify-between gap-3">
+                        <div class="flex gap-3">
+                            <button type="button" id="cancelar"
+                                class="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                Cancelar
+                            </button>
+                            <button type="button" id="bt-deletar"
+                                class="px-6 h-12 text-[#ffff] rounded-xl bg-[#B3261E] font-bold hover:bg-[#E8863A] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B] focus-visible:ring-offset-2">
+                                Deletar pet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+ 
+            <!-- rodapé fixo: salvar, cancelar e excluir -->
+            <div class="shrink-0 p-6 border-t border-[#E9DDCF]">
+                <!-- confirmação de exclusão: troca o rodapé normal -->
+                <div id="rodape-confirmar" hidden>
+                    <div class="flex flex-col gap-3">
+                        <p class="font-semibold">Tem certeza que quer excluir esse pet?</p>
+                        <p class="text-sm text-[#75634F]">Essa ação não pode ser desfeita.</p>
+                        <div class="flex gap-3">
+                            <button type="button" id="manter"
+                                class="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                                Manter
+                            </button>
+                            <button type="button" id="bt-confirmar-excluir"
+                                class="px-5 h-12 rounded-xl bg-[#B3261E] text-white font-semibold hover:brightness-110 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B3261E] focus-visible:ring-offset-2">
+                                Sim, excluir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </dialog>
+    <script>
+        const botaoExcluir = document.getElementById('bt-remover-pet')
+        const botaoFechar = document.getElementById('fechar-painel')
+        const botaoCancelar = document.getElementById('cancelar')
+        const botaoDeletar = document.getElementById('bt-deletar')
+        const botaoManter = document.getElementById('manter')
+        const botaoConfirmarExcluir = document.getElementById('bt-confirmar-excluir')
+        const painel = document.getElementById('painel-excluir')
+        const rodapeNormal = document.getElementById('rodape-normal')
+        const rodapeConfirmar = document.getElementById('rodape-confirmar')
+        const selectPet = document.getElementById('edit-pet')
+
+        function resetar() {
+            rodapeConfirmar.hidden = true
+            rodapeNormal.hidden = false
+        }
+
+        botaoExcluir.addEventListener('click', () => {
+            resetar()
+            painel.showModal()
+        })
+
+        botaoFechar.addEventListener('click', () => {
+            painel.close()
+            resetar()
+        })
+
+        botaoCancelar.addEventListener('click', () => {
+            painel.close()
+            resetar()
+        })
+
+        botaoDeletar.addEventListener('click', () => {
+            rodapeNormal.hidden = true
+            rodapeConfirmar.hidden = false
+        })
+
+        botaoManter.addEventListener('click', resetar)
+
+        botaoConfirmarExcluir.addEventListener('click', () => {
+            const opcao = selectPet.options[selectPet.selectedIndex]
+            const nome = opcao.textContent.trim()
+
+            document.querySelectorAll('.pet').forEach((card) => {
+                if (card.querySelector('h2').textContent.trim() === nome) card.remove()
+            })
+
+            opcao.remove()
+            painel.close()
+            resetar()
+        })
+    </script>
 </body>
 </html>

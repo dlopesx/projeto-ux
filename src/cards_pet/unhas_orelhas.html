@@ -110,9 +110,9 @@
                     <div class="flex gap-[8rem] items-center">
                         <section class="flex flex-col gap-5 w-[30rem]">
                             <h2 class="font-semibold text-2xl self-stretch"> Próximas datas </h2>
-                            <div class="flex flex-col gap-6 rounded-3xl border border-[#E9DDCF] p-8">
+                            <div class="flex flex-col gap-6 rounded-3xl border  p-8">
                                 
-                                <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
+                                <ol class="ml-3 flex flex-col gap-8 ">
                                     <li class="flex justify-between gap-5">
                                         <div>
                                             <p class="text-xl font-semibold">Unhas</p>
@@ -169,14 +169,14 @@
 
         botaoFeito.forEach((botao) => {
             botao.addEventListener('click', () => {
-                if (botao.style.backgroundColor === 'green') {
+                if (botao.textContent === 'Realizado hoje') {
                     botao.textContent = 'Marcar como feito';
                     botao.style.backgroundColor = '#FFFFFF';
                     botao.style.color = '#000000';
                 } else {
-                    botao.textContent = 'Feito!';
-                    botao.style.backgroundColor = 'green';
-                    botao.style.color = '#FFFFFF';
+                    botao.textContent = 'Realizado hoje';
+                    botao.style.backgroundColor = '#9EE68CB3';
+                    botao.style.color = '#000000';
                     
                 }
             });
