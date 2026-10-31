@@ -20,6 +20,7 @@
                         cabecalho: '#FFF6EC',
                         bege: '#E9DDCF',
                         laranja: '#F29A4B',
+                        verde: '#06402B',
                         texto: '#2B1A0E',
                         suave: '#75634F',
                         destaque: '#8F4B17',
@@ -34,72 +35,62 @@
 
 <body class="bg-fundo text-texto font-sans text-[15px] antialiased">
 
-<div class="flex min-h-screen">
+<div class="flex min-h-dvh">
 
     <!-- SIDEBAR (só aparece a partir de 768px) -->
     <aside class="hidden md:flex sticky top-0 h-screen w-[248px] shrink-0 flex-col bg-superficie border-r border-bege px-4 py-6" aria-label="Menu lateral">
 
-        <!-- perfil -->
-        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 mb-6 rounded-2xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
-            <span class="w-10 h-10 shrink-0 rounded-full bg-bege group-hover:bg-superficie flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
-            <span class="flex-1 min-w-0 text-base font-semibold truncate">Marina</span>
-            <img src="../svg/seta-baixo.svg" alt="" class="w-4 h-4 shrink-0">
-        </a>
+        <div class="flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                <ul class="flex-1 space-y-2 font-medium">
+                    <li class="flex">
+                        <a href="#" class="flex flex-1 items-center px-2 py-3 rounded-2xl group">
+                            <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                        </a>
+                        <button> <img class="w-6 h-6 mb-6" src="svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                    </li>
 
-        <nav class="flex-1" aria-label="Navegação principal">
-            <ul class="flex flex-col gap-2">
-                <li>
-                    <a href="../index.html" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
-                        <img src="../svg/inicio.svg" alt="" class="w-6 h-6 shrink-0">
-                        Início
-                    </a>
-                </li>
+                    <!-- PERFIL DO USUÁRIO -->
+                    <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                            <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+                            <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                        </a>
+                    </li>
 
-                <!-- item ativo: barrinha só no meio -->
-                <li class="relative">
-                    <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-laranja"></span>
-                    <a href="#" aria-current="page" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl bg-bege font-semibold">
-                        <img src="../svg/paw-print.svg" alt="" class="w-6 h-6 shrink-0">
-                        Meus pets
-                    </a>
-                </li>
+                    <li>
+                        <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                        </a>
+                    </li>
+                    <li class="relative">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                        <a href="meus_pets.html" class="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group" aria-current="page">
+                            <img class="w-6 h-6" src="svg/paw-print.svg" alt="Pata de animal na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meus_agendamentos.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/calendario.svg" alt="Calendario na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meus_alertas.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tutores.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                            <img class="w-6 h-6" src="svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                        </a>
+                    </li>
+                </ul>
 
-                <li>
-                    <a href="#" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
-                        <img src="../svg/calendario.svg" alt="" class="w-6 h-6 shrink-0">
-                        Agendamentos
-                    </a>
-                </li>
-                <li>
-                    <a href="../meus_alertas.html" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
-                        <img src="../svg/notificacao.svg" alt="" class="w-6 h-6 shrink-0">
-                        Alertas
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
-                        <img src="../svg/tutores.svg" alt="" class="w-6 h-6 shrink-0">
-                        Outros tutores
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- rodapé da sidebar -->
-        <ul class="flex flex-col gap-1 border-t border-bege pt-4">
-            <li>
-                <a href="#" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
-                    <img src="../svg/info.svg" alt="" class="w-6 h-6 shrink-0">
-                    Sobre
-                </a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
-                    <img src="../svg/help-circle.svg" alt="" class="w-6 h-6 shrink-0">
-                    Ajuda
-                </a>
-            </li>
-        </ul>
+            </div>
     </aside>
 
     <!-- ÁREA PRINCIPAL -->
@@ -174,7 +165,7 @@
                         <p class="text-xl font-semibold">Gripe</p>
                         <p class="text-suave">Última dose: 23/05/2026</p>
                         <p class="text-destaque">Próxima dose: 23/05/2027</p>
-                        <p><span class="inline-flex px-3.5 py-2 rounded-full bg-fundo text-[13px] font-semibold text-laranja">Em dia</span></p>
+                        <p><span class="inline-flex px-3.5 py-2 rounded-full bg-fundo text-[13px] font-semibold text-verde">Em dia</span></p>
                     </li>
                 </ul>
             </section>

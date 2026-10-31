@@ -44,7 +44,7 @@
         <div id="cadastro" class="flex">
 
             <!-- SIDEBAR -->
-            <aside id="default-sidebar" class="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen" aria-label="Sidebar">
+            <aside id="default-sidebar" class="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh" aria-label="Sidebar">
                 <div class="flex flex-col flex-1 px-3 py-4 justify-between">
                     <ul class="flex-1 space-y-2 font-medium">
                         <li class="flex">
@@ -98,9 +98,6 @@
                     <!-- RODAPÉ DA SIDEBAR -->
                     <ul class="mt-auto space-y-2 py-5 border-t border-[#E9DDCF]">
                         <li>
-                            <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src="svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
-                        </li>
-                        <li>
                             <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src="svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
                         </li>
                     </ul>
@@ -118,7 +115,7 @@
                     <button><img src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/></button>
                 </header>
 
-                <main class="flex w-full py-8 px-16 items-start self-stretch">
+                <main class="flex w-full py-6 px-4 sm:px-8 lg:px-16 items-start self-stretch">
 
                     <div class="grid grid-cols-1 md:grid-cols-[16rem_minmax(0,1fr)] gap-12 w-full max-w-6xl">
 
@@ -159,7 +156,7 @@
                             <!-- ETAPA 1: NOME E ESPÉCIE -->
                             <section class="etapa flex flex-col w-full gap-10 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="1">
                                 <label for="nome_pet">
-                                    <h1 class="text-4xl font-semibold">Qual o nome do pet?</h1>
+                                    <h1 class="text-3xl md:text-4xl font-semibold">Qual o nome do pet?</h1>
                                 </label>
                                 <input id="nome_pet" name="nome_pet" type="text" class="campo w-full max-w-lg h-12 px-5 bg-[#F8F0E6] border border-[#E9DDCF]">
 
@@ -221,7 +218,7 @@
                             <!-- ETAPA 2: RAÇA -->
                             <section class="etapa hidden flex-col w-full gap-10 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="2">
                                 <label for="raca_pet">
-                                    <h1 class="text-4xl font-semibold">Qual a raça do pet?</h1>
+                                    <h1 class="text-3xl md:text-4xl font-semibold">Qual a raça do pet?</h1>
                                 </label>
                                 <div class="flex flex-col gap-5">
                                     <input id="raca_pet" name="raca_pet" type="text" class="campo w-full max-w-lg h-12 px-5 bg-[#F8F0E6] border border-[#E9DDCF]">
@@ -241,7 +238,7 @@
                             <!-- ETAPA 3: NASCIMENTO -->
                             <section class="etapa hidden flex-col w-full gap-10 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="3">
                                 <label for="data_nasc">
-                                    <h1 class="text-4xl font-semibold">Qual a data de nascimento do pet?</h1>
+                                    <h1 class="text-3xl md:text-4xl font-semibold">Qual a data de nascimento do pet?</h1>
                                 </label>
                                 <div class="flex flex-col gap-5">
                                     <input id="data_nasc" name="data_nasc" type="date" class="campo w-full max-w-lg h-12 px-5 bg-[#F8F0E6] border border-[#E9DDCF]">
@@ -261,7 +258,7 @@
                             <!-- ETAPA 4: INFORMAÇÕES ADICIONAIS -->
                             <section class="etapa hidden flex-col w-full gap-10 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="4">
                                 <div class="flex flex-col gap-3">
-                                    <h1 class="text-4xl font-semibold">Quase lá!</h1>
+                                    <h1 class="text-3xl md:text-4xl font-semibold">Quase lá!</h1>
                                     <p class="font-semibold text-[#8F4B17]">Preencha informações adicionais sobre o pet.</p>
                                 </div>
 
@@ -308,7 +305,7 @@
                             <!-- ETAPA 5: FOTO -->
                             <section class="etapa hidden flex-col w-full gap-8 border p-9 border-[#E9DDCF] rounded-3xl" data-etapa="5">
                                 <div class="flex flex-col gap-3">
-                                    <h1 class="text-4xl font-semibold">Que tal uma foto?</h1>
+                                    <h1 class="text-3xl md:text-4xl font-semibold">Que tal uma foto?</h1>
                                     <p class="text-sm text-[#8F4B17]">Personalize o perfil de <span class="nome-pet">seu pet</span>!</p>
                                 </div>
 
@@ -339,7 +336,7 @@
         </div>
 
         <!-- ================= PET CADASTRADO ================= -->
-        <div id="sucesso" class="hidden min-h-screen w-full bg-[#FFFBF6] items-center justify-center p-8">
+        <div id="sucesso" class="hidden min-h-dvh w-full bg-[#FFFBF6] items-center justify-center p-8">
             <div class="w-full max-w-[26rem] flex flex-col gap-8 rounded-3xl border border-[#E9DDCF] bg-[#F8F0E6] p-8">
                 <h2 class="text-2xl font-semibold text-texto1">Pet cadastrado!</h2>
                 <p class="text-texto3">Veja o perfil de <span class="nome-pet font-semibold">seu pet</span> ♡</p>
@@ -353,8 +350,8 @@
     </section>
 
     <!-- MOBILE -->
-    <section class="block md:hidden min-h-screen w-full bg-fundo">
-        <div id="nomeEspecie" class="min-h-screen w-full bg-fundo flex flex-col">
+    <section class="block md:hidden min-h-dvh w-full bg-fundo">
+        <div id="nomeEspecie" class="min-h-dvh w-full bg-fundo flex flex-col">
 
             <header class="h-16 shrink-0 px-5 border-b border-borda flex items-center gap-4">
                 <button type="button" aria-label="Voltar" onclick="window.location.href='index.html'"

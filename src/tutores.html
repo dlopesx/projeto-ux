@@ -20,7 +20,7 @@
 
         <!-- SIDEBAR-->
 
-        <aside id="default-sidebar" class="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen" aria-label="Sidebar">
+        <aside id="default-sidebar" class="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh" aria-label="Sidebar">
             <div class="flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
                 <ul class="flex-1 space-y-2 font-medium">
                     <li class="flex">
@@ -70,16 +70,6 @@
                         </a>
                     </li>
                 </ul>
-
-                <!-- RODAPÉ DA SIDEBAR-->
-                <ul class="mt-auto space-y-2 py-5 border-t border-[#E9DDCF]">
-                    <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img class="w-5 h-5" src="svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img class="w-5 h-5" src="svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
-                    </li>
-                </ul>
             </div>
         </aside>
 
@@ -95,7 +85,7 @@
                 <button> <img class="w-6 h-6" src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/> </button>
             </header>
 
-            <main class="flex w-full py-8 px-16 flex-col items-start self-stretch">
+            <main class="flex w-full py-6 px-4 sm:px-8 lg:px-16 flex-col items-start self-stretch">
 
                 <div class="flex flex-col self-stretch gap-[2.25rem]">
 
@@ -258,7 +248,7 @@
 
     <!-- AVISO DE CONVITE ENVIADO -->
     <div id="aviso-convite" role="status"
-        class="hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[380px] max-w-[90vw] items-center gap-3 p-5 bg-[#E8863A] rounded-3xl shadow-2xl border border-[#E9DDCF]">
+        class="hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[380px] max-w-[90vw] max-w-[90vw] items-center gap-3 p-5 bg-[#E8863A] rounded-3xl shadow-2xl border border-[#E9DDCF]">
         <div class="inline-flex items-center justify-center shrink-0 w-7 h-7 bg-white/40 rounded-full">
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/></svg>
         </div>

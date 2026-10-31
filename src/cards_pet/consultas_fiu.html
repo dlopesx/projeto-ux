@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus agendamentos</title>
+    <title>Consultas - Fiu</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss"> 
             @layer components {
@@ -21,7 +21,7 @@
 
         <!-- SIDEBAR-->
 
-        <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-screen " aria-label="Sidebar">
+        <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh " aria-label="Sidebar">
             <div class=" flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
                 <ul class=" flex-1 space-y-2 font-medium">
                     <li class="flex">
@@ -72,17 +72,6 @@
                         </a>
                     </li>
                 </ul>
-
-                <!-- RODAPÉ DA SIDEBAR-->
-                <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
-                    <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "../svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"><img src = "../svg/help-circle.svg" alt="Símbolo de ajuda em laranja"/>Ajuda</a>
-                        
-                    </li>
-                </ul>
                 
             </div>
         </aside>
@@ -100,7 +89,7 @@
             </header>
 
             
-            <main class="flex flex-col w-full py-8 px-16 items-start gap-10 self-stretch">
+            <main class="flex flex-col w-full py-6 px-4 sm:px-8 lg:px-16 items-start gap-10 self-stretch">
                 
                 <div class="flex flex-col gap-10 self-stretch">
                     <div class="flex justify-between items-center">
@@ -112,29 +101,12 @@
                     </div>
                     <div class="flex gap-[2.25rem]">
                         <section >
-                            <ul class="flex flex-col gap-4 p-6 max-w-[800px] bg-[#E9DDCF] rounded-2xl"> 
-                                <li class="relative flex flex-col gap-9 p-5 px-7 rounded-2xl bg-[#F8F0E6] hover:shadow-md ">
-                                    <div class="flex-1 gap-9"> <!-- Data e nome -->
-                                        <div class="flex justify-between gap-1">
-                                            <p class="font-semibold text-2xl text-[#2B1A0E]"> Consulta de Tina</p>
-                                            <button class="bt-editar flex gap-2 hover:font-semibold">
-                                                <img src="../svg/edit.svg" alt="Símbolo de lápis pra editar" class="w-6 h-6 ">
-                                                <p class="text-[#75634F] text-xl"> Editar</p>
-                                            </button>
-                                        </div>
-                                        <p class="font-semibold text-md text-[#75634F]"> 14 de setembro de 2026, quinta-feira ⋅ 09:00</p>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <img src="../svg/mapa.svg" class="w-6 h-6">
-                                        <div>
-                                            <p class="font-semibold text-xl text-[#2B1A0E]"> Clínica Solemar </p>
-                                            <p class="font-semibold text-md text-[#75634F]"> Rua blablabla 34, Terra Nova, São Bernardo do Campo - SP  </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <img src="../svg/heart.svg" class="w-6 h-6">
-                                        <p class="font-semibold text-xl text-[#2B1A0E]"> Profissional: Adriana</p>
-                                    </div>
+                            <ul class="flex flex-col gap-16 items-center p-6 max-w-[800px] min-h-[200px] bg-[#F8F0E6] rounded-2xl border-2 border-[#F29A4B] border-dashed relative"> 
+                                <li class="text-xl">
+                                    Fiu não possui nenhuma consulta agendada.   
+                                </li>
+                                <li class="text-md font-semibold border-2 border-[#E8863a] rounded-full px-5 py-3 bg-[#F29A4B]">
+                                    <a href="../adicionar_agendamento.html" class="text-"> Adicionar novo agendamento </a>
                                 </li>
                             </ul>
                         </section>
@@ -144,16 +116,16 @@
                                 <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
                                     <li class="relative">
                                         <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
-                                        <p class="text-sm font-semibold text-[#75634F]">14 de setembro de 2026 · 09:00</p>
-                                        <p class="text-xl font-semibold">Consulta de rotina</p>
-                                        <p class="text-[#75634F]">Clínica Solemar · Adriana</p>
-                                        <p class="mt-2 rounded-lg bg-[#EEEE88] px-3 py-2 text-sm">Check-up geral e sem nenhuma alteração :)</p>
+                                        <p class="text-sm font-semibold text-[#75634F]">18 de outubro de 2026 · 09:00</p>
+                                        <p class="text-xl font-semibold">Corte de asas</p>
+                                        <p class="text-[#75634F]">Vet. Raio de Sol · Fabinho</p>
                                     </li>
                                     <li class="relative">
                                         <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
-                                        <p class="text-sm font-semibold text-[#75634F]">12 de maio de 2026 · 10:00</p>
-                                        <p class="text-xl font-semibold">Exame de sangue</p>
-                                        <p class="text-[#75634F]">Clínica Solemar · Adriana</p>
+                                        <p class="text-sm font-semibold text-[#75634F]">12 de setembro de 2026 · 10:00</p>
+                                        <p class="text-xl font-semibold">Consulta</p>
+                                        <p class="text-[#75634F]">Vet. Raio de Sol · Clara </p>
+                                        <p class="mt-2 rounded-lg bg-[#EEEE88] px-3 py-2 text-sm">Resfriado leve</p>
                                     </li>
                                 </ol>
                             </div>
