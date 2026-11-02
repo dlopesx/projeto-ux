@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar peso</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .campo {
+                @apply w-full h-14 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition focus:ring-2 focus:ring-[#F29A4B];
+            }
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        botao2: '#EEEE88',
+                        borda: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto1: '#2B1A0E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-fundo font-sans">
+
+    <!-- DESKTOP -->
+    <section class="hidden md:block">
+        <div class="flex min-h-dvh">
+
+            <!-- SIDEBAR -->
+            <aside id="default-sidebar"
+                class="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh"
+                aria-label="Menu lateral">
+
+                <div class="flex flex-col flex-1 px-3 py-4 justify-between">
+
+                    <ul class="flex-1 space-y-2 font-medium">
+
+                        <li class="flex">
+                            <a href="index.html"
+                                class="flex flex-1 items-center px-2 py-3 rounded-2xl group">
+                                <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                            </a>
+
+                            <button type="button" aria-label="Fechar menu lateral">
+                                <img class="w-6 h-6 mb-6"
+                                    src="svg/fechar.svg"
+                                    alt="Fechar">
+                            </button>
+                        </li>
+
+                        <!-- PERFIL -->
+                        <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                            <a href="perfil_marina.html"
+                                aria-label="Perfil de Marina"
+                                class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+
+                                <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] flex items-center justify-center font-semibold"
+                                    aria-hidden="true">M</span>
+
+                                <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html"
+                                class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/inicio.svg" alt="Início">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                            </a>
+                        </li>
+
+                        <li class="relative">
+                            <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+
+                            <a href="meus_pets.html"
+                                class="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group"
+                                aria-current="page">
+                                <img class="w-6 h-6" src="svg/paw-print.svg" alt="Pata de cachorro">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="meus_agendamentos.html"
+                                class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/calendario.svg" alt="Calendário">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="meus_alertas.html"
+                                class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/notificacao.svg" alt="Sino de notificação">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="tutores.html"
+                                class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/tutores.svg" alt="Símbolo de perfil">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- RODAPÉ -->
+                    <ul class="mt-auto space-y-2 py-5 border-t border-[#E9DDCF]">
+                        <li>
+                            <a href="configuracoes.html"
+                                class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]">
+                                Config. do app
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="sobre.html"
+                                class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]">
+                                <img src="svg/info.svg" alt="Informações">
+                                Sobre
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- CONTEÚDO -->
+            <div class="bg-[#FFFBF6] flex flex-col flex-1">
+
+                <header class="flex flex-row justify-between p-5 border-b border-[#E9DDCF]">
+                    <a href="index.html"
+                        class="flex items-center gap-2 text-lg font-semibold text-[#473C31] hover:text-laranja transition">
+                        <img alt="Voltar" src="svg/voltar.svg">
+                        Voltar
+                    </a>
+
+                    <button type="button" aria-label="Notificações">
+                        <img src="svg/notificacao.svg" alt="Sino de notificação">
+                    </button>
+                </header>
+
+                <main class="flex w-full py-6 px-4 sm:px-8 lg:px-12 flex-col items-start">
+
+                    <div class="flex flex-col items-center self-stretch gap-9">
+
+                        <div class="flex justify-between self-stretch items-center">
+                            <h1 class="text-4xl font-semibold">
+                                Registrar peso
+                            </h1>
+                        </div>
+
+                        <form id="form-peso"
+                            class="flex flex-col gap-8 w-full max-w-[500px] border border-[#E9DDCF] rounded-2xl p-6">
+
+                            <div class="grid grid-cols-1 gap-y-5">
+
+                                <div class="flex flex-col gap-3">
+                                    <label for="peso-pet"
+                                        class="text-sm font-medium">
+                                        Peso do pet (kg)
+                                    </label>
+
+                                    <input id="peso-pet"
+                                        name="peso"
+                                        type="number"
+                                        min="0.01"
+                                        step="0.01"
+                                        placeholder="Ex.: 4,5"
+                                        class="campo"
+                                        required>
+                                </div>
+
+                                <div class="flex flex-col gap-3">
+                                    <label for="data-pesagem"
+                                        class="text-sm font-medium">
+                                        Data da pesagem
+                                    </label>
+
+                                    <input id="data-pesagem"
+                                        name="data-pesagem"
+                                        type="date"
+                                        class="campo"
+                                        required>
+                                </div>
+
+                                <div class="flex flex-col gap-3">
+                                    <label for="observacoes-peso"
+                                        class="text-sm font-medium">
+                                        Observações (opcional)
+                                    </label>
+
+                                    <input id="observacoes-peso"
+                                        name="observacoes"
+                                        type="text"
+                                        placeholder="Alguma observação sobre a pesagem..."
+                                        class="campo">
+                                </div>
+                            </div>
+
+                            <button id="btn-registrar-peso"
+                                type="submit"
+                                class="flex w-full items-center justify-center bg-[#F29A4B] px-4 py-3 gap-3 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition">
+
+                                <img src="svg/adicionar.svg" alt="Registrar peso" class="w-6 h-6">
+                                Registrar peso
+                            </button>
+
+                            <!-- MENSAGEM DE SUCESSO -->
+                            <div id="mensagem-peso"
+                                class="hidden w-full items-center p-4 gap-3 fixed top-7 right-5 md:right-10 max-w-md text-[#2B1A0E] bg-[#F8F0E6] rounded-xl shadow-md border border-[#E9DDCF]"
+                                role="status"
+                                aria-live="polite">
+
+                                <div class="shrink-0 w-7 h-7 flex items-center justify-center">
+                                    <svg class="w-7 h-7" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 11.917 9.724 16.5 19 7.5"/>
+                                    </svg>
+                                </div>
+
+                                <span class="text-base font-medium">
+                                    Peso registrado com sucesso!
+                                </span>
+
+                                <button type="button"
+                                    id="fechar-mensagem-peso"
+                                    class="ms-auto h-8 w-8 flex items-center justify-center"
+                                    aria-label="Fechar mensagem">
+                                    ✕
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE -->
+    <section class="block md:hidden min-h-dvh w-full bg-fundo flex flex-col">
+
+        <header class="h-16 shrink-0 px-5 border-b border-borda flex items-center gap-4">
+            <button type="button"
+                aria-label="Voltar"
+                onclick="window.location.href='index.html'"
+                class="size-6 shrink-0 flex items-center justify-center">
+
+                <img src="svg/voltar.svg" alt="Voltar" class="size-4 object-contain">
+            </button>
+
+            <h1 class="text-texto1 text-lg font-semibold">
+                Registrar peso
+            </h1>
+        </header>
+
+        <form id="form-peso-mobile"
+            class="flex-1 w-full bg-fundo px-5 py-6 flex flex-col gap-6">
+
+            <div class="text-texto1 text-2xl font-semibold leading-8">
+                Registre o peso do seu pet
+            </div>
+
+            <!-- PESO -->
+            <div class="w-full">
+                <label for="peso-pet-mobile"
+                    class="text-texto1 text-sm font-medium">
+                    Peso do pet (kg)
+                </label>
+
+                <div class="h-12 w-full px-3.5 bg-superficie rounded-xl border border-borda flex items-center">
+                    <input id="peso-pet-mobile"
+                        name="peso"
+                        type="number"
+                        min="0.01"
+                        step="0.01"
+                        placeholder="Ex.: 4,5"
+                        required
+                        class="min-w-0 flex-1 bg-transparent text-texto1 outline-none">
+                </div>
+            </div>
+
+            <!-- DATA DA PESAGEM -->
+            <div class="w-full flex flex-col gap-2">
+                <label for="data-pesagem-mobile"
+                    class="text-texto1 text-sm font-medium">
+                    Data da pesagem
+                </label>
+
+                <div class="relative h-12 w-full px-3.5 bg-superficie rounded-xl border border-borda flex items-center">
+
+                    <input id="data-pesagem-mobile"
+                        name="data-pesagem"
+                        type="date"
+                        required
+                        class="absolute inset-0 w-full h-full opacity-0 pointer-events-none">
+
+                    <span id="texto-data-pesagem"
+                        class="flex-1 text-texto1 text-base pointer-events-none">
+                    </span>
+
+                    <button type="button"
+                        id="abrir-calendario-peso"
+                        aria-label="Abrir calendário da data da pesagem"
+                        class="relative z-10 size-6 shrink-0 flex items-center justify-center">
+
+                        <img src="svg/calendario.svg"
+                            alt="Calendário"
+                            class="size-4 object-contain pointer-events-none">
+                    </button>
+                </div>
+            </div>
+
+            <!-- OBSERVAÇÕES -->
+            <div class="w-full">
+                <label for="observacoes-peso-mobile"
+                    class="text-texto1 text-sm font-medium">
+                    Observações (opcional)
+                </label>
+
+                <div class="h-12 w-full px-3.5 bg-superficie rounded-xl border border-borda flex items-center">
+                    <input id="observacoes-peso-mobile"
+                        name="observacoes"
+                        type="text"
+                        placeholder="Alguma observação sobre a pesagem..."
+                        class="min-w-0 flex-1 bg-transparent text-texto1 outline-none">
+                </div>
+            </div>
+
+            <button id="btn-registrar-peso-mobile"
+                type="submit"
+                class="mt-auto w-full h-12 shrink-0 px-5 bg-laranja rounded-xl border border-borda flex justify-center items-center">
+
+                <span class="text-texto1 text-base font-semibold">
+                    Registrar peso
+                </span>
+            </button>
+
+            <!-- MENSAGEM MOBILE -->
+            <div id="mensagem-peso-mobile"
+                role="status"
+                aria-live="polite"
+                class="hidden w-full items-center justify-between gap-3 rounded-xl bg-superficie border border-borda p-3">
+
+                <span class="text-texto1 text-sm">
+                    Peso registrado com sucesso!
+                </span>
+
+                <button type="button"
+                    id="fechar-mensagem-peso-mobile"
+                    aria-label="Fechar mensagem"
+                    class="text-texto1 font-semibold px-2">
+                    ✕
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <script>
+        // DESKTOP
+        const formularioPeso = document.getElementById('form-peso');
+        const mensagemPeso = document.getElementById('mensagem-peso');
+        const fecharMensagemPeso = document.getElementById('fechar-mensagem-peso');
+
+        let temporizadorPeso;
+
+        function mostrarMensagemPeso() {
+            mensagemPeso.classList.remove('hidden');
+            mensagemPeso.classList.add('flex');
+
+            clearTimeout(temporizadorPeso);
+            temporizadorPeso = setTimeout(esconderMensagemPeso, 5000);
+        }
+
+        function esconderMensagemPeso() {
+            clearTimeout(temporizadorPeso);
+            mensagemPeso.classList.add('hidden');
+            mensagemPeso.classList.remove('flex');
+        }
+
+        formularioPeso.addEventListener('submit', (event) => {
+            event.preventDefault();
+            mostrarMensagemPeso();
+        });
+
+        fecharMensagemPeso.addEventListener('click', esconderMensagemPeso);
+
+
+        // MOBILE
+        const formularioPesoMobile = document.getElementById('form-peso-mobile');
+
+        const dataPesagemMobile = document.getElementById('data-pesagem-mobile');
+        const textoDataPesagem = document.getElementById('texto-data-pesagem');
+        const abrirCalendarioPeso = document.getElementById('abrir-calendario-peso');
+
+        const mensagemPesoMobile = document.getElementById('mensagem-peso-mobile');
+        const fecharMensagemPesoMobile = document.getElementById('fechar-mensagem-peso-mobile');
+
+        let temporizadorPesoMobile;
+
+        // ABRIR CALENDÁRIO
+        abrirCalendarioPeso.addEventListener('click', () => {
+            if (typeof dataPesagemMobile.showPicker === 'function') {
+                dataPesagemMobile.showPicker();
+            } else {
+                dataPesagemMobile.click();
+            }
+        });
+
+        // FORMATAR DATA
+        dataPesagemMobile.addEventListener('change', () => {
+            if (!dataPesagemMobile.value) {
+                textoDataPesagem.textContent = '';
+                return;
+            }
+
+            const [ano, mes, dia] = dataPesagemMobile.value.split('-');
+            textoDataPesagem.textContent = `${dia}/${mes}/${ano}`;
+        });
+
+        // MENSAGEM DE SUCESSO
+        formularioPesoMobile.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            mensagemPesoMobile.classList.remove('hidden');
+            mensagemPesoMobile.classList.add('flex');
+
+            clearTimeout(temporizadorPesoMobile);
+
+            temporizadorPesoMobile = setTimeout(() => {
+                mensagemPesoMobile.classList.add('hidden');
+                mensagemPesoMobile.classList.remove('flex');
+            }, 5000);
+        });
+
+        fecharMensagemPesoMobile.addEventListener('click', () => {
+            clearTimeout(temporizadorPesoMobile);
+            mensagemPesoMobile.classList.add('hidden');
+            mensagemPesoMobile.classList.remove('flex');
+        });
+    </script>
+
+</body>
+</html>
