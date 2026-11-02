@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Marina</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        cabecalho: '#FFF6EC',
+                        ondasFundo: '#FFF6EC',
+                        bege: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto: '#2B1A0E'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .campo {
+                @apply w-full h-12 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition focus:ring-2 focus:ring-[#E9DDCF];
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-fundo text-texto font-sans text-[15px] antialiased">
+
+    <!-- DESKTOP -->
+    <section class="hidden md:block">
+        <div class="flex min-h-dvh">
+
+            <aside class="sticky top-0 h-screen w-[248px] shrink-0 flex flex-col bg-superficie border-r border-bege px-4 py-6" aria-label="Menu lateral">
+                <div class="flex flex-col flex-1 px-3 py-4">
+                    <ul class="flex-1 space-y-2 font-medium">
+
+                        <li class="flex mb-5">
+                            <a href="index.html" class="flex flex-1 items-center px-2 py-3 rounded-2xl">
+                                <span class="px-1 text-xl font-bold">Site nome</span>
+                            </a>
+                            <button type="button">
+                                <img class="w-6 h-6" src="svg/fechar.svg" alt="Fechar menu">
+                            </button>
+                        </li>
+
+                        <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                            <a href="perfil.html" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl bg-[#E9DDCF]">
+                                <span class="w-10 h-10 shrink-0 rounded-full bg-ondasFundo flex items-center justify-center font-semibold">M</span>
+                                <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/inicio.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="meus_pets.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/paw-print.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="meus_agendamentos.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/calendario.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="meus_alertas.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/notificacao.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="tutores.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/tutores.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="flex-1 min-w-0 flex flex-col bg-fundo">
+
+                <header class="flex items-center h-[88px] px-6 md:px-12 border-b border-bege">
+                    <a href="index.html" class="flex items-center gap-3 text-lg font-semibold text-[#473C31] hover:text-laranja transition">
+                        <img src="svg/voltar.svg" alt="" class="w-5 h-5">
+                        Voltar
+                    </a>
+                </header>
+
+                <main class="p-6 md:p-10 lg:p-12 flex flex-col gap-8">
+
+                    <h1 class="text-3xl font-semibold">Meu perfil</h1>
+
+                    <div class="grid grid-cols-1 xl:grid-cols-[320px_1fr] gap-8 items-start">
+
+                        <!-- CARTÃO DO PERFIL -->
+                        <section class="relative flex flex-col items-center gap-5 min-h-[360px] px-8 py-10 rounded-[28px] bg-ondasFundo text-center overflow-hidden">
+
+                            <div class="w-36 h-36 rounded-full bg-white border border-[#E9DDCF] flex items-center justify-center">
+                                <span class="text-6xl font-semibold text-texto">M</span>
+                            </div>
+
+                            <div class="flex items-center justify-center gap-3">
+                                <h2 class="text-3xl font-semibold text-texto">Marina</h2>
+
+                                <button type="button" class="abrir-edicao p-2 rounded-lg hover:bg-white/70 transition" aria-label="Editar perfil">
+                                    <img src="svg/editar.svg" alt="" class="w-5 h-5">
+                                </button>
+                            </div>
+
+                            <p class="text-sm text-[#75634F]">Tutora</p>
+
+                            <img src="svg/curvaMobile.svg" alt="" aria-hidden="true" class="absolute left-0 bottom-0 w-full h-12 object-fill">
+                        </section>
+
+                        <div class="flex flex-col gap-8 min-w-0">
+
+                            <!-- INFORMAÇÕES PESSOAIS -->
+                            <section class="flex flex-col gap-5">
+                                <h2 class="text-2xl font-semibold">Informações pessoais</h2>
+
+                                <div class="flex items-center gap-5 p-6 rounded-3xl bg-superficie border border-bege">
+
+                                    <div class="w-14 h-14 shrink-0 rounded-2xl bg-ondasFundo flex items-center justify-center">
+                                        <svg class="w-7 h-7 text-[#75634F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="5" y="3" width="14" height="18" rx="2"/>
+                                            <path d="M9 8h6M9 12h6M9 16h3"/>
+                                        </svg>
+                                    </div>
+
+                                    <div class="flex flex-col gap-1 min-w-0">
+                                        <p id="nome-perfil" class="font-semibold text-lg break-words">Marina Rodrigues</p>
+                                        <p id="email-perfil" class="text-sm text-[#75634F] break-all">emailTeste@gmail.com</p>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            <!-- MEUS PETS -->
+                            <section class="flex flex-col gap-5">
+
+                                <div class="flex items-center justify-between">
+                                    <h2 class="text-2xl font-semibold">Meus pets</h2>
+                                    <span class="text-sm text-[#75634F]">2 pets</span>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                                    <a href="fiu.html" class="flex items-center gap-4 p-5 rounded-3xl bg-superficie border border-bege hover:shadow-md hover:-translate-y-0.5 transition">
+                                        <div class="w-16 h-16 shrink-0 rounded-full bg-ondasFundo border border-bege flex items-center justify-center">
+                                            <img src="svg/fiu.svg" alt="Fiu" class="w-10 h-10 object-contain">
+                                        </div>
+
+                                        <div class="flex flex-col gap-1">
+                                            <span class="font-semibold text-xl">Fiu</span>
+                                            <span class="text-sm text-[#75634F]">Ver perfil</span>
+                                        </div>
+
+                                        <span class="ml-auto text-xl text-[#75634F]">›</span>
+                                    </a>
+
+                                    <a href="tina.html" class="flex items-center gap-4 p-5 rounded-3xl bg-superficie border border-bege hover:shadow-md hover:-translate-y-0.5 transition">
+                                        <div class="w-16 h-16 shrink-0 rounded-full bg-ondasFundo border border-bege flex items-center justify-center">
+                                            <img src="svg/tina.svg" alt="Tina" class="w-10 h-10 object-contain">
+                                        </div>
+
+                                        <div class="flex flex-col gap-1">
+                                            <span class="font-semibold text-xl">Tina</span>
+                                            <span class="text-sm text-[#75634F]">Ver perfil</span>
+                                        </div>
+
+                                        <span class="ml-auto text-xl text-[#75634F]">›</span>
+                                    </a>
+
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MOBILE -->
+    <section class="block md:hidden min-h-screen bg-[#FFFBF6]">
+
+        <div class="w-full min-h-screen flex flex-col">
+
+            <header class="relative h-64 px-6 pt-6 pb-9 bg-ondasFundo flex flex-col items-center gap-3 overflow-hidden">
+
+                <button type="button" onclick="window.location.href='index.html'" aria-label="Voltar" class="absolute left-6 top-6">
+                    <img src="svg/voltar.svg" alt="" class="w-5 h-5">
+                </button>
+
+                <figure class="w-20 h-20 mt-8 bg-white rounded-full border border-[#E9DDCF] flex justify-center items-center">
+                    <span class="text-4xl font-semibold text-texto">M</span>
+                </figure>
+
+                <div class="flex justify-center items-center gap-2">
+                    <h1 class="text-texto text-2xl font-semibold">Marina</h1>
+
+                    <button type="button" class="abrir-edicao p-1 rounded-lg hover:bg-white/70 transition" aria-label="Editar perfil">
+                        <img src="svg/editar.svg" alt="" class="w-4 h-4">
+                    </button>
+                </div>
+
+                <p class="text-[#75634F] text-sm">Tutora</p>
+
+                <img src="svg/curvaMobile.svg" alt="" aria-hidden="true" class="absolute left-0 bottom-0 w-full h-12 object-fill">
+            </header>
+
+            <main class="flex-1 p-6 flex flex-col gap-7 bg-[#FFFCF8]">
+
+                <!-- INFORMAÇÕES PESSOAIS -->
+                <section class="flex flex-col gap-3">
+
+                    <h2 class="text-[#2B1A0E] text-lg font-semibold">Informações pessoais</h2>
+
+                    <div class="flex items-center gap-4 p-4 bg-[#F8F0E6] rounded-2xl border border-[#E9DDCF]">
+
+                        <div class="w-12 h-12 shrink-0 rounded-xl bg-ondasFundo flex items-center justify-center">
+                            <svg class="w-6 h-6 text-[#75634F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="5" y="3" width="14" height="18" rx="2"/>
+                                <path d="M9 8h6M9 12h6M9 16h3"/>
+                            </svg>
+                        </div>
+
+                        <div class="flex flex-col gap-1 min-w-0">
+                            <p id="nome-perfil-mobile" class="font-semibold text-sm break-words">Marina Rodrigues</p>
+                            <p id="email-perfil-mobile" class="text-xs text-[#75634F] break-all">emailTeste@gmail.com</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- MEUS PETS -->
+                <section class="flex flex-col gap-3">
+
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-[#2B1A0E] text-lg font-semibold">Meus pets</h2>
+                        <span class="text-xs text-[#75634F]">2 pets</span>
+                    </div>
+
+                    <nav aria-label="Meus pets" class="flex flex-col gap-3">
+
+                        <a href="fiu.html" class="flex items-center gap-4 p-4 bg-[#F8F0E6] rounded-2xl border border-[#E9DDCF] hover:shadow-md transition">
+
+                            <div class="w-14 h-14 shrink-0 rounded-full bg-ondasFundo border border-[#E9DDCF] flex items-center justify-center">
+                                <img src="svg/fiu.svg" alt="Fiu" class="w-9 h-9 object-contain">
+                            </div>
+
+                            <div class="flex flex-col gap-1">
+                                <span class="font-semibold text-base text-[#2B1A0E]">Fiu</span>
+                                <span class="text-xs text-[#75634F]">Ver perfil</span>
+                            </div>
+
+                            <span class="ml-auto text-xl text-[#75634F]">›</span>
+                        </a>
+
+                        <a href="tina.html" class="flex items-center gap-4 p-4 bg-[#F8F0E6] rounded-2xl border border-[#E9DDCF] hover:shadow-md transition">
+
+                            <div class="w-14 h-14 shrink-0 rounded-full bg-ondasFundo border border-[#E9DDCF] flex items-center justify-center">
+                                <img src="svg/tina.svg" alt="Tina" class="w-9 h-9 object-contain">
+                            </div>
+
+                            <div class="flex flex-col gap-1">
+                                <span class="font-semibold text-base text-[#2B1A0E]">Tina</span>
+                                <span class="text-xs text-[#75634F]">Ver perfil</span>
+                            </div>
+
+                            <span class="ml-auto text-xl text-[#75634F]">›</span>
+                        </a>
+
+                    </nav>
+                </section>
+
+            </main>
+        </div>
+    </section>
+
+
+    <!-- MODAL DE EDIÇÃO -->
+    <dialog id="painel-editar" class="m-auto p-0 w-[92vw] max-w-[28rem] rounded-3xl bg-[#FFFBF6] text-[#2B1A0E] border border-[#E9DDCF] shadow-2xl backdrop:bg-black/40">
+
+        <div class="flex items-center justify-between gap-4 p-6 border-b border-[#E9DDCF]">
+            <h2 class="text-xl font-semibold">Editar perfil</h2>
+
+            <button type="button" id="fechar-edicao" aria-label="Fechar" class="p-2 rounded-lg hover:bg-[#F8F0E6]">
+                <img src="svg/fechar.svg" alt="" class="w-5 h-5">
+            </button>
+        </div>
+
+        <form id="form-editar" class="p-6 flex flex-col gap-5">
+
+            <div class="flex flex-col gap-2">
+                <label for="nome-completo" class="font-medium">Nome completo</label>
+                <input id="nome-completo" type="text" required placeholder="Digite seu nome completo" class="campo">
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="email" class="font-medium">E-mail</label>
+                <input id="email" type="email" required placeholder="Digite seu e-mail" class="campo">
+            </div>
+
+            <div class="flex justify-end gap-3">
+
+                <button type="button" id="cancelar-edicao" class="px-5 h-11 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition">
+                    Cancelar
+                </button>
+
+                <button type="submit" class="px-5 h-11 rounded-xl bg-ondasFundo border border-[#E9DDCF] text-[#2B1A0E] font-semibold hover:brightness-95 transition">
+                    Salvar
+                </button>
+
+            </div>
+        </form>
+    </dialog>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const painelEdicao = document.getElementById('painel-editar');
+        const formEdicao = document.getElementById('form-editar');
+        const campoNome = document.getElementById('nome-completo');
+        const campoEmail = document.getElementById('email');
+
+        const nomeDesktop = document.getElementById('nome-perfil');
+        const emailDesktop = document.getElementById('email-perfil');
+
+        const nomeMobile = document.getElementById('nome-perfil-mobile');
+        const emailMobile = document.getElementById('email-perfil-mobile');
+
+        // Abre o formulário de edição
+        document.querySelectorAll('.abrir-edicao').forEach((botao) => {
+            botao.addEventListener('click', () => {
+
+                campoNome.value = nomeDesktop.textContent.includes('[')
+                    ? ''
+                    : nomeDesktop.textContent;
+
+                campoEmail.value = emailDesktop.textContent.includes('[')
+                    ? ''
+                    : emailDesktop.textContent;
+
+                painelEdicao.showModal();
+            });
+        });
+
+        // Salva as informações atualizadas
+        formEdicao.addEventListener('submit', (evento) => {
+            evento.preventDefault();
+
+            const nome = campoNome.value.trim();
+            const email = campoEmail.value.trim();
+
+            nomeDesktop.textContent = nome;
+            nomeMobile.textContent = nome;
+
+            emailDesktop.textContent = email;
+            emailMobile.textContent = email;
+
+            painelEdicao.close();
+        });
+
+        // Fecha pelo botão X
+        document.getElementById('fechar-edicao').addEventListener('click', () => {
+            painelEdicao.close();
+        });
+
+        // Fecha pelo botão cancelar
+        document.getElementById('cancelar-edicao').addEventListener('click', () => {
+            painelEdicao.close();
+        });
+
+        // Fecha ao clicar fora do modal
+        painelEdicao.addEventListener('click', (evento) => {
+            if (evento.target === painelEdicao) {
+                painelEdicao.close();
+            }
+        });
+    </script>
+
+</body>
+</html>

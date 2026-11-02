@@ -17,152 +17,291 @@
 </head>
 <body>
 
-    <div class="flex">
+    <!--DESKTOP-->
+    <section class="hidden md:block">
+        <div class="flex">
 
-        <!-- SIDEBAR-->
+                <!-- SIDEBAR-->
 
-        <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh " aria-label="Sidebar">
-            <div class="flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
-                <ul class="flex-1 space-y-2 font-medium">
-                    <li class="flex">
-                        <a href="#" class="flex flex-1 items-center px-2 py-3 rounded-2xl group">
-                            <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                <aside id="default-sidebar" class=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh " aria-label="Sidebar">
+                    <div class="flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
+                        <ul class="flex-1 space-y-2 font-medium">
+                            <li class="flex">
+                                <a href="#" class="flex flex-1 items-center px-2 py-3 rounded-2xl group">
+                                    <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                                </a>
+                                <button> <img class="w-6 h-6 mb-6" src="svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
+                            </li>
+
+                            <!-- PERFIL DO USUÁRIO -->
+                            <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                                <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                                    <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
+                                    <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                                    <img class="w-6 h-6" src="svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
+                                    <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                                </a>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+                                <a href="meus_pets.html" class="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group" aria-current="page">
+                                    <img class="w-6 h-6" src="svg/paw-print.svg" alt="Pata de animal na cor laranja"/>
+                                    <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="meus_agendamentos.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                    <img class="w-6 h-6" src="svg/calendario.svg" alt="Calendario na cor laranja"/>
+                                    <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="meus_alertas.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                    <img class="w-6 h-6" src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
+                                    <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tutores.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                    <img class="w-6 h-6" src="svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
+                                    <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </aside>
+
+                <!-- HEADER E MAIN -->
+
+                <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
+
+                    <header class="flex flex-row justify-between p-5 border ">
+                        <a href="../tina.html" class="flex gap-4">
+                            <img alt="Figura de seta laranja" src="../svg/voltar.svg">
+                            <p> Voltar</p>
                         </a>
-                        <button> <img class="w-6 h-6 mb-6" src="svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
-                    </li>
+                        <button> <img src = "../svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
+                    </header>
 
-                    <!-- PERFIL DO USUÁRIO -->
-                    <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
-                        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
-                            <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
-                            <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="index.html" class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
-                            <img class="w-6 h-6" src="svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
-                            <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
-                        </a>
-                    </li>
-                    <li class="relative">
-                        <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
-                        <a href="meus_pets.html" class="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group" aria-current="page">
-                            <img class="w-6 h-6" src="svg/paw-print.svg" alt="Pata de animal na cor laranja"/>
-                            <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="meus_agendamentos.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
-                            <img class="w-6 h-6" src="svg/calendario.svg" alt="Calendario na cor laranja"/>
-                            <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="meus_alertas.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
-                            <img class="w-6 h-6" src="svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
-                            <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tutores.html" class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
-                            <img class="w-6 h-6" src="svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
-                            <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-        </aside>
-
-        <!-- HEADER E MAIN -->
-
-        <div class=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
-
-            <header class="flex flex-row justify-between p-5 border ">
-                <a href="../tina.html" class="flex gap-4">
-                    <img alt="Figura de seta laranja" src="../svg/voltar.svg">
-                    <p> Voltar</p>
-                </a>
-                <button> <img src = "../svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
-            </header>
-
-            
-            <main class="flex flex-col w-full py-6 px-4 sm:px-8 lg:px-16 items-start gap-10 self-stretch">
-                
-                <div class="flex flex-col gap-10">
-                    <div class="flex justify-between items-center">
-                        <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Unhas e orelhas </h1>
+                    
+                    <main class="flex flex-col w-full py-6 px-4 sm:px-8 lg:px-16 items-start gap-10 self-stretch">
                         
-                    </div>
-                    <div class="flex gap-[5rem] items-center">
-                        <section class="flex flex-col gap-5 w-[30rem]">
-                            <div class="flex flex-col gap-6 rounded-3xl border p-8">
-                                <h2 class="font-semibold text-xl self-stretch"> Unhas </h2>
-                                <div class="flex justify-between gap-5">
-                                    <div>
-                                        <p class="text-xl font-semibold text-[#75634F]">Próxima data: </p>
-                                        <p class="text-[#75634F]"> 05 de novembro de 2026 </p>
-                                    </div>
-                                    <button type="button" class="bt-feito inline-flex h-11 shrink-0 items-center justify-center self-center whitespace-nowrap rounded-full border border-[#8A7F76] px-5 font-semibold transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F1A17]">
-                                        Marcar como feito
-                                    </button>
-                                </div>
-                                <div class="flex flex-col gap-6 rounded-3xl ">
-                                    <h2 class="font-semibold text-md self-stretch text-[#75634F]"> HISTÓRICO DE UNHAS </h2>
-                                    <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
-                                        <li class="relative flex flex-col gap-2">
-                                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
-                                            <p class="text-md font-semibold">05 de novembro de 2026</p>
-                                        </li>
-                                        <li class="relative">
-                                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
-                                            <p class="text-md font-semibold"> 29 de outubro de 2026</p>
-                                        </li>
-                                        <li class="relative">
-                                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
-                                            <p class="text-md font-semibold">22 de outubro de 2026</p>
-                                        </li>
-                                    </ol>
-                                </div>
+                        <div class="flex flex-col gap-10">
+                            <div class="flex justify-between items-center">
+                                <h1 class= " flex items-start self-stretch text-4xl font-semibold"> Unhas e orelhas </h1>
+                                
                             </div>
-                        </section>
-                       <section class="flex flex-col gap-5 w-[30rem]">
-                            <div class="flex flex-col gap-6 rounded-3xl border p-8">
-                                <h2 class="font-semibold text-xl self-stretch"> Orelhas </h2>
-                                <div class="flex justify-between gap-5">
-                                    <div>
-                                        <p class="text-xl font-semibold ">Próxima data: </p>
-                                        <p class="text-[#75634F]"> 30 de outubro de 2026 </p>
+                            <div class="flex gap-[5rem] items-center">
+                                <section class="flex flex-col gap-5 w-[30rem]">
+                                    <div class="flex flex-col gap-6 rounded-3xl border p-8">
+                                        <h2 class="font-semibold text-xl self-stretch"> Unhas </h2>
+                                        <div class="flex justify-between gap-5">
+                                            <div>
+                                                <p class="text-xl font-semibold text-[#75634F]">Próxima data: </p>
+                                                <p class="text-[#75634F]"> 05 de novembro de 2026 </p>
+                                            </div>
+                                            <button type="button" class="bt-feito inline-flex h-11 shrink-0 items-center justify-center self-center whitespace-nowrap rounded-full border border-[#8A7F76] px-5 font-semibold transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F1A17]">
+                                                Marcar como feito
+                                            </button>
+                                        </div>
+                                        <div class="flex flex-col gap-6 rounded-3xl ">
+                                            <h2 class="font-semibold text-md self-stretch text-[#75634F]"> HISTÓRICO DE UNHAS </h2>
+                                            <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
+                                                <li class="relative flex flex-col gap-2">
+                                                    <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                                    <p class="text-md font-semibold">05 de novembro de 2026</p>
+                                                </li>
+                                                <li class="relative">
+                                                    <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                                    <p class="text-md font-semibold"> 29 de outubro de 2026</p>
+                                                </li>
+                                                <li class="relative">
+                                                    <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                                    <p class="text-md font-semibold">22 de outubro de 2026</p>
+                                                </li>
+                                            </ol>
+                                        </div>
                                     </div>
-                                    <button type="button" class="bt-feito inline-flex h-11 shrink-0 items-center justify-center self-center whitespace-nowrap rounded-full border border-[#8A7F76] px-5 font-semibold transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F1A17]">
-                                        Marcar como feito
-                                    </button>
-                                </div>
-                                <div class="flex flex-col gap-6 rounded-3xl ">
-                                    <h2 class="font-semibold text-md self-stretch text-[#75634F]"> HISTÓRICO DE LIMPEZA</h2>
-                                    <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
-                                        <li class="relative flex flex-col gap-2">
-                                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
-                                            <p class="text-md font-semibold">25 de outubro de 2026</p>
-                                        </li>
-                                        <li class="relative">
-                                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
-                                            <p class="text-md font-semibold"> 15 de outubro de 2026</p>
-                                        </li>
-                                        <li class="relative">
-                                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
-                                            <p class="text-md font-semibold">10 de outubro de 2026</p>
-                                        </li>
-                                    </ol>
-                                </div>
+                                </section>
+                            <section class="flex flex-col gap-5 w-[30rem]">
+                                    <div class="flex flex-col gap-6 rounded-3xl border p-8">
+                                        <h2 class="font-semibold text-xl self-stretch"> Orelhas </h2>
+                                        <div class="flex justify-between gap-5">
+                                            <div>
+                                                <p class="text-xl font-semibold ">Próxima data: </p>
+                                                <p class="text-[#75634F]"> 30 de outubro de 2026 </p>
+                                            </div>
+                                            <button type="button" class="bt-feito inline-flex h-11 shrink-0 items-center justify-center self-center whitespace-nowrap rounded-full border border-[#8A7F76] px-5 font-semibold transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F1A17]">
+                                                Marcar como feito
+                                            </button>
+                                        </div>
+                                        <div class="flex flex-col gap-6 rounded-3xl ">
+                                            <h2 class="font-semibold text-md self-stretch text-[#75634F]"> HISTÓRICO DE LIMPEZA</h2>
+                                            <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
+                                                <li class="relative flex flex-col gap-2">
+                                                    <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                                    <p class="text-md font-semibold">25 de outubro de 2026</p>
+                                                </li>
+                                                <li class="relative">
+                                                    <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                                    <p class="text-md font-semibold"> 15 de outubro de 2026</p>
+                                                </li>
+                                                <li class="relative">
+                                                    <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                                                    <p class="text-md font-semibold">10 de outubro de 2026</p>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
-                        </section>
-                    </div>
+                        </div>
+                    </main>
                 </div>
-            </main>
-        </div>
-    </div>
+            </div>
+    </section>
+
+
+    <!-- MOBILE -->
+    <section class="block md:hidden min-h-screen w-full bg-[#FFFBF6]">
+
+        <header class="min-h-16 px-6 py-4 border-b border-[#E9DDCF] flex items-center gap-4">
+            <a href="../tina.html" class="flex items-center gap-3">
+                <img src="../svg/voltar.svg" alt="Voltar" class="w-6 h-6">
+                <span class="text-lg font-semibold text-[#75634F]">Voltar</span>
+            </a>
+        </header>
+
+        <main class="w-full p-5 sm:p-6 flex flex-col gap-6">
+
+            <h1 class="text-2xl font-semibold text-[#120111]">
+                Unhas e orelhas
+            </h1>
+
+            <section class="w-full flex flex-col gap-5 rounded-3xl border-2 border-[#E9DDCF] p-5">
+
+                <h2 class="font-semibold text-xl text-[#120111]">
+                    Unhas
+                </h2>
+
+                <div class="flex flex-col gap-4">
+
+                    <div>
+                        <p class="text-lg font-semibold text-[#75634F]">
+                            Próxima data:
+                        </p>
+                        <p class="text-[#75634F]">
+                            05 de novembro de 2026
+                        </p>
+                    </div>
+
+                    <button type="button"
+                        class="bt-feito w-full min-h-11 flex items-center justify-center rounded-full border border-[#8A7F76] px-5 py-2 font-semibold transition hover:shadow-md">
+                        Marcar como feito
+                    </button>
+
+                </div>
+
+                <div class="flex flex-col gap-5 pt-2">
+
+                    <h2 class="font-semibold text-md text-[#75634F]">
+                        HISTÓRICO DE UNHAS
+                    </h2>
+
+                    <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
+
+                        <li class="relative flex flex-col gap-2">
+                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                            <p class="text-md font-semibold">
+                                05 de novembro de 2026
+                            </p>
+                        </li>
+
+                        <li class="relative">
+                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                            <p class="text-md font-semibold">
+                                29 de outubro de 2026
+                            </p>
+                        </li>
+
+                        <li class="relative">
+                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                            <p class="text-md font-semibold">
+                                22 de outubro de 2026
+                            </p>
+                        </li>
+
+                    </ol>
+                </div>
+
+            </section>
+
+            <section class="w-full flex flex-col gap-5 rounded-3xl border-2 border-[#E9DDCF] p-5">
+
+                <h2 class="font-semibold text-xl text-[#120111]">
+                    Orelhas
+                </h2>
+
+                <div class="flex flex-col gap-4">
+
+                    <div>
+                        <p class="text-lg font-semibold text-[#75634F]">
+                            Próxima data:
+                        </p>
+                        <p class="text-[#75634F]">
+                            30 de outubro de 2026
+                        </p>
+                    </div>
+
+                    <button type="button"
+                        class="bt-feito w-full min-h-11 flex items-center justify-center rounded-full border border-[#8A7F76] px-5 py-2 font-semibold transition hover:shadow-md">
+                        Marcar como feito
+                    </button>
+
+                </div>
+
+                <div class="flex flex-col gap-5 pt-2">
+
+                    <h2 class="font-semibold text-md text-[#75634F]">
+                        HISTÓRICO DE LIMPEZA
+                    </h2>
+
+                    <ol class="ml-3 flex flex-col gap-8 border-l-2 border-[#E9DDCF] pl-8">
+
+                        <li class="relative flex flex-col gap-2">
+                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                            <p class="text-md font-semibold">
+                                25 de outubro de 2026
+                            </p>
+                        </li>
+
+                        <li class="relative">
+                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                            <p class="text-md font-semibold">
+                                15 de outubro de 2026
+                            </p>
+                        </li>
+
+                        <li class="relative">
+                            <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-[#F8F0E6] bg-[#F29A4B]"></span>
+                            <p class="text-md font-semibold">
+                                10 de outubro de 2026
+                            </p>
+                        </li>
+
+                    </ol>
+                </div>
+
+            </section>
+
+        </main>
+    </section>
 
    
     <script>

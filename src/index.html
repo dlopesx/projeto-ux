@@ -29,7 +29,7 @@
 
                     <!-- PERFIL DO USUÁRIO -->
                     <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
-                        <a href="#" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+                        <a href="perfil_marina.html" aria-label="Perfil de Marina" class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
                             <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
                             <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
                         </a>
@@ -65,6 +65,17 @@
                             <img class="w-6 h-6" src="svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
                             <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
                         </a>
+                    </li>
+                </ul>
+
+                <!-- RODAPÉ DA SIDEBAR-->
+                <ul class=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
+                    <li>
+                        <a href="configuracoes.html" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]">Config. do app</a>
+                            
+                    </li>
+                    <li>
+                        <a href="sobre.html" class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]"> <img src = "svg/info.svg" alt="Símbolo de informação em laranja"/>Sobre</a>
                     </li>
                 </ul>
 
@@ -273,9 +284,10 @@
             <header class="flex h-14 shrink-0 items-center gap-4 border-b border-[#E9DDCF] px-6">
                 <button
                     type="button"
-                    onclick="mostrarTela('menu'); return false;"
+                    id="abrir-menu"
                     class="flex size-6 shrink-0 items-center justify-center"
                     aria-label="Abrir menu"
+                    aria-expanded="false"
                 >
                     <img src="svg/menu.svg" alt="" class="w-4 h-4 object-contain">
                 </button>
@@ -294,7 +306,7 @@
 
                     <div class="flex items-start justify-around gap-3 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] p-3">
 
-                        <button type="button" onclick="window.location.href='novo_pet.html'"  class="flex w-16 shrink-0 flex-col items-center gap-2">
+                        <button type="button" onclick="window.location.href='novo_pet.html'" class="flex w-16 shrink-0 flex-col items-center gap-2">
                             <span class="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF]">
                                 <img src="svg/plus.svg" alt="Figura de um + laranja" class="w-6 object-contain">
                             </span>
@@ -307,18 +319,14 @@
                             <span class="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF] bg-[#FFF6EC]">
                                 <img src="svg/fiuLaranja.svg" alt="Figura de um pássaro laranja" class="w-9 object-contain">
                             </span>
-                            <span class="text-xs font-normal font-['Inter'] text-[#75634F]">
-                                Fiu
-                            </span>
+                            <span class="text-xs font-normal font-['Inter'] text-[#75634F]">Fiu</span>
                         </button>
 
                         <button type="button" onclick="window.location.href='tina.html'" class="flex w-16 shrink-0 flex-col items-center gap-2">
                             <span class="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF] bg-[#FFF6EC]">
                                 <img src="svg/tinaLaranja.svg" alt="Figura de um cachorro laranja" class="w-9 object-contain">
                             </span>
-                            <span class="text-xs font-normal font-['Inter'] text-[#75634F]">
-                                Tina
-                            </span>
+                            <span class="text-xs font-normal font-['Inter'] text-[#75634F]">Tina</span>
                         </button>
 
                     </div>
@@ -363,7 +371,7 @@
                             Alertas
                         </h2>
 
-                        <button type="button" onclick="window.location.href='novo_alerta.html'"  class="text-xs font-semibold font-['Inter'] text-[#75634F]">
+                        <button type="button" onclick="window.location.href='novo_alerta.html'" class="text-xs font-semibold font-['Inter'] text-[#75634F]">
                             + Adicionar
                         </button>
                     </div>
@@ -385,18 +393,115 @@
             </main>
 
             <nav class="mx-4 mb-3 mt-auto flex h-12 shrink-0 items-center justify-between rounded-full border border-[#E9DDCF] bg-[#F8F0E6] px-6">
-                <button type="button" 
-                    onclick="window.location.href='#'" 
-                    class="flex size-6 items-center justify-center" aria-label="Início">
+                <button
+                    type="button"
+                    onclick="window.location.href='#'"
+                    class="flex size-6 items-center justify-center"
+                    aria-label="Início"
+                >
                     <img src="svg/inicio.svg" alt="Figura de uma casa laranja" class="w-9 object-contain">
                 </button>
 
-                <button type="button" class="flex size-10 items-center justify-center rounded-full bg-[#F29A4B]" aria-label="Adicionar">
+                <button type="button" id="bt-adicionar-mobile" class="flex size-10 items-center justify-center rounded-full bg-[#F29A4B]" aria-label="Adicionar">
                     <img src="svg/Adicionar2.svg" alt="Figura de um círculo com um + branco no centro" class="w-14 object-contain">
                 </button>
             </nav>
 
+            <div id="menu-lateral" class="fixed inset-0 z-50 hidden">
+
+                <button
+                    type="button"
+                    id="fechar-menu-fundo"
+                    class="absolute inset-0 bg-black/30"
+                    aria-label="Fechar menu"
+                ></button>
+
+                <aside class="absolute left-0 top-0 flex h-dvh w-64 max-w-[85vw] flex-col gap-8 overflow-y-auto bg-[#FFFBF6] p-6 shadow-xl">
+
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-semibold font-['Inter'] text-[#2B1A0E]">
+                            Marina
+                        </span>
+
+                        <button
+                            type="button"
+                            id="fechar-menu"
+                            class="flex size-8 items-center justify-center rounded-full text-[#75634F] hover:bg-[#F8F0E6]"
+                            aria-label="Fechar menu"
+                        >
+                            <span class="text-2xl leading-none">&times;</span>
+                        </button>
+                    </div>
+
+                    <nav class="flex flex-col gap-6">
+                        <a href="perfil_marina.html" class="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                            Ver perfil
+                        </a>
+
+                        <a href="tutores.html" class="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                            Administrar tutores
+                        </a>
+
+                        <a href="compartilhar_infos.html" class="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                            Compartilhar infos dos pets
+                        </a>
+                    </nav>
+
+                    <div class="mt-auto flex flex-col gap-6 border-t border-[#E9DDCF] pt-6">
+                        <a href="configuracoes.html" class="text-base font-normal font-['Inter'] text-[#75634F]">
+                            Config. do app
+                        </a>
+
+                        <a href="sobre.html" class="flex items-center gap-2.5 text-base font-normal font-['Inter'] text-[#75634F]">
+                            Sobre
+                            <span class="flex size-5 items-center justify-center rounded-full border border-[#75634F] text-xs font-semibold">
+                                i
+                            </span>
+                        </a>
+                    </div>
+
+                </aside>
+            </div>
+
         </div>
+        
+        <dialog
+            id="painel-adicionar-mobile"
+            aria-label="Adicionar novo item"
+            class="fixed top-auto bottom-20 left-1/2 -translate-x-1/2 m-0 p-0 w-80 max-w-[calc(100%-2rem)] bg-transparent text-[#2B1A0E] overflow-visible backdrop:bg-black/30"
+        >
+            <button
+                id="fechar-painel-mobile"
+                type="button"
+                class="mb-3 ml-auto block rounded-xl border border-[#E9DDCF] bg-white px-4 py-2 font-semibold"
+            >
+                Fechar menu
+            </button>
+
+            <ul class="flex flex-col gap-2 rounded-2xl border border-[#E9DDCF] bg-white p-4 shadow-md">
+                <li>
+                    <a href="novo_alerta.html" class="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
+                        <img src="svg/notificacao.svg" alt="" class="h-6 w-6 shrink-0">
+                        Adicionar novo alerta
+                    </a>
+                </li>
+
+                <li>
+                    <a href="adicionar_agendamento.html" class="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
+                        <img src="svg/calendario.svg" alt="" class="h-6 w-6 shrink-0">
+                        Adicionar agendamento
+                    </a>
+                </li>
+
+                <li>
+                    <a href="adicionar_vacina.html" class="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
+                        <img src="svg/vacinas.svg" alt="" class="h-6 w-6 shrink-0">
+                        Adicionar nova vacina
+                    </a>
+                </li>
+            </ul>
+        </dialog>
+
     </section>
     
 
@@ -412,6 +517,47 @@
         botaoFechar.addEventListener('click', () => {
             painel.close();
         })
+
+        // PAINEL DE ADICIONAR - MOBILE
+        const botaoAbrirMobile = document.getElementById('bt-adicionar-mobile');
+        const botaoFecharMobile = document.getElementById('fechar-painel-mobile');
+        const painelMobile = document.getElementById('painel-adicionar-mobile');
+
+        botaoAbrirMobile.addEventListener('click', () => {
+            painelMobile.showModal();
+        });
+
+        botaoFecharMobile.addEventListener('click', () => {
+            painelMobile.close();
+        });
+
+        // MENU LATERAL - MOBILE
+        const botaoAbrirMenuMobile = document.getElementById('abrir-menu');
+        const botaoFecharMenuMobile = document.getElementById('fechar-menu');
+        const fundoMenuMobile = document.getElementById('fechar-menu-fundo');
+        const menuLateralMobile = document.getElementById('menu-lateral');
+
+        function abrirMenuMobile() {
+            menuLateralMobile.classList.remove('hidden');
+            botaoAbrirMenuMobile.setAttribute('aria-expanded', 'true');
+        }
+
+        function fecharMenuMobile() {
+            menuLateralMobile.classList.add('hidden');
+            botaoAbrirMenuMobile.setAttribute('aria-expanded', 'false');
+        }
+
+        botaoAbrirMenuMobile.addEventListener('click', abrirMenuMobile);
+
+        botaoFecharMenuMobile.addEventListener('click', fecharMenuMobile);
+
+        fundoMenuMobile.addEventListener('click', fecharMenuMobile);
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                fecharMenuMobile();
+            }
+        });
 
     </script>
 
