@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar medicamento</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .campo {
+                @apply w-full h-14 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition focus:ring-2 focus:ring-[#F29A4B] disabled:opacity-50 disabled:cursor-not-allowed;
+            }
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fundo: '#FFFBF6',
+                        superficie: '#F8F0E6',
+                        botao2: '#EEEE88',
+                        borda: '#E9DDCF',
+                        laranja: '#F29A4B',
+                        texto1: '#2B1A0E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-fundo font-sans">
+
+    <!-- DESKTOP -->
+    <section class="hidden md:block">
+        <div class="flex min-h-dvh">
+
+            <!-- SIDEBAR -->
+            <aside id="default-sidebar"
+                class="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh"
+                aria-label="Menu lateral">
+
+                <div class="flex flex-col flex-1 px-3 py-4 justify-between">
+
+                    <ul class="flex-1 space-y-2 font-medium">
+
+                        <li class="flex">
+                            <a href="index.html"
+                                class="flex flex-1 items-center px-2 py-3 rounded-2xl group">
+                                <span class="px-1 pb-6 text-xl font-bold">Site nome</span>
+                            </a>
+
+                            <button type="button" aria-label="Fechar menu lateral">
+                                <img class="w-6 h-6 mb-6"
+                                    src="svg/fechar.svg"
+                                    alt="">
+                            </button>
+                        </li>
+
+                        <!-- PERFIL -->
+                        <li class="pb-3 mb-2 border-b border-[#E9DDCF]">
+                            <a href="perfil_marina.html"
+                                aria-label="Perfil de Marina"
+                                class="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
+
+                                <span class="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] flex items-center justify-center font-semibold"
+                                    aria-hidden="true">M</span>
+
+                                <span class="flex-1 min-w-0 font-semibold truncate">Marina</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html"
+                                class="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/inicio.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Início</span>
+                            </a>
+                        </li>
+
+                        <li class="relative">
+                            <span class="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
+
+                            <a href="meus_pets.html"
+                                class="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group"
+                                aria-current="page">
+                                <img class="w-6 h-6" src="svg/paw-print.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="meus_agendamentos.html"
+                                class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/calendario.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="meus_alertas.html"
+                                class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/notificacao.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Alertas</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="tutores.html"
+                                class="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
+                                <img class="w-6 h-6" src="svg/tutores.svg" alt="">
+                                <span class="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- RODAPÉ -->
+                    <ul class="mt-auto space-y-2 py-5 border-t border-[#E9DDCF]">
+                        <li>
+                            <a href="configuracoes.html"
+                                class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]">
+                                Config. do app
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="sobre.html"
+                                class="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]">
+                                <img src="svg/info.svg" alt="">
+                                Sobre
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- CONTEÚDO -->
+            <div class="bg-[#FFFBF6] flex flex-col flex-1">
+
+                <header class="flex flex-row justify-between p-5 border-b border-[#E9DDCF]">
+                    <a href="index.html"
+                        class="flex items-center gap-2 text-lg font-semibold text-[#473C31] hover:text-laranja transition">
+                        <img alt="" src="svg/voltar.svg">
+                        Voltar
+                    </a>
+
+                    <button type="button" aria-label="Notificações">
+                        <img src="svg/notificacao.svg" alt="">
+                    </button>
+                </header>
+
+                <main class="flex w-full py-6 px-4 sm:px-8 lg:px-12 flex-col items-start">
+
+                    <div class="flex flex-col items-center self-stretch gap-9">
+
+                        <div class="flex justify-between self-stretch items-center">
+                            <h1 class="text-4xl font-semibold">
+                                Adicionar medicamento
+                            </h1>
+                        </div>
+
+                        <form id="form-medicamento"
+                            class="flex flex-col gap-8 w-full max-w-[500px] border border-[#E9DDCF] rounded-2xl p-6">
+
+                            <div class="grid grid-cols-1 gap-y-5">
+
+                                <div class="flex flex-col gap-3">
+                                    <label for="nome-medicamento"
+                                        class="text-sm font-medium">
+                                        Nome do medicamento
+                                    </label>
+
+                                    <input id="nome-medicamento"
+                                        name="nome-medicamento"
+                                        type="text"
+                                        class="campo"
+                                        placeholder="Nome do medicamento"
+                                        required>
+                                </div>
+
+                                <div class="flex flex-col gap-3">
+                                    <label for="dosagem-medicamento"
+                                        class="text-sm font-medium">
+                                        Dosagem
+                                    </label>
+
+                                    <input id="dosagem-medicamento"
+                                        name="dosagem"
+                                        type="text"
+                                        class="campo"
+                                        placeholder="Ex.: 5 ml ou 1 comprimido"
+                                        required>
+                                </div>
+
+                                <div class="flex flex-col gap-3">
+                                    <label for="frequencia-medicamento"
+                                        class="text-sm font-medium">
+                                        Frequência
+                                    </label>
+
+                                    <input id="frequencia-medicamento"
+                                        name="frequencia"
+                                        type="text"
+                                        class="campo"
+                                        placeholder="Ex.: A cada 8 horas"
+                                        required>
+                                </div>
+
+                                <div class="flex flex-col gap-3">
+                                    <label for="data-inicio-medicamento"
+                                        class="text-sm font-medium">
+                                        Data de início
+                                    </label>
+
+                                    <input id="data-inicio-medicamento"
+                                        name="data-inicio"
+                                        type="date"
+                                        class="campo"
+                                        required>
+                                </div>
+
+                                <div class="flex flex-col gap-3">
+                                    <label for="data-termino-medicamento"
+                                        class="text-sm font-medium">
+                                        Data de término
+                                    </label>
+
+                                    <input id="data-termino-medicamento"
+                                        name="data-termino"
+                                        type="date"
+                                        class="campo"
+                                        required>
+                                </div>
+                            </div>
+
+                            <label for="uso-continuo"
+                                class="flex items-center gap-3 cursor-pointer">
+                                <input id="uso-continuo"
+                                    name="uso-continuo"
+                                    type="checkbox"
+                                    class="w-4 h-4 accent-[#F29A4B]">
+
+                                <span>Uso contínuo</span>
+                            </label>
+
+                            <button id="btn-adicionar-medicamento"
+                                type="submit"
+                                class="flex w-full items-center justify-center bg-[#F29A4B] px-4 py-3 gap-3 rounded-2xl font-semibold hover:bg-[#E8863A] hover:shadow-md transition">
+
+                                <img src="svg/adicionar.svg" alt="" class="w-6 h-6">
+                                Adicionar
+                            </button>
+
+                            <!-- MENSAGEM DE SUCESSO -->
+                            <div id="mensagem-medicamento"
+                                class="hidden w-full items-center p-4 gap-3 fixed top-7 right-5 md:right-10 max-w-md text-[#2B1A0E] bg-[#F8F0E6] rounded-xl shadow-md border border-[#E9DDCF]"
+                                role="status"
+                                aria-live="polite">
+
+                                <div class="shrink-0 w-7 h-7 flex items-center justify-center">
+                                    <svg class="w-7 h-7" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 11.917 9.724 16.5 19 7.5"/>
+                                    </svg>
+                                </div>
+
+                                <span class="text-base font-medium">
+                                    Medicamento adicionado com sucesso!
+                                </span>
+
+                                <button type="button"
+                                    id="fechar-mensagem-medicamento"
+                                    class="ms-auto h-8 w-8 flex items-center justify-center"
+                                    aria-label="Fechar mensagem">
+                                    ✕
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE -->
+    <section class="block md:hidden min-h-dvh w-full bg-fundo flex flex-col">
+
+        <header class="h-16 shrink-0 px-5 border-b border-borda flex items-center gap-4">
+            <button type="button"
+                aria-label="Voltar"
+                onclick="window.location.href='index.html'"
+                class="size-6 shrink-0 flex items-center justify-center">
+
+                <img src="svg/voltar.svg" alt="" class="size-4 object-contain">
+            </button>
+
+            <h1 class="text-texto1 text-lg font-semibold">
+                Adicionar medicamento
+            </h1>
+        </header>
+
+        <form id="form-medicamento-mobile"
+            class="flex-1 w-full bg-fundo px-5 py-6 flex flex-col gap-6">
+
+            <div class="text-texto1 text-2xl font-semibold leading-8">
+                Digite as informações do medicamento
+            </div>
+
+            <div class="w-full">
+                <label for="nome-medicamento-mobile"
+                    class="text-texto1 text-sm font-medium">
+                    Nome do medicamento
+                </label>
+
+                <div class="h-12 w-full px-3.5 bg-superficie rounded-xl border border-borda flex items-center">
+                    <input id="nome-medicamento-mobile"
+                        name="nome-medicamento"
+                        type="text"
+                        placeholder="Nome do medicamento"
+                        required
+                        class="min-w-0 flex-1 bg-transparent text-texto1 outline-none">
+                </div>
+            </div>
+
+            <div class="w-full">
+                <label for="dosagem-medicamento-mobile"
+                    class="text-texto1 text-sm font-medium">
+                    Dosagem
+                </label>
+
+                <div class="h-12 w-full px-3.5 bg-superficie rounded-xl border border-borda flex items-center">
+                    <input id="dosagem-medicamento-mobile"
+                        name="dosagem"
+                        type="text"
+                        placeholder="Ex.: 5 ml ou 1 comprimido"
+                        required
+                        class="min-w-0 flex-1 bg-transparent text-texto1 outline-none">
+                </div>
+            </div>
+
+            <div class="w-full">
+                <label for="frequencia-medicamento-mobile"
+                    class="text-texto1 text-sm font-medium">
+                    Frequência
+                </label>
+
+                <div class="h-12 w-full px-3.5 bg-superficie rounded-xl border border-borda flex items-center">
+                    <input id="frequencia-medicamento-mobile"
+                        name="frequencia"
+                        type="text"
+                        placeholder="Ex.: A cada 8 horas"
+                        required
+                        class="min-w-0 flex-1 bg-transparent text-texto1 outline-none">
+                </div>
+            </div>
+
+            <!-- DATA DE INÍCIO -->
+            <div class="w-full flex flex-col gap-2">
+                <label for="data-inicio-medicamento-mobile"
+                    class="text-texto1 text-sm font-medium">
+                    Data de início
+                </label>
+
+                <div class="relative h-12 w-full px-3.5 bg-superficie rounded-xl border border-borda flex items-center">
+
+                    <input id="data-inicio-medicamento-mobile"
+                        name="data-inicio"
+                        type="date"
+                        required
+                        class="absolute inset-0 w-full h-full opacity-0 pointer-events-none">
+
+                    <span id="texto-data-inicio-medicamento"
+                        class="flex-1 text-texto1 text-base pointer-events-none">
+                    </span>
+
+                    <button type="button"
+                        id="abrir-calendario-medicamento1"
+                        aria-label="Abrir calendário da data de início"
+                        class="relative z-10 size-6 shrink-0 flex items-center justify-center">
+
+                        <img src="svg/calendario.svg"
+                            alt=""
+                            class="size-4 object-contain pointer-events-none">
+                    </button>
+                </div>
+            </div>
+
+            <!-- DATA DE TÉRMINO -->
+            <div class="w-full flex flex-col gap-2">
+                <label for="data-termino-medicamento-mobile"
+                    class="text-texto1 text-sm font-medium">
+                    Data de término
+                </label>
+
+                <div class="relative h-12 w-full px-3.5 bg-superficie rounded-xl border border-borda flex items-center">
+
+                    <input id="data-termino-medicamento-mobile"
+                        name="data-termino"
+                        type="date"
+                        required
+                        class="absolute inset-0 w-full h-full opacity-0 pointer-events-none">
+
+                    <span id="texto-data-termino-medicamento"
+                        class="flex-1 text-texto1 text-base pointer-events-none">
+                    </span>
+
+                    <button type="button"
+                        id="abrir-calendario-medicamento2"
+                        aria-label="Abrir calendário da data de término"
+                        class="relative z-10 size-6 shrink-0 flex items-center justify-center">
+
+                        <img src="svg/calendario.svg"
+                            alt=""
+                            class="size-4 object-contain pointer-events-none">
+                    </button>
+                </div>
+            </div>
+
+            <!-- USO CONTÍNUO -->
+            <label for="uso-continuo-mobile"
+                class="min-h-12 w-full px-5 bg-botao2 rounded-xl border border-borda flex items-center justify-center gap-2 cursor-pointer">
+
+                <input id="uso-continuo-mobile"
+                    name="uso-continuo"
+                    type="checkbox"
+                    class="w-4 h-4 accent-[#F29A4B]">
+
+                <span class="text-texto1 text-base font-semibold text-center">
+                    Uso contínuo
+                </span>
+            </label>
+
+            <button id="btn-adicionar-medicamento-mobile"
+                type="submit"
+                class="mt-auto w-full h-12 shrink-0 px-5 bg-laranja rounded-xl border border-borda flex justify-center items-center">
+
+                <span class="text-texto1 text-base font-semibold">
+                    Adicionar
+                </span>
+            </button>
+
+            <!-- MENSAGEM MOBILE -->
+            <div id="mensagem-medicamento-mobile"
+                role="status"
+                aria-live="polite"
+                class="hidden w-full items-center justify-between gap-3 rounded-xl bg-superficie border border-borda p-3">
+
+                <span class="text-texto1 text-sm">
+                    Medicamento adicionado com sucesso!
+                </span>
+
+                <button type="button"
+                    id="fechar-mensagem-medicamento-mobile"
+                    aria-label="Fechar mensagem"
+                    class="text-texto1 font-semibold px-2">
+                    ✕
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <script>
+        // DESKTOP
+        const formularioMedicamento = document.getElementById('form-medicamento');
+        const mensagemMedicamento = document.getElementById('mensagem-medicamento');
+        const fecharMensagemMedicamento = document.getElementById('fechar-mensagem-medicamento');
+
+        const dataInicioMedicamento = document.getElementById('data-inicio-medicamento');
+        const dataTerminoMedicamento = document.getElementById('data-termino-medicamento');
+        const usoContinuoDesktop = document.getElementById('uso-continuo');
+
+        let temporizadorMedicamento;
+
+        function mostrarMensagemMedicamento() {
+            mensagemMedicamento.classList.remove('hidden');
+            mensagemMedicamento.classList.add('flex');
+
+            clearTimeout(temporizadorMedicamento);
+            temporizadorMedicamento = setTimeout(esconderMensagemMedicamento, 5000);
+        }
+
+        function esconderMensagemMedicamento() {
+            clearTimeout(temporizadorMedicamento);
+            mensagemMedicamento.classList.add('hidden');
+            mensagemMedicamento.classList.remove('flex');
+        }
+
+        usoContinuoDesktop.addEventListener('change', () => {
+            dataTerminoMedicamento.disabled = usoContinuoDesktop.checked;
+            dataTerminoMedicamento.required = !usoContinuoDesktop.checked;
+
+            if (usoContinuoDesktop.checked) {
+                dataTerminoMedicamento.value = '';
+            }
+        });
+
+        formularioMedicamento.addEventListener('submit', (event) => {
+            event.preventDefault();
+            mostrarMensagemMedicamento();
+        });
+
+        fecharMensagemMedicamento.addEventListener('click', esconderMensagemMedicamento);
+
+
+        // MOBILE
+        const formularioMedicamentoMobile = document.getElementById('form-medicamento-mobile');
+
+        const dataInicioMedicamentoMobile = document.getElementById('data-inicio-medicamento-mobile');
+        const dataTerminoMedicamentoMobile = document.getElementById('data-termino-medicamento-mobile');
+
+        const textoDataInicioMedicamento = document.getElementById('texto-data-inicio-medicamento');
+        const textoDataTerminoMedicamento = document.getElementById('texto-data-termino-medicamento');
+
+        const abrirCalendarioMedicamento1 = document.getElementById('abrir-calendario-medicamento1');
+        const abrirCalendarioMedicamento2 = document.getElementById('abrir-calendario-medicamento2');
+
+        const usoContinuoMobile = document.getElementById('uso-continuo-mobile');
+
+        const mensagemMedicamentoMobile = document.getElementById('mensagem-medicamento-mobile');
+        const fecharMensagemMedicamentoMobile = document.getElementById('fechar-mensagem-medicamento-mobile');
+
+        let temporizadorMedicamentoMobile;
+
+        function abrirSeletorDataMedicamento(campoData) {
+            if (campoData.disabled) return;
+
+            if (typeof campoData.showPicker === 'function') {
+                campoData.showPicker();
+            } else {
+                campoData.click();
+            }
+        }
+
+        abrirCalendarioMedicamento1.addEventListener('click', () => {
+            abrirSeletorDataMedicamento(dataInicioMedicamentoMobile);
+        });
+
+        abrirCalendarioMedicamento2.addEventListener('click', () => {
+            abrirSeletorDataMedicamento(dataTerminoMedicamentoMobile);
+        });
+
+        dataInicioMedicamentoMobile.addEventListener('change', () => {
+            if (!dataInicioMedicamentoMobile.value) {
+                textoDataInicioMedicamento.textContent = '';
+                return;
+            }
+
+            const [ano, mes, dia] = dataInicioMedicamentoMobile.value.split('-');
+            textoDataInicioMedicamento.textContent = `${dia}/${mes}/${ano}`;
+        });
+
+        dataTerminoMedicamentoMobile.addEventListener('change', () => {
+            if (!dataTerminoMedicamentoMobile.value) {
+                textoDataTerminoMedicamento.textContent = '';
+                return;
+            }
+
+            const [ano, mes, dia] = dataTerminoMedicamentoMobile.value.split('-');
+            textoDataTerminoMedicamento.textContent = `${dia}/${mes}/${ano}`;
+        });
+
+        usoContinuoMobile.addEventListener('change', () => {
+            const marcado = usoContinuoMobile.checked;
+
+            dataTerminoMedicamentoMobile.disabled = marcado;
+            dataTerminoMedicamentoMobile.required = !marcado;
+
+            if (marcado) {
+                dataTerminoMedicamentoMobile.value = '';
+                textoDataTerminoMedicamento.textContent = '';
+            }
+        });
+
+        formularioMedicamentoMobile.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            mensagemMedicamentoMobile.classList.remove('hidden');
+            mensagemMedicamentoMobile.classList.add('flex');
+
+            clearTimeout(temporizadorMedicamentoMobile);
+
+            temporizadorMedicamentoMobile = setTimeout(() => {
+                mensagemMedicamentoMobile.classList.add('hidden');
+                mensagemMedicamentoMobile.classList.remove('flex');
+            }, 5000);
+        });
+
+        fecharMensagemMedicamentoMobile.addEventListener('click', () => {
+            clearTimeout(temporizadorMedicamentoMobile);
+            mensagemMedicamentoMobile.classList.add('hidden');
+            mensagemMedicamentoMobile.classList.remove('flex');
+        });
+    </script>
+
+</body>
+</html>
