@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom' 
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
     const [painelAberto, setPainelAberto] = useState(false)
     const [painelMobileAberto, setPainelMobileAberto] = useState(false)
     const [menuMobileAberto, setMenuMobileAberto] = useState(false)
+    const navigate = useNavigate()
   return (
     <>
       <section className="hidden md:block">
@@ -129,22 +132,22 @@ function Home() {
                     
                                     <div className="bg-[#F8F0E6] flex self-stretch items-start rounded-xl p-7 gap-8 "> 
                                         
-                                        <a href= "fiu.html" className="bg-[#FFFFFF]  items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border border-[#E9DDCF] hover:shadow-md transition"> 
+                                        <Link to= "/fiu" className="bg-[#FFFFFF]  items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border border-[#E9DDCF] hover:shadow-md transition"> 
                                             <div className=" flex items-center gap-[1.5rem]">
                                                 <div className="w-16 h-16 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center ">
                                                     <img src = "/svg/fiu.svg" alt="Figura pássaro na cor laranja" className="w-10 "/>
                                                 </div>
                                                 <p className="font-semibold text-2xl"> Fiu</p>
                                             </div>
-                                        </a>
-                                        <a href= "tina.html" className="bg-[#FFFFFF]  items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border border-[#E9DDCF] hover:shadow-md transition"> 
+                                        </Link>
+                                        <Link to= "/tina" className="bg-[#FFFFFF]  items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border border-[#E9DDCF] hover:shadow-md transition"> 
                                             <div className=" flex items-center gap-[1.5rem]">
                                                 <div className="w-16 h-16 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center ">
                                                     <img src = "/svg/tina.svg" alt="Figura cachorro na cor laranja" className="w-10 "/>
                                                 </div>
                                                 <p className="font-semibold text-2xl"> Tina</p>
                                             </div>
-                                        </a>
+                                        </Link>
                                         <a href= "novo_pet.html" className=" bg-[#E9DDCF] items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border-2 border-[#F29A4B] border-dashed hover:shadow-md transition"> 
                                             <div className=" bg-[#E9DDCF] flex flex-col p-[1.75rem] gap-[1.25rem] w-[16.5rem] rounded-md ">
                                                 <p> Adicionar pet</p>
@@ -287,7 +290,7 @@ function Home() {
 
                             <div className="flex items-start justify-around gap-3 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] p-3">
 
-                                <button type="button" onclick="window.location.href='novo_pet.html'" className="flex w-16 shrink-0 flex-col items-center gap-2">
+                                <button type="button" onClick="window.location.href='novo_pet.html'" className="flex w-16 shrink-0 flex-col items-center gap-2">
                                     <span className="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF]">
                                         <img src="/svg/plus.svg" alt="Figura de um + laranja" className="w-6 object-contain"/>
                                     </span>
@@ -296,14 +299,14 @@ function Home() {
                                     </span>
                                 </button>
 
-                                <button type="button" onclick="window.location.href='fiu.html'" className="flex w-16 shrink-0 flex-col items-center gap-2">
+                                <button type="button" onClick={() => navigate('/fiu')} className="flex w-16 shrink-0 flex-col items-center gap-2">
                                     <span className="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF] bg-[#FFF6EC]">
                                         <img src="/svg/fiuLaranja.svg" alt="Figura de um pássaro laranja" className="w-9 object-contain"/>
                                     </span>
                                     <span className="text-xs font-normal font-['Inter'] text-[#75634F]">Fiu</span>
                                 </button>
 
-                                <button type="button" onclick="window.location.href='tina.html'" className="flex w-16 shrink-0 flex-col items-center gap-2">
+                                <button type="button" onClick={() => navigate('/tina')} className="flex w-16 shrink-0 flex-col items-center gap-2">
                                     <span className="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF] bg-[#FFF6EC]">
                                         <img src="/svg/tinaLaranja.svg" alt="Figura de um cachorro laranja" className="w-9 object-contain"/>
                                     </span>
@@ -352,7 +355,7 @@ function Home() {
                                     Alertas
                                 </h2>
 
-                                <button type="button" onclick="window.location.href='novo_alerta.html'" className="text-xs font-semibold font-['Inter'] text-[#75634F]">
+                                <button type="button" onClick="window.location.href='novo_alerta.html'" className="text-xs font-semibold font-['Inter'] text-[#75634F]">
                                     + Adicionar
                                 </button>
                             </div>
@@ -376,7 +379,7 @@ function Home() {
                     <nav className="mx-4 mb-3 mt-auto flex h-12 shrink-0 items-center justify-between rounded-full border border-[#E9DDCF] bg-[#F8F0E6] px-6">
                         <button
                             type="button"
-                            onclick="window.location.href='#'"
+                            onClick="window.location.href='#'"
                             className="flex size-6 items-center justify-center"
                             aria-label="Início"
                         >
