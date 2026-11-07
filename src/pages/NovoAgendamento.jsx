@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import flatpickr from 'flatpickr'
 import { Portuguese } from 'flatpickr/dist/l10n/pt.js'
 import 'flatpickr/dist/flatpickr.min.css'
+import Sidebar from '../componentes/Sidebar'
 
 function NovoAgendamento(){
     // const navigate = useNavigate()
@@ -55,67 +56,9 @@ function NovoAgendamento(){
                 <div className="flex">
                     {/* <!-- SIDEBAR--> */}
 
-                    <aside id="default-sidebar" className=" bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh " aria-label="Sidebar">
-
-                        <div className="flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
-                        <ul className="flex-1 space-y-2 font-medium">
-                            <li className="flex">
-                                <a href="#" className="flex flex-1 items-center px-2 py-3 rounded-2xl group">
-                                    <span className="px-1 pb-6 text-xl font-bold">Site nome</span>
-                                </a>
-                                <button> <img className="w-6 h-6 mb-6" src="/svg/fechar.svg" alt="X cinza para fechar menu lateral"/></button>
-                            </li>
-
-                            {/* <!-- PERFIL DO USUÁRIO --> */}
-                            <li className="pb-3 mb-2 border-b border-[#E9DDCF]">
-                                <a href="#" aria-label="Perfil de Marina" className="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]">
-                                    <span className="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition" aria-hidden="true">M</span>
-                                    <span className="flex-1 min-w-0 font-semibold truncate">Marina</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="index.html" className="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
-                                    <img className="w-6 h-6" src="/svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
-                                    <span className="flex-1 ms-3 whitespace-nowrap">Início</span>
-                                </a>
-                            </li>
-                            <li className="relative">
-                                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
-                                <a href="meus_pets.html" className="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group" aria-current="page">
-                                    <img className="w-6 h-6" src="/svg/paw-print.svg" alt="Pata de animal na cor laranja"/>
-                                    <span className="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="meus_agendamentos.html" className="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
-                                    <img className="w-6 h-6" src="/svg/calendario.svg" alt="Calendario na cor laranja"/>
-                                    <span className="flex-1 ms-3 whitespace-nowrap">Agendamentos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="meus_alertas.html" className="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
-                                    <img className="w-6 h-6" src="/svg/notificacao.svg" alt="Sino de alerta na cor laranja"/>
-                                    <span className="flex-1 ms-3 whitespace-nowrap">Alertas</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tutores.html" className="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group">
-                                    <img className="w-6 h-6" src="/svg/tutores.svg" alt="Figura de usuários na cor laranja"/>
-                                    <span className="flex-1 ms-3 whitespace-nowrap">Outros tutores</span>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                    </aside>
-
-
+                    <Sidebar />
 
                     {/* <!-- HEADER E MAIN --> */}
-
-
 
                     <div className=" bg-[#FFFBF6] flex flex-col self-stretch flex-1">
 

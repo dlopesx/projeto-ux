@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 
 function Tina() {
     const navigate = useNavigate()
@@ -20,10 +22,10 @@ function Tina() {
                 <nav className="flex-1" aria-label="Navegação principal">
                     <ul className="flex flex-col gap-2">
                         <li>
-                            <a href="index.html" className="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                            <Link to="/" className="flex items-center gap-3 pl-6 pr-3 py-3 rounded-xl hover:bg-bege transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
                                 <img src="/svg/inicio.svg" alt="Início" className="w-6 h-6 shrink-0"/>
                                 Início
-                            </a>
+                            </Link>
                         </li>
 
                         {/* <!-- item ativo: barrinha só no meio --> */}
@@ -57,10 +59,10 @@ function Tina() {
             <div className="flex-1 min-w-0 flex flex-col">
 
                 <header className="flex items-center h-[88px] px-6 md:px-12 border-b border-bege">
-                    <a href="index.html" className="flex items-center gap-3 text-lg font-semibold text-[#473C31] hover:text-laranja transition rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                    <Link to="/" className="flex items-center gap-3 text-lg font-semibold text-[#473C31] hover:text-laranja transition rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
                         <img src="/svg/voltar.svg" alt="Voltar" className="w-5 h-5"/>
                         Voltar
-                    </a>
+                    </Link>
                 </header>
 
                 <main className="p-6 md:p-12">

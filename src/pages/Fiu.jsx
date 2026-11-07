@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Fiu() {
     const navigate = useNavigate()
@@ -26,10 +27,10 @@ function Fiu() {
                     </li>
 
                     <li>
-                        <a href="index.html" className="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
+                        <Link to="/" className="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group">
                             <img className="w-6 h-6" src="/svg/inicio.svg" alt="Figura de uma casa na cor laranja"/>
                             <span className="flex-1 ms-3 whitespace-nowrap">Início</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="relative">
                         <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
@@ -65,10 +66,10 @@ function Fiu() {
             <div className="flex-1 min-w-0 flex flex-col">
 
                 <header className="flex items-center h-[88px] px-6 md:px-12 border-b border-bege">
-                    <a href="index.html" className="flex items-center gap-3 text-lg font-semibold text-[#473C31] hover:text-laranja transition rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
+                    <Link to="/" className="flex items-center gap-3 text-lg font-semibold text-[#473C31] hover:text-laranja transition rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
                         <img src="/svg/voltar.svg" alt="Voltar" className="w-5 h-5"/>
                         Voltar
-                    </a>
+                    </Link>
                 </header>
 
                 <main className="p-6 md:p-12">

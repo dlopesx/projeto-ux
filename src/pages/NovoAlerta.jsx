@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import Sidebar from '../componentes/Sidebar'
 
 function NovoAlerta() {
     const [repetirDesktop, setRepetirDesktop] = useState('nao')
@@ -28,116 +29,7 @@ function NovoAlerta() {
 
                     {/* SIDEBAR */}
 
-                    <aside
-                        id="default-sidebar"
-                        className="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh"
-                        aria-label="Sidebar"
-                    >
-                        <div className="flex flex-col flex-1 px-3 py-4 justify-between bg-neutral-primary-soft">
-                            <ul className="flex-1 space-y-2 font-medium">
-
-                                <li className="flex">
-                                    <a href="#" className="flex flex-1 items-center px-2 py-3 rounded-2xl group">
-                                        <span className="px-1 pb-6 text-xl font-bold">
-                                            Site nome
-                                        </span>
-                                    </a>
-
-                                    <button type="button">
-                                        <img
-                                            className="pb-6"
-                                            src="/svg/fechar.svg"
-                                            alt="X cinza para fechar menu lateral"
-                                        />
-                                    </button>
-                                </li>
-
-                                {/* PERFIL DO USUÁRIO */}
-
-                                <li className="pb-3 mb-2 border-b border-[#E9DDCF]">
-                                    <a
-                                        href="#"
-                                        aria-label="Perfil de Marina"
-                                        className="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]"
-                                    >
-                                        <span
-                                            className="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] group-hover:bg-[#F8F0E6] flex items-center justify-center font-semibold transition"
-                                            aria-hidden="true"
-                                        >
-                                            M
-                                        </span>
-
-                                        <span className="flex-1 min-w-0 font-semibold truncate">
-                                            Marina
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        to="/"
-                                        className="flex items-center px-2 py-3 rounded-xl hover:bg-[#E9DDCF] group"
-                                    >
-                                        <img src="/svg/inicio.svg" alt="Figura de uma casa na cor laranja" />
-                                        <span className="flex-1 ms-3 whitespace-nowrap">
-                                            Início
-                                        </span>
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        to="/meus-pets"
-                                        className="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group"
-                                    >
-                                        <img src="/svg/paw-print.svg" alt="Pata de animal na cor laranja" />
-                                        <span className="flex-1 ms-3 whitespace-nowrap">
-                                            Meus pets
-                                        </span>
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        to="/meus-agendamentos"
-                                        className="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group"
-                                    >
-                                        <img src="/svg/calendario.svg" alt="Calendário na cor laranja" />
-                                        <span className="flex-1 ms-3 whitespace-nowrap">
-                                            Agendamentos
-                                        </span>
-                                    </Link>
-                                </li>
-
-                                <li className="relative">
-                                    <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]"></span>
-
-                                    <Link
-                                        to="/meus-alertas"
-                                        className="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group"
-                                    >
-                                        <img src="/svg/notificacao.svg" alt="Sino de alerta na cor laranja" />
-                                        <span className="flex-1 ms-3 whitespace-nowrap">
-                                            Alertas
-                                        </span>
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        to="/tutores"
-                                        className="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group"
-                                    >
-                                        <img src="/svg/tutores.svg" alt="Figura de usuários na cor laranja" />
-                                        <span className="flex-1 ms-3 whitespace-nowrap">
-                                            Outros tutores
-                                        </span>
-                                    </Link>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </aside>
+                    <Sidebar />
 
                     {/* HEADER E MAIN */}
 

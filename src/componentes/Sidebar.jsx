@@ -1,4 +1,6 @@
-    function Sidebar() {
+import { Link, useLocation } from "react-router-dom";
+
+    export default function Sidebar() {
 
         /*pega a rota atual pra destacar o menu ativo */
         const { pathname } = useLocation();
@@ -28,11 +30,6 @@
                             </Link>
 
                             <button type="button">
-                            <img
-                                className="w-6 h-6 mb-6"
-                                src="/svg/fechar.svg"
-                                alt="Fechar menu lateral"
-                            />
                             </button>
                         </li>
 
@@ -52,7 +49,7 @@
                             </a>
                         </li>
 
-                        <li>
+                        <li className={inicio ? "relative" : ""}>
                             {inicio && (
                                 <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]" />
                             )}
@@ -65,20 +62,26 @@
                             </Link>
                         </li>
 
-                        <li>
+                        <li className={meusPets ? "relative" : ""}>
+                            {meusPets && (
+                                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]" />
+                            )}
                             <Link
                             to="/meus-pets"
-                            className="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group"
+                            className={`flex items-center px-2 py-3 rounded-xl ${meusPets ? "pl-6" : ""}`}
                             >
                             <img className="w-6 h-6" src="/svg/paw-print.svg" alt="" />
                             <span className="flex-1 ms-3 whitespace-nowrap">Meus pets</span>
                             </Link>
                         </li>
 
-                        <li>
+                        <li className={meusAgendamentos ? "relative" : ""}>
+                            {meusAgendamentos && (
+                                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]" />
+                            )}
                             <Link
                             to="/meus-agendamentos"
-                            className="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group"
+                            className={`flex items-center px-2 py-3 rounded-xl ${meusAgendamentos ? "pl-6" : ""}`}
                             >
                             <img className="w-6 h-6" src="/svg/calendario.svg" alt="" />
                             <span className="flex-1 ms-3 whitespace-nowrap">
@@ -87,22 +90,27 @@
                             </Link>
                         </li>
 
-                        <li>
+                        <li className={meusAlertas ? "relative" : ""}>
+                            {meusAlertas && (
+                                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]" />
+                            )}
                             <Link
                             to="/meus-alertas"
-                            className="flex items-center px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] group"
+                            className={`flex items-center px-2 py-3 rounded-xl ${meusAlertas ? "pl-6" : ""}`}
                             >
                             <img className="w-6 h-6" src="/svg/notificacao.svg" alt="" />
                             <span className="flex-1 ms-3 whitespace-nowrap">Alertas</span>
                             </Link>
                         </li>
 
-                        <li className="relative">
-                            <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]" />
+                        <li className={outrosTutores ? "relative" : ""}>
+                            {outrosTutores && (
+                                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]" />
+                            )}
 
                             <Link
                             to="/outros-tutores"
-                            className="flex items-center px-2 py-3 pl-6 rounded-2xl hover:bg-[#E9DDCF] group"
+                            className={`flex items-center px-2 py-3 rounded-xl ${outrosTutores ? "pl-6" : ""}`}
                             aria-current="page"
                             >
                             <img className="w-6 h-6" src="/svg/tutores.svg" alt="" />
