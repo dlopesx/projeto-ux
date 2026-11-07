@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Sidebar from '../componentes/Sidebar'
 import Header from '../componentes/Header'
+import { usePets } from '../context/Pets'
 
 function Home() {
+    const { pets } = usePets()    // NOVO (aqui só precisa de pets, não de setPets)
     const [painelAberto, setPainelAberto] = useState(false)
     const [painelMobileAberto, setPainelMobileAberto] = useState(false)
     const [menuMobileAberto, setMenuMobileAberto] = useState(false)
     const navigate = useNavigate()
+    
   return (
     <>
       <section className="hidden md:block ">
@@ -18,11 +21,7 @@ function Home() {
 
                 <div className=" bg-[#FFFBF6] flex flex-col self-stretch flex-1"> 
 
-                    <header className="flex flex-row justify-between p-5 border ">
-                        <p> Início</p>
-                        <button> <img src = "/svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
-                    </header>
-
+                    <Header />
                     
                     <main className="flex py-6 px-4 sm:px-8 lg:px-16 flex-col items-start self-stretch">
                         
@@ -73,22 +72,20 @@ function Home() {
                 
                                 <div className="bg-[#F8F0E6] flex self-stretch items-start rounded-xl p-7 gap-8 "> 
                                     
-                                    <Link to= "/fiu" className="bg-[#FFFFFF]  items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border border-[#E9DDCF] hover:shadow-md transition"> 
-                                        <div className=" flex items-center gap-[1.5rem]">
-                                            <div className="w-16 h-16 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center ">
-                                                <img src = "/svg/fiu.svg" alt="Figura pássaro na cor laranja" className="w-10 "/>
-                                            </div>
-                                            <p className="font-semibold text-2xl"> Fiu</p>
+                                    {pets.map((pet) => (
+                                    <Link
+                                        key={pet.id}
+                                        to={`/pet/${pet.id}`}
+                                        className="bg-[#FFFFFF] items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border border-[#E9DDCF] hover:shadow-md transition"
+                                    >
+                                        <div className="flex items-center gap-[1.5rem]">
+                                        <div className="w-16 h-16 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center">
+                                            <img src={pet.imagem} alt="" className="w-10" />
+                                        </div>
+                                        <p className="font-semibold text-2xl">{pet.nome}</p>
                                         </div>
                                     </Link>
-                                    <Link to= "/tina" className="bg-[#FFFFFF]  items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border border-[#E9DDCF] hover:shadow-md transition"> 
-                                        <div className=" flex items-center gap-[1.5rem]">
-                                            <div className="w-16 h-16 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center ">
-                                                <img src = "/svg/tina.svg" alt="Figura cachorro na cor laranja" className="w-10 "/>
-                                            </div>
-                                            <p className="font-semibold text-2xl"> Tina</p>
-                                        </div>
-                                    </Link>
+                                    ))}
                                     <a href= "novo_pet.html" className=" bg-[#E9DDCF] items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border-2 border-[#F29A4B] border-dashed hover:shadow-md transition"> 
                                         <div className=" bg-[#E9DDCF] flex flex-col p-[1.75rem] gap-[1.25rem] w-[16.5rem] rounded-md ">
                                             <p> Adicionar pet</p>

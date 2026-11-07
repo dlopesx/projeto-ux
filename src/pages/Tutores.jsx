@@ -211,24 +211,7 @@ function OutrosTutores() {
           {/* CONTEÚDO PRINCIPAL */}
           <div className="bg-[#FFFBF6] flex flex-col self-stretch flex-1">
 
-            <header className="flex flex-row justify-between p-5 border">
-              <Link to="/" className="flex gap-4">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/svg/voltar.svg"
-                />
-                <p>Voltar</p>
-              </Link>
-
-              <button type="button">
-                <img
-                  className="w-6 h-6"
-                  src="/svg/notificacao.svg"
-                  alt="Notificações"
-                />
-              </button>
-            </header>
+            <Header />
 
             <main className="flex w-full py-6 px-4 sm:px-8 lg:px-16 flex-col items-start self-stretch">
               <div className="flex flex-col self-stretch gap-[2.25rem]">

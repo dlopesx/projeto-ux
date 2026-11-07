@@ -6,6 +6,7 @@ import flatpickr from 'flatpickr'
 import { Portuguese } from 'flatpickr/dist/l10n/pt.js'
 import 'flatpickr/dist/flatpickr.min.css'
 import Sidebar from '../componentes/Sidebar'
+import Header from '../componentes/Header'
 
 function NovoAgendamento(){
     // const navigate = useNavigate()
@@ -62,24 +63,7 @@ function NovoAgendamento(){
 
                     <div className=" bg-[#FFFBF6] flex flex-col self-stretch flex-1">
 
-
-
-                        <header className="flex flex-row justify-between p-5 border ">
-
-                            <Link to="/" className="flex gap-4">
-
-                                <img alt="Figura de seta laranja" src="/svg/voltar.svg"/>
-
-                                <p> Voltar</p>
-
-                            </Link>
-
-                            <button> <img src = "/svg/notificacao.svg" alt="Símbolo de informação em laranja"/> </button>
-
-                        </header>
-
-
-
+                        <Header />
                         <main className="flex w-full py-6 px-4 sm:px-8 lg:px-16 flex-col items-start self-stretch">
 
 

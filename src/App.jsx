@@ -7,8 +7,18 @@ import MeusAlertas from './pages/MeusAlertas'
 import MeusPets from './pages/MeusPets'
 import Configuracoes from './pages/Configuracoes'
 import Sobre from './pages/Sobre'
+import PainelPet from './pages/PainelPet'
+import Vacinas from './pages/Vacinas'
+import Alimentacao from './pages/Alimentacao.jsx'
+import BanhoTosa from './pages/BanhoTosa'
+import Cio from './pages/Cio'
+import Consultas from './pages/Consultas'
+import Medicamentos from './pages/Medicamentos'
+import Peso from './pages/Peso'
+import UnhasOrelhas from './pages/UnhasOrelhas'
 
 function App() {
+
   return (
     // habilita a navegação
     <BrowserRouter> 
@@ -22,8 +32,20 @@ function App() {
         <Route path="/meus-alertas" element={<MeusAlertas />} />
         <Route path="/configuracoes" element={<Configuracoes />} />
         <Route path="/sobre" element={<Sobre />} />
+        <Route path="/pet/:id" element={<PainelPet />} />
+
+        <Route path="/pet/:id/vacinas" element={<Vacinas />} />
+        <Route path="/pet/:id/alimentacao" element={<Alimentacao />} />
+        <Route path="/pet/:id/banho-tosa" element={<BanhoTosa />} />
+        <Route path="/pet/:id/cio" element={<Cio />} />
+        <Route path="/pet/:id/consultas" element={<Consultas />} />
+        <Route path="/pet/:id/medicamentos" element={<Medicamentos />} />
+        <Route path="/pet/:id/peso" element={<Peso />} />
+        <Route path="/pet/:id/unhas-orelhas" element={<UnhasOrelhas />} />
       </Routes>
     </BrowserRouter>
+
+    
   )
 }
 

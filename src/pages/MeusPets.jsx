@@ -2,28 +2,13 @@
 import { Link } from 'react-router-dom'
 import { useRef, useState } from 'react'
 import Sidebar from '../componentes/Sidebar'
+import Header from '../componentes/Header'
+import { usePets } from '../context/Pets'
 
 function MeusPets() {
   const painelRef = useRef(null)
 
-  const [pets, setPets] = useState([
-    {
-      id: 1,
-      nome: 'Tina',
-      especie: 'Cachorro',
-      raca: 'Poodle',
-      imagem: '/svg/tina.svg',
-      rota: '/tina',
-    },
-    {
-      id: 2,
-      nome: 'Fiu',
-      especie: 'Ave',
-      raca: 'Calopsita',
-      imagem: '/svg/fiu.svg',
-      rota: '/fiu',
-    },
-  ])
+ const { pets, setPets } = usePets()
 
   const [petSelecionado, setPetSelecionado] = useState('')
   const [confirmarExclusao, setConfirmarExclusao] = useState(false)
@@ -56,55 +41,14 @@ function MeusPets() {
   return (
     <div className="flex min-h-dvh bg-[#FFFBF6] text-[#2B1A0E]">
 
-      {/* SIDEBAR - DESKTOP */}
+      {/* SIDEBAR */}
       <Sidebar />
 
       {/* CONTEÚDO PRINCIPAL */}
       <div className="bg-[#FFFBF6] flex flex-col self-stretch flex-1 min-w-0">
 
-        {/* HEADER DESKTOP */}
-        <header className="hidden lg:flex flex-row justify-between items-center p-5 border-b border-[#E9DDCF]">
-
-          <Link to="/" className="flex gap-4 items-center">
-            <img
-              className="w-6 h-6"
-              alt=""
-              src="/svg/voltar.svg"
-            />
-            <p>Voltar</p>
-          </Link>
-
-          <button type="button" aria-label="Notificações">
-            <img
-              className="w-6 h-6"
-              src="/svg/notificacao.svg"
-              alt=""
-            />
-          </button>
-
-        </header>
-
-        {/* HEADER MOBILE */}
-        <header className="lg:hidden flex items-center justify-between p-4 border-b border-[#E9DDCF]">
-
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              className="w-5 h-5"
-              alt=""
-              src="/svg/voltar.svg"
-            />
-            <span>Voltar</span>
-          </Link>
-
-          <button type="button" aria-label="Notificações">
-            <img
-              className="w-6 h-6"
-              src="/svg/notificacao.svg"
-              alt=""
-            />
-          </button>
-
-        </header>
+        {/* HEADER */}
+        <Header />
 
         {/* MAIN */}
         <main className="flex w-full py-6 px-4 sm:px-8 lg:px-16 flex-col items-start">
@@ -190,7 +134,7 @@ function MeusPets() {
                 <li key={pet.id} className="w-full sm:w-[300px]">
 
                   <Link
-                    to={pet.rota}
+                    to={`/pet/${pet.id}`}
                     aria-label={`Ver ${pet.nome}`}
                     className="block w-full sm:w-[300px] overflow-hidden rounded-2xl border-2 border-[#2B1A0E] bg-[#F8F0E6] shadow-md transition duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A4B]/50"
                   >

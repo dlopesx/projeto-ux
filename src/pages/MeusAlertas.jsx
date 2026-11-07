@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom'
 import { useRef, useState } from 'react'
 import Sidebar from '../componentes/Sidebar'
+import Header from '../componentes/Header'
 
 function MeusAlertas() {
   const painelRef = useRef(null)
@@ -131,29 +132,8 @@ function MeusAlertas() {
       {/* CONTEÚDO PRINCIPAL */}
       <div className="bg-[#FFFBF6] flex flex-col flex-1 min-w-0">
 
-        {/* HEADER DESKTOP */}
-        <header className="hidden lg:flex flex-row justify-between items-center p-5 border-b border-[#E9DDCF]">
-          <Link to="/" className="flex gap-4 items-center">
-            <img alt="" src="/svg/voltar.svg" />
-            <p>Voltar</p>
-          </Link>
-
-          <button type="button">
-            <img src="/svg/notificacao.svg" alt="Notificações" />
-          </button>
-        </header>
-
-        {/* HEADER MOBILE */}
-        <header className="lg:hidden flex items-center justify-between p-4 border-b border-[#E9DDCF]">
-          <Link to="/" className="flex items-center gap-3">
-            <img src="/svg/voltar.svg" alt="Voltar" className="w-5 h-5" />
-            <span className="font-medium">Voltar</span>
-          </Link>
-
-          <button type="button" aria-label="Notificações">
-            <img src="/svg/notificacao.svg" alt="" className="w-6 h-6" />
-          </button>
-        </header>
+        {/* HEADER */}
+        <Header />
 
         {/* MAIN */}
         <main className="flex w-full py-6 px-4 sm:px-8 lg:px-16 flex-col items-start">
