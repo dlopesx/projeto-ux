@@ -55,6 +55,36 @@ export function PetsLista({ children }) {
     }
   ])
 
+  const [banhos, setBanhos] = useState([
+    { id: 1, petId: 1, proximaData: '2026-11-05', historico: ['2026-11-05', '2026-10-29', '2026-10-22'] },
+    { id: 2, petId: 2, proximaData: '2026-11-10', historico: ['2026-10-10'] } 
+  ])
+
+  const [tosas, setTosas] = useState([
+    { id: 1, petId: 1, proximaData: '2026-10-30', historico: ['2026-10-25', '2026-10-15', '2026-10-10'] }
+  ])
+
+  const [medicamentos, setMedicamentos] = useState([
+    { id: 1, petId: 1, tipo: 'Antimicrobiano', nome: 'Doxifin', dosagem: '1 comprimido', horario: '08:00', periodo: 'Manhã' }
+  ])
+
+  const [pesos, setPesos] = useState([
+    { id: 1, petId: 1, pesoAtual: '6,0 kg', dataAtual: '28/10' }, // Tina
+    { id: 2, petId: 2, pesoAtual: '100g', dataAtual: '28/10' }    // Fiu
+  ])
+
+  const [unhas, setUnhas] = useState([
+    { id: 1, petId: 1, proximaData: '05 de novembro de 2026', historico: ['05 de novembro de 2026', '29 de outubro de 2026', '22 de outubro de 2026'] }
+  ])
+
+  const [orelhas, setOrelhas] = useState([
+    { id: 1, petId: 1, proximaData: '30 de outubro de 2026', historico: ['25 de outubro de 2026', '15 de outubro de 2026', '10 de outubro de 2026'] }
+  ])
+
+  const [cios, setCios] = useState([
+    { id: 1, petId: 1, historico: ['25 de agosto de 2026', '12 de maio de 2026'] }
+  ])
+
 
   return (  
     <PetsContext.Provider value={{
@@ -63,6 +93,13 @@ export function PetsLista({ children }) {
         alertas, setAlertas,
         consultas, setConsultas,
         alimentacao, setAlimentacao,
+        banhos, setBanhos, 
+        tosas, setTosas,
+        medicamentos, setMedicamentos,
+        pesos, setPesos,
+        unhas, setUnhas,
+        orelhas, setOrelhas,
+        cios, setCios
         }}>
       {children}
     </PetsContext.Provider>
