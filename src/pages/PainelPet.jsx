@@ -92,7 +92,7 @@ function PainelPet() {
         </section>
 
 
-        <section className="block md:hidden">
+        {/* <section className="block md:hidden">
             <div className="w-96 relative bg-Fundo rounded-3xl inline-flex flex-col justify-start items-start overflow-hidden">
 
                 <header className="self-stretch h-64 px-6 pt-6 pb-9 relative bg-[#FFF6EC] flex flex-col justify-start items-center gap-2.5 overflow-hidden">
@@ -153,6 +153,80 @@ function PainelPet() {
 
                         <nav aria-label="Categorias de cuidados">
                             <ul className="grid grid-cols-2 gap-3">
+                                {cuidados.map((c) => (
+                                <Card key={c.pagina} nome={c.nome} svg={c.svg} pagina={c.pagina} petId={pet.id} />
+                                ))}
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </section> */}
+        <section className="block md:hidden">
+            {/* CORREÇÃO 1: Troquei w-96 por w-full min-h-dvh para ocupar 100% da largura e altura da tela */}
+            <div className="w-full min-h-dvh relative bg-[#FFFCF8] rounded-3xl flex flex-col justify-start items-start overflow-hidden">
+
+                <header className="self-stretch h-64 px-6 pt-6 pb-9 relative bg-[#FFF6EC] flex flex-col justify-start items-center gap-2.5 overflow-hidden">
+
+                    {/* Voltar com navigate(-1) para voltar para a tela exata de onde veio */}
+                    <button type="button" 
+                        onClick={() => navigate(-1)} 
+                        aria-label="Voltar" className="left-6 top-6 absolute">
+                        <img src="/svg/voltar.svg" alt="Voltar" className="size-5"/>
+                    </button>
+
+                    <figure className="size-20 mt-8 bg-[#FFF6EC] rounded-full border border-[#E9DDCF] flex justify-center items-center overflow-hidden">
+                        {/* CORREÇÃO 2: Puxando a imagem dinamicamente igual ao desktop */}
+                        <img src={pet.imagem} alt={`Foto de ${pet.nome}`} className="w-12 object-contain"/>
+                    </figure>
+
+                    <div className="inline-flex justify-center items-center gap-2">
+                        <h1 className="text-[#382719] text-2xl font-semibold font-['Inter']">
+                            {pet.nome}
+                        </h1>
+
+                        <button type="button" aria-label="Editar perfil" className="size-4 relative overflow-hidden">
+                            <img src="/svg/lapis.svg" alt="Figura de um lápis laranja" className="size-3.5 absolute left-[1.5px] top-[1.5px]"/>
+                        </button>
+                    </div>
+
+                    <p className="self-stretch text-center text-[#75634F] text-sm font-normal font-['Inter'] leading-5">
+                        {pet.especie} • {pet.genero}<br/>
+                        {pet.idade}
+                    </p>
+
+                    <img src="/svg/curvaMobile.svg" alt="Curva de fundo" aria-hidden="true" className="absolute left-0 bottom-0 w-full h-12 object-fill"/>
+                </header>
+
+                <div className="self-stretch p-6 flex flex-col flex-1 justify-start items-start gap-6 overflow-hidden bg-[#FFFCF8]">
+
+                    <div className="self-stretch flex flex-col justify-start items-start gap-3">
+
+                        <h2 id="proximos-cuidados" className="self-stretch text-[#382719] text-lg font-semibold font-['Inter']">
+                            Próximos cuidados
+                        </h2>
+
+                        <ul className="self-stretch p-4 bg-[#F8F0E6] rounded-2xl border border-[#E9DDCF] flex flex-col items-start gap-3">
+                            <li className="self-stretch text-[#8F4B17] text-sm font-normal font-['Inter'] leading-5">
+                                Vacinação — hoje, 14h
+                            </li>
+
+                            <li className="self-stretch text-[#8F4B17] text-sm font-normal font-['Inter'] leading-5">
+                                Limpar vasilha — hoje
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div className="self-stretch flex flex-col justify-start items-start gap-3">
+
+                        <h2 id="cuidados" className="self-stretch text-[#8F4B17] text-lg font-semibold font-['Inter']">
+                            Cuidados
+                        </h2>
+
+                        <nav aria-label="Categorias de cuidados" className="w-full">
+                            <ul className="grid grid-cols-2 gap-3 w-full">
                                 {cuidados.map((c) => (
                                 <Card key={c.pagina} nome={c.nome} svg={c.svg} pagina={c.pagina} petId={pet.id} />
                                 ))}

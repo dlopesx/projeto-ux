@@ -6,7 +6,6 @@ import Header from '../componentes/Header'
 import RotinaAlimentacao from '../componentes/RotinaAlimentacao'
 
 function Alimentacao() {
-
     const { id } = useParams()
     const { pets, alimentacao, setAlimentacao } = usePets()
     const [editandoFavoritos, setEditandoFavoritos] = useState(false)
@@ -14,8 +13,8 @@ function Alimentacao() {
     const pet = pets.find((p) => p.id === Number(id))
     const registro = alimentacao.find((a) => a.petId === Number(id))
 
-    if (!pet) return <p>Pet não encontrado.</p>
-    if (!registro) return <p>Esse pet ainda não tem alimentação cadastrada.</p>
+    if (!pet) return <p className="p-8">Pet não encontrado.</p>
+    if (!registro) return <p className="p-8">Esse pet ainda não tem alimentação cadastrada.</p>
 
     function salvarPreferidos(novaLista) {
         setAlimentacao(
@@ -37,24 +36,22 @@ function Alimentacao() {
     }
 
     return (
-        // TROCADO: era <section className="hidden md:block"> + <div className="flex">
-        // agora é um único div, para a página aparecer no celular também
-        <div className="flex min-h-dvh">
-            <Sidebar />
+        <div className="flex min-h-dvh bg-[#FFFBF6]">
+            
+            {/* CORREÇÃO: Esconde a Sidebar no celular para não esmagar a tela */}
+            <div className="hidden md:flex">
+                <Sidebar />
+            </div>
 
-            <div className="flex-1 min-w-0 flex flex-col">
+            <div className="flex-1 min-w-0 flex flex-col w-full">
                 <Header />
 
-                {/* TROCADO: main agora é flex-col com gap, para caber o título */}
-                <main className="flex flex-col gap-8 md:gap-10 p-6 md:p-12">
-
-                    {/* TROCADO: título novo */}
+                <main className="flex flex-col gap-8 md:gap-10 p-6 md:p-12 w-full">
                     <h1 className="text-3xl md:text-4xl font-semibold">
                         Alimentação de {pet.nome}
                     </h1>
 
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-9">
-
+                    <div className="flex flex-col md:flex-row gap-8 md:gap-9 w-full">
                         {/* ROTINA */}
                         <section className="order-2 md:order-1 flex-1 min-w-0">
                             <div className="flex flex-col gap-10 md:gap-16 rounded-3xl border border-[#E9DDCF] bg-[#F8F0E6] p-6 md:p-8">
@@ -64,7 +61,6 @@ function Alimentacao() {
                                         <img src="/svg/edit.svg" alt="" className="w-5 h-5 md:w-auto md:h-auto" />
                                     </button>
                                 </div>
-                                {/* TROCADO: era rotina={rotina} */}
                                 <RotinaAlimentacao rotina={registro.rotina} />
                             </div>
                         </section>
@@ -88,7 +84,6 @@ function Alimentacao() {
                                 </div>
 
                                 <ol className="flex flex-wrap gap-3 md:gap-4 min-h-16 md:min-h-24">
-                                    {/* TROCADO: era preferidos.map */}
                                     {registro.preferidos.map((p) =>
                                         editandoFavoritos ? (
                                             <li key={p}>
@@ -128,12 +123,10 @@ function Alimentacao() {
                                 </ol>
                             </div>
                         </section>
-
                     </div>
                 </main>
             </div>
         </div>
-        // TROCADO: o final tinha </div></section>; agora só um </div> fecha o "flex min-h-dvh"
     )
 }
 

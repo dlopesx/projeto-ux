@@ -7,7 +7,7 @@ export const CUIDADOS = {
     { pagina: 'banho-tosa', nome: 'Banho e Tosa', svg: 'banheira' },
     { pagina: 'peso', nome: 'Peso', svg: 'peso'},
     { pagina: 'unhas-orelhas', nome: 'Unhas/Orelhas', svg: 'coracao' },
-    { secao: 'cio', nome: 'Cio', svg: 'coracao', soFemea: true },
+    { pagina: 'cio', nome: 'Cio', svg: 'coracao', soFemea: true },
   ],
   ave: [
     { pagina: 'consultas', nome: 'Consultas', svg: 'consulta' },

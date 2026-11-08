@@ -237,19 +237,15 @@ function Home() {
                             </span>
                         </button>
 
-                        <button type="button" onClick={() => navigate('/fiu')} className="flex w-16 shrink-0 flex-col items-center gap-2">
-                            <span className="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF] bg-[#FFF6EC]">
-                                <img src="/svg/fiuLaranja.svg" alt="Figura de um pássaro laranja" className="w-9 object-contain"/>
-                            </span>
-                            <span className="text-xs font-normal font-['Inter'] text-[#75634F]">Fiu</span>
-                        </button>
-
-                        <button type="button" onClick={() => navigate('/tina')} className="flex w-16 shrink-0 flex-col items-center gap-2">
-                            <span className="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF] bg-[#FFF6EC]">
-                                <img src="/svg/tinaLaranja.svg" alt="Figura de um cachorro laranja" className="w-9 object-contain"/>
-                            </span>
-                            <span className="text-xs font-normal font-['Inter'] text-[#75634F]">Tina</span>
-                        </button>
+                        {/* MAPEAMENTO DINÂMICO DOS PETS NO MOBILE */}
+                        {pets.map((pet) => (
+                            <button key={pet.id} type="button" onClick={() => navigate(`/pet/${pet.id}`)} className="flex w-16 shrink-0 flex-col items-center gap-2">
+                                <span className="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF] bg-[#FFF6EC] overflow-hidden">
+                                    <img src={pet.imagem} alt={pet.nome} className="w-9 object-contain"/>
+                                </span>
+                                <span className="text-xs font-normal font-['Inter'] text-[#75634F]">{pet.nome}</span>
+                            </button>
+                        ))}
 
                     </div>
                 </section>
@@ -260,7 +256,7 @@ function Home() {
                             Agendamentos
                         </h2>
 
-                        <button type="button" onClick={() => navigate('/novoAgendamento')} className="text-xs font-semibold font-['Inter'] text-[#75634F]">
+                        <button type="button" onClick={() => navigate('/NovoAgendamento')} className="text-xs font-semibold font-['Inter'] text-[#75634F]">
                             + Adicionar
                         </button>
                     </div>
@@ -282,9 +278,9 @@ function Home() {
                         </time>
                     </article>
 
-                    <a href="#" className="self-end text-xs font-normal font-['Inter'] text-[#75634F]">
+                    <Link to="/meus-agendamentos" className="self-end text-xs font-normal font-['Inter'] text-[#75634F]">
                         Ver todos
-                    </a>
+                    </Link>
                 </section>
 
                 <section className="flex flex-col gap-3">
@@ -310,6 +306,9 @@ function Home() {
                             </p>
                         </div>
                     </article>
+                    <Link to="/meus-alertas" className="self-end text-xs font-normal font-['Inter'] text-[#75634F]">
+                        Ver todos
+                    </Link>
                 </section>
 
             </main>
@@ -365,7 +364,7 @@ function Home() {
                             Administrar tutores
                         </Link>
 
-                        <Link to="/MeusPets" className="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                        <Link to="/meus-pets" className="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
                             Meus pets
                         </Link>
                     </nav>
