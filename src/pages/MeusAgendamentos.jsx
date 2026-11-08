@@ -1,10 +1,32 @@
 import { Link } from 'react-router-dom'
 import { useState, useRef } from 'react'
+import { usePets } from '../context/Pets'
 import Sidebar from '../componentes/Sidebar'
 import Header from '../componentes/Header'
 import CardAgendamento from '../componentes/CardAgendamento'
 
+// "2026-09-14" + "09:00" -> "14 de setembro de 2026, segunda-feira ⋅ 09:00"
+function formatarDataHora(data, hora) {
+    const [ano, mes, dia] = data.split('-')
+    const d = new Date(ano, mes - 1, dia)
+    const dataLonga = d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })
+    const diaSemana = d.toLocaleDateString('pt-BR', { weekday: 'long' })
+    return `${dataLonga}, ${diaSemana} ⋅ ${hora}`
+}
+
+// endereço + (clínica)
+function montarLocal({ endereco, clinica }) {
+    if (endereco && clinica) return `${endereco} (${clinica})`
+    return endereco || clinica || 'Local não informado'
+}
+
 function MeusAgendamentos() {
+    const { consultas } = usePets()
+    // só os pendentes, do mais próximo para o mais distante
+    const agendamentos = consultas
+        .filter((consulta) => !consulta.feito)
+        .sort((a, b) => `${a.data} ${a.hora}`.localeCompare(`${b.data} ${b.hora}`))
+
     const painelRef = useRef(null)
     const [confirmarExclusao, setConfirmarExclusao] = useState(false)
 
@@ -62,20 +84,22 @@ function MeusAgendamentos() {
 
                     {/* LISTA DE AGENDAMENTOS */}
                     <ul className="flex flex-col gap-4 rounded-2xl bg-[#E9DDCF] p-3 md:p-6 max-w-[800px] w-full">
-                        <CardAgendamento 
-                            titulo="Consulta de Tina"
-                            dataHora="14 de setembro de 2026, quinta-feira ⋅ 09:00"
-                            local="Rua blablabla 34, Terra Nova, São Bernardo do Campo - SP (Clínica Solemar)"
-                            profissional="Adriana"
-                            onEdit={abrirPainel}
-                        />
-                        <CardAgendamento 
-                            titulo="Tosa da Tina"
-                            dataHora="11 de setembro de 2026, domingo ⋅ 08:00"
-                            local="Rua fulano 981, Centro, São Bernardo do Campo - SP"
-                            profissional="Marcos"
-                            onEdit={abrirPainel}
-                        />
+                        {agendamentos.map((consulta) => (
+                            <CardAgendamento
+                                key={consulta.id}
+                                titulo={consulta.nomeConsulta}
+                                dataHora={formatarDataHora(consulta.data, consulta.hora)}
+                                local={montarLocal(consulta)}
+                                profissional={consulta.profissional}
+                                onEdit={abrirPainel}
+                            />
+                        ))}
+
+                        {agendamentos.length === 0 && (
+                            <li className="py-8 text-center text-[#75634F]">
+                                Você ainda não possui agendamentos.
+                            </li>
+                        )}
                     </ul>
                 </main>
             </div>

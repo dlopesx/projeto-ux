@@ -16,6 +16,8 @@ import Consultas from './pages/Consultas'
 import Medicamentos from './pages/Medicamentos'
 import Peso from './pages/Peso'
 import UnhasOrelhas from './pages/UnhasOrelhas'
+import NovoAgendamento from './pages/NovoAgendamento.jsx'
+import NovoAlerta from './pages/NovoAlerta.jsx'
 
 function App() {
 
@@ -42,6 +44,9 @@ function App() {
         <Route path="/pet/:id/medicamentos" element={<Medicamentos />} />
         <Route path="/pet/:id/peso" element={<Peso />} />
         <Route path="/pet/:id/unhas-orelhas" element={<UnhasOrelhas />} />
+
+        <Route path="/novo-agendamento" element={<NovoAgendamento />} />
+        <Route path="/novo-alerta" element={<NovoAlerta />} />
       </Routes>
     </BrowserRouter>
 

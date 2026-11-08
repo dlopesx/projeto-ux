@@ -1,41 +1,22 @@
 import { Link } from 'react-router-dom'
 import { useRef, useState } from 'react'
+import { usePets } from '../context/Pets'
+import { montarQuando, diaDoTexto } from '../js/alertas'
 import Sidebar from '../componentes/Sidebar'
 import Header from '../componentes/Header'
+import CardAlerta from '../componentes/CardAlerta'
 
 function MeusAlertas() {
   const painelRef = useRef(null)
   const formRef = useRef(null)
 
-  const [alertas, setAlertas] = useState([
-    {
-      id: 1,
-      titulo: 'Limpar gaiola de Fiu',
-      pet: 'fiu',
-      data: '',
-      hora: '',
-      repetir: 'semanal',
-      dia: 'qua',
-      horario: '',
-      descricao: 'Toda quarta',
-    },
-    {
-      id: 2,
-      titulo: 'Cortar unha da Tina',
-      pet: 'tina',
-      data: '',
-      hora: '',
-      repetir: 'nao',
-      dia: '',
-      horario: '',
-      descricao: 'Hoje',
-    },
-  ])
+  // alertas e pets agora vêm do context (os mesmos que a tela Novo alerta usa)
+  const { pets, alertas, setAlertas } = usePets()
 
   const [alertaSelecionado, setAlertaSelecionado] = useState(null)
   const [formulario, setFormulario] = useState({
     titulo: '',
-    pet: 'fiu',
+    petId: '',
     data: '',
     hora: '',
     repetir: 'nao',
@@ -49,13 +30,13 @@ function MeusAlertas() {
     setAlertaSelecionado(alerta)
 
     setFormulario({
-      titulo: alerta.titulo,
-      pet: alerta.pet,
-      data: alerta.data,
-      hora: alerta.hora,
-      repetir: alerta.repetir,
-      dia: alerta.dia,
-      horario: alerta.horario,
+      titulo: alerta.texto,
+      petId: String(alerta.petId),
+      data: alerta.data ?? '',
+      hora: alerta.hora ?? '',
+      repetir: alerta.repete ? 'semanal' : 'nao',
+      dia: alerta.dia || diaDoTexto(alerta.quando),
+      horario: alerta.horario ?? '',
     })
 
     setConfirmarExclusao(false)
@@ -82,20 +63,22 @@ function MeusAlertas() {
 
     if (!alertaSelecionado) return
 
-    const descricao =
-      formulario.repetir === 'semanal'
-        ? `Toda ${formulario.dia === 'sab' ? 'sábado' :
-          formulario.dia === 'dom' ? 'domingo' :
-          formulario.dia === 'seg' ? 'segunda' :
-          formulario.dia === 'ter' ? 'terça' :
-          formulario.dia === 'qua' ? 'quarta' :
-          formulario.dia === 'qui' ? 'quinta' : 'sexta'}`
-        : 'Hoje'
+    const repete = formulario.repetir === 'semanal'
 
     setAlertas((anteriores) =>
       anteriores.map((alerta) =>
         alerta.id === alertaSelecionado.id
-          ? { ...alerta, ...formulario, descricao }
+          ? {
+              ...alerta,
+              petId: Number(formulario.petId),
+              texto: formulario.titulo.trim(),
+              quando: montarQuando(formulario),
+              repete,
+              data: formulario.data,
+              hora: formulario.hora,
+              dia: repete ? formulario.dia : '',
+              horario: repete ? formulario.horario : '',
+            }
           : alerta
       )
     )
@@ -144,7 +127,7 @@ function MeusAlertas() {
               <h1 className="text-4xl font-semibold">Meus alertas</h1>
 
               <Link
-                to="/NovoAlerta"
+                to="/novo-alerta"
                 className="flex items-center px-5 py-3 gap-4 rounded-2xl font-semibold border border-[#E9DDCF] hover:shadow-md transition"
               >
                 <img src="/svg/adicionar.svg" alt="Adicionar alerta" />
@@ -157,7 +140,7 @@ function MeusAlertas() {
               <h1 className="text-3xl font-semibold">Meus alertas</h1>
 
               <Link
-                to="/NovoAlerta"
+                to="/novo-alerta"
                 className="flex items-center justify-center gap-3 w-full px-4 py-3 rounded-2xl font-semibold border border-[#E9DDCF] hover:bg-[#F8F0E6] transition"
               >
                 <img src="/svg/adicionar.svg" alt="" />
@@ -169,24 +152,12 @@ function MeusAlertas() {
             <ul className="flex flex-col gap-4 p-4 sm:p-6 w-full max-w-[600px] bg-[#F8F0E6] rounded-2xl">
 
               {alertas.map((alerta) => (
-                <li
+                <CardAlerta
                   key={alerta.id}
-                  className="flex flex-col sm:flex-row sm:gap-5 sm:items-center gap-4 p-5 rounded-2xl bg-[#FFAE52] hover:shadow-md transition"
-                >
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold break-words">{alerta.titulo}</p>
-                    <p className="text-sm mt-1">{alerta.descricao}</p>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => abrirPainel(alerta)}
-                    className="flex items-center justify-center sm:justify-start gap-2 font-medium hover:font-semibold transition"
-                  >
-                    <img src="/svg/editar.svg" alt="" />
-                    <span>Editar alerta</span>
-                  </button>
-                </li>
+                  titulo={alerta.texto}
+                  descricao={alerta.quando}
+                  onEdit={() => abrirPainel(alerta)}
+                />
               ))}
 
               {alertas.length === 0 && (
@@ -248,14 +219,17 @@ function MeusAlertas() {
               <div className="relative">
                 <select
                   id="edit-pet"
-                  name="pet"
+                  name="petId"
                   required
-                  value={formulario.pet}
+                  value={formulario.petId}
                   onChange={atualizarCampo}
                   className="campo appearance-none pr-12 cursor-pointer"
                 >
-                  <option value="fiu">Fiu</option>
-                  <option value="tina">Tina</option>
+                  {pets.map((pet) => (
+                    <option key={pet.id} value={pet.id}>
+                      {pet.nome}
+                    </option>
+                  ))}
                 </select>
 
                 <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#F29A4B] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

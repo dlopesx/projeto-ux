@@ -43,14 +43,14 @@ function Home() {
 
                                 <ul className="flex flex-col gap-2 p-4 bg-white border border-[#E9DDCF] rounded-2xl shadow-md">
                                     <li>
-                                        <a href="novo_alerta.html"
+                                        <Link to="novo-alerta"
                                         className="flex items-center gap-5 p-5 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
                                             <img src="/svg/notificacao.svg" alt="Sino de notificação" className="w-6 h-6 shrink-0"/>
                                             Adicionar novo alerta
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to="/NovoAgendamento"
+                                        <Link to="/novo-agendamento"
                                         className="flex items-center gap-5 p-5 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
                                             <img src="/svg/calendario.svg" alt="Calendário" className="w-6 h-6 shrink-0"/>
                                             Adicionar agendamento
@@ -102,10 +102,10 @@ function Home() {
                                     <div className="flex gap-4">
                                         <p className="text-2xl font-semibold"> Agendamentos</p>
                                         <div className="w-9 h-9 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center items-center"> 2 </div>
-                                        <Link to="/NovoAgendamento" className="bg-[#F29A4B] p-1 rounded-3xl hover:bg-[#E8863A] hover:shadow-md transition flex items-center"> <img src = "/svg/adicionar.svg" alt="Botão de 'Mais'" className="w-6 h-4"/> </Link>
+                                        <Link to="/novo-agendamento" className="bg-[#F29A4B] p-1 rounded-3xl hover:bg-[#E8863A] hover:shadow-md transition flex items-center"> <img src = "/svg/adicionar.svg" alt="Botão de 'Mais'" className="w-6 h-4"/> </Link>
                                     </div>
                                     
-                                    <Link to="/MeusAgendamentos" className="text-xl hover:underline text-[#DB7F2E] font-bold"> Ver todos → </Link>
+                                    <Link to="/meus-agendamentos" className="text-xl hover:underline text-[#DB7F2E] font-bold"> Ver todos → </Link>
                 
                                     
                                 </div>
@@ -159,10 +159,10 @@ function Home() {
                                     <div className="flex gap-4">
                                         <p className="text-2xl font-semibold"> Alertas </p>
                                         <div className="w-9 h-9 shrink-0 rounded-full bg-[#E9DDCF] flex justify-center items-center"> 2 </div>
-                                        <Link to="/NovoAlerta" className="bg-[#F29A4B] p-1 rounded-3xl hover:bg-[#E8863A] hover:shadow-md transition flex items-center" > <img src = "/svg/adicionar.svg" alt="Botão de 'Mais'" className="w-6 h-4"/> </Link> 
+                                        <Link to="/novo-alerta" className="bg-[#F29A4B] p-1 rounded-3xl hover:bg-[#E8863A] hover:shadow-md transition flex items-center" > <img src = "/svg/adicionar.svg" alt="Botão de 'Mais'" className="w-6 h-4"/> </Link> 
                                     </div>
                                         
-                                    <Link to="/MeusAlertas"  className="text-xl hover:underline text-[#DB7F2E] font-bold"> Ver todos →</Link>
+                                    <Link to="/meus-alertas"  className="text-xl hover:underline text-[#DB7F2E] font-bold"> Ver todos →</Link>
                 
                                 </div>
                                 
@@ -256,7 +256,7 @@ function Home() {
                             Agendamentos
                         </h2>
 
-                        <button type="button" onClick={() => navigate('/NovoAgendamento')} className="text-xs font-semibold font-['Inter'] text-[#75634F]">
+                        <button type="button" onClick={() => navigate('/novo-agendamento')} className="text-xs font-semibold font-['Inter'] text-[#75634F]">
                             + Adicionar
                         </button>
                     </div>
