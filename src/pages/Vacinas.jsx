@@ -1,12 +1,14 @@
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { usePets } from '../context/Pets'
 import Sidebar from '../componentes/Sidebar'
 import Header from '../componentes/Header'
 import CardVacina from '../componentes/CardVacina'
 
 function calcularStatus(v) {
+        // compara só o dia (sem horas), para "próxima dose = hoje" não virar atrasada à tarde
         const hoje = new Date()
-        const proxima = new Date(v.proxima + 'T12:00')
+        hoje.setHours(0, 0, 0, 0)
+        const proxima = new Date(v.proxima + 'T00:00')
         const diasRestantes = (proxima - hoje) / (1000 * 60 * 60 * 24)
 
         if (diasRestantes < 0) return 'atrasada'
@@ -15,6 +17,8 @@ function calcularStatus(v) {
         }
 
 function formatar(dataISO) {
+        // vacina sem primeira dose ainda não tem data
+        if (!dataISO) return '—'
         return new Date(dataISO + 'T12:00').toLocaleDateString('pt-BR')
     }
 
@@ -42,7 +46,7 @@ function Vacinas(){
                         <div className="flex flex-wrap items-center gap-6">
                             <h1 className="flex-1 min-w-[12rem] text-3xl md:text-[32px] font-semibold leading-[120%]">{pet.nome} — vacinas</h1>
     
-                            <Link to="adicionar-vacina"
+                            <Link to={`/pet/${pet.id}/adicionar-vacina`}
                                 className="flex items-center justify-center gap-2.5 h-[52px] w-full sm:w-[220px]
                                 px-6 rounded-xl bg-fundo border border-bege hover:bg-superficie hover:shadow-md 
                                 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">

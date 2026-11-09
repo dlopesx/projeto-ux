@@ -14,5 +14,11 @@ export const CUIDADOS = {
     { pagina: 'medicamentos', nome: 'Medicamentos', svg: 'estrela' },
     { pagina: 'alimentacao', nome: 'Alimentação', svg: 'talher' },
     { pagina: 'peso', nome: 'Peso', svg: 'peso' },
-  ],
-}
+]
+}; // <-- IMPORTANTE: Feche a chave do objeto CUIDADOS aqui com ponto e vírgula!
+
+// COMENTÁRIO: Agora sim, a função fica solta no arquivo e pode ser exportada
+export const formatarDataBR = (dataString) => {
+    if (!dataString || dataString === 'Em andamento') return dataString;
+    return dataString.split('-').reverse().join('/');
+};

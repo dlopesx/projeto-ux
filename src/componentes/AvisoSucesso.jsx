@@ -1,4 +1,18 @@
-export default function AvisoSucesso({ mensagem, onFechar }) {
+import { useEffect, useRef } from 'react'
+
+// some sozinho depois de `duracao` ms (5 segundos, como nos html originais)
+export default function AvisoSucesso({ mensagem, onFechar, duracao = 5000 }) {
+    // guarda a versão mais recente do onFechar sem reiniciar o timer a cada render
+    const fecharRef = useRef(onFechar)
+    useEffect(() => {
+        fecharRef.current = onFechar
+    })
+
+    useEffect(() => {
+        const timer = setTimeout(() => fecharRef.current(), duracao)
+        return () => clearTimeout(timer)
+    }, [mensagem, duracao])
+
     return (
         <div
             role="status"

@@ -1,4 +1,3 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function CardVacina({nome, ultima, proxima, status}) {
     const estilos = {

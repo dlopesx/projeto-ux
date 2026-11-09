@@ -122,13 +122,19 @@ import { Link, useLocation } from "react-router-dom";
                     </ul>
 
                     <ul className=" mt-auto space-y-2 py-5 border-t border-[#E9DDCF] ">
-                        <li>
-                            <Link to="/configuracoes" className="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]">
+                        <li className={configuracoes ? "relative" : ""}>
+                            {configuracoes && (
+                                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]" />
+                            )}
+                            <Link to="/configuracoes" className={`flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] ${configuracoes ? "pl-6" : ""}`}>
                                 Config. do app
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/sobre" className="flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF]">
+                        <li className={sobre ? "relative" : ""}>
+                            {sobre && (
+                                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]" />
+                            )}
+                            <Link to="/sobre" className={`flex items-center gap-2 px-2 py-3 rounded-2xl hover:bg-[#E9DDCF] ${sobre ? "pl-6" : ""}`}>
                                 <img src="/svg/info.svg" alt="Símbolo de informação em laranja" />
                                 Sobre
                             </Link>

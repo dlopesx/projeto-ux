@@ -57,11 +57,11 @@ function Home() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <a href="adicionar_vacina.html"
+                                        <Link to="nova-vacina"
                                         className="flex items-center gap-5 p-5 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
                                             <img src="/svg/vacinas.svg" alt="Adicionar vacina" className="w-6 h-6 shrink-0"/>
                                             Adicionar nova vacina
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </dialog>

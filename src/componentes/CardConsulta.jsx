@@ -1,4 +1,4 @@
-import React from "react";
+
 
 // Função para formatar a data (ex: "2026-09-18" -> "18 de setembro de 2026")
 function formatarData(dataString) {

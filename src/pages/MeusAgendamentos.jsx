@@ -104,9 +104,58 @@ function MeusAgendamentos() {
                 </main>
             </div>
 
-            {/* MANTENHA SEU CÓDIGO DO <dialog> DO PAINEL DE EDITAR AQUI... */}
-            <dialog ref={painelRef} className="...">
-                 {/* (todo o resto do seu modal) */}
+            <dialog ref={painelRef} className="m-auto p-0 w-[92vw] max-w-[40rem] max-h-[90vh] overflow-hidden rounded-3xl bg-[#FFFBF6] text-[#2B1A0E] border border-[#E9DDCF] shadow-2xl backdrop:bg-black/40 flex-col">
+                <div className="flex items-center justify-between gap-4 h-[88px] shrink-0 px-6 border-b border-[#E9DDCF]">
+                    <h2 className="text-2xl font-semibold">Editar Agendamento</h2>
+                    <button type="button" onClick={fecharPainel} className="p-2 rounded-lg hover:bg-[#F8F0E6] transition focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
+                        <img src="/svg/fechar.svg" alt="Fechar" className="w-6 h-6" />
+                    </button>
+                </div>
+                
+                {/* Aqui a função salvarEdicao é conectada ao envio do formulário */}
+                <form onSubmit={salvarEdicao} className="flex flex-1 min-h-0 flex-col">
+                    <div className="flex-1 overflow-y-auto flex flex-col gap-6 p-6">
+                        {/* Exemplo de campos - você pode colocar os seus originais aqui */}
+                        <div className="flex flex-col gap-2">
+                            <label className="font-semibold">Nome da consulta</label>
+                            <input type="text" className="h-12 px-4 rounded-xl border border-[#E9DDCF] bg-white outline-none focus:ring-2 focus:ring-[#F29A4B]" defaultValue="Consulta de rotina" />
+                        </div>
+                    </div>
+
+                    <div className="shrink-0 p-6 border-t border-[#E9DDCF]">
+                        {!confirmarExclusao ? (
+                            <div className="flex items-center justify-between gap-3">
+                                {/* Conectando mostrarConfirmacao */}
+                                <button type="button" onClick={mostrarConfirmacao} className="font-semibold text-[#B3261E] rounded-lg hover:underline focus-visible:ring-2 focus-visible:ring-[#B3261E]">
+                                    Excluir agendamento
+                                </button>
+                                <div className="flex gap-3">
+                                    <button type="button" onClick={fecharPainel} className="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition">
+                                        Cancelar
+                                    </button>
+                                    <button type="submit" className="px-6 h-12 rounded-xl bg-[#F29A4B] text-white font-semibold hover:bg-[#E8863A] transition">
+                                        Salvar
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col gap-3">
+                                <p className="font-semibold">Excluir este agendamento?</p>
+                                <p className="text-sm text-[#75634F]">Essa ação não pode ser desfeita.</p>
+                                <div className="flex gap-3">
+                                    {/* Conectando cancelarExclusao */}
+                                    <button type="button" onClick={cancelarExclusao} className="px-5 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition">
+                                        Manter
+                                    </button>
+                                    {/* Conectando confirmarExclusaoAgendamento */}
+                                    <button type="button" onClick={confirmarExclusaoAgendamento} className="px-5 h-12 rounded-xl bg-[#B3261E] text-white font-semibold hover:brightness-110 transition">
+                                        Sim, excluir
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </form>
             </dialog>
         </div>
     )

@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function CardAgendamento({ titulo, dataHora, local, profissional, onEdit }) {
     return (

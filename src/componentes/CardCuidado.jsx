@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from "react";
 
 export default function CardCuidado({ titulo, proximaData, historico, tituloHistorico }) {
     const [feitoHoje, setFeitoHoje] = useState(false);
