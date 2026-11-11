@@ -4,18 +4,7 @@
 **(o número de usuários observados é igual o número de membros da equipe)**
 
 1) **Fluxograma de Avaliação de Usabilidade por Observação do Usuário \[1 solução por equipe\]**
-flowchart TD
-    A[Início: Planejamento] --> B[Preparação: Definir tarefas, perfil e ambiente de gravação]
-    B --> C[Executar Teste-Piloto com 1 membro da equipe]
-    C --> D{Ajustes necessários?}
-    D -- Sim --> B
-    D -- Não --> E[Coleta de Dados: Apresentar TCLE e Questionário Pré-teste]
-    E --> F[Iniciar gravação de tela/áudio e entregar lista de tarefas]
-    F --> G[Observar execução sem interferir]
-    G --> H[Encerrar gravação e aplicar Questionário Pós-teste]
-    H --> I[Interpretação: Assistir vídeos e preencher Tabela de Observação]
-    I --> J[Consolidação: Cruzar métricas quantitativas e problemas qualitativos]
-    J --> K[Relato dos Resultados: Documentar achados e sugestões de melhoria]
+![Fluxograma de Avaliação de Usabilidade por Observação](./imagens/mermaid-diagram-2026-11-11-104331.png)
 
 2) **DESCRIÇÃO DO PROCEDIMENTO DE PREPARAÇÃO DO TESTE \[1 solução por equipe\]**
 
