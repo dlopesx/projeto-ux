@@ -9,6 +9,7 @@ function Alimentacao() {
     const { id } = useParams()
     const { pets, alimentacao, setAlimentacao } = usePets()
     const [editandoFavoritos, setEditandoFavoritos] = useState(false)
+    const voltarPara = `/pet/${id}`
 
     const pet = pets.find((p) => p.id === Number(id))
     const registro = alimentacao.find((a) => a.petId === Number(id))
@@ -44,7 +45,7 @@ function Alimentacao() {
             </div>
 
             <div className="flex-1 min-w-0 flex flex-col w-full">
-                <Header />
+                <Header voltarPara={voltarPara}/>
 
                 <main className="flex flex-col gap-8 md:gap-10 p-6 md:p-12 w-full">
                     <h1 className="text-3xl md:text-4xl font-semibold">
@@ -83,17 +84,17 @@ function Alimentacao() {
                                     </button>
                                 </div>
 
-                                <ol className="flex flex-wrap gap-3 md:gap-4 min-h-16 md:min-h-24">
+                                <ol className="flex flex-wrap items-center gap-3 md:gap-4 min-h-16 md:min-h-24">
                                     {registro.preferidos.map((p) =>
                                         editandoFavoritos ? (
-                                            <li key={p}>
-                                                <span className="inline-flex items-center bg-[#FEF3E8] border border-[#F29A4B] text-[#120111] text-md font-semibold ps-4 pe-2 py-2 rounded-full gap-2">
-                                                    {p}
+                                            <li key={p} className="max-w-full">
+                                                <span className="inline-flex max-w-full items-center gap-2 whitespace-nowrap bg-[#FEF3E8] border border-[#F29A4B] text-[#120111] text-md font-semibold ps-4 pe-2 py-2 rounded-full">
+                                                    <span className="truncate">{p}</span>
                                                     <button
                                                         type="button"
                                                         onClick={() => removerPreferido(p)}
                                                         aria-label={`Remover ${p}`}
-                                                        className="inline-flex items-center p-0.5 rounded-full hover:bg-[#F29A4B]/20"
+                                                        className="inline-flex shrink-0 items-center p-0.5 rounded-full hover:bg-[#F29A4B]/20"
                                                     >
                                                         <svg className="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 24 24">
                                                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6" />
@@ -102,7 +103,7 @@ function Alimentacao() {
                                                 </span>
                                             </li>
                                         ) : (
-                                            <li key={p} className="px-4 py-2 text-md font-semibold rounded-full border border-[#F29A4B]">
+                                            <li key={p} className="max-w-full truncate whitespace-nowrap px-4 py-2 text-md font-semibold rounded-full border border-[#F29A4B]">
                                                 {p}
                                             </li>
                                         )
@@ -114,9 +115,9 @@ function Alimentacao() {
                                                 type="button"
                                                 onClick={adicionarPreferido}
                                                 aria-label="Adicionar alimento favorito"
-                                                className="inline-flex items-center p-0.5 rounded-full hover:bg-[#F29A4B]/20"
+                                                className="inline-flex items-center rounded-full hover:bg-[#F29A4B]/20"
                                             >
-                                                <img src="/svg/Adicionar2.svg" alt="" />
+                                                <img src="/svg/Adicionar2.svg" alt="" className="size-9" />
                                             </button>
                                         </li>
                                     )}

@@ -35,8 +35,8 @@ import { Link, useLocation } from "react-router-dom";
 
                         {/* PERFIL DO USUÁRIO */}
                         <li className="pb-3 mb-2 border-b border-[#E9DDCF]">
-                            <a
-                            href="#"
+                            <Link
+                            to="#"
                             className="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]"
                             >
                             <span className="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] flex items-center justify-center font-semibold">
@@ -46,7 +46,7 @@ import { Link, useLocation } from "react-router-dom";
                             <span className="flex-1 min-w-0 font-semibold truncate">
                                 Marina
                             </span>
-                            </a>
+                            </Link>
                         </li>
 
                         <li className={inicio ? "relative" : ""}>

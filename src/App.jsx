@@ -17,11 +17,13 @@ import Medicamentos from './pages/Medicamentos'
 import Peso from './pages/Peso'
 import UnhasOrelhas from './pages/UnhasOrelhas'
 import NovoAgendamento from './pages/NovoAgendamento.jsx'
+import NovoAgendamentoPet from './pages/NovoAgendamento.jsx'
 import NovoAlerta from './pages/NovoAlerta.jsx'
 import NovaVacina from './pages/NovaVacina.jsx'
 import NovoMedicamento from './pages/NovoMedicamento.jsx'
 import AdicionarCio from './pages/AdicionarCio.jsx'
 import AdicionarPeso from './pages/AdicionarPeso.jsx'
+import NovoPet from './pages/NovoPet.jsx'
 
 function App() {
 
@@ -48,6 +50,7 @@ function App() {
         <Route path="/pet/:id/medicamentos" element={<Medicamentos />} />
         <Route path="/pet/:id/peso" element={<Peso />} />
         <Route path="/pet/:id/unhas-orelhas" element={<UnhasOrelhas />} />
+        <Route path="/novo-pet" element={<NovoPet />} />
 
         <Route path="/nova-vacina" element={<NovaVacina />} />
         <Route path="/pet/:id/adicionar-vacina" element={<NovaVacina />} />
@@ -55,6 +58,7 @@ function App() {
         <Route path="/pet/:id/adicionar-medicamento" element={<NovoMedicamento />} />
         <Route path="/pet/:id/adicionar-cio" element={<AdicionarCio />} />
         <Route path='/pet/:id/adicionar-peso' element={<AdicionarPeso />} />
+        <Route path='/pet/:id/novo-agendamento' element={<NovoAgendamentoPet />} />
 
         <Route path="/novo-agendamento" element={<NovoAgendamento />} />
         <Route path="/novo-alerta" element={<NovoAlerta />} />

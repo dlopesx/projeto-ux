@@ -7,6 +7,7 @@ import CardConsulta from '../componentes/CardConsulta'
 export default function Consultas(){
     const { id } = useParams()
     const { pets, consultas } = usePets()
+    const voltarPara = `/pet/${id}`
 
     const pet = pets.find((p) => p.id === Number(id))
     if (!pet) return <p>Pet não encontrado.</p>
@@ -23,14 +24,14 @@ export default function Consultas(){
                 <div className="flex">
                     <Sidebar />
                     <div className="bg-[#FFFBF6] flex flex-col self-stretch flex-1 min-h-screen">
-                        <Header />
+                        <Header voltarPara={voltarPara}/>
                         
                         <main className="flex flex-col w-full py-6 px-4 sm:px-8 lg:px-16 items-start gap-10 self-stretch">
                             <div className="flex flex-col gap-10 self-stretch">
                                 
                                 <div className="flex justify-between items-center">
                                     <h1 className="flex items-start self-stretch text-4xl font-semibold"> Consultas </h1>
-                                    <Link to={`/pet/${pet.id}/adicionar-agendamento`} className="flex px-5 py-3 gap-4 rounded-2xl font-semibold border border-[#9c9c9c] hover:shadow-md transition"> 
+                                    <Link to={`/pet/${pet.id}/novo-agendamento`} className="flex px-5 py-3 gap-4 rounded-2xl font-semibold border border-[#9c9c9c] hover:shadow-md transition"> 
                                         <img src="/svg/adicionar.svg" alt="Adicionar nova consulta" />
                                         Adicionar uma nova consulta
                                     </Link>
@@ -46,7 +47,7 @@ export default function Consultas(){
                                                     {pet.nome} não possui nenhuma consulta agendada.   
                                                 </li>
                                                 <li className="text-md font-semibold border-2 border-[#E8863a] rounded-full px-5 py-3 bg-[#F29A4B]">
-                                                    <Link to={`/pet/${pet.id}/adicionar-agendamento`}> Adicionar novo agendamento </Link>
+                                                    <Link to={`/novo-agendamento`}> Adicionar novo agendamento </Link>
                                                 </li>
                                             </ul>
                                         </section>

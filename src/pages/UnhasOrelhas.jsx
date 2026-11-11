@@ -3,10 +3,12 @@ import { usePets } from '../context/Pets'
 import Sidebar from '../componentes/Sidebar'
 // Importando o novo componente que você criou:
 import CardCuidado from '../componentes/CardCuidado'
+import Header from '../componentes/Header'
 
 export default function UnhasOrelhas(){
     const { id } = useParams()
     const { pets, unhas, orelhas } = usePets()
+    const voltarPara = `/pet/${id}`
     
     const pet = pets.find((p) => p.id === Number(id))
     if (!pet) return <p>Pet não encontrado.</p>
@@ -25,13 +27,7 @@ export default function UnhasOrelhas(){
             {/* ÁREA PRINCIPAL */}
             <div className="flex-1 min-w-0 flex flex-col bg-[#FFFBF6]">
                 
-                {/* HEADER */}
-                <header className="flex items-center justify-between h-[88px] px-6 md:px-12 border-b border-bege">
-                    <Link to={`/pet/${pet.id}`} className="flex items-center gap-2 text-lg font-semibold text-[#473C31] hover:text-laranja transition rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-laranja">
-                        <img alt="Voltar" src="/svg/voltar.svg" className="w-6 h-6" />
-                        Voltar
-                    </Link>
-                </header>
+                <Header voltarPara={voltarPara}/>
 
                 <main className="flex flex-col gap-8 p-6 md:p-12 w-full">
                     

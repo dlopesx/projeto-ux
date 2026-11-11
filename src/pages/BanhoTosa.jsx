@@ -8,6 +8,7 @@ export default function BanhoTosa(){
     const { id } = useParams()
     // Puxando os dois arrays separados
     const { pets, banhos, tosas } = usePets()
+    const voltarPara = `/pet/${id}`
     
     const pet = pets.find((p) => p.id === Number(id))
     if (!pet) return <p>Pet não encontrado.</p>
@@ -23,7 +24,7 @@ export default function BanhoTosa(){
                 <div className="flex">
                     <Sidebar />
                     <div className="bg-[#FFFBF6] flex flex-col self-stretch flex-1 min-h-screen">
-                        <Header />
+                        <Header voltarPara={voltarPara}/>
                         <main className="flex flex-col w-full py-6 px-4 sm:px-8 lg:px-16 items-start gap-10 self-stretch">
                             <div className="flex flex-col gap-10 w-full">
                                 

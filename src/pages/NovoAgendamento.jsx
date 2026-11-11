@@ -200,7 +200,6 @@ function NovoAgendamento() {
                                         id="profissional"
                                         name="profissional"
                                         type="text"
-                                        required
                                         value={form.profissional}
                                         onChange={atualizar}
                                         className={`${estiloCampo} h-12 md:h-14`}

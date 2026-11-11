@@ -1,109 +1,152 @@
-import Sidebar from '../componentes/Sidebar' // Ajuste o caminho conforme a sua estrutura de pastas
-import { useNavigate } from 'react-router-dom';
+import Sidebar from '../componentes/Sidebar'
+import Header from '../componentes/Header'
+import HeaderMobile from '../componentes/HeaderMobile'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { usePets } from '../context/Pets'
+import AvisoSucesso from '../componentes/AvisoSucesso'
+
+const FORM_INICIAL = {
+  petId: '',
+  data: '',
+  peso: '',
+  unidadePeso: 'g',
+}
 
 export default function AdicionarPeso() {
-  const campoClass = "w-full h-12 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition focus:ring-2 focus:ring-[#F29A4B]";
-  const navigate = useNavigate();
+  const campoClass =
+    "w-full h-12 px-4 bg-[#F8F0E6] border border-[#E9DDCF] rounded-2xl outline-none transition focus:ring-2 focus:ring-[#F29A4B]"
+  const navigate = useNavigate()
+  const { id } = useParams()
+  const { pets } = usePets()
+
+  const [form, setForm] = useState({ ...FORM_INICIAL, petId: id ?? '' })
+  const [aviso, setAviso] = useState(false)
+
+  const pet = pets.find((p) => p.id === Number(form.petId))
+  const hoje = new Date().toISOString().slice(0, 10)
+  const voltarPara = `/pet/${form.petId}/peso`
+
+  // aviso some sozinho depois de 5 segundos
+  useEffect(() => {
+    if (!aviso) return
+    const timer = setTimeout(() => setAviso(false), 5000)
+    return () => clearTimeout(timer)
+  }, [aviso])
+
+  // um único handler para todos os campos (usa o atributo name)
+  function atualizar(event) {
+    const { name, value } = event.target
+    setForm((anterior) => ({ ...anterior, [name]: value }))
+  }
+
+  function salvar(event) {
+    event.preventDefault()
+
+    const peso = Number(form.peso)
+    const pesoEmGramas = form.unidadePeso === 'kg' ? peso * 1000 : peso
+    // aqui entra a lógica de salvar (setPesos, etc.), usando pesoEmGramas
+
+    // mantém o pet escolhido e limpa o resto
+    setForm({ ...FORM_INICIAL, petId: form.petId })
+    setAviso(true)
+  }
 
   return (
-    <div className="bg-[#FFFBF6] min-h-screen">
-      
-      {/* DESKTOP */}
-      <section className="hidden md:flex w-full min-h-screen">
-        {/* Renderiza o seu componente de Menu */}
+    <div className="flex min-h-dvh bg-[#FFFBF6]">
+      <div className="hidden md:flex">
         <Sidebar />
-        
-        {/* Área Principal Desktop */}
-        <div className="flex-1 flex flex-col">
-          <header className="flex flex-row justify-between p-5 border-b border-[#E9DDCF] bg-white">
-            <button onClick={() => navigate(-1)} className="flex items-center gap-3 hover:opacity-75 transition">
-                <img src="/svg/voltar.svg" alt="Voltar" className="w-6 h-6" />
-                <span className="text-lg font-semibold text-[#75634F]">Voltar</span>
-            </button>
-          </header>
+      </div>
 
-          <main className="w-full max-w-2xl mx-auto py-10 px-8 flex flex-col gap-6 flex-1">
-            <h1 className="text-3xl md:text-4xl font-semibold text-[#120111]">Registrar Peso</h1>
-            
-            <form className="flex flex-col gap-6 p-8 border-2 border-[#E9DDCF] rounded-3xl bg-white shadow-sm">
-              <div className="flex flex-col gap-2">
-                <label className="font-medium text-[#2B1A0E]">Data da pesagem</label>
-                <input name="data" type="date" required className={campoClass} />
-              </div>
-              
-              <div className="flex flex-col gap-2">
-                <label className="font-medium text-[#2B1A0E]">Peso (gramas ou kg)</label>
-                <div className="relative">
-                  <input name="peso" type="number" step="0.01" placeholder="Ex: 100" required className={campoClass} />
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 font-semibold text-[#75634F]">
-                    g/kg
-                  </span>
-                </div>
-              </div>
-              
-              <div className="flex flex-col gap-2">
-                <label className="font-medium text-[#2B1A0E]">Observações</label>
-                <input name="obs" type="text" placeholder="Ex: Pesagem pós-consulta" className={campoClass} />
-              </div>
-
-              <div className="flex justify-end gap-3 mt-4 pt-6 border-t border-[#E9DDCF]">
-                <a href="/peso-historico" className="flex items-center justify-center px-6 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition">
-                  Cancelar
-                </a>
-                <button type="submit" className="px-8 h-12 rounded-xl bg-[#F29A4B] text-[#2B1A0E] font-semibold hover:bg-[#E8863A] transition shadow-md">
-                  Salvar Peso
-                </button>
-              </div>
-            </form>
-          </main>
+      <div className="flex min-w-0 flex-1 flex-col">
+        <div className="hidden md:block">
+          <Header />
         </div>
-      </section>
 
-      {/* MOBILE */}
-      <section className="flex md:hidden flex-col w-full min-h-screen">
-        <header className="min-h-16 px-6 py-4 border-b border-[#E9DDCF] flex items-center gap-4 bg-white">
-          <a href="/peso-historico" className="flex items-center gap-3">
-            <img src="/svg/voltar.svg" alt="Voltar" className="w-6 h-6" />
-            <span className="text-lg font-semibold text-[#75634F]">Voltar</span>
-          </a>
-        </header>
+        <div className="md:hidden">
+          <HeaderMobile />
+        </div>
 
-        <main className="w-full p-5 sm:p-6 flex flex-col gap-6 flex-1">
-          <h1 className="text-2xl font-semibold text-[#120111]">Registrar Peso</h1>
-          
-          <form className="flex flex-col gap-6 p-6 border-2 border-[#E9DDCF] rounded-3xl bg-white shadow-sm">
+        <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 p-5 sm:p-6 md:px-8 md:py-10">
+          <h1 className="text-2xl font-semibold text-[#120111] md:text-4xl">
+            Registrar Peso{pet ? ` - ${pet.nome}` : ''}
+          </h1>
+
+          <form
+            onSubmit={salvar}
+            className="flex flex-col gap-6 rounded-3xl border-2 border-[#E9DDCF] bg-white p-6 shadow-sm md:p-8"
+          >
             <div className="flex flex-col gap-2">
-              <label className="font-medium text-[#2B1A0E]">Data da pesagem</label>
-              <input name="data" type="date" required className={campoClass} />
+              <label htmlFor="data" className="font-medium text-[#2B1A0E]">
+                Data da pesagem
+              </label>
+              <input
+                id="data"
+                name="data"
+                type="date"
+                required
+                max={hoje}
+                value={form.data}
+                onChange={atualizar}
+                className={campoClass}
+              />
             </div>
-            
+
             <div className="flex flex-col gap-2">
-              <label className="font-medium text-[#2B1A0E]">Peso (gramas ou kg)</label>
+              <label htmlFor="peso" className="font-medium text-[#2B1A0E]">
+                Peso
+              </label>
               <div className="relative">
-                <input name="peso" type="number" step="0.01" placeholder="Ex: 100" required className={campoClass} />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 font-semibold text-[#75634F]">
-                  g/kg
-                </span>
+                <input
+                  id="peso"
+                  name="peso"
+                  type="number"
+                  min="0.01"
+                  step="0.01"
+                  placeholder="Ex: 100"
+                  required
+                  value={form.peso}
+                  onChange={atualizar}
+                  className={`${campoClass} pr-24`}
+                />
+                <select
+                  name="unidadePeso"
+                  value={form.unidadePeso}
+                  onChange={atualizar}
+                  aria-label="Unidade do peso"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 bg-transparent font-semibold text-[#75634F] outline-none"
+                >
+                  <option value="g">g</option>
+                  <option value="kg">kg</option>
+                </select>
               </div>
             </div>
-            
-            <div className="flex flex-col gap-2">
-              <label className="font-medium text-[#2B1A0E]">Observações</label>
-              <input name="obs" type="text" placeholder="Ex: Pesagem pós-consulta" className={campoClass} />
-            </div>
 
-            <div className="flex flex-col-reverse gap-3 mt-4 pt-6 border-t border-[#E9DDCF]">
-              <a href="/peso-historico" className="flex items-center justify-center w-full h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition">
+            <div className="mt-4 flex flex-col-reverse gap-3 border-t border-[#E9DDCF] pt-6 md:flex-row md:justify-end">
+              <button
+                type="button"
+                onClick={() => navigate(voltarPara)}
+                className="flex h-12 w-full items-center justify-center rounded-xl border border-[#E9DDCF] font-semibold transition hover:bg-[#F8F0E6] md:w-auto md:px-6"
+              >
                 Cancelar
-              </a>
-              <button type="submit" className="w-full h-12 rounded-xl bg-[#F29A4B] text-[#2B1A0E] font-semibold hover:bg-[#E8863A] transition shadow-md">
+              </button>
+              <button
+                type="submit"
+                className="h-12 w-full rounded-xl bg-[#F29A4B] font-semibold text-[#2B1A0E] shadow-md transition hover:bg-[#E8863A] md:w-auto md:px-8"
+              >
                 Salvar Peso
               </button>
             </div>
           </form>
         </main>
-      </section>
+      </div>
 
+      {aviso && (
+        <AvisoSucesso
+          mensagem="Peso adicionado com sucesso."
+          onFechar={() => setAviso(false)}
+        />
+      )}
     </div>
-  );
+  )
 }

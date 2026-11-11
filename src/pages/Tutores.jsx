@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Sidebar from '../componentes/Sidebar'
+import Header from '../componentes/Header'
 
 // 1. CardTutor movido para FORA do componente principal (Boas práticas do React)
 function CardTutor({ tutor, mobile = false, onGerenciar }) {
@@ -115,15 +116,7 @@ function OutrosTutores() {
         <div className="flex min-h-screen">
           <Sidebar />
           <div className="bg-[#FFFBF6] flex flex-col self-stretch flex-1">
-            <header className="flex flex-row justify-between items-center h-[88px] px-6 md:px-12 border-b border-[#E9DDCF] bg-white">
-              <Link to="/" className="flex items-center gap-2 text-lg font-semibold hover:text-[#F29A4B] transition rounded-lg">
-                <img alt="Seta" src="/svg/voltar.svg" className="w-6 h-6" />
-                Voltar
-              </Link>
-              <button className="hover:opacity-75 transition"> 
-                <img className="w-6 h-6" src="/svg/notificacao.svg" alt="Notificações" /> 
-              </button>
-            </header>
+            <Header />
 
             <main className="flex w-full py-6 px-4 sm:px-8 lg:px-16 flex-col items-start self-stretch">
               <div className="flex flex-col self-stretch gap-[2.25rem] w-full max-w-[800px]">

@@ -86,11 +86,11 @@ function Home() {
                                         </div>
                                     </Link>
                                     ))}
-                                    <a href= "novo_pet.html" className=" bg-[#E9DDCF] items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border-2 border-[#F29A4B] border-dashed hover:shadow-md transition"> 
+                                    <button onClick={() => navigate(`novo-pet`)} className=" bg-[#E9DDCF] items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border-2 border-[#F29A4B] border-dashed hover:shadow-md transition"> 
                                         <div className=" bg-[#E9DDCF] flex flex-col p-[1.75rem] gap-[1.25rem] w-[16.5rem] rounded-md ">
                                             <p> Adicionar pet</p>
                                         </div>
-                                    </a>
+                                    </button>
                                 </div>      
                 
                             </div>
@@ -228,7 +228,7 @@ function Home() {
 
                     <div className="flex items-start justify-around gap-3 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] p-3">
 
-                        <button type="button" onClick="window.location.href='novo_pet.html'" className="flex w-16 shrink-0 flex-col items-center gap-2">
+                        <button type="button" onClick={() => navigate(`/pet/${pet.id}`)} className="flex w-16 shrink-0 flex-col items-center gap-2">
                             <span className="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF]">
                                 <img src="/svg/plus.svg" alt="Figura de um + laranja" className="w-6 object-contain"/>
                             </span>
