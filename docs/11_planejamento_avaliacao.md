@@ -10,6 +10,10 @@
 
 2) Lista de Instrumentos  
    1) Termo de consentimento  
+   https://docs.google.com/forms/d/e/1FAIpQLSd9R_y4RI6qO2MtZllf7Vvqm4wKXM7DAPR5oL_uTSlBScxJvA/viewform?usp=dialog
+   
    2) Questionários  
+   https://docs.google.com/forms/d/e/1FAIpQLSdbAag_B1WKJnqwO3f_inmOLpgQO88ohqbkjKb3fz7FMGHCrw/viewform?usp=dialog
+   
    3) Tabela de Observação  
    4) Formulário de avaliação Heuristica.
