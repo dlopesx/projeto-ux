@@ -38,7 +38,10 @@
 | **4. Criar agendamento** | | | | | |
 
 **Links dos vídeos:**
+https://drive.google.com/file/d/16KWNO1_B_02V480HZuoNpkVDFQrhYfs_/view?usp=sharing
 
 **Respostas do Formulário do Usuário:**
+[📄 Questionário de Consentimento (PDF)](./docs/termo_de_consentimento.pdf)
+[📄 Questionário Pré e Pós teste de usabilidade (PDF)](./docs/questionario_pre_e_pos_teste_de_usabilidade.pdf)
 
 **Conclusão da avaliação por observação do usuário:**
