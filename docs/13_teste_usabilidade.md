@@ -1,12 +1,9 @@
-**\[1 solução completa por pessoa da equipe\]**
-
 **Método de Avaliação de Usabilidade por Observação do Usuário**   
-**(o número de usuários observados é igual o número de membros da equipe)**
 
-1) **Fluxograma de Avaliação de Usabilidade por Observação do Usuário \[1 solução por equipe\]**
+1) **Fluxograma de Avaliação de Usabilidade por Observação do Usuário**
 ![Fluxograma de Avaliação de Usabilidade por Observação](./imagens/mermaid-diagram-2026-11-11-104331.png)
 
-2) **DESCRIÇÃO DO PROCEDIMENTO DE PREPARAÇÃO DO TESTE \[1 solução por equipe\]**
+2) **DESCRIÇÃO DO PROCEDIMENTO DE PREPARAÇÃO DO TESTE**
 
 * *Passo 1: Configuração do Ambiente e Ferramentas de Registro*
   * Preparar o link do sistema em execução (ambiente web) e testar o software de gravação de tela e microfone (ex.: OBS Studio ou Google Meet) para garantir que o cursor, os cliques e a voz do participante sejam capturados com nitidez[cite: 13].
@@ -26,16 +23,16 @@
 * *Passo 5: Roteiro de Condução da Sessão*
   * Ler as instruções iniciais reforçando que o sistema está sendo testado (e não o usuário), solicitar que pense em voz alta durante a navegação e iniciar a gravação somente após o aceite do Termo de Consentimento.
 
-3) **RESULTADOS DO TESTE [1 solução por equipe]**
+3) **RESULTADOS DO TESTE**
 
 **Avaliação de cada Tarefa — Usuário 01 (Código/Iniciais)**
 
 | Tarefa | Grau de Sucesso | Total de Erros cometidos | Tipos de Erros | Tempo Necessário | Grau de Satisfação |
 | :--- | :--- | :---: | :--- | :---: | :--- |
-| **1. Cadastrar novo pet** | *(Ex.: Sucesso Total)* | *(Ex.: 0)* | *(Nenhum)* | *(Ex.: 38 segundos)* | *(Ex.: Satisfeito / Sem confusão)* |
-| **2. Registrar nova vacina** | *(Ex.: Sucesso Parcial)* | *(Ex.: 1)* | *(1) Compreensão* | *(Ex.: 52 segundos)* | *(Ex.: Confusão Leve)* |
-| **3. Adicionar pesagem** | | | | | |
-| **4. Criar agendamento** | | | | | |
+| **1. Cadastrar novo pet** | *Sucesso total* | *0* | *Nenhum* | *2 minutos* | *Satisfeito* |
+| **2. Registrar nova vacina** | *Sem sucesso* | *3* | *(1) Página sem direcionamento correto (2) Página sem direcionamento correto (3) Página sem direcionamento correto* | *1 minuto e 20 segundos* | *Confusão na navegação* |
+| **3. Adicionar pesagem** | *Sucesso total* | *1* | *(1)Voltar na navegação* | *1 minuto* | *Confusão na navegação* |
+| **4. Criar agendamento** | *Sucesso Total* | *0* | *Nenhum* | *50 segundos* | *Consusão leve* |
 
 **Links dos vídeos:**
 https://drive.google.com/file/d/16KWNO1_B_02V480HZuoNpkVDFQrhYfs_/view?usp=sharing
@@ -45,3 +42,12 @@ https://drive.google.com/file/d/16KWNO1_B_02V480HZuoNpkVDFQrhYfs_/view?usp=shari
 [📄 Questionário Pré e Pós teste de usabilidade (PDF)](./docs/questionario_pre_e_pos_teste_de_usabilidade.pdf)
 
 **Conclusão da avaliação por observação do usuário:**
+
+A partir da análise das sessões gravadas e das respostas dos questionários pós-teste com os **1** participantes, verificou-se que o sistema apresentou uma taxa geral de sucesso de **75%** na execução das tarefas propostas.
+
+* **Pontos Positivos:** Os fluxos de **criar agendamento** demonstraram alta facilidade de aprendizado (*learnability*), sendo concluídos sem necessidade de ajuda externa e com boa avaliação de clareza nos formulários.
+* **Principais Dificuldades Identificadas:** Os maiores gargalos de interação ocorreram nas tarefas de **Registrar vacina e Adicionar Pesagem**. Observou-se **que deve ser ajustado rotas de navegação entre as páginas e páginas responsivas em Meus pets para melhor navegação no Mobile**.
+* **Sugestões de Melhoria:** Para mitigar os erros de compreensão e navegação identificados, recomenda-se:
+  1. **[Melhoria 1 — ex.: Ajuste nas rota de tela para direcionamento correto.**
+  2. **[Melhoria 2 — ex.: Ajuste no formato responsivo das telas para melhor visualização do usuário.**
+  3. **[Melhoria 3 — ex.: Ajuste na rota dos botões de voltar no modelo mobile para impedimento de possíveis loops.**
