@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useRef, useState } from 'react'
 import Sidebar from '../componentes/Sidebar'
 import Header from '../componentes/Header'
-import { usePets } from '../context/Pets'
+import { usePets } from '../context/usePets'
 
 function MeusPets() {
   const painelRef = useRef(null)

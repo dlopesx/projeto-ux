@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { usePets } from '../context/Pets'
+import { usePets } from '../context/usePets'
 import Sidebar from '../componentes/Sidebar'
 import Header from '../componentes/Header'
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { usePets } from '../context/Pets'
+import { usePets } from '../context/usePets'
 import LayoutFormulario from '../componentes/LayoutFormulario'
 import CampoForm, { estiloCampo } from '../componentes/CampoForm'
 import SelectPet from '../componentes/SelectPet'

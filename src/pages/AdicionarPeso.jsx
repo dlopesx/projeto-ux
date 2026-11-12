@@ -3,7 +3,7 @@ import Header from '../componentes/Header'
 import HeaderMobile from '../componentes/HeaderMobile'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { usePets } from '../context/Pets'
+import { usePets } from '../context/usePets'
 import AvisoSucesso from '../componentes/AvisoSucesso'
 
 const FORM_INICIAL = {
@@ -42,10 +42,6 @@ export default function AdicionarPeso() {
 
   function salvar(event) {
     event.preventDefault()
-
-    const peso = Number(form.peso)
-    const pesoEmGramas = form.unidadePeso === 'kg' ? peso * 1000 : peso
-    // aqui entra a lógica de salvar (setPesos, etc.), usando pesoEmGramas
 
     // mantém o pet escolhido e limpa o resto
     setForm({ ...FORM_INICIAL, petId: form.petId })

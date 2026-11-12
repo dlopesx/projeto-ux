@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Sidebar from '../componentes/Sidebar'
 import Header from '../componentes/Header'
-import { usePets } from '../context/Pets'
+import { usePets } from '../context/usePets'
 
 function Home() {
     const { pets } = usePets()

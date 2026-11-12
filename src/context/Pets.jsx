@@ -1,6 +1,5 @@
-import { createContext, useContext, useState } from 'react'
-
-const PetsContext = createContext()
+import { useState } from 'react'
+import { PetsContext } from './PetsContext'
 
 export function PetsLista({ children }) {
 
@@ -106,6 +105,3 @@ export function PetsLista({ children }) {
   )
 }
 
-export function usePets() {
-  return useContext(PetsContext)
-}

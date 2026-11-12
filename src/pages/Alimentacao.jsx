@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
-import { usePets } from '../context/Pets'
+import { usePets } from '../context/usePets'
 import Sidebar from '../componentes/Sidebar'
 import Header from '../componentes/Header'
 import RotinaAlimentacao from '../componentes/RotinaAlimentacao'

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { usePets } from '../context/Pets'
+import { usePets } from '../context/usePets'
 import Sidebar from '../componentes/Sidebar'
 import Header from '../componentes/Header'
 import CampoForm, { estiloCampo, SelectCampo } from '../componentes/CampoForm'

@@ -1,5 +1,5 @@
-import { useParams, Link } from 'react-router-dom'
-import { usePets } from '../context/Pets'
+import { useParams } from 'react-router-dom'
+import { usePets } from '../context/usePets'
 import Sidebar from '../componentes/Sidebar'
 // Importando o novo componente que você criou:
 import CardCuidado from '../componentes/CardCuidado'
