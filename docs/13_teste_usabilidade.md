@@ -48,6 +48,6 @@ A partir da análise das sessões gravadas e das respostas dos questionários p�
 * **Pontos Positivos:** Os fluxos de **criar agendamento** demonstraram alta facilidade de aprendizado (*learnability*), sendo concluídos sem necessidade de ajuda externa e com boa avaliação de clareza nos formulários.
 * **Principais Dificuldades Identificadas:** Os maiores gargalos de interação ocorreram nas tarefas de **Registrar vacina e Adicionar Pesagem**. Observou-se **que deve ser ajustado rotas de navegação entre as páginas e páginas responsivas em Meus pets para melhor navegação no Mobile**.
 * **Sugestões de Melhoria:** Para mitigar os erros de compreensão e navegação identificados, recomenda-se:
-  1. **[Melhoria 1 — ex.: Ajuste nas rota de tela para direcionamento correto.**
-  2. **[Melhoria 2 — ex.: Ajuste no formato responsivo das telas para melhor visualização do usuário.**
-  3. **[Melhoria 3 — ex.: Ajuste na rota dos botões de voltar no modelo mobile para impedimento de possíveis loops.**
+  1. **[Melhoria 1 — Ajuste nas rota de tela para direcionamento correto.**
+  2. **[Melhoria 2 — Ajuste no formato responsivo das telas para melhor visualização do usuário.**
+  3. **[Melhoria 3 — Ajuste na rota dos botões de voltar no modelo mobile para impedimento de possíveis loops.**
