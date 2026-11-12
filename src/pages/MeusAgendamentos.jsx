@@ -117,8 +117,8 @@ function MeusAgendamentos() {
                     <div className="flex-1 overflow-y-auto flex flex-col gap-6 p-6">
                         {/* Exemplo de campos - você pode colocar os seus originais aqui */}
                         <div className="flex flex-col gap-2">
-                            <label className="font-semibold">Nome da consulta</label>
-                            <input type="text" className="h-12 px-4 rounded-xl border border-[#E9DDCF] bg-white outline-none focus:ring-2 focus:ring-[#F29A4B]" defaultValue="Consulta de rotina" />
+                            <label htmlFor="nome-consulta" className="font-semibold">Nome da consulta</label>
+                            <input id="nome-consulta" name="nomeConsulta" type="text" className="h-12 px-4 rounded-xl border border-[#E9DDCF] bg-white outline-none focus:ring-2 focus:ring-[#F29A4B]" defaultValue="Consulta de rotina" />
                         </div>
                     </div>
 

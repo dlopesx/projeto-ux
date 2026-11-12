@@ -16,3 +16,122 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+
+/* Mantém os seletores nativos de data e hora, usando os ícones do MeuPet. */
+input[type='date'],
+input[type='time'] {
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 20px 20px;
+  padding-right: 44px;
+}
+
+input[type='date'] {
+  background-image: url('/svg/calendario.svg');
+}
+
+input[type='time'] {
+  background-image: url('/svg/relogio.svg');
+}
+
+input[type='date']::-webkit-calendar-picker-indicator,
+input[type='time']::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Calendário de agendamento no formato compacto do layout mobile. */
+.flatpickr-calendar.inline {
+  width: min(100%, 320px);
+  max-width: 100%;
+  padding: 8px 10px 10px;
+  border: 1px solid var(--color-bege);
+  border-radius: 16px;
+  background: #fffcf8;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.flatpickr-calendar.inline::before,
+.flatpickr-calendar.inline::after {
+  display: none;
+}
+
+.flatpickr-calendar.inline .flatpickr-months,
+.flatpickr-calendar.inline .flatpickr-months .flatpickr-month {
+  height: 30px;
+}
+
+.flatpickr-calendar.inline .flatpickr-current-month {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding-top: 0;
+  color: #75634f;
+  font-size: 14px;
+}
+
+.flatpickr-calendar.inline .flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-calendar.inline .flatpickr-current-month input.cur-year {
+  color: inherit;
+  font: inherit;
+}
+
+.flatpickr-calendar.inline .flatpickr-weekdays,
+.flatpickr-calendar.inline span.flatpickr-weekday {
+  height: 24px;
+  color: #75634f;
+  background: transparent;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.flatpickr-calendar.inline .flatpickr-days,
+.flatpickr-calendar.inline .dayContainer {
+  width: 100% !important;
+  min-width: 0;
+  max-width: none;
+}
+
+.flatpickr-calendar.inline .flatpickr-day {
+  width: 14.285714%;
+  max-width: none;
+  height: 32px;
+  line-height: 30px;
+  border-radius: 50%;
+  color: #473c31;
+  font-size: 11px;
+}
+
+.flatpickr-calendar.inline .flatpickr-day.prevMonthDay,
+.flatpickr-calendar.inline .flatpickr-day.nextMonthDay {
+  color: #c9c0b8;
+}
+
+.flatpickr-calendar.inline .flatpickr-day:hover {
+  border-color: #f29a4b;
+  background: #fff6ec;
+}
+
+.flatpickr-calendar.inline .flatpickr-day.selected,
+.flatpickr-calendar.inline .flatpickr-day.selected:hover {
+  border-color: #f29a4b;
+  background: transparent;
+  color: #473c31;
+}
+
+.flatpickr-calendar.inline .flatpickr-prev-month,
+.flatpickr-calendar.inline .flatpickr-next-month {
+  top: 8px;
+  height: 20px;
+  padding: 2px 8px;
+  fill: #f29a4b;
+}
+
+.flatpickr-calendar.inline .flatpickr-prev-month svg,
+.flatpickr-calendar.inline .flatpickr-next-month svg {
+  width: 12px;
+  height: 12px;
+}

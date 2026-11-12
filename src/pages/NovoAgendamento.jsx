@@ -112,11 +112,11 @@ function NovoAgendamento() {
                     >
                         <img src="/svg/voltar.svg" alt="" className="size-4" />
                     </button>
-                    <h1 className="text-lg font-semibold">Novo agendamento</h1>
+                    <h1 className="text-lg font-semibold">Adicionar consulta</h1>
                 </header>
 
                 <main className="flex w-full flex-col gap-6 px-5 py-6 sm:px-6 md:gap-9 md:px-8 lg:px-16">
-                    <h1 className="hidden text-4xl font-semibold md:block">Novo agendamento</h1>
+                    <h1 className="hidden text-4xl font-semibold md:block">Adicionar consulta</h1>
 
                     <form
                         onSubmit={adicionarAgendamento}
@@ -125,7 +125,7 @@ function NovoAgendamento() {
                         {/* COLUNA ESQUERDA: calendário + horário */}
                         <div className="flex w-full shrink-0 flex-col gap-6 lg:w-[26rem]">
                             <section className="flex flex-col gap-3">
-                                <h2 className="text-lg font-semibold md:text-xl">Selecione a data</h2>
+                                <h2 className="text-lg font-semibold md:text-xl">Selecione a data da consulta:</h2>
 
                                 <div className="w-full overflow-x-auto">
                                     {/* o flatpickr desenha o calendário logo depois deste input */}

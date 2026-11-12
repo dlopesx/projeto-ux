@@ -153,7 +153,7 @@ export default function AdicionarCio() {
           <form
             onSubmit={salvar}
             className="flex flex-col gap-6 p-6 border-2 border-[#E9DDCF] rounded-3xl bg-white shadow-sm"
-          >form.
+          >
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <label htmlFor="dataInicioM" className="font-semibold">
