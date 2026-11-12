@@ -1,56 +1,63 @@
-1) **Avaliação de IHC através de inspeção HEURÍSTICA \[1 solução completa por pessoa da equipe \- todas as telas do projeto\]**
+# Avaliação de IHC por inspeção heurística
 
-> **_NOTE:_**: SOMENTE VIOLAÇÕES
+## Escopo e método
 
-Dez Heurísticas de Nielsen
+Esta avaliação registra uma inspeção heurística da implementação React do MeuPet, considerando os fluxos e componentes disponíveis para desktop e celular. A inspeção foi feita por análise das telas, rotas e comportamentos implementados, usando as dez heurísticas de Nielsen e Molich (1994), conforme a estrutura proposta neste documento.
 
-**Descrição da avaliação**
+O material da aula *Usabilidade e Heurísticas* destaca que avaliações com usuários devem observar tarefas reais e registrar, entre outros dados, sucesso, erros, tempo e satisfação. A inspeção heurística abaixo complementa o teste por observação registrado em [13_teste_usabilidade.md](./13_teste_usabilidade.md); ela não substitui uma nova sessão com participantes. Os resultados anteriores são usados como contexto, sem serem apresentados como problemas ainda existentes quando o fluxo correspondente já foi corrigido no React.
 
-Avaliação heurística, definida por Nielsen e Molich (1994), é um método de avaliação de usabilidade onde um avaliador procura problemas de usabilidade numa interface com o usuário através da análise e interpretação de um conjunto de princípios ou heurísticas. Este método de avaliação é baseado no julgamento do avaliador.
+Foram consideradas as telas de primeiro acesso, dashboard, cadastro de pets, alertas, agendamentos e áreas de cuidado dos pets. A tabela principal contém **somente violações** encontradas na implementação atual. As evidências apontam a tela e o comportamento para facilitar a reprodução; não foram anexadas capturas de tela nesta inspeção.
 
-1\. Primeiramente, leia e analise as dez heurísticas (ver Tabela 1).
+## Escala de severidade
 
-**Tabela 1 \- Conjunto de heurísticas de Nielsen (1994)**
+| Grau | Classificação | Descrição |
+| :---: | :--- | :--- |
+| 0 | Sem importância | Não afeta a operação da interface. |
+| 1 | Cosmético | Não exige correção imediata. |
+| 2 | Simples | Problema de baixa prioridade, que pode ser corrigido. |
+| 3 | Grave | Problema de alta prioridade, que deve ser corrigido. |
+| 4 | Catastrófico | Problema muito grave, que deve ser corrigido de qualquer forma. |
 
-| 1\. | Visibilidade do status do sistema: |
-| :---- | :---- |
-| O sistema deve sempre manter os usuários informados sobre o que está acontecendo através de feedback apropriado, em um tempo razoável. |  |
-| **2\.** | **Compatibilidade entre sistema e mundo real:** |
-| O sistema deve utilizar a linguagem do usuário, com palavras, frases e conceitos familiares para ele, ao invés de termos específicos de sistemas. Seguir convenções do mundo real, fazendo com que a informação apareça em uma ordem lógica e natural. |  |
-| **3\.** | **Controle e liberdade para o usuário:** |
-| Estão relacionados à situação em que os usuários frequentemente escolhem as funções do sistema por engano e então necessitam de "uma saída de emergência” claramente definida para sair do estado não desejado sem ter que percorrer um longo diálogo, ou seja, é necessário suporte a *undo* e *redo*. |  |
-| **4\.** | **Consistência e padrões:** |
-| Referem-se ao fato de que os usuários não deveriam ter acesso a diferentes situações, palavras ou ações representando a mesma coisa. A interface deve ter convenções não-ambíguas. |  |
-| **5\.** | **Prevenção de erros:** |
-| Os erros são as principais fontes de frustração, ineficiência e ineficácia durante a utilização do sistema. |  |
-| **6\.** |  **Reconhecimento em lugar de lembrança:** |
-| Tornar objetos, ações, opções visíveis e coerentes. O usuário não deve ter que lembrar informações de uma parte do diálogo para outra. Instruções para o uso do sistema devem estar visíveis ou facilmente acessíveis. |  |
-| **7\.** | **Flexibilidade e eficiência de uso:** |
-| A ineficiência nas tarefas pode reduzir a eficácia do usuário e causar-lhes frustração. O sistema deve ser adequado tanto para usuários inexperientes quanto para usuários experientes. |  |
-| **8\.** | **Projeto minimalista e estético:** |
-| Os diálogos não devem conter informações irrelevantes ou raramente necessárias. Cada unidade extra de informação em um diálogo compete com unidades relevantes e diminui sua visibilidade relativa. |  |
-| **9\.** | **Auxiliar os usuários a reconhecer, diagnosticar e recuperar erros:** |
-| Mensagens de erro devem ser expressas em linguagem natural (sem códigos), indicando precisamente o erro e sugerindo uma solução. |  |
-| **10\.** | **Ajuda e documentação:** |
-| Mesmo que seja melhor que o sistema possa ser usado sem documentação, pode ser necessário fornecer ajuda e documentação. Tais informações devem ser fáceis de encontrar, ser centradas na tarefa do usuário, listar passos concretos a serem seguidos e não ser muito grandes. A ajuda deve estar facilmente acessível e on-line. |  |
+## Violações identificadas
 
-2\. A seguir, avalie o sistema procurando possíveis problemas de usabilidade.   
-3\. Quando um problema qualquer for detectado, classifique-o em uma das dez heurísticas de Nielsen, anotando o problema na tabela correspondente e atribuindo o **grau de severidade** (0 até 4\) para este problema (dado pela tabela 2\) e recomece novamente até não encontrar mais problemas de usabilidade.
+| Heurística | Tela e evidência observada | Impacto para a pessoa usuária | Severidade | Recomendação |
+| :--- | :--- | :--- | :---: | :--- |
+| **1. Visibilidade do status do sistema** | **Dashboard:** os cartões de agendamentos e alertas são exemplos escritos diretamente na tela e não refletem os dados do contexto usados pelos formulários. | Depois de criar ou alterar um item, o dashboard pode continuar mostrando informações antigas. A pessoa não consegue confirmar o estado atual dos registros por esse resumo. | **3 — Grave** | Montar os cartões a partir dos mesmos dados de agendamentos e alertas usados nas telas de listagem e atualizar o resumo após cada alteração. |
+| **1. Visibilidade do status do sistema** | **Novo alerta:** o envio mostra uma confirmação e limpa o formulário, mas a ação `adicionarAlerta` não grava o alerta no contexto usado por “Meus alertas”. | A mensagem indica sucesso, mas o alerta não aparece na lista; o retorno do sistema não corresponde ao resultado da ação. | **3 — Grave** | Salvar o alerta no estado compartilhado antes de mostrar a confirmação. Se o salvamento falhar, manter os dados e apresentar uma mensagem de erro. |
+| **1. Visibilidade do status do sistema** | **Registrar peso:** ao salvar, a tela apresenta “Peso adicionado com sucesso”, mas a função não atualiza os pesos do pet. | A pessoa recebe uma confirmação de uma operação que não foi concluída e pode acreditar que o histórico foi atualizado. | **3 — Grave** | Registrar a pesagem no estado compartilhado e atualizar o histórico antes de mostrar a confirmação. |
+| **1. Visibilidade do status do sistema** | **Adicionar registro de cio:** ao salvar, a tela volta ao histórico sem adicionar o registro ao estado de cios nem confirmar o resultado. | A pessoa não sabe se o registro foi salvo; ao retornar, o histórico permanece inalterado. | **3 — Grave** | Salvar o registro no contexto do pet e exibir confirmação; em caso de falha, permanecer no formulário e explicar como corrigir. |
+| **1. Visibilidade do status do sistema** | **Primeiro acesso:** os botões “Continuar com Google” e “Esqueci a senha” não executam uma ação nem informam que o recurso ainda não está disponível. | A aparência e os rótulos criam a expectativa de que essas ações funcionem; ao clicar, não há resposta. | **2 — Simples** | Implementar os fluxos ou indicar claramente que estão indisponíveis nesta versão. Todo controle visível deve responder à interação. |
+| **9. Ajudar a reconhecer, diagnosticar e recuperar erros** | **Rotas de detalhes de pets:** quando um identificador não corresponde a um pet, algumas páginas, como Vacinas e Consultas, mostram apenas “Pet não encontrado”, sem uma ação para voltar à lista de pets. | A pessoa pode ficar sem um caminho claro para se recuperar de um endereço inválido ou de um pet removido. | **2 — Simples** | Exibir uma mensagem em linguagem simples e oferecer um link ou botão para “Meus pets” ou para o início. |
 
-**Tabela 2 \- Grau de severidade dos problemas de usabilidade**
+## Boas práticas observadas
 
-| Grau de severidade | Tipo | Descrição |
-| ----- | :---- | :---- |
-| 0 | Sem importância | Não afeta a operação da interface |
-| 1 | Cosmético | Não há necessidade imediata de solução |
-| 2 | Simples | Problema de baixa prioridade (pode ser reparado) |
-| 3 | Grave | Problema de alta prioridade (deve ser reparado) |
-| 4 | Catastrófico | Muito grave, deve ser reparado de qualquer forma. |
+Os exemplos abaixo registram aspectos positivos do protótipo. Eles não anulam as violações listadas acima.
 
-> **_NOTE:_**: **colocar o print**
+| Heurística | Exemplo no MeuPet |
+| :--- | :--- |
+| **2. Compatibilidade entre o sistema e o mundo real** | A interface usa termos familiares ao cuidado de animais, como “Vacinas”, “Consultas”, “Alimentação”, “Meus pets” e “Próximos cuidados”. |
+| **3. Controle e liberdade para a pessoa usuária** | Formulários oferecem opções de voltar ou cancelar, e diálogos de edição podem ser fechados sem concluir a ação. |
+| **4. Consistência e padrões** | A paleta, os ícones e o estilo dos cartões e botões se repetem entre as áreas do app, ajudando a reconhecer elementos com a mesma função. |
+| **5. Prevenção de erros** | O cadastro de pet valida campos obrigatórios por etapa; campos de data restringem datas futuras quando essa regra se aplica; opções que tornam uma data desnecessária desabilitam o campo correspondente. |
+| **6. Reconhecimento em vez de memorização** | O dashboard e os seletores mostram os nomes dos pets, e as áreas de cuidado são acessadas por cartões identificados por texto e ícone. |
+| **7. Flexibilidade e eficiência de uso** | O dashboard oferece atalhos de adição para tarefas comuns, incluindo alerta, agendamento, vacina e cadastro de pet. |
+| **8. Projeto estético e minimalista** | As telas agrupam informações por assunto, usam títulos de seção e mantêm uma hierarquia visual que facilita localizar os principais conteúdos. |
+| **9. Recuperação de erros em formulários** | Em fluxos como o cadastro de pet e o agendamento, a validação pode indicar campos ou dados que precisam de correção. Isso convive com o problema de recuperação de rota descrito na tabela de violações. |
 
-> **_NOTE:_**: **escolher a tabela de declaração de violação padrão da equipe**
+## Relação com o teste por observação
 
-2) **INDICAÇÃO DE BOAS PRÁTICAS DE HEURÍSTICA \- HEURÍSTICAS NÃO VIOLADAS \[1 solução completa por pessoa da equipe\]**
+O teste registrado em [13_teste_usabilidade.md](./13_teste_usabilidade.md) teve um participante e apontou dificuldades de navegação na tarefa de registrar vacina e no retorno após adicionar pesagem. Essas observações são evidências do protótipo testado naquele momento. As rotas e os botões de voltar foram ajustados depois; portanto, esses dois relatos não foram repetidos como violações atuais sem nova observação com usuários. Recomenda-se repetir as tarefas após as correções e comparar sucesso, erros, tempo e satisfação, como indicado no material da aula.
 
-> **_NOTE:_**: **1 EXEMPLO DO SEU SISTEMA ONDE A HEURÍSTICA FOI ATENDIDA (ISSO NÃO É USADO NO MERCADO, SERVE APENAS PARA APRENDIZADO)**
+## Prioridade de correção
+
+1. Fazer com que alerta, peso e registro de cio sejam realmente salvos antes de confirmar a operação.
+2. Conectar o resumo do dashboard aos dados atuais do app.
+3. Dar uma resposta aos botões de autenticação externa e recuperação de senha, ou sinalizar que ainda não estão disponíveis.
+4. Oferecer um caminho de recuperação nas telas abertas com um identificador de pet inválido.
+5. Repetir o teste por observação nas tarefas de vacina, peso, alerta e registro de cio para verificar se as mudanças resolvem as dificuldades sem introduzir novas.
+
+## Referências
+
+- Nielsen e Molich (1994), heurísticas de usabilidade, conforme descritas no enunciado de avaliação da disciplina.
+- Material da aula *Usabilidade e Heurísticas* (PDF enviado para esta atividade), especialmente as páginas 4 e 6–8: objetivos e medidas do teste, análise quantitativa e qualitativa e relato dos problemas com localização, justificativa e sugestão de solução.
+- Resultados do teste por observação do projeto em [13_teste_usabilidade.md](./13_teste_usabilidade.md).
