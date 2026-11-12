@@ -60,7 +60,7 @@ function PainelPet() {
     const { pets, setPets } = usePets()
     const pet = pets.find((p) => p.id === Number(id))
     const navigate = useNavigate()
-    const voltarPara = `/`
+    const voltarPara = `/index`
 
     if (!pet) {
         return (
@@ -164,9 +164,8 @@ function PainelPet() {
 
                 <header className="self-stretch h-64 px-6 pt-6 pb-9 relative bg-[#FFF6EC] flex flex-col justify-start items-center gap-2.5 overflow-hidden">
 
-                    {/* Voltar com navigate(-1) para voltar para a tela exata de onde veio */}
                     <button type="button" 
-                        onClick={() => navigate(-1)} 
+                        onClick={() => navigate('/index')} 
                         aria-label="Voltar" className="left-6 top-6 absolute">
                         <img src="/svg/voltar.svg" alt="Voltar" className="size-5"/>
                     </button>

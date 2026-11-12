@@ -6,7 +6,7 @@ import Header from '../componentes/Header'
 import { usePets } from '../context/Pets'
 
 function Home() {
-    const { pets } = usePets()    // NOVO (aqui só precisa de pets, não de setPets)
+    const { pets } = usePets()
     const [painelAberto, setPainelAberto] = useState(false)
     const [painelMobileAberto, setPainelMobileAberto] = useState(false)
     const [menuMobileAberto, setMenuMobileAberto] = useState(false)
@@ -43,7 +43,7 @@ function Home() {
 
                                 <ul className="flex flex-col gap-2 p-4 bg-white border border-[#E9DDCF] rounded-2xl shadow-md">
                                     <li>
-                                        <Link to="novo-alerta"
+                                        <Link to="/novo-alerta"
                                         className="flex items-center gap-5 p-5 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
                                             <img src="/svg/notificacao.svg" alt="Sino de notificação" className="w-6 h-6 shrink-0"/>
                                             Adicionar novo alerta
@@ -57,7 +57,7 @@ function Home() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="nova-vacina"
+                                        <Link to="/nova-vacina"
                                         className="flex items-center gap-5 p-5 rounded-2xl bg-[#F8F0E6] hover:shadow-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F29A4B]">
                                             <img src="/svg/vacinas.svg" alt="Adicionar vacina" className="w-6 h-6 shrink-0"/>
                                             Adicionar nova vacina
@@ -86,7 +86,7 @@ function Home() {
                                         </div>
                                     </Link>
                                     ))}
-                                    <button onClick={() => navigate(`novo-pet`)} className=" bg-[#E9DDCF] items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border-2 border-[#F29A4B] border-dashed hover:shadow-md transition"> 
+                                    <button onClick={() => navigate('/novo-pet')} className=" bg-[#E9DDCF] items-center flex p-9 gap-4 w-[16.5rem] h-[6.5rem] rounded-xl border-2 border-[#F29A4B] border-dashed hover:shadow-md transition"> 
                                         <div className=" bg-[#E9DDCF] flex flex-col p-[1.75rem] gap-[1.25rem] w-[16.5rem] rounded-md ">
                                             <p> Adicionar pet</p>
                                         </div>
@@ -228,7 +228,7 @@ function Home() {
 
                     <div className="flex items-start justify-around gap-3 rounded-2xl border border-[#E9DDCF] bg-[#F8F0E6] p-3">
 
-                        <button type="button" onClick={() => navigate(`/pet/${pet.id}`)} className="flex w-16 shrink-0 flex-col items-center gap-2">
+                        <button type="button" onClick={() => navigate('/novo-pet')} className="flex w-16 shrink-0 flex-col items-center gap-2">
                             <span className="flex size-14 items-center justify-center rounded-full border border-[#E9DDCF]">
                                 <img src="/svg/plus.svg" alt="Figura de um + laranja" className="w-6 object-contain"/>
                             </span>
@@ -289,7 +289,7 @@ function Home() {
                             Alertas
                         </h2>
 
-                        <button type="button" onClick="window.location.href='novo_alerta.html'" className="text-xs font-semibold font-['Inter'] text-[#75634F]">
+                        <button type="button" onClick={() => navigate('/novo-alerta')} className="text-xs font-semibold font-['Inter'] text-[#75634F]">
                             + Adicionar
                         </button>
                     </div>
@@ -316,7 +316,7 @@ function Home() {
             <nav className="mx-4 mb-3 mt-auto flex h-12 shrink-0 items-center justify-between rounded-full border border-[#E9DDCF] bg-[#F8F0E6] px-6">
                 <button
                     type="button"
-                    onClick="window.location.href='#'"
+                    onClick={() => navigate('/index')}
                     className="flex size-6 items-center justify-center"
                     aria-label="Início"
                 >
@@ -333,6 +333,7 @@ function Home() {
                 <button
                     type="button"
                     id="fechar-menu-fundo"
+                    onClick={() => setMenuMobileAberto(false)}
                     className="absolute inset-0 bg-black/30"
                     aria-label="Fechar menu"
                 ></button>
@@ -356,30 +357,30 @@ function Home() {
                     </div>
 
                     <nav className="flex flex-col gap-6">
-                        <a href="perfil_marina.html" className="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                        <Link to="/perfil" onClick={() => setMenuMobileAberto(false)} className="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
                             Ver perfil
-                        </a>
+                        </Link>
 
-                        <Link to="/tutores" className="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                        <Link to="/outros-tutores" onClick={() => setMenuMobileAberto(false)} className="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
                             Administrar tutores
                         </Link>
 
-                        <Link to="/meus-pets" className="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
+                        <Link to="/meus-pets" onClick={() => setMenuMobileAberto(false)} className="text-base font-normal font-['Inter'] leading-6 text-[#75634F]">
                             Meus pets
                         </Link>
                     </nav>
 
                     <div className="mt-auto flex flex-col gap-6 border-t border-[#E9DDCF] pt-6">
-                        <a href="configuracoes.html" className="text-base font-normal font-['Inter'] text-[#75634F]">
+                        <Link to="/configuracoes" onClick={() => setMenuMobileAberto(false)} className="text-base font-normal font-['Inter'] text-[#75634F]">
                             Config. do app
-                        </a>
+                        </Link>
 
-                        <a href="sobre.html" className="flex items-center gap-2.5 text-base font-normal font-['Inter'] text-[#75634F]">
+                        <Link to="/sobre" onClick={() => setMenuMobileAberto(false)} className="flex items-center gap-2.5 text-base font-normal font-['Inter'] text-[#75634F]">
                             Sobre
                             <span className="flex size-5 items-center justify-center rounded-full border border-[#75634F] text-xs font-semibold">
                                 i
                             </span>
-                        </a>
+                        </Link>
                     </div>
 
                 </aside>
@@ -404,24 +405,24 @@ function Home() {
 
                     <ul className="flex flex-col gap-2 rounded-2xl border border-[#E9DDCF] bg-white p-4 shadow-md">
                         <li>
-                            <a href="novo_alerta.html" className="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
+                            <Link to="/novo-alerta" onClick={() => setPainelMobileAberto(false)} className="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
                                 <img src="/svg/notificacao.svg" alt="Sino de notificação" className="h-6 w-6 shrink-0"/>
                                 Adicionar novo alerta
-                            </a>
+                            </Link>
                         </li>
 
                         <li>
-                            <a href="adicionar_agendamento.html" className="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
+                            <Link to="/novo-agendamento" onClick={() => setPainelMobileAberto(false)} className="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
                                 <img src="/svg/calendario.svg" alt="Calendário" className="h-6 w-6 shrink-0"/>
                                 Adicionar agendamento
-                            </a>
+                            </Link>
                         </li>
 
                         <li>
-                            <a href="adicionar_vacina.html" className="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
+                            <Link to="/nova-vacina" onClick={() => setPainelMobileAberto(false)} className="flex items-center gap-5 rounded-2xl bg-[#F8F0E6] p-5">
                                 <img src="/svg/vacinas.svg" alt="Adicionar vacina" className="h-6 w-6 shrink-0"/>
                                 Adicionar nova vacina
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </dialog>

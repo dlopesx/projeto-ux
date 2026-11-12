@@ -60,11 +60,11 @@ export default function AdicionarPeso() {
 
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="hidden md:block">
-          <Header />
+          <Header voltarPara={voltarPara} />
         </div>
 
         <div className="md:hidden">
-          <HeaderMobile />
+          <HeaderMobile voltarPara={voltarPara} titulo="Voltar" />
         </div>
 
         <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 p-5 sm:p-6 md:px-8 md:py-10">

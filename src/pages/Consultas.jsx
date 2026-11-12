@@ -84,7 +84,7 @@ export default function Consultas(){
                     <h1 className="text-2xl font-semibold text-[#120111]"> Consultas </h1>
 
                     <div className="flex justify-center w-full">
-                        <Link to={`/pet/${pet.id}/adicionar-agendamento`} className="w-full flex items-center justify-center gap-2 px-3 py-3 rounded-2xl font-semibold text-sm border border-[#9c9c9c] hover:shadow-md transition">
+                        <Link to={`/pet/${pet.id}/novo-agendamento`} className="w-full flex items-center justify-center gap-2 px-3 py-3 rounded-2xl font-semibold text-sm border border-[#9c9c9c] hover:shadow-md transition">
                             <img src="/svg/adicionar.svg" alt="Adicionar consulta" className="w-5 h-5" />
                             <span>Adicionar consulta</span>
                         </Link>
@@ -97,7 +97,7 @@ export default function Consultas(){
                                 <p className="text-base text-[#120111]">
                                     {pet.nome} não possui nenhuma consulta agendada.
                                 </p>
-                                <Link to={`/pet/${pet.id}/adicionar-agendamento`} className="text-sm font-semibold border-2 border-[#E8863A] rounded-full px-5 py-3 bg-[#F29A4B] hover:shadow-md transition">
+                                <Link to={`/pet/${pet.id}/novo-agendamento`} className="text-sm font-semibold border-2 border-[#E8863A] rounded-full px-5 py-3 bg-[#F29A4B] hover:shadow-md transition">
                                     Adicionar novo agendamento
                                 </Link>
                             </div>

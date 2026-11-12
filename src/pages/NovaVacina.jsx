@@ -23,6 +23,7 @@ function NovaVacina() {
     const [form, setForm] = useState({ ...FORM_INICIAL, petId: id ?? '' })
     // null = sem aviso | 'adicionada' | 'atualizada'
     const [aviso, setAviso] = useState(null)
+    const voltarPara = id ? `/pet/${id}/vacinas` : '/index'
 
     const pet = pets.find((p) => p.id === Number(form.petId))
     const sugestoes = pet ? (VACINAS_SUGERIDAS[pet.especie] ?? []) : []
@@ -92,14 +93,14 @@ function NovaVacina() {
 
             <div className="flex min-w-0 flex-1 flex-col">
                 <div className="hidden md:block">
-                    <Header />
+                    <Header voltarPara={voltarPara} />
                 </div>
 
                 {/* header mobile */}
                 <header className="flex min-h-16 items-center gap-4 border-b border-bege px-5 py-4 md:hidden">
                     <button
                         type="button"
-                        onClick={() => navigate(-1)}
+                        onClick={() => navigate(voltarPara)}
                         aria-label="Voltar"
                         className="flex size-8 shrink-0 items-center justify-center rounded-full hover:bg-superficie"
                     >

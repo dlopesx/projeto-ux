@@ -131,7 +131,7 @@ export default function NovoPet() {
 
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="hidden md:block">
-          <Header voltarPara="/" />
+          <Header voltarPara="/index" />
         </div>
 
         <header className="flex h-16 items-center gap-4 border-b border-[#E9DDCF] px-5 md:hidden">

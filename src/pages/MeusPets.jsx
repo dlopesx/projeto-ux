@@ -42,7 +42,7 @@ function MeusPets() {
     <div className="flex min-h-dvh bg-[#FFFBF6] text-[#2B1A0E]">
 
       {/* SIDEBAR */}
-      <Sidebar />
+      <div className="hidden md:flex"><Sidebar /></div>
 
       {/* CONTEÚDO PRINCIPAL */}
       <div className="bg-[#FFFBF6] flex flex-col self-stretch flex-1 min-w-0">

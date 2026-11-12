@@ -1,13 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
-export default function Header({ voltarPara }) {
+export default function Header({ voltarPara = '/index' }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const inicio = pathname === "/";
+  const inicio = pathname === "/index" || pathname === "/inicio";
 
   function voltar() {
-    if (voltarPara) navigate(voltarPara);
-    else navigate(-1);
+    navigate(voltarPara);
   }
 
   return (

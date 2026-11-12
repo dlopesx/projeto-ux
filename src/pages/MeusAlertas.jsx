@@ -109,7 +109,7 @@ function MeusAlertas() {
 
       {/* SIDEBAR - DESKTOP */}
       
-      <Sidebar />
+      <div className="hidden md:flex"><Sidebar /></div>
 
       {/* CONTEÚDO PRINCIPAL */}
       <div className="bg-[#FFFBF6] flex flex-col flex-1 min-w-0">

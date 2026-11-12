@@ -14,7 +14,7 @@ import { Link, useLocation } from "react-router-dom";
 
         return (
             <aside
-                className="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-60 min-h-dvh"
+                className="bg-[#F8F0E6] p-3 flex flex-col shrink-0 w-[15rem] min-w-[15rem] max-w-[15rem] min-h-dvh"
                 aria-label="Sidebar"
                 >
                 <div className="flex flex-col flex-1 px-3 py-4">
@@ -25,7 +25,7 @@ import { Link, useLocation } from "react-router-dom";
                             className="flex flex-1 items-center px-2 py-3 rounded-2xl"
                             >
                             <span className="px-1 pb-6 text-xl font-bold">
-                                Site nome
+                                MeuPet
                             </span>
                             </Link>
 

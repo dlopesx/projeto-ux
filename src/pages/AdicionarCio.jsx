@@ -70,7 +70,7 @@ export default function AdicionarCio() {
         <Sidebar />
 
         <div className="flex-1 flex flex-col">
-          <Header />
+          <Header voltarPara={`/pet/${id}/cio`} />
 
           <main className="w-full max-w-xl mx-auto py-10 px-8 flex flex-col gap-6 flex-1">
             <h1 className="text-2xl md:text-2xl font-semibold text-[#120111]">
@@ -121,6 +121,7 @@ export default function AdicionarCio() {
 
               <div className="flex justify-end gap-3 mt-4 pt-6 border-t border-[#E9DDCF]">
                 <button
+                  type="button"
                   onClick={() => navigate(`/pet/${form.petId}/cio`)}
                   className="flex items-center justify-center px-6 h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition"
                 >
@@ -140,6 +141,12 @@ export default function AdicionarCio() {
 
       {/* MOBILE */}
       <section className="flex md:hidden flex-col w-full min-h-screen">
+        <header className="flex min-h-16 items-center gap-4 border-b border-[#E9DDCF] px-5 py-4">
+          <button type="button" onClick={() => navigate(`/pet/${id}/cio`)} aria-label="Voltar" className="flex size-8 shrink-0 items-center justify-center rounded-full hover:bg-[#F8F0E6]">
+            <img src="/svg/voltar.svg" alt="" className="size-5" />
+          </button>
+          <h1 className="text-lg font-semibold">Adicionar registro (cio)</h1>
+        </header>
         <main className="w-full p-5 sm:p-6 flex flex-col gap-6 flex-1">
           <h1 className="text-2xl font-semibold text-[#120111]">Adicionar Registro (Cio)</h1>
 
@@ -187,6 +194,7 @@ export default function AdicionarCio() {
 
             <div className="flex flex-col-reverse gap-3 mt-4 pt-6 border-t border-[#E9DDCF]">
               <button
+                type="button"
                 onClick={() => navigate(`/pet/${form.petId}/cio`)}
                 className="flex items-center justify-center w-full h-12 rounded-xl border border-[#E9DDCF] font-semibold hover:bg-[#F8F0E6] transition"
               >

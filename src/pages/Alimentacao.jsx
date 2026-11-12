@@ -9,6 +9,7 @@ function Alimentacao() {
     const { id } = useParams()
     const { pets, alimentacao, setAlimentacao } = usePets()
     const [editandoFavoritos, setEditandoFavoritos] = useState(false)
+    const [editandoRotina, setEditandoRotina] = useState(false)
     const voltarPara = `/pet/${id}`
 
     const pet = pets.find((p) => p.id === Number(id))
@@ -27,6 +28,12 @@ function Alimentacao() {
 
     function removerPreferido(nome) {
         salvarPreferidos(registro.preferidos.filter((p) => p !== nome))
+    }
+
+    function mudarRefeicao(indice, refeicao) {
+        setAlimentacao((atual) => atual.map((item) => item.petId === pet.id
+            ? { ...item, rotina: item.rotina.map((r, i) => i === indice ? { ...r, refeicao } : r) }
+            : item))
     }
 
     function adicionarPreferido() {
@@ -58,11 +65,11 @@ function Alimentacao() {
                             <div className="flex flex-col gap-10 md:gap-16 rounded-3xl border border-[#E9DDCF] bg-[#F8F0E6] p-6 md:p-8">
                                 <div className="flex justify-between items-start">
                                     <h2 className="text-2xl font-semibold text-[#120111]">Rotina alimentar</h2>
-                                    <button type="button" aria-label="Editar rotina">
-                                        <img src="/svg/edit.svg" alt="" className="w-5 h-5 md:w-auto md:h-auto" />
+                                    <button type="button" onClick={() => setEditandoRotina((value) => !value)} aria-label={editandoRotina ? 'Concluir edição da rotina' : 'Editar rotina'}>
+                                        <img src={editandoRotina ? '/svg/fechar.svg' : '/svg/edit.svg'} alt="" className="w-5 h-5 md:w-auto md:h-auto" />
                                     </button>
                                 </div>
-                                <RotinaAlimentacao rotina={registro.rotina} />
+                                <RotinaAlimentacao rotina={registro.rotina} editando={editandoRotina} onMudar={mudarRefeicao} />
                             </div>
                         </section>
 

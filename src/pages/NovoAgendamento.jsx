@@ -25,13 +25,14 @@ const FORM_INICIAL = {
 
 function NovoAgendamento() {
     const navigate = useNavigate()
-    // existe só quando a rota é /pet/:id/adicionar-agendamento (pet já escolhido)
+    // Quando há um ID na rota, o formulário já abre com o pet escolhido.
     const { id } = useParams()
     const { pets, setConsultas } = usePets()
 
     const [form, setForm] = useState({ ...FORM_INICIAL, petId: id ?? '' })
     const [erroData, setErroData] = useState(false)
     const [adicionado, setAdicionado] = useState(false)
+    const voltarPara = id ? `/pet/${id}/consultas` : '/index'
 
     const dataRef = useRef(null) // input escondido que o flatpickr usa
     const calendarioRef = useRef(null) // instância do calendário
@@ -98,14 +99,14 @@ function NovoAgendamento() {
 
             <div className="flex min-w-0 flex-1 flex-col">
                 <div className="hidden md:block">
-                    <Header />
+                    <Header voltarPara={voltarPara} />
                 </div>
 
                 {/* header mobile */}
                 <header className="flex min-h-16 items-center gap-4 border-b border-bege px-6 py-4 md:hidden">
                     <button
                         type="button"
-                        onClick={() => navigate(-1)}
+                        onClick={() => navigate(voltarPara)}
                         aria-label="Voltar"
                         className="flex size-8 shrink-0 items-center justify-center rounded-full hover:bg-superficie"
                     >

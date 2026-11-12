@@ -4,7 +4,7 @@ import Header from './Header'
 
 // moldura das telas de formulário: sidebar + header no desktop, header com voltar no mobile
 // uso: <LayoutFormulario titulo="Adicionar vacina">...formulário...</LayoutFormulario>
-export default function LayoutFormulario({ titulo, tituloMobile = titulo, children }) {
+export default function LayoutFormulario({ titulo, tituloMobile = titulo, voltarPara = '/index', children }) {
     const navigate = useNavigate()
 
     return (
@@ -15,14 +15,14 @@ export default function LayoutFormulario({ titulo, tituloMobile = titulo, childr
 
             <div className="flex min-w-0 flex-1 flex-col">
                 <div className="hidden md:block">
-                    <Header />
+                    <Header voltarPara={voltarPara} />
                 </div>
 
                 {/* header mobile */}
                 <header className="flex min-h-16 items-center gap-4 border-b border-bege px-5 py-4 md:hidden">
                     <button
                         type="button"
-                        onClick={() => navigate(-1)}
+                        onClick={() => navigate(voltarPara)}
                         aria-label="Voltar"
                         className="flex size-8 shrink-0 items-center justify-center rounded-full hover:bg-superficie"
                     >

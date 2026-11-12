@@ -69,6 +69,7 @@ function NovoMedicamento() {
         <LayoutFormulario
             titulo="Adicionar medicamento"
             tituloMobile={`Adicionar medicamento${pet ? ` — ${pet.nome}` : ''}`}
+            voltarPara={id ? `/pet/${id}/medicamentos` : '/index'}
         >
             <form
                 onSubmit={adicionarMedicamento}

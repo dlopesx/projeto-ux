@@ -49,6 +49,7 @@ function Vacinas() {
             : vacinasComStatus.filter((v) => v.status === filtro)
 
     return (
+        <>
         <section className="hidden md:block ">
             <div className="flex">
                 <Sidebar />
@@ -126,6 +127,27 @@ function Vacinas() {
                 </div>
             </div>
         </section>
+        <section className="min-h-dvh bg-[#FFFBF6] md:hidden">
+            <header className="flex min-h-16 items-center gap-4 border-b border-[#E9DDCF] px-5 py-4">
+                <Link to={voltarPara} aria-label="Voltar ao perfil do pet" className="flex size-8 shrink-0 items-center justify-center rounded-full">
+                    <img src="/svg/voltar.svg" alt="" className="size-5" />
+                </Link>
+                <h1 className="text-lg font-semibold">{pet.nome} — vacinas</h1>
+            </header>
+            <main className="flex flex-col gap-6 p-5 sm:p-6">
+                <Link to={`/pet/${pet.id}/adicionar-vacina`} className="flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#E9DDCF] px-4 py-3 font-semibold">
+                    <img src="/svg/adicionar.svg" alt="" className="size-5" />Adicionar vacina
+                </Link>
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Filtro de vacinas">
+                    {FILTROS.map((f) => <button key={f.valor} type="button" onClick={() => setFiltro(f.valor)} aria-pressed={filtro === f.valor} className={`rounded-full border px-4 py-2 text-sm ${filtro === f.valor ? 'border-[#F29A4B] bg-[#F29A4B]' : 'border-[#E9DDCF] bg-white'}`}>{f.rotulo}</button>)}
+                </div>
+                <h2 className="text-xl font-semibold">{FILTROS.find((f) => f.valor === filtro).rotulo === 'Todas' ? 'Todas as vacinas' : `Vacinas ${FILTROS.find((f) => f.valor === filtro).rotulo.toLowerCase()}`}</h2>
+                <section className="w-full overflow-hidden rounded-2xl border border-[#E9DDCF]" aria-label="Carteira de vacinação">
+                    {vacinasFiltradas.length === 0 ? <p className="p-5 text-[#75634F]">Nenhuma vacina nessa categoria.</p> : <ul>{vacinasFiltradas.map((v) => <CardVacina key={v.id} nome={v.nome} ultima={formatar(v.data)} proxima={formatar(v.proxima)} status={v.status} />)}</ul>}
+                </section>
+            </main>
+        </section>
+        </>
     )
 }
 

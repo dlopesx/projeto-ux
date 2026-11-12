@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import LayoutPagina from '../componentes/LayoutPagina'
 import Interruptor from '../componentes/Interruptor'
 import { NOME_APP, VERSAO_APP } from '../js/app'
@@ -72,9 +73,8 @@ function Configuracoes() {
                 </div>
 
                 <Secao titulo="Conta">
-                    {/* TODO: trocar href="#" por <Link to="/perfil"> quando a página de perfil existir */}
-                    <a
-                        href="#"
+                    <Link
+                        to="/perfil"
                         className="group flex items-center justify-between gap-3 rounded-2xl border border-bege bg-superficie p-4 transition hover:bg-[#FFF6EC] hover:shadow-md md:gap-4 md:p-6"
                     >
                         <div className="flex min-w-0 items-center gap-3 md:gap-4">
@@ -118,7 +118,7 @@ function Configuracoes() {
                                 d="m9 18 6-6-6-6"
                             />
                         </svg>
-                    </a>
+                    </Link>
                 </Secao>
 
                 <Secao titulo="Preferências">
