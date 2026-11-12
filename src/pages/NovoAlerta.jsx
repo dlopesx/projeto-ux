@@ -303,7 +303,7 @@ function NovoAlerta() {
                     <header className="h-16 shrink-0 px-5 border-b border-borda flex items-center gap-4">
 
                         <Link
-                            to="/"
+                            to="/index"
                             aria-label="Voltar"
                             className="size-6 shrink-0 flex items-center justify-center"
                         >

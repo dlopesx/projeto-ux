@@ -63,7 +63,7 @@ export default function NovoPet() {
   }
 
   function voltar() {
-    if (passo === 1) navigate('/')
+    if (passo === 1) navigate('/index')
     else irParaEtapa(passo - 1)
   }
 
@@ -115,7 +115,7 @@ export default function NovoPet() {
           >
             Ir para o pet
           </Link>
-          <Link to="/" className="text-center text-sm hover:underline">
+          <Link to="/index" className="text-center text-sm hover:underline">
             Voltar ao início
           </Link>
         </div>

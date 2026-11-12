@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
         /*pega a rota atual pra destacar o menu ativo */
         const { pathname } = useLocation();
-        const inicio = pathname === "/";
+        const inicio = pathname === "/index" || pathname === "/inicio";
         const meusPets = pathname === "/meus-pets";
         const meusAgendamentos = pathname === "/meus-agendamentos";
         const meusAlertas = pathname === "/meus-alertas";
@@ -21,7 +21,7 @@ import { Link, useLocation } from "react-router-dom";
                     <ul className="flex-1 space-y-2 font-medium">
                         <li className="flex">
                             <Link
-                            to="/"
+                            to="/index"
                             className="flex flex-1 items-center px-2 py-3 rounded-2xl"
                             >
                             <span className="px-1 pb-6 text-xl font-bold">
@@ -36,7 +36,7 @@ import { Link, useLocation } from "react-router-dom";
                         {/* PERFIL DO USUÁRIO */}
                         <li className="pb-3 mb-2 border-b border-[#E9DDCF]">
                             <Link
-                            to="#"
+                            to="/perfil"
                             className="group flex items-center gap-3 px-2 py-2 rounded-2xl hover:bg-[#E9DDCF]"
                             >
                             <span className="w-10 h-10 shrink-0 rounded-full bg-[#E9DDCF] flex items-center justify-center font-semibold">
@@ -54,7 +54,7 @@ import { Link, useLocation } from "react-router-dom";
                                 <span className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-1.5 rounded-r bg-[#F29A4B]" />
                             )}
                             <Link
-                            to="/"
+                            to="/index"
                             className={`flex items-center px-2 py-3 rounded-xl ${inicio ? "pl-6" : ""}`}
                             >
                             <img className="w-6 h-6" src="/svg/inicio.svg" alt="" />

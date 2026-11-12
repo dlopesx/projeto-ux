@@ -63,7 +63,7 @@ function MeusAgendamentos() {
 
                 {/* HEADER MOBILE (Opcional, se você quiser aquele cabeçalho com botão voltar só no mobile) */}
                 <header className="md:hidden flex min-h-16 items-center gap-4 border-b border-[#E9DDCF] px-6 py-4">
-                    <Link to="/" aria-label="Voltar" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full hover:bg-[#F8F0E6]">
+                    <Link to="/index" aria-label="Voltar" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full hover:bg-[#F8F0E6]">
                         <img src="/svg/voltar.svg" alt="Voltar" className="h-4 w-4" />
                     </Link>
                     <h1 className="text-lg font-semibold leading-snug">Meus agendamentos</h1>

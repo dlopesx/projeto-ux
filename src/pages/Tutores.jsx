@@ -163,7 +163,7 @@ function OutrosTutores() {
       {/* MOBILE */}
       <section className="block md:hidden min-h-screen bg-[#FFFBF6]">
         <header className="min-h-16 px-6 py-4 border-b border-[#E9DDCF] flex items-center gap-4">
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/index" className="flex items-center gap-3">
             <img src="/svg/voltar.svg" alt="" className="w-6 h-6" />
             <span className="text-lg font-semibold text-[#75634F]">Voltar</span>
           </Link>

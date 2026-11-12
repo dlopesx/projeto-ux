@@ -20,7 +20,7 @@ export default function LayoutPagina({ tituloMobile, children }) {
                 {/* header mobile */}
                 <header className="flex h-14 shrink-0 items-center gap-4 border-b border-bege px-6 md:hidden">
                     <Link
-                        to="/"
+                        to="/index"
                         aria-label="Voltar para o início"
                         className="flex size-6 shrink-0 items-center justify-center"
                     >

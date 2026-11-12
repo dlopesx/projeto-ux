@@ -24,6 +24,10 @@ import NovoMedicamento from './pages/NovoMedicamento.jsx'
 import AdicionarCio from './pages/AdicionarCio.jsx'
 import AdicionarPeso from './pages/AdicionarPeso.jsx'
 import NovoPet from './pages/NovoPet.jsx'
+import PrimeiroAcessoLogin from './pages/PrimeiroAcessoLogin.jsx'
+import PrimeiroAcessoCadastro from './pages/PrimeiroAcessoCadastro.jsx'
+import PerfilMarina from './pages/PerfilMarina.jsx'
+import Erro from './pages/Erro.jsx'
 
 function App() {
 
@@ -33,7 +37,13 @@ function App() {
     {/* agrupa as todas de navegação */}
       <Routes>
         {/* define qual componente aparece em cada endereço */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<PrimeiroAcessoLogin />} />
+        <Route path="/index" element={<Home />} />
+        <Route path="/inicio" element={<Home />} />
+        <Route path="/primeiro-acesso/login" element={<PrimeiroAcessoLogin />} />
+        <Route path="/primeiro-acesso/cadastro" element={<PrimeiroAcessoCadastro />} />
+        <Route path="/perfil" element={<PerfilMarina />} />
+        <Route path="/erro" element={<Erro />} />
         <Route path="/meus-pets" element={<MeusPets />} />
         <Route path="/meus-agendamentos" element={<MeusAgendamentos />} />
         <Route path="/outros-tutores" element={<OutrosTutores />} />
